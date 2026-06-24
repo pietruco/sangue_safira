@@ -7,7 +7,7 @@ const CLANS = [
     cor: "#8b6914",
     resumo: "Caçadores implacáveis e executores da lei vampírica, os Banu Haqim habitam as sombras entre o julgamento e a execução. Nascidos das areias da Anatólia e do Oriente Médio, eles foram por séculos os braços armados da Camarilla — e também seus inimigos mais temidos.",
     historia: "Os Banu Haqim traçam sua linhagem até Haqim, o Antediluviano que fundou a cidade de Alamut nas montanhas inacessíveis. Por milênios, serviram como assassinos contratados e guardiões da lei entre os imortais, desenvolvendo uma filosofia de julgamento que mistura lei islâmica, filosofia grega e pragmatismo brutal. No passado recente se dividiram entre a Camarilla e o Sabá, mas hoje muitos buscam um terceiro caminho — o da Anarquia ou da independência total.",
-    disciplinas: ["Furtividade (Celeridade)", "Obfuscação", "Sangue-feitiçaria"],
+    disciplinas: ["Celeridade", "Ofuscação", "Feitiçaria de Sangue"],
     perdicao: "Vingança — os Banu Haqim são consumidos por um senso de justiça que rapidamente degenera em obsessão com punição. Qualquer transgressão percebida exige correção, e o Banu Haqim em Besta é um executor que não distingue culpados de inocentes.",
     fome: "Os Banu Haqim anseiam pelo sangue de outros vampiros. Quando se alimentam de Cainitas, sua Fome diminui extraordinariamente — e o apetite por este sangue mais rico nunca os abandona completamente.",
     citacao: "\"Nenhuma lei existe sem punição. Nenhuma punição existe sem julgamento. E eu sou o juiz.\""
@@ -46,7 +46,7 @@ const CLANS = [
     cor: "#6b4a8b",
     resumo: "Uma confederação de clãs menores unidos sob o manto da morte, os Hecata são os vampiros que encaram a mortalidade como ciência e religião simultaneamente. Eles não fogem da morte — eles a estudam, a manipulam, a veneram.",
     historia: "Os Hecata são na verdade um clã-confederação, reunindo os antigos Giovanni, os Samedi, os Cappadocianos sobreviventes e outras linhagens ligadas à morte. Os Giovanni traíram e devoraram os Cappadocianos no século XV; a culpa e o karma dessa traição os persegue. Em 2012, as linhagens se reunificaram formalmente como Hecata, reconhecendo sua herança compartilhada e terrível.",
-    disciplinas: ["Auspício", "Fortitude", "Necromancia (Sangue-feitiçaria da Morte)"],
+    disciplinas: ["Auspício", "Fortitude", "Oblívio"],
     perdicao: "Necrose — a maldição familiar dos Giovanni: seu beijo causa dor excruciante em vez de êxtase. Mortais raramente sobrevivem à alimentação de um Hecata sem sequelas. A morte os segue literalmente.",
     fome: "Os Hecata anseiam pelo sangue dos moribundos — aqueles no limiar entre a vida e a morte. O sangue de cadáveres frescos também os sustenta, embora seja considerado indelicado.",
     citacao: "\"A morte não é o fim. É apenas a próxima pergunta.\""
@@ -59,7 +59,7 @@ const CLANS = [
     cor: "#1a1a4a",
     resumo: "Aristocratas das trevas que governaram o Mediterrâneo por milênios, os Lasombra combinam elegância refinada com crueldade absoluta. Fundadores do Sabá, agora divididos — alguns migraram para a Camarilla, trazendo seus segredos sombrios consigo.",
     historia: "Os Lasombra dominaram o mar Mediterrâneo e a Igreja Católica medieval como marionetes. Quando o Sabá foi fundado, eram sua coluna vertebral — seus Antitribu mais refinados tornaram-se os Mestres. Em 2012, após o avanço dos Antu pelos territórios do Sabá, facções significativas dos Lasombra negociaram entrada na Camarilla, pagando um preço de sangue: matar um parente de clã como prova de lealdade.",
-    disciplinas: ["Dominação", "Potência", "Obtenebração"],
+    disciplinas: ["Dominação", "Potência", "Oblívio"],
     perdicao: "Arrogância absoluta — os Lasombra acreditam genuinamente que o sofrimento alheio tem valor pedagógico. Eles não refletem em espelhos e não aparecem em câmeras — nem mesmo digitais — o que interpretam como prova de sua natureza além do mundano.",
     fome: "Os Lasombra anseiam pelo poder — pelo sangue daqueles que possuem autoridade, influência ou força de vontade. O sangue de líderes, chefes e figuras de poder os satisfaz de forma ímpar.",
     citacao: "\"As sombras não mentem. É a luz que ilude.\""
@@ -85,7 +85,7 @@ const CLANS = [
     cor: "#8b6914",
     resumo: "Devotos do deus egípcio Set, o Ministry vê a corrupção não como vício mas como sacramento. Eles tentam porque acreditam genuinamente que libertar os outros de suas inibições é um ato de amor.",
     historia: "Os Seguidores de Set se originaram no Egito antigo, servindo ao deus das tempestades e do caos. Por milênios mantiveram templos secretos onde mortais buscavam vícios e libertação. Recentemente se renomearam como Ministry, adotando uma abordagem mais moderna: clubes noturnos, casas de drogas, movimentos de auto-liberação. Seu Antediluviano, Set, teria sido morto por Osíris e agora aguarda ressurreição.",
-    disciplinas: ["Presença", "Ofuscação", "Proteano"],
+    disciplinas: ["Presença", "Ofuscação", "Proteanismo"],
     perdicao: "Sensibilidade à luz — os membros do Ministry sofrem com toda e qualquer luz, não apenas a solar. Mesmo luz artificial causa desconforto; eles preferem a escuridão completa e atuam apenas onde a sombra domina.",
     fome: "O Ministry anseia pelo sangue daqueles que sucumbiram à tentação — viciados, corrompidos, aqueles que venderam suas inibições. Quanto mais profunda a queda, mais doce o sangue.",
     citacao: "\"Eu não te corrompo. Eu te mostro quem você sempre foi.\""
@@ -111,7 +111,7 @@ const CLANS = [
     cor: "#8b4a14",
     resumo: "Viajantes eternos e mestres da ilusão, os Ravnos sobreviveram à quase extinção durante a Semana dos Pesadelos — e saíram do outro lado diferentes, mais raros e mais perigosos do que antes.",
     historia: "Os Ravnos vinham principalmente do subcontinente indiano e de comunidades Romani, carregando tradições de viagem e magia de ilusão. Em 1999, a Semana dos Pesadelos quase os exterminou: seu Antediluviano acordou, enlouqueceu, e foi destruído por forças mortais e imortais combinadas. Dos milhares de Ravnos existentes, talvez centenas sobreviveram. Cada um deles é agora uma raridade, e carregam o peso dessa perda.",
-    disciplinas: ["Animalismo", "Ofuscação", "Quimerismo (Presença/Auspício)"],
+    disciplinas: ["Animalismo", "Ofuscação", "Presença"],
     perdicao: "Compulsão ao vício — cada Ravnos possui um vício específico ou compulsão que deve ser satisfeita ou resistida ativamente. Roubo, jogo, sedução, mentira compulsiva — cada um tem o seu.",
     fome: "Os Ravnos anseiam pelo sangue de viajantes, forasteiros, aqueles sem lar fixo — espíritos livres como eles mesmos foram antes da calamidade.",
     citacao: "\"A ilusão perfeita é aquela que o alvo constrói para si mesmo.\""
@@ -137,7 +137,7 @@ const CLANS = [
     cor: "#c41230",
     resumo: "O único clã criado deliberadamente, os Tremere são ex-magos medievais que roubaram a imortalidade vampírica através de ritual e traição. Estruturados como uma ordem hermética, eles são ao mesmo tempo os aliados mais valiosos da Camarilla e sua maior fonte de paranoia.",
     historia: "No século XII, o chefe de uma ordem hermética chamado Tremere procurou a imortalidade. Com seus discípulos, ele capturou Saulot — um Antediluviano Salubri — e o devorou. A magia hermética fundiu-se com o sangue vampírico para criar algo novo: a Sangue-feitiçaria. Por séculos, os Tremere mantiveram uma hierarquia piramidal rígida com o Conselho dos Sete no topo. Em 2008, a Segunda Inquisição e um ataque misterioso destruíram quase toda a liderança. O clã sobrevive, mas fragmentado.",
-    disciplinas: ["Auspício", "Dominação", "Sangue-feitiçaria"],
+    disciplinas: ["Auspício", "Dominação", "Feitiçaria de Sangue"],
     perdicao: "Vinculação de sangue forçada — os Tremere antigos dominavam a arte de criar laços de sangue involuntários. Embora a prática seja agora proibida, a desconfiança permanece. Todo Tremere carrega o estigma dessa manipulação histórica.",
     fome: "Os Tremere anseiam pelo sangue de outros sobrenaturais — bruxas, lobisomens, fadas, vampiros de outros clãs. Sangue comum parece agua comparado a esse néctar de poder.",
     citacao: "\"O sangue é a maior magia. Tudo mais é apenas gramática.\""
@@ -145,12 +145,12 @@ const CLANS = [
   {
     id: "tzimisce",
     nome: "Tzimisce",
-    alcunhas: ["Dragões", "Molders", "Bestas Antigas"],
+    alcunhas: ["Dragões", "Moldadores", "Bestas Antigas"],
     simbolo: "🐉",
     cor: "#2a4a1a",
     resumo: "Os mais alienígenas dos vampiros, os Tzimisce transcenderam tanto a humanidade quanto a bestialidade. Eles não apenas moldam carne — eles questionam por que a carne deveria ter uma forma fixa. Antigas voivodes dos Cárpatos que tornaram o corpo uma argila eterna.",
     historia: "Os Tzimisce governaram a Europa Oriental como voivodes — príncipes guerreiros — por milênios, sendo venerados e temidos como dragões nos Cárpatos. Fundadores do Sabá junto com os Lasombra, eles abraçaram a Via da Monstruosidade com fervor filosófico. Seu Antediluviano dizem ter-se fundido com a terra da Europa Oriental — literalmente tornado-se parte do solo. Aqueles Tzimisce que migraram para as cidades modernas tornaram-se algo difícil de categorizar.",
-    disciplinas: ["Animalismo", "Dominação", "Vicissitude"],
+    disciplinas: ["Animalismo", "Dominação", "Proteanismo"],
     perdicao: "Arraigamento territorial — os Tzimisce devem dormir cobertos pela terra de seu domínio natal. Longe dela, regeneram-se mais lentamente. Muitos passam séculos presos ao mesmo solo por essa necessidade.",
     fome: "Os Tzimisce anseiam pela carne — não apenas sangue, mas tecido humano. Nos momentos de frenesi mais profundo, devorar é tão atraente quanto beber.",
     citacao: "\"Forma é uma prisão que construímos para nós mesmos. Eu me libertei.\""
