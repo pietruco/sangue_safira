@@ -10,12 +10,12 @@ const CLANS = [
     disciplinas: ["Celeridade", "Ofuscação", "Feitiçaria de Sangue"],
     perdicao: "Vingança — os Banu Haqim são consumidos por um senso de justiça que rapidamente degenera em obsessão com punição. Qualquer transgressão percebida exige correção, e o Banu Haqim em Besta é um executor que não distingue culpados de inocentes.",
     fome: "Os Banu Haqim anseiam pelo sangue de outros vampiros. Quando se alimentam de Cainitas, sua Fome diminui extraordinariamente — e o apetite por este sangue mais rico nunca os abandona completamente.",
-    citacao: "\"Nenhuma lei existe sem punição. Nenhuma punição existe sem julgamento. E eu sou o juiz.\""
+    citacao: "\"Nenhuma lei existe sem punição. Nenhuma punição existe sem julgamento. E nós somos os juizes.\""
   },
   {
     id: "brujah",
     nome: "Brujah",
-    alcunhas: ["Rebeldes", "Iconoclastas", "A Ralé"],
+    alcunhas: ["Rebeldes", "Apaixonados", "A Ralé"],
     simbolo: "✊",
     cor: "#c41230",
     resumo: "Filósofos que se tornaram punhos, revolucionários que não conseguem parar de lutar mesmo quando não sabem mais pelo quê — os Brujah são paixão pura encapsulada em carne imortal e raiva ancestral.",
@@ -23,7 +23,7 @@ const CLANS = [
     disciplinas: ["Potência", "Presença", "Celeridade"],
     perdicao: "Ira — os Brujah sucumbem à Besta mais facilmente que qualquer outro clã. A mínima provocação pode despertar séculos de raiva reprimida. Sua Frenesi é explosivo, destrutivo e frequentemente impossível de parar sem intervenção externa.",
     fome: "Os Brujah anseiam pelo sangue daqueles que se opõem a eles — inimigos, opressores, traidores. A adrenalina de uma luta genuína é o tempero que torna o sangue inebriante.",
-    citacao: "\"Toda ordem é uma corrente dourada. Eu prefiro as cicatrizes da liberdade.\""
+    citacao: "\"Toda ordem é uma corrente, as vezes elas vem com plumas. De toda forma eu prefiro as cicatrizes da liberdade.\""
   },
   {
     id: "gangrel",
@@ -36,12 +36,12 @@ const CLANS = [
     disciplinas: ["Animalismo", "Fortitude", "Proteanismo"],
     perdicao: "Bestialidade — cada vez que um Gangrel perde o controle para a Besta, ele ganha marcas animais permanentes: olhos de gato, presas de lobo, orelhas pontiagudas. Com tempo suficiente, distinguir o vampiro do animal torna-se impossível.",
     fome: "Os Gangrel preferem o sangue de animais selvagens e caçados — o sangue de presas que lutaram, que correram, que temeram. Sangue colhido passivamente não satisfaz da mesma forma.",
-    citacao: "\"Cidades são prisões de pedra. Eu tenho toda a eternidade para ser livre.\""
+    citacao: "\"Cidades são prisões de pedra. Se eu tenho toda a eternidade, serei livre.\""
   },
   {
     id: "hecata",
     nome: "Hecata",
-    alcunhas: ["Coveiros", "O Clã da Morte", "Necrômanos"],
+    alcunhas: ["Coveiros", "O Clã da Morte", "Necromantes"],
     simbolo: "☽",
     cor: "#6b4a8b",
     resumo: "Uma confederação de clãs menores unidos sob o manto da morte, os Hecata são os vampiros que encaram a mortalidade como ciência e religião simultaneamente. Eles não fogem da morte — eles a estudam, a manipulam, a veneram.",
@@ -49,7 +49,7 @@ const CLANS = [
     disciplinas: ["Auspício", "Fortitude", "Oblívio"],
     perdicao: "Necrose — a maldição familiar dos Giovanni: seu beijo causa dor excruciante em vez de êxtase. Mortais raramente sobrevivem à alimentação de um Hecata sem sequelas. A morte os segue literalmente.",
     fome: "Os Hecata anseiam pelo sangue dos moribundos — aqueles no limiar entre a vida e a morte. O sangue de cadáveres frescos também os sustenta, embora seja considerado indelicado.",
-    citacao: "\"A morte não é o fim. É apenas a próxima pergunta.\""
+    citacao: "\"A morte não é o fim. É apenas o início da próxima pergunta.\""
   },
   {
     id: "lasombra",
@@ -67,7 +67,7 @@ const CLANS = [
   {
     id: "malkavian",
     nome: "Malkavian",
-    alcunhas: ["Lunáticos", "O Clã da Lua", "Visionários"],
+    alcunhas: ["Lunáticos", "O Clã da Lua", "OS Quebrados"],
     simbolo: "🌙",
     cor: "#6b2a6b",
     resumo: "Cada Malkavian carrega uma maldição única: uma desordem mental que os fragmenta, os expande ou os quebra de formas impossíveis de prever. O que mortais chamariam de loucura, os Malkavian chamam de clareza.",
@@ -88,7 +88,7 @@ const CLANS = [
     disciplinas: ["Presença", "Ofuscação", "Proteanismo"],
     perdicao: "Sensibilidade à luz — os membros do Ministry sofrem com toda e qualquer luz, não apenas a solar. Mesmo luz artificial causa desconforto; eles preferem a escuridão completa e atuam apenas onde a sombra domina.",
     fome: "O Ministry anseia pelo sangue daqueles que sucumbiram à tentação — viciados, corrompidos, aqueles que venderam suas inibições. Quanto mais profunda a queda, mais doce o sangue.",
-    citacao: "\"Eu não te corrompo. Eu te mostro quem você sempre foi.\""
+    citacao: "\"Nós não corrompemos, simplesmente te mostramos quem você sempre foi.\""
   },
   {
     id: "nosferatu",
@@ -106,7 +106,7 @@ const CLANS = [
   {
     id: "ravnos",
     nome: "Ravnos",
-    alcunhas: ["Ilusionistas", "Ciganos", "Os Errantes"],
+    alcunhas: ["Ilusionistas", "Ciganos", "Errantes"],
     simbolo: "🎲",
     cor: "#8b4a14",
     resumo: "Viajantes eternos e mestres da ilusão, os Ravnos sobreviveram à quase extinção durante a Semana dos Pesadelos — e saíram do outro lado diferentes, mais raros e mais perigosos do que antes.",
@@ -140,7 +140,7 @@ const CLANS = [
     disciplinas: ["Auspício", "Dominação", "Feitiçaria de Sangue"],
     perdicao: "Vinculação de sangue forçada — os Tremere antigos dominavam a arte de criar laços de sangue involuntários. Embora a prática seja agora proibida, a desconfiança permanece. Todo Tremere carrega o estigma dessa manipulação histórica.",
     fome: "Os Tremere anseiam pelo sangue de outros sobrenaturais — bruxas, lobisomens, fadas, vampiros de outros clãs. Sangue comum parece agua comparado a esse néctar de poder.",
-    citacao: "\"O sangue é a maior magia. Tudo mais é apenas gramática.\""
+    citacao: "\"O sangue é a maior e mais importante magia. O restante, apenas gramática.\""
   },
   {
     id: "tzimisce",
@@ -153,12 +153,12 @@ const CLANS = [
     disciplinas: ["Animalismo", "Dominação", "Proteanismo"],
     perdicao: "Arraigamento territorial — os Tzimisce devem dormir cobertos pela terra de seu domínio natal. Longe dela, regeneram-se mais lentamente. Muitos passam séculos presos ao mesmo solo por essa necessidade.",
     fome: "Os Tzimisce anseiam pela carne — não apenas sangue, mas tecido humano. Nos momentos de frenesi mais profundo, devorar é tão atraente quanto beber.",
-    citacao: "\"Forma é uma prisão que construímos para nós mesmos. Eu me libertei.\""
+    citacao: "\"A forma é mais uma prisão que construímos para nós mesmos. Eu me libertei.\""
   },
   {
     id: "ventrue",
     nome: "Ventrue",
-    alcunhas: ["Lordes", "A Nobreza Azul", "Reis Azuis"],
+    alcunhas: ["Lordes", "A Nobreza", "Reis Azuis"],
     simbolo: "👑",
     cor: "#14348b",
     resumo: "Reis eternos que acreditam que liderança é um direito de nascimento vampírico, os Ventrue constroem impérios, compram governos e mantêm a Camarilla funcionando com sangue frio e convicções inabaláveis sobre a ordem natural das coisas.",
