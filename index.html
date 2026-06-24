@@ -28,7 +28,6 @@
       --radius:    2px;
     }
 
-    /* ── RESET ─────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
@@ -42,7 +41,6 @@
       overflow-x: hidden;
     }
 
-    /* Blood drip texture at very top */
     body::before {
       content: '';
       position: fixed;
@@ -53,7 +51,6 @@
       box-shadow: 0 0 20px rgba(196,18,48,0.6), 0 0 40px rgba(139,0,0,0.3);
     }
 
-    /* ── BACKGROUND TEXTURE ────────────────────────────────── */
     .bg-texture {
       position: fixed;
       inset: 0;
@@ -64,7 +61,6 @@
       z-index: 0;
     }
 
-    /* ── LAYOUT ────────────────────────────────────────────── */
     .layout {
       display: flex;
       min-height: 100vh;
@@ -72,7 +68,7 @@
       z-index: 1;
     }
 
-    /* ── SIDEBAR ───────────────────────────────────────────── */
+    /* ── SIDEBAR ── */
     #sidebar {
       width: var(--sidebar-w);
       min-height: 100vh;
@@ -102,7 +98,6 @@
       border-bottom: 1px solid var(--border);
       position: relative;
     }
-
     .sidebar-brand::after {
       content: '✦ ✦ ✦';
       display: block;
@@ -111,7 +106,6 @@
       letter-spacing: 8px;
       margin-top: 10px;
     }
-
     .brand-title {
       font-family: 'Cinzel Decorative', serif;
       font-size: 13px;
@@ -121,7 +115,6 @@
       line-height: 1.3;
       text-shadow: 0 0 20px rgba(200,150,42,0.4);
     }
-
     .brand-sub {
       font-family: 'Cinzel', serif;
       font-size: 9px;
@@ -140,7 +133,6 @@
       padding: 16px 20px 6px;
     }
 
-    /* NAV ITEMS */
     #clanNav { flex: 1; padding: 6px 0 20px; }
 
     .clan-nav-item {
@@ -158,28 +150,18 @@
       position: relative;
       user-select: none;
     }
-
     .clan-nav-item:hover {
       background: rgba(139,0,0,0.08);
       color: var(--text);
       border-left-color: var(--blood);
     }
-
     .clan-nav-item.active {
       background: rgba(139,0,0,0.14);
       color: var(--gold2);
       border-left-color: var(--blood2);
     }
-
-    .nav-symbol {
-      font-size: 14px;
-      width: 20px;
-      text-align: center;
-      opacity: 0.8;
-    }
-
+    .nav-symbol { font-size: 14px; width: 20px; text-align: center; opacity: 0.8; }
     .nav-name { flex: 1; }
-
     .nav-arrow {
       font-size: 10px;
       opacity: 0;
@@ -188,10 +170,7 @@
       color: var(--blood2);
     }
     .clan-nav-item:hover .nav-arrow,
-    .clan-nav-item.active .nav-arrow {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    .clan-nav-item.active .nav-arrow { opacity: 1; transform: translateX(0); }
 
     .sidebar-footer {
       padding: 14px 20px;
@@ -204,18 +183,11 @@
       text-align: center;
     }
 
-    /* ── MAIN ──────────────────────────────────────────────── */
-    #main {
-      margin-left: var(--sidebar-w);
-      flex: 1;
-      min-height: 100vh;
-    }
+    /* ── MAIN ── */
+    #main { margin-left: var(--sidebar-w); flex: 1; min-height: 100vh; }
 
-    /* ── INTRO PAGE ────────────────────────────────────────── */
-    .intro-page {
-      padding: 80px 60px;
-      max-width: 820px;
-    }
+    /* ── INTRO ── */
+    .intro-page { padding: 80px 60px; max-width: 820px; }
 
     .page-eyebrow {
       font-family: 'Cinzel', serif;
@@ -228,11 +200,7 @@
       align-items: center;
       gap: 12px;
     }
-    .page-eyebrow::before {
-      content: '';
-      width: 40px; height: 1px;
-      background: var(--blood2);
-    }
+    .page-eyebrow::before { content: ''; width: 40px; height: 1px; background: var(--blood2); }
 
     .intro-title {
       font-family: 'Cinzel Decorative', serif;
@@ -243,7 +211,6 @@
       text-shadow: 0 0 40px rgba(200,150,42,0.2);
       margin-bottom: 10px;
     }
-
     .intro-subtitle {
       font-family: 'Cinzel', serif;
       font-size: 13px;
@@ -265,10 +232,7 @@
       background: linear-gradient(90deg, transparent, var(--blood));
     }
     .blood-divider::after { background: linear-gradient(90deg, var(--blood), transparent); }
-    .blood-divider-icon {
-      color: var(--blood2);
-      font-size: 14px;
-    }
+    .blood-divider-icon { color: var(--blood2); font-size: 14px; }
 
     .intro-text {
       font-size: 17px;
@@ -278,14 +242,12 @@
       font-style: italic;
     }
 
-    /* CLAN GRID */
     .clan-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 12px;
       margin-top: 48px;
     }
-
     .clan-thumb {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -296,7 +258,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .clan-thumb::before {
       content: '';
       position: absolute;
@@ -305,48 +266,26 @@
       opacity: 0;
       transition: opacity 0.2s;
     }
-
     .clan-thumb:hover {
       border-color: var(--blood2);
       transform: translateY(-2px);
       box-shadow: 0 8px 30px rgba(139,0,0,0.15);
     }
     .clan-thumb:hover::before { opacity: 1; }
+    .clan-thumb-symbol { font-size: 28px; display: block; margin-bottom: 10px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }
+    .clan-thumb-name { font-family: 'Cinzel', serif; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: var(--text); line-height: 1.3; }
+    .clan-thumb-nick { font-family: 'Inter', sans-serif; font-size: 10px; color: var(--text3); margin-top: 5px; font-style: italic; }
 
-    .clan-thumb-symbol {
-      font-size: 28px;
-      display: block;
-      margin-bottom: 10px;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
-    }
-    .clan-thumb-name {
-      font-family: 'Cinzel', serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: var(--text);
-      line-height: 1.3;
-    }
-    .clan-thumb-nick {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      color: var(--text3);
-      margin-top: 5px;
-      font-style: italic;
-    }
-
-    /* ── CLAN DETAIL PAGE ──────────────────────────────────── */
+    /* ── CLAN DETAIL ── */
     .clan-page { animation: fadeIn 0.35s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
-    /* CLAN HEADER */
     .clan-header {
       padding: 60px 60px 48px;
       border-bottom: 1px solid var(--border);
       position: relative;
       overflow: hidden;
     }
-
     .clan-header::before {
       content: '';
       position: absolute;
@@ -357,8 +296,6 @@
       opacity: 0.08;
       pointer-events: none;
     }
-
-    /* Blood heartbeat pulse on open */
     .clan-header::after {
       content: '';
       position: absolute;
@@ -371,7 +308,7 @@
     @keyframes heartbeat {
       0%   { opacity: 0.15; transform: scale(0.8); }
       40%  { opacity: 0.06; transform: scale(1.1); }
-      100% { opacity: 0; transform: scale(1.2); }
+      100% { opacity: 0;    transform: scale(1.2); }
     }
 
     .clan-header-inner {
@@ -381,40 +318,12 @@
       gap: 32px;
       max-width: 800px;
     }
-
-    .clan-big-symbol {
-      font-size: 64px;
-      line-height: 1;
-      flex-shrink: 0;
-      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.8));
-    }
-
+    .clan-big-symbol { font-size: 64px; line-height: 1; flex-shrink: 0; filter: drop-shadow(0 4px 20px rgba(0,0,0,0.8)); }
     .clan-header-text { flex: 1; }
+    .clan-eyebrow { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--blood2); margin-bottom: 10px; }
+    .clan-name { font-family: 'Cinzel Decorative', serif; font-size: 36px; font-weight: 900; color: var(--gold2); line-height: 1.1; text-shadow: 0 0 30px rgba(200,150,42,0.15); }
 
-    .clan-eyebrow {
-      font-family: 'Cinzel', serif;
-      font-size: 9px;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--blood2);
-      margin-bottom: 10px;
-    }
-
-    .clan-name {
-      font-family: 'Cinzel Decorative', serif;
-      font-size: 36px;
-      font-weight: 900;
-      color: var(--gold2);
-      line-height: 1.1;
-      text-shadow: 0 0 30px rgba(200,150,42,0.15);
-    }
-
-    .clan-alcunhas {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
+    .clan-alcunhas { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
     .alcunha-pill {
       font-family: 'Cinzel', serif;
       font-size: 9px;
@@ -425,7 +334,6 @@
       background: rgba(139,0,0,0.08);
       padding: 3px 10px;
     }
-
     .clan-quote {
       margin-top: 20px;
       font-style: italic;
@@ -437,7 +345,6 @@
       line-height: 1.6;
     }
 
-    /* BACK NAV */
     .clan-nav-bar {
       display: flex;
       align-items: center;
@@ -450,7 +357,6 @@
       z-index: 10;
       backdrop-filter: blur(8px);
     }
-
     .back-btn {
       font-family: 'Cinzel', serif;
       font-size: 10px;
@@ -468,49 +374,16 @@
     }
     .back-btn:hover { color: var(--blood2); }
     .breadcrumb-sep { color: var(--text3); font-size: 12px; }
-    .breadcrumb-current {
-      font-family: 'Cinzel', serif;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-    }
+    .breadcrumb-current { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.1em; color: var(--gold); }
 
-    /* CLAN TABS */
-    .clan-tabs {
-      display: flex;
-      gap: 0;
-      border-bottom: 1px solid var(--border);
-      padding: 0 60px;
-      background: var(--bg2);
-    }
-    .clan-tab {
-      font-family: 'Cinzel', serif;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 14px 18px;
-      border: none;
-      background: none;
-      color: var(--text3);
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .clan-tab:hover { color: var(--text); }
-    .clan-tab.active { color: var(--blood2); border-bottom-color: var(--blood2); }
-
-    /* CLAN BODY */
     .clan-body {
       display: grid;
-      grid-template-columns: 1fr 280px;
+      grid-template-columns: 1fr 300px;
       max-width: 1100px;
     }
-
     .clan-main { padding: 44px 60px; border-right: 1px solid var(--border); }
-    .clan-side { padding: 44px 36px; }
+    .clan-side  { padding: 44px 36px; }
 
-    /* SECTION TITLES */
     .section-label {
       font-family: 'Cinzel', serif;
       font-size: 9px;
@@ -522,35 +395,17 @@
       align-items: center;
       gap: 12px;
     }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, var(--border2), transparent);
-    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border2), transparent); }
 
-    .clan-resumo {
-      font-size: 18px;
-      color: var(--text);
-      line-height: 1.75;
-      margin-bottom: 44px;
-    }
+    .clan-resumo  { font-size: 18px; color: var(--text);  line-height: 1.75; margin-bottom: 44px; }
+    .clan-historia { font-size: 16px; color: var(--text2); line-height: 1.8;  margin-bottom: 44px; }
 
-    .clan-historia {
-      font-size: 16px;
-      color: var(--text2);
-      line-height: 1.8;
-      margin-bottom: 44px;
-    }
-
-    /* SIDE CARDS */
     .side-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-top: 2px solid var(--blood);
       padding: 20px;
       margin-bottom: 20px;
-      position: relative;
     }
     .side-card-title {
       font-family: 'Cinzel', serif;
@@ -561,57 +416,37 @@
       margin-bottom: 12px;
     }
 
-    /* DISCIPLINAS */
-    .disc-list { display: flex; flex-direction: column; gap: 8px; }
-    .disc-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    /* Disciplinas */
+    .disc-list { display: flex; flex-direction: column; gap: 14px; }
+    .disc-item-nome {
       font-family: 'Cinzel', serif;
       font-size: 12px;
-      color: var(--text);
-      letter-spacing: 0.04em;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .disc-item::before {
-      content: '⬥';
-      color: var(--blood2);
-      font-size: 8px;
-      flex-shrink: 0;
-    }
+    .disc-item-nome::before { content: '⬥'; color: var(--blood2); font-size: 8px; }
+    .disc-item-desc { font-size: 13px; color: var(--text2); line-height: 1.55; padding-left: 16px; }
 
-    /* PERDICAO */
-    .perdicao-text {
-      font-size: 14px;
-      color: var(--text2);
-      line-height: 1.65;
-      font-style: italic;
+    /* Perdição & Fome */
+    .perdicao-text { font-size: 14px; color: var(--text2); line-height: 1.65; font-style: italic; }
+    .fome-nome {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 8px;
     }
+    .fome-text { font-size: 14px; color: var(--text2); line-height: 1.65; }
 
-    /* FOME */
-    .fome-text {
-      font-size: 14px;
-      color: var(--text2);
-      line-height: 1.65;
-    }
-
-    /* BLOOD DROP accent */
-    .blood-drop {
-      display: inline-block;
-      width: 8px; height: 10px;
-      background: var(--blood2);
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      transform: rotate(15deg);
-      margin-right: 6px;
-      flex-shrink: 0;
-    }
-
-    /* SCROLLBAR */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--blood); border-radius: 2px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--blood2); }
 
-    /* MOBILE TOGGLE */
     #menuToggle {
       display: none;
       position: fixed;
@@ -624,29 +459,10 @@
       flex-direction: column;
       gap: 5px;
     }
-    #menuToggle span {
-      display: block;
-      width: 20px; height: 1px;
-      background: var(--blood2);
-      transition: all 0.25s;
-    }
-    #overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 99;
-    }
+    #menuToggle span { display: block; width: 20px; height: 1px; background: var(--blood2); transition: all 0.25s; }
+    #overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 99; }
 
-    /* ORNAMENT */
-    .ornament {
-      text-align: center;
-      color: var(--blood);
-      font-size: 12px;
-      letter-spacing: 12px;
-      padding: 16px 0;
-      opacity: 0.6;
-    }
+    .ornament { text-align: center; color: var(--blood); font-size: 12px; letter-spacing: 12px; padding: 16px 0; opacity: 0.6; }
 
     @media (max-width: 900px) {
       .clan-body { grid-template-columns: 1fr; }
@@ -661,9 +477,9 @@
       .intro-page { padding: 40px 24px; }
       .intro-title { font-size: 26px; }
       .clan-header { padding: 40px 24px 36px; }
-      .clan-nav-bar, .clan-tabs { padding-left: 24px; padding-right: 24px; }
+      .clan-nav-bar { padding-left: 24px; padding-right: 24px; }
       .clan-main { padding: 32px 24px; }
-      .clan-side { padding: 28px 24px; }
+      .clan-side  { padding: 28px 24px; }
     }
   </style>
 </head>
@@ -677,20 +493,16 @@
 
 <div class="layout">
 
-  <!-- SIDEBAR -->
   <aside id="sidebar">
     <div class="sidebar-brand">
       <div class="brand-title">Sangue<br>&amp; Safira</div>
       <div class="brand-sub">Guia dos Clãs · V5</div>
     </div>
-
     <div class="sidebar-section-label">Os Treze Clãs</div>
     <nav id="clanNav"></nav>
-
     <div class="sidebar-footer">Vampiro: A Máscara · 5ª Edição</div>
   </aside>
 
-  <!-- MAIN -->
   <main id="main">
     <div id="introPage"></div>
     <div id="clanDetail" style="display:none"></div>
@@ -703,11 +515,16 @@
 <script src="clans.js"></script>
 <script>
 
+// ── clans.js exports `clans` (lowercase) — alias it here
+const CLANS = (typeof clans !== 'undefined') ? clans : [];
+
 const $ = id => document.getElementById(id);
 let currentClan = null;
 
-/* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
+  if (!CLANS.length) {
+    console.error('CLANS array is empty — check clans.js is loaded correctly.');
+  }
   buildNav();
   renderIntro();
   setupMobile();
@@ -717,7 +534,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function buildNav() {
   const nav = $('clanNav');
   nav.innerHTML = CLANS.map(c => `
-    <div class="clan-nav-item ${currentClan?.id === c.id ? 'active' : ''}" onclick="showClan('${c.id}')">
+    <div class="clan-nav-item ${currentClan?.id === c.id ? 'active' : ''}"
+         onclick="showClan('${c.id}')">
       <span class="nav-symbol">${c.simbolo}</span>
       <span class="nav-name">${c.nome}</span>
       <span class="nav-arrow">›</span>
@@ -747,9 +565,9 @@ function renderIntro() {
 
       <div class="blood-divider"><span class="blood-divider-icon">🩸</span></div>
 
-      <div class="clan-grid" id="clanGrid">
+      <div class="clan-grid">
         ${CLANS.map(c => `
-          <div class="clan-thumb" onclick="showClan('${c.id}')" style="--clan-color:${c.cor}">
+          <div class="clan-thumb" onclick="showClan('${c.id}')">
             <span class="clan-thumb-symbol">${c.simbolo}</span>
             <span class="clan-thumb-name">${c.nome}</span>
             <span class="clan-thumb-nick">${c.alcunhas[0]}</span>
@@ -765,12 +583,26 @@ function renderIntro() {
 /* ── CLAN DETAIL ── */
 function showClan(id) {
   const c = CLANS.find(x => x.id === id);
-  if (!c) return;
+  if (!c) { console.error('Clan not found:', id); return; }
   currentClan = c;
   buildNav();
 
   $('introPage').style.display = 'none';
   $('clanDetail').style.display = 'block';
+
+  // disciplinas: array of {nome, descricao}
+  const discHTML = c.disciplinas.map(d => `
+    <div>
+      <div class="disc-item-nome">${d.nome}</div>
+      <div class="disc-item-desc">${d.descricao}</div>
+    </div>
+  `).join('');
+
+  // fome: object {nome, descricao}
+  const fomeHTML = `
+    <div class="fome-nome">${c.fome.nome}</div>
+    <p class="fome-text">${c.fome.descricao}</p>
+  `;
 
   $('clanDetail').innerHTML = `
     <div class="clan-page" style="--clan-color:${c.cor}">
@@ -797,7 +629,6 @@ function showClan(id) {
 
       <div class="clan-body">
         <div class="clan-main">
-
           <p class="section-label">Resumo</p>
           <p class="clan-resumo">${c.resumo}</p>
 
@@ -805,16 +636,13 @@ function showClan(id) {
 
           <p class="section-label">História</p>
           <p class="clan-historia">${c.historia}</p>
-
         </div>
 
         <div class="clan-side">
 
           <div class="side-card">
             <div class="side-card-title">Disciplinas</div>
-            <div class="disc-list">
-              ${c.disciplinas.map(d => `<div class="disc-item">${d}</div>`).join('')}
-            </div>
+            <div class="disc-list">${discHTML}</div>
           </div>
 
           <div class="side-card">
@@ -823,24 +651,21 @@ function showClan(id) {
           </div>
 
           <div class="side-card">
-            <div class="side-card-title">🩸 Fome</div>
-            <p class="fome-text">${c.fome}</p>
+            <div class="side-card-title">🩸 Fome — Compulsão</div>
+            ${fomeHTML}
           </div>
 
         </div>
       </div>
 
       <div class="ornament" style="padding:32px 0">✦ ✦ ✦</div>
-
     </div>
   `;
 
   $('main').scrollTo(0, 0);
-  // scroll sidebar item into view
   const active = document.querySelector('.clan-nav-item.active');
   if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 
-  // close mobile menu
   $('sidebar').classList.remove('open');
   $('overlay').classList.remove('open');
 }
