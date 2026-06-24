@@ -9,7 +9,7 @@ const clans = [
     alcunhas: ["O Clã da Caça", "Filhos de Haqim", "Mediadores", "Juízes"],
     simbolo: "⬡",
     cor: "#8B0000",
-    citacao: "Seu Sangue considerou você indigno, mas tenho certeza de que posso encontrar um propósito adequado para ele.",
+    citacao: "Nenhuma lei pode existir sem punição. Nenhuma punição pode ser aplicada sem julgamento. E nos somos os juízes.",
     resumo: "Os Juízes dos Banu Haqim estão divididos entre sua sede hereditária por Sangue vampírico e sua paixão pela justiça. Árbitros severos e ferozmente dedicados a defender um código moral, eles Abraçam mortais capazes de avaliar e lidar com ameaças, aplicar leis e tradições e punir transgressores.",
     historia: "O Sangue é uma lei em si mesmo a partir da perspectiva dos Banu Haqim, comunicando um senso de dever àqueles que o carregam, além da maldição de estarem para sempre vigiando contra a Besta. Banu Haqim de todas as culturas e tradições jurídicas em vida descobrem que seu Sangue os vincula à rigores e à honra. Eles gravitam em torno de uma sociedade ordenada — segundo seu raciocínio, os Amaldiçoados precisam de estrutura para não se perderem em seus impulsos mais baixos e os domínios se tornarem cenários infernais salpicados de sangue. Um motivo comum entre os Banu Haqim é uma linhagem tripartite composta por juízes, feiticeiros de sangue e assassinos de assassinos. As linhagens mais renomadas prometeram lealdade à Camarilla, embora Juízes pragmáticos favoreçam qualquer instituição que melhor sirva à justiça em um determinado domínio.",
     disciplinas: [
@@ -39,7 +39,7 @@ const clans = [
     alcunhas: ["O Clã Erudito", "Chusma", "Punks", "Hipsters", "Prometeanos", "Rebeldes", "Reis-Filósofos", "Helenos"],
     simbolo: "⊘",
     cor: "#CC2200",
-    citacao: "O sonho do clã erudito é um mundo onde toda injustiça tenha sido eliminada e os vivos e os mortos-vivos possam coexistir em paz.",
+    citacao: "Toda ordem é uma corrente, as vezes ela vem decorada e cheia de plumas, mas sempre preferimos as cicatrizes da liberdade",
     resumo: "O sonho do clã erudito é um mundo onde toda injustiça tenha sido eliminada. Eles dizem que é por amor aos mortais que os lideram contra seus senhores. Na verdade, eles podem simplesmente enfurecer-se contra um Deus distante ou inexistente que nunca poderão combater, contra uma maldição que nunca poderão encerrar. O deles é um sonho que envenena tudo o que toca.",
     historia: "O Clã Brujah sempre Abraçou a partir das fileiras daqueles que simpatizam com a contracultura e a revolução. Eles buscam aliados que questionam ideias normativas e, reconhecendo o fogo dos oprimidos, gravitam em direção aos desfavorecidos. A percepção comum coloca punks, membros de gangues, imigrantes desajustados e manifestantes entre os Brujah. Embora o clã inclua um número substancial de marginalizados vocais, seu desejo de rebelião vai tão fundo quanto o fraudador que rouba a própria empresa, ou o advogado que representa os pobres pro bono. Os Brujah filosóficos, conhecidos como Helenos, acreditam que o melhor método para desmantelar o sistema é compreender os sistemas sociais e culturais que permitem que ele exista em primeiro lugar.",
     disciplinas: [
@@ -69,7 +69,7 @@ const clans = [
     alcunhas: ["O Clã da Besta", "Animais", "Ferais", "Selvagens", "Bárbaros", "Exilados", "Lobos", "Vira-latas"],
     simbolo: "🐺",
     cor: "#5C4033",
-    citacao: "Quando outros Membros amaldiçoam seus apetites e escolhem a gaiola dourada da cidade e a coleira da hierarquia social, os lobos aceitam a Besta como parte de si mesmos e correm livres.",
+    citacao: "Cidades são prisões de pedra, se eu tenho uma eternidade pela frente prefiro ser livre.",
     resumo: "Uma fome mais antiga que a humanidade arde dentro dos lobos. Cruzando fronteiras entre espécies, nações e domínios com a facilidade de predadores perfeitos, eles pertencem à vida selvagem e a vida selvagem pertence a eles. Trocando histórias de guerra e as histórias secretas de sua espécie ao redor de fogueiras acesas com os ossos de seus opressores, eles viraram as costas para a Camarilla.",
     historia: "O Clã Gangrel é composto por exilados, andarilhos, trapaceiros e caçadores. Eles fazem seus refúgios nas partes mais pobres da cidade e não sentem vergonha disso. Eles reivindicam poucos domínios como seus, mas não se curvam a nenhum príncipe. Os Gangrel Abraçam a partir das fileiras de sobreviventes e lutadores: líderes de detentos e gangues, exploradores e qualquer gado que veja o mundo como algo a ser atravessado, em vez de algo do qual se esconder. Eles não se importam com aparências ou títulos, mas sim com realizações e reputação. Qualquer mortal capaz de projetar sua vontade sobre os outros, liderar um grupo do desastre ao sucesso ou lutar contra probabilidades impossíveis atrai a atenção do clã.",
     disciplinas: [
@@ -82,7 +82,7 @@ const clans = [
         descricao: "Como guarda-costas e soldados de longa data para os outros clãs, os Gangrel se beneficiaram enormemente da Fortitude. A Disciplina pode dar-lhes uma sensação de destemor, pois permite-lhes caçar em terrenos difíceis e receber balas e lâminas de faca sem preocupação."
       },
       {
-        nome: "Metamorfose",
+        nome: "Proteanismo",
         descricao: "Os Gangrel são conhecidos por seu domínio de Metamorfose, já que poucos outros clãs possuem seus dons. Cruzando a linha entre o vampirismo e a mudança de forma, a Disciplina permite que um Gangrel assuma as propriedades físicas de outra criatura ou, de outras maneiras, altere sua forma física."
       }
     ],
@@ -99,7 +99,7 @@ const clans = [
     alcunhas: ["Necromantes", "Membros-Demônios", "Lazarenos", "O Clã da Morte"],
     simbolo: "☠",
     cor: "#2E4A3E",
-    citacao: "Os Membros são simplesmente uma expressão da morte, uma consciência ainda vital vestida em uma carne de lividez decadente, ou mesmo de vitalidade… e tais expressões podem ser reinterpretadas, por assim dizer.",
+    citacao: "A morte não é o fim, é apenas a próxima pergunta a ser respondida.",
     resumo: "Uma coleção heterogênea de linhagens vampíricas necromânticas, o clã Hecata está unido na busca de um único assunto: a Morte. Eles são estudantes do pós-vida e ressurreicionistas dos mortos — ou pior. Vendendo seus serviços a quem pagar mais, há poucos que conseguem se esconder da vigilância daqueles que podem invocar e comandar os próprios espíritos dos falecidos.",
     historia: "Os Hecata são anômalos entre os clãs de Membros, no sentido de que são praticamente uma seita em si mesmos, um clã que consiste em linhagens estranhas e até mesmo em alguns laços familiares genuínos, todos construídos sobre a reverência e a subjugação ocasional da própria morte. Compreendendo desde famílias criminosas do Velho Mundo que adoram ancestrais até sacerdotes que empunham efígies e monstros degenerados comedores de carne, o clã Hecata tem em comum uma fascinação doentia pela matéria mortal entre suas linhagens membras. Um ritual mórbido uniu recentemente essas consanguinidades díspares em um clã 'unificado' propriamente dito. Os Hecata subscrevem uma filosofia cíclica em relação ao Abraço, que simbolizam pelas três faces da Morte, Decomposição e Renascimento.",
     disciplinas: [
@@ -112,8 +112,8 @@ const clans = [
         descricao: "Quem melhor para exaltar a durabilidade física da forma morta-viva? A Fortitude pode se manifestar desde a futilidade de retalhar um cadáver já morto até um grande domínio sobre — e evasão de — as próprias leis da Morte."
       },
       {
-        nome: "Alheamento",
-        descricao: "O Alheamento está entre as Disciplinas mais misteriosas, pois pode alcançar além do véu do pós-vida. Através de seu uso, os Hecata podem interrogar um fantasma ou instigá-lo a atormentar um rival. Eles podem apodrecer a carne de um mortal com um toque ou conduzir um gado intrometido a uma recompensa sombria."
+        nome: "Oblívio",
+        descricao: "O Oblívio está entre as Disciplinas mais misteriosas, pois pode alcançar além do véu do pós-vida. Através de seu uso, os Hecata podem interrogar um fantasma ou instigá-lo a atormentar um rival. Eles podem apodrecer a carne de um mortal com um toque ou conduzir um gado intrometido a uma recompensa sombria."
       }
     ],
     perdicao: "Os Hecata inflictam um Beijo notoriamente doloroso. As presas os Lazarenos trazem não o êxtase, mas a agonia. Vítimas pegas de surpresa resistirão violentamente, a menos que sejam contidas, e poucas pessoas se submetem voluntariamente. Ao beber diretamente de uma vítima, os Hecata só podem dar goles dolorosos, resultando em perda de sangue. Mesmo aqueles coagidos ou dispostos devem ser bem-sucedidos em um teste de Vigor + Determinação contra Dificuldade 2 + Severidade da Perdição para não se debaterem contra a dor.",
@@ -138,7 +138,7 @@ const clans = [
         descricao: "Os Lasombra confiam em sua habilidade de esmagar vontades e comandar obediência sem os afetos gentis que alguns dos Amaldiçoados fingem possuir. A maneira cruel como exercem esta Disciplina nas vítimas frequentemente rende a antipatia de outros Membros, mas poucos negam a habilidade dos Magistrados em fazer lavagem cerebral e subjugar suas presas."
       },
       {
-        nome: "Alheamento",
+        nome: "Oblívio",
         descricao: "A habilidade de manipular sombras permite que os Lasombra observem, golpeiem e escapem sem nunca ter que confrontar sua vítima, ou empregar entidades mais sombrias que a morte para o mesmo propósito. Muitos afirmam que há um custo para a alma de alguém ao usar o Alheamento, ou que o excesso de indulgência nele é a razão pela qual os Lasombra aparecem de forma estranha em reflexos e formatos de mídia modernos."
       },
       {
@@ -159,7 +159,7 @@ const clans = [
     alcunhas: ["O Clã da Lua", "Lunáticos", "Loucos", "Bobos", "Oráculos", "Dervixes", "Visionários", "Filhos de Malkav"],
     simbolo: "☽",
     cor: "#4A0E6E",
-    citacao: "Não somos palhaços, Jeanette. Não estamos aqui para divertir os outros Membros.",
+    citacao: "Não somos palhaços. Todos vocês olham para as sombras e fingem entender o mundo. Nós olhamos para o fogo que produz a sombra e abraçamos o fato de não entendermos.",
     resumo: "Os psicólogos diagnosticariam os filhos de Malkav com esquizofrenia, depressão, transtorno obsessivo-compulsivo ou transtorno de estresse pós-traumático. Na realidade, eles têm todas essas coisas e nenhuma. Como os 'loucos sábios' da poesia, sua perturbação decorre de ver demais do mundo de uma só vez, de compreender profundamente e sentir emoções fortes demais para suportar.",
     historia: "Há muito tempo existe o equívoco de que poucas famílias de Membros são tão díspares quanto o Clã da Lua. Outros clãs os veem e raciocinam: 'cada um deles é louco, então por que suas respectivas origens deveriam importar?' Para os Malkavianos, as origens importam muito. Um dos dons que os Malkavianos procuram em um mortal é a 'segunda vista' — a habilidade de interpretar sonhos, perceber espíritos ou prever eventos futuros infalivelmente. Eles também são fascinados pelos 'quebrados' — indivíduos que foram mudados por experiências traumáticas. Alguns Malkavianos afirmam que existe um fator comum em sua loucura; que estão todos psiquicamente ligados através de um comprimento de onda comunitário conhecido como a teia ou a rede da loucura.",
     disciplinas: [
@@ -189,7 +189,7 @@ const clans = [
     alcunhas: ["Serpentes", "O Clã da Fé", "O Clã das Mentiras", "Setitas"],
     simbolo: "🐍",
     cor: "#1C3A1C",
-    citacao: "Você me chama de mentiroso, de tentador e de degenerado, mas todos os seus supostos insultos são simplesmente o peso das correntes com as quais você continuou a se acorrentar.",
+    citacao: "Você me chama de mentiroso, de tentador e de degenerado, mas todos os seus supostos insultos são simplesmente o peso das correntes com as quais você se acorrenta.",
     resumo: "O Ministério sempre tem algo a oferecer. Este clã, frequentemente semelhante a um culto, recruta aqueles capazes de empregar a tentação como uma arma. Eles Abraçam aqueles com a vontade e os meios para influenciar, enredar e, por fim, libertar seus alvos daquilo que procuram: os bens da vítima, sua lealdade ou até mesmo sua fé. Para as Serpentes, tudo tem um preço.",
     historia: "Parte clã, parte culto, o Ministério ocupa um nicho estranho na sociedade dos Membros. Em suas próprias mentes, o Ministério serve ao propósito de libertar os indivíduos de aceitarem acriticamente o fardo do 'pecado', seja na forma de doutrina religiosa, estigma social ou mesmo as Tradições dos Amaldiçoados. Para a mente do Ministério, questionar é em si um sacramento. Sem o pecado, que valor tem a retidão? O caminho do Ministério é desafiar a moralidade predominante, perguntar 'Por que isso é proibido?' Talvez a maior facção do clã tenha se apropriado do deus egípcio Set, com quem os anciões do clã afirmam ter uma conexão ou mesmo consanguinidade — daí o seu apelido de Setitas.",
     disciplinas: [
@@ -202,7 +202,7 @@ const clans = [
         descricao: "Para muitos Ministros nas noites modernas, esta é a sua habilidade favorita, oferecendo um poder com uma sutileza que satisfaz até mesmo os autoproclamados executores da Máscara. As Serpentes usam Presença com grande destreza, empunhando gestos majestosos e discursos ressonantes que tocam os corações de uma congregação."
       },
       {
-        nome: "Metamorfose",
+        nome: "Proteanismo",
         descricao: "Os Ministros usam esta habilidade para impressionar os observadores, mas também se utilizam de suas muitas maneiras inovadoras de escapar do perigo. Eles costumam adotar a forma de uma cobra em vez de a de um lobo, mas podem se fundir com a terra para evitar o sol ao lado de qualquer Gangrel."
       }
     ],
@@ -219,7 +219,7 @@ const clans = [
     alcunhas: ["Horrores", "O Clã dos Escondidos", "Ratos de Esgoto", "Leprosos", "Colmeias", "Artistas de Circo", "Cascas", "Kapos", "Mendigos", "Orloks"],
     simbolo: "🐀",
     cor: "#2B2B2B",
-    citacao: "Podemos não ser bonitos ou capazes de nos misturar com o gado. Não podemos fingir ser nada além de monstros degenerados. Mas quer saber de uma coisa? Isso nos dá perspectivas que faltam a cada um daqueles outros bastardos iludidos.",
+    citacao: "Podemos não ser bonitos ou capazes de nos misturar com o gado. Não podemos fingir ser nada além de monstros degenerados. Mas quer saber de uma coisa? Isso nos dá perspectivas que faltam a cada um daqueles outros bastardos iludidos. Nos enxergamos os segredos, pois eles residem nas mais profundas e piores das sombras.",
     resumo: "Para os Nosferatu, o Abraço é uma jornada através da abjeção, à medida que o Sangue do horror deforma gradualmente os tecidos em luta do corpo humano em abominações grotescas. Semanas de dor resultam em deformidades semelhantes a terríveis defeitos congênitos, crescimentos cancerígenos, lesões incapacitantes e feridas semelhantes às de leprosos. Mas talvez a dor e a humilhação ensinem a compaixão.",
     historia: "Os Nosferatu são os mais humanos dos Membros, exibindo sua maldição por fora e não por dentro. Para se misturarem, alguns recorrem ao Sangue para usar os rostos emprestados de suas vítimas ou desaparecer de vista, enquanto outros confiam em próteses e maquiagem pesada. Quando a Segunda Inquisição encontrou a SchreckNET, muitos Membros propuseram secretamente um brinde ao colapso do clã. Mas aqueles que resistiram e prosperaram dominaram as artes do arquivamento seguro, fisicamente e online. Eles reforçaram seus laços existentes com contatos e clientes, e recuperaram firmemente a confiança dos Membros que valorizam um centro de informações centralizado para pesquisas e troca de mensagens secretas.",
     disciplinas: [
@@ -249,7 +249,7 @@ const clans = [
     alcunhas: ["Trapaceiros", "Corvos", "Demolidores", "Os Assombrados"],
     simbolo: "🦅",
     cor: "#3D1A00",
-    citacao: "Ofuscar e desaparecer – para sempre em movimento e sempre em fuga.",
+    citacao: "A ilusão perfeita é aquela que o alvo cria para ele mesmo.",
     resumo: "Mestres do drecionamento incorreto, os Ravnos preferem não lutar ou sangrar por algo que podem obter através de meios mais sutis. Eles podem encantar e desaparecer no espaço de um suspiro mortal, e aqueles outrora enganados rapidamente aprendem a questionar seus próprios sentidos quando na companhia de Corvos. Sempre em movimento, os Ravnos nunca podem descansar no mesmo lugar por muito tempo, sob o risco de sua maldição incendiá-los enquanto dormem.",
     historia: "Um clã quase aniquilado na salva de abertura da Guerra da Gehena, cujas brasas agora brilham mais a cada noite que passa. Outros os conhecem como portadores de mensagens, andarilhos e manipuladores mentais. Seus métodos não são a força bruta, a adoração de multidões ou conspirações meticulosas que duram séculos, mas sim a astúcia e a elegância, o charme artístico e a ilusão direta. Embora os hábitos nômades (e até mesmo exigências) do clã tornem difícil qualquer tipo de organização adequada, algo como um renascimento Ravnos está se formando. Um conjunto complexo de sinais e marcas, conhecido e ensinado apenas aos membros do clã, ajuda-os a encontrar e identificar uns aos outros.",
     disciplinas: [
@@ -309,7 +309,7 @@ const clans = [
     alcunhas: ["Divas", "O Clã da Rosa", "Degenerados", "Artistas", "Prostitutas", "Arikelitas", "Hedonistas", "Sensitivos", "Pervertidos"],
     simbolo: "🌹",
     cor: "#8B0066",
-    citacao: "A beleza é poder, e o amor pode fazer qualquer um fazer praticamente qualquer coisa. E essa é a promessa dos Toreador. Eles podem fazer até os mortos sentirem algo puro, algo real.",
+    citacao: "A imortalidade sem beleza é apenas uma forma mais longa de morrer.",
     resumo: "Amaldiçoadas por sua sensualidade desenfreada, as divas são obcecadas pela perfeição estética. Mas descartar os Toreador como pervertidos devassos ou artistas superficiais é o último erro que um Membro cometerá na vida. A beleza é poder, e o amor pode fazer qualquer um fazer praticamente qualquer coisa.",
     historia: "O Clã Toreador sempre pregou a seletividade em seus rituais do Abraço. Os anciões do clã enfatizam repetidas vezes que o clã necessita de pioneiros entre as artes e todos os tipos de vanguarda. Por esta razão, muitos Toreador emergem das fileiras de artistas talentosos. Para os Toreador, a arte abrange todas as formas de entretenimento e estimulação. O clã corteja os maiores atores, cantores, escritores, bailarinos e até profissionais do sexo. Apesar do costume de Abraçar apenas os melhores, a fixação dos Toreador pela beleza e inocência fez com que muitas divas criassem um neófito apressadamente, resultando em hedonistas superficiais e sucessos de uma nota só. O clã ainda se mantém no topo, liderando a Camarilla ao lado dos Ventrue e Tremere.",
     disciplinas: [
@@ -339,7 +339,7 @@ const clans = [
     alcunhas: ["Usurpadores", "Feiticeiros", "Herméticos", "Taumaturgos", "Transgressores", "O Clã Partido", "Bruxas de Sangue"],
     simbolo: "⊙",
     cor: "#6B0000",
-    citacao: "Nunca fomos nobres. Nosso clã consiste em mortais que buscaram um poder que não mereciam. Talvez seja hora de Abraçarmos aqueles que amam a magia por si mesma.",
+    citacao: "Nunca fomos nobres. Nobreza não vem do sangue, magia vem. O restantes é apenas gramática.",
     resumo: "Um mago Hermético na Romênia do século VIII, Tremere era o líder de uma cabala de praticantes de magia temidos por sua obsessão por conhecimento e poder. Incapaz de aceitar a própria mortalidade, Tremere instigou os experimentos mágicos mais aterrorizantes já conduzidos, condenando a si mesmo e a seus seguidores a um inferno criado por eles mesmos.",
     historia: "Depois que a Segunda Inquisição destruiu a Capela Primária em Viena em 2008, os Tremere caíram de eminências pardas para personae non gratae em muitas regiões. A arrogância da Pirâmide fizera com que os Usurpadores conquistassem poucos amigos. Sem a Pirâmide ordenando-os em posições e valores, os feiticeiros encontram-se competindo com seus companheiros Membros e, cada vez mais, uns com os outros por qualquer coisa que possa permitir-lhes recuperar parte do seu antigo poder. O termo 'mago mercenário' está se tornando cada vez mais difundido, à medida que os feiticeiros que antes estavam Vinculados pela vontade de seus senhores se veem livres para servir pelo preço que escolherem.",
     disciplinas: [
@@ -369,7 +369,7 @@ const clans = [
     alcunhas: ["Dragões", "O Velho Clã", "Voivodes", "Fomentadores"],
     simbolo: "🐉",
     cor: "#003320",
-    citacao: "Não para liderar, não para triunfar, mas para governar — possuir completamente.",
+    citacao: "Não para liderar, não para triunfar, mas para governar — possuir completamente. A forma é uma prisão. Eu me libertei.",
     resumo: "Para os Tzimisce, a posse é tudo. Eles visam dominar e possuir o objeto de sua possessividade, guardando-o zelosamente como o dragão de seu nome faria com seu tesouro. Tudo, desde terras, pessoas, cultos, empresas ou gangues, pode cair sob as garras cobiçosas de um Dragão.",
     historia: "Os encargos do clã têm sido tradicionalmente definidos geograficamente, como uma terra ou um povo regional, mas à medida que as propriedades na Transilvânia diminuem, eles estendem sua obsessão para gangues, redes de negócios ou mesmo unidades militares. Esta possessividade implacável estende-se também à forma física dos Tzimisce, que se consideram os donos definitivos dos seus corpos, mesmo além das limitações da Maldição de Caim. Muitos Dragões praticam uma especialização da Disciplina de Metamorfose conhecida como Vicissitude, que lhes permite remodelar seus corpos e os de seus súditos e até de vítimas menos dispostas. Os Tzimisce participaram vigorosamente na Revolta Anarquista e foram um dos clãs fundadores do Sabá.",
     disciplinas: [
@@ -382,7 +382,7 @@ const clans = [
         descricao: "A Disciplina perfeita para impor editais através de pura força mental. Dominação não apenas ajuda os Dragões a se apoderarem do objeto de sua obsessão, mas também condiciona servidores de longo prazo a se tornarem extensões da vontade inquestionável do Demônio."
       },
       {
-        nome: "Metamorfose",
+        nome: "Proteanismo",
         descricao: "Como mestres de suas próprias formas físicas, os Tzimisce usam Metamorfose para se forçarem em outras formas, especialmente aquelas associadas a muitas das terras ancestrais do Velho Clã. Muitos Tzimisce praticam os métodos da Vicissitude, que lhes permite transcender as formas mecânicas de Metamorfose e tratar os seus próprios corpos e os dos seus súditos como argila primordial."
       }
     ],
@@ -399,7 +399,7 @@ const clans = [
     alcunhas: ["O Clã dos Reis", "Sangues-Azuis", "Tiranos", "Senhores da Guerra", "Patrícios", "Borgias", "o Culto de Mithras"],
     simbolo: "♜",
     cor: "#00008B",
-    citacao: "Você passará a entender que este clã está destinado a governar. Fomos imperadores, reis e rainhas, e agora somos os chefes de corporações globais. Os outros recorrem a nós em busca de liderança e nós a fornecemos, pois somos os mais bem equipados para o fazer.",
+    citacao: "Nós não governamos porque queremos poder. Nós governamos porqque sem nós, tudo desmorona.",
     resumo: "Aos seus próprios olhos, apenas o Clã dos Reis tem a contenção, a sabedoria, o controle e o pedigree para liderar sua espécie através da noite. Ao longo de sua trajetória como reis-deuses da antiga Babilônia e lordes e ladys da Idade Das Trevas até seus papéis contemporâneos como guardiões de sangue real, acionistas majoritários e apoiadores de fundos de campanha, eles têm sido obcecados pelo impulso de governar.",
     historia: "O Clã Ventrue há muito tempo lidera a Camarilla, ocupando mais posições de poder do que qualquer outro clã, e eles relutam em abrir mão disso. Os Ventrue acreditam na força da tradição e da linhagem. O Abraço é um dos seus rituais mais importantes, e a escolha da cria afeta a forma como os outros membros do clã tratam o senhor. Os Ventrue, portanto, visam Abraçar pessoas de alto desempenho, gado política ou financeiramente poderoso, ou aqueles com um talento que os diferencie das massas. Os Ventrue são o sistema. Eles estabelecem e mantêm as regras, punindo aqueles que as quebram. A verdade desconfortável é que, sem eles, a Máscara, e a Camarilla com ela, já teriam caído há muito tempo.",
     disciplinas: [
