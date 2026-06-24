@@ -1,430 +1,430 @@
 // clans.js — Sangue & Safira Campaign Companion
-// Content based on Vampire: The Masquerade V5 official material
-// (Players Guide & Corebook)
+// Conteúdo baseado no material oficial de Vampiro: O Mapeamento V5
+// (Guia dos Jogadores & Livro Básico)
 
 const clans = [
   {
     id: "banu-haqim",
     nome: "Banu Haqim",
-    alcunhas: ["The Clan of the Hunt", "Children of Haqim", "Mediators", "Judges"],
+    alcunhas: ["O Clã da Caça", "Filhos de Haqim", "Mediadores", "Juízes"],
     simbolo: "⬡",
     cor: "#8B0000",
-    citacao: "Your Blood has found you wanting, but I'm sure I can find a suitable purpose for it.",
-    resumo: "The Judges of the Banu Haqim are torn between their hereditary thirst for vampiric Blood and their passion for justice. Stern adjudicators fiercely devoted to upholding a moral code, they Embrace mortals capable of assessing and handling threats, enforcing laws and traditions, and punishing transgressors.",
-    historia: "The Blood is a law unto itself from the Banu Haqim perspective, communicating a sense of duty to those who bear it in addition to the curse of forever standing guard against the Beast. Banu Haqim from all cultures and legal traditions in life find that their Blood binds them to stringency and honor. They gravitate toward an orderly society — by their reasoning, the Damned need structure lest they lose themselves to their baser urges and domains become blood-spattered hellscapes. A common motif among the Banu Haqim is a tripartite lineage consisting of judges, blood-sorcerers, and killers-of-killers. The most renowned lineages have pledged themselves to the Camarilla, though pragmatic Judges favor whatever institution best serves justice in a given domain.",
+    citacao: "Seu Sangue considerou você indigno, mas tenho certeza de que posso encontrar um propósito adequado para ele.",
+    resumo: "Os Juízes dos Banu Haqim estão divididos entre sua sede hereditária por Sangue vampírico e sua paixão pela justiça. Árbitros severos e ferozmente dedicados a defender um código moral, eles Abraçam mortais capazes de avaliar e lidar com ameaças, aplicar leis e tradições e punir transgressores.",
+    historia: "O Sangue é uma lei em si mesmo a partir da perspectiva dos Banu Haqim, comunicando um senso de dever àqueles que o carregam, além da maldição de estarem para sempre vigiando contra a Besta. Banu Haqim de todas as culturas e tradições jurídicas em vida descobrem que seu Sangue os vincula à rigores e à honra. Eles gravitam em torno de uma sociedade ordenada — segundo seu raciocínio, os Amaldiçoados precisam de estrutura para não se perderem em seus impulsos mais baixos e os domínios se tornarem cenários infernais salpicados de sangue. Um motivo comum entre os Banu Haqim é uma linhagem tripartite composta por juízes, feiticeiros de sangue e assassinos de assassinos. As linhagens mais renomadas prometeram lealdade à Camarilla, embora Juízes pragmáticos favoreçam qualquer instituição que melhor sirva à justiça em um determinado domínio.",
     disciplinas: [
       {
-        nome: "Blood Sorcery",
-        descricao: "Various Haqimite methods and philosophies regarding Blood Sorcery inflect the practical applications of the Discipline, from providing its practitioners murderous abilities to more versatile ritual aspects, gleaning secrets from their own Blood and others'."
+        nome: "Feitiçaria de Sangue",
+        descricao: "Vários métodos e filosofias Haqimitas a respeito da Feitiçaria de Sangue infletem as aplicações práticas da Disciplina, desde fornecer aos seus praticantes habilidades assassinas até aspectos rituais mais versáteis, extraindo segredos de seu próprio Sangue e do de outros."
       },
       {
-        nome: "Celerity",
-        descricao: "The Children of Haqim use Celerity to terrifying effect. Many are skilled in its use before all other Disciplines, to rely on speed of judgment before doubt can slow a blade to the throat."
+        nome: "Celeridade",
+        descricao: "Os Filhos de Haqim usam Celeridade com efeitos aterrorizantes. Muitos são habilidosos em seu uso antes de todas as outras Disciplinas, para confiar na velocidade do julgamento antes que a dúvida possa retardar uma lâmina na garganta."
       },
       {
-        nome: "Obfuscate",
-        descricao: "Banu Haqim stalk their prey unseen, whether as a means to feed discreetly or deliver final death to a target without the needless risks of going toe-to-toe. Some employ this Discipline to observe a target performing an act of transgression before delivering judgment."
+        nome: "Ofuscação",
+        descricao: "Os Banu Haqim perseguem suas presas sem serem vistos, seja como um meio de se alimentar discretamente ou de desferir a morte final a um alvo sem os riscos desnecessários de um confronto direto. Alguns empregam esta Disciplina para observar um alvo cometendo um ato de transgressão antes de proferir o julgamento."
       }
     ],
-    perdicao: "Banu Haqim are drawn to feed from those deserving punishment — especially vampire Blood, the very essence of transgression. When one of the Judges tastes the Blood of another Cainite, they find it very hard to stop. Slaking at least one Hunger level with vampiric vitae provokes a hunger frenzy test at Difficulty 2 + Bane Severity. If the test is failed they attempt to gorge themselves on vampire Blood, sometimes until they perform diablerie upon their Kindred victim.",
+    perdicao: "Os Banu Haqim são atraídos a se alimentar daqueles que merecem punição — especialmente do Sangue de vampiros, a própria essência da transgressão. Quando um dos Juízes prova o Sangue de outro Cainita, ele acha muito difícil parar. Saciar pelo menos um nível de Fome com vitae vampírica provoca um teste de frenesi de fome com Dificuldade 2 + Severidade da Perdição. Se o teste falhar, eles tentam se fartar com Sangue de vampiro, às vezes até realizarem diablerie contra sua vítima Membro.",
     fome: {
-      nome: "Judgment",
-      descricao: "The vampire is compelled to punish anyone seen to transgress against their personal code, taking their blood as just vengeance for the crime. For one scene, the vampire must slake at least one Hunger from anyone, friend or foe, who acts against a Conviction of theirs. Failing to do so results in a three-dice penalty to all rolls until the Compulsion is satisfied or the scene ends."
+      nome: "Julgamento",
+      descricao: "O vampiro é compelido a punir qualquer pessoa vista transgredindo seu código pessoal, tomando seu sangue como justa vingança pelo crime. Por uma cena, o vampiro deve saciar pelo menos uma Fome de qualquer pessoa, amigo ou inimigo, que aja contra uma Convicção dele. Falhar em fazer isso resulta em uma penalidade de três dados para todas as jogadas até que a Compulsão seja satisfeita ou a cena termine."
     }
   },
 
   {
     id: "brujah",
     nome: "Brujah",
-    alcunhas: ["The Learned Clan", "Rabble", "Punks", "Hipsters", "Prometheans", "Rebels", "Philosopher-Kings", "Hellenes"],
+    alcunhas: ["O Clã Erudito", "Chusma", "Punks", "Hipsters", "Prometeanos", "Rebeldes", "Reis-Filósofos", "Helenos"],
     simbolo: "⊘",
     cor: "#CC2200",
-    citacao: "The dream of the learned clan is a world where all injustice has been eliminated and the living and the undead can coexist in peace.",
-    resumo: "The dream of the learned clan is a world where all injustice has been eliminated. They say it is for love of the mortals that they lead them against their masters. In truth, they may simply rage against a distant or non-existent God they can never fight, against a curse they can never end. Theirs is a dream that poisons everything it touches.",
-    historia: "Clan Brujah have always Embraced from the ranks of those sympathetic to counterculture and revolution. They seek out allies who question normative ideas, and recognizing the fire of the oppressed, they gravitate toward the underdog. Common perception places punks, gang-members, maladjusted immigrants, and rioters among the Brujah. While the clan includes substantial numbers of vocal outsiders, their desire for rebellion reaches as deep as the fraudster ripping off his own company, or the lawyer representing the poor pro bono. The philosophical Brujah, known as Hellenes, believe the best method of dismantling the establishment is to understand the social and cultural systems that allow it to exist in the first place.",
+    citacao: "O sonho do clã erudito é um mundo onde toda injustiça tenha sido eliminada e os vivos e os mortos-vivos possam coexistir em paz.",
+    resumo: "O sonho do clã erudito é um mundo onde toda injustiça tenha sido eliminada. Eles dizem que é por amor aos mortais que os lideram contra seus senhores. Na verdade, eles podem simplesmente enfurecer-se contra um Deus distante ou inexistente que nunca poderão combater, contra uma maldição que nunca poderão encerrar. O deles é um sonho que envenena tudo o que toca.",
+    historia: "O Clã Brujah sempre Abraçou a partir das fileiras daqueles que simpatizam com a contracultura e a revolução. Eles buscam aliados que questionam ideias normativas e, reconhecendo o fogo dos oprimidos, gravitam em direção aos desfavorecidos. A percepção comum coloca punks, membros de gangues, imigrantes desajustados e manifestantes entre os Brujah. Embora o clã inclua um número substancial de marginalizados vocais, seu desejo de rebelião vai tão fundo quanto o fraudador que rouba a própria empresa, ou o advogado que representa os pobres pro bono. Os Brujah filosóficos, conhecidos como Helenos, acreditam que o melhor método para desmantelar o sistema é compreender os sistemas sociais e culturais que permitem que ele exista em primeiro lugar.",
     disciplinas: [
       {
-        nome: "Celerity",
-        descricao: "Brujah use Celerity to strike fast and escape uprisings they have started. They hunt with it to snatch vessels from the streets, feeding from them savagely, or to rapidly dispose of a mortal before vanishing into the night."
+        nome: "Celeridade",
+        descricao: "Os Brujah usam Celeridade para golpear rápido e escapar de revoltas que eles mesmos iniciaram. Eles caçam com ela para arrebatar recipientes nas ruas, alimentando-se deles de forma selvagem, ou para descartar rapidamente um mortal antes de desaparecer na noite."
       },
       {
-        nome: "Potence",
-        descricao: "Brujah use Potence as a devastating weapon, cutting short any confrontation with destructive finality. Though the clan preaches a connection to humanity, its members often take what they want by force."
+        nome: "Potência",
+        descricao: "Os Brujah usam Potência como uma arma devastadora, encurtando qualquer confronto com uma finalidade destrutiva. Embora o clã pregue uma conexão com a humanidade, seus membros frequentemente tomam o que querem pela força."
       },
       {
-        nome: "Presence",
-        descricao: "Brujah use Presence to win the hearts of the crowd, turn a threatening mob against itself, or send a dangerous opponent fleeing into the night. Brujah intellectuals prefer feeding with Presence to convince vessels to give up their blood voluntarily."
+        nome: "Presença",
+        descricao: "Os Brujah usam Presença para conquistar os corações da multidão, virar uma turba ameaçadora contra si mesma ou enviar um oponente perigoso fugindo para a noite. Os intelectuais Brujah preferem se alimentar com Presença para convencer os recipientes a cederem seu sangue voluntariamente."
       }
     ],
-    perdicao: "The Blood of the Brujah simmers with barely contained rage, exploding at the slightest provocation. Subtract dice equal to the Bane Severity of the Brujah from any roll to resist fury frenzy. This cannot take the pool below one die.",
+    perdicao: "O Sangue dos Brujah fervilha com uma raiva mal contida, explodindo à menor provocação. Subtraia dados iguais à Severidade da Perdição do Brujah de qualquer jogada para resistir ao frenesi de fúria. Isso não pode reduzir a parada abaixo de um dado.",
     fome: {
-      nome: "Rebellion",
-      descricao: "When a Brujah suffers a Compulsion, they must speak out against or actively resist the most prominent authority figure in the scene. Any action that does not somehow resist, undermine, or defy authority costs the Brujah a two-dice penalty until the Compulsion is satisfied."
+      nome: "Rebelião",
+      descricao: "Quando um Brujah sofre uma Compulsão, ele deve se manifestar contra ou resistir ativamente à figura de autoridade mais proeminente na cena. Qualquer ação que não resista, sabote ou desafie de alguma forma a autoridade custa ao Brujah uma penalidade de dois dados até que a Compulsão seja satisfeita."
     }
   },
 
   {
     id: "gangrel",
     nome: "Gangrel",
-    alcunhas: ["The Clan of the Beast", "Animals", "Ferals", "Savages", "Barbarians", "Outcasts", "Wolves", "Strays"],
+    alcunhas: ["O Clã da Besta", "Animais", "Ferais", "Selvagens", "Bárbaros", "Exilados", "Lobos", "Vira-latas"],
     simbolo: "🐺",
     cor: "#5C4033",
-    citacao: "When other Kindred curse their appetites and choose the gilded cage of the city and the leash of social hierarchy, the wolves accept the Beast as a part of themselves and run free.",
-    resumo: "A hunger older than mankind burns inside the wolves. Crossing borders between species, nations, and domains with the ease of perfect predators, they belong to the wild and the wild belongs to them. Trading stories of war and the secret histories of their kind around campfires lit with the bones of their oppressors, they have turned their backs on the Camarilla.",
-    historia: "Clan Gangrel are outcasts, wanderers, rogues, and hunters. They make havens in the poorest parts of the city and feel no shame for doing so. They claim few domains as their own but defer to no prince. Gangrel Embrace from the ranks of survivors and fighters: leaders of prison crews and gangs, explorers, and any kine who sees the world as something to traverse instead of something to hide from. They care not for looks or title, but for accomplishment and reputation. Any mortal capable of projecting their will onto others, leading a group from disaster to success, or fighting impossible odds draws the clan's attention.",
+    citacao: "Quando outros Membros amaldiçoam seus apetites e escolhem a gaiola dourada da cidade e a coleira da hierarquia social, os lobos aceitam a Besta como parte de si mesmos e correm livres.",
+    resumo: "Uma fome mais antiga que a humanidade arde dentro dos lobos. Cruzando fronteiras entre espécies, nações e domínios com a facilidade de predadores perfeitos, eles pertencem à vida selvagem e a vida selvagem pertence a eles. Trocando histórias de guerra e as histórias secretas de sua espécie ao redor de fogueiras acesas com os ossos de seus opressores, eles viraram as costas para a Camarilla.",
+    historia: "O Clã Gangrel é composto por exilados, andarilhos, trapaceiros e caçadores. Eles fazem seus refúgios nas partes mais pobres da cidade e não sentem vergonha disso. Eles reivindicam poucos domínios como seus, mas não se curvam a nenhum príncipe. Os Gangrel Abraçam a partir das fileiras de sobreviventes e lutadores: líderes de detentos e gangues, exploradores e qualquer gado que veja o mundo como algo a ser atravessado, em vez de algo do qual se esconder. Eles não se importam com aparências ou títulos, mas sim com realizações e reputação. Qualquer mortal capaz de projetar sua vontade sobre os outros, liderar um grupo do desastre ao sucesso ou lutar contra probabilidades impossíveis atrai a atenção do clã.",
     disciplinas: [
       {
-        nome: "Animalism",
-        descricao: "A Gangrel can use Animalism to take on an animal companion, sometimes called a famulus. The animal companion can be used for hunting, spying, and attacking. Some Gangrel will turn pets on their owners, hound vagrants with packs of dogs, or lure strays to them for a quick feeding."
+        nome: "Animalismo",
+        descricao: "Um Gangrel pode usar Animalism para adotar um companheiro animal, às vezes chamado de famulato. O companheiro animal pode ser usado para caçar, espiar e atacar. Alguns Gangrel atiçam animais de estimação contra seus donos, perseguem mendigos com matilhas de cães ou atraem vira-latas para si para uma alimentação rápida."
       },
       {
         nome: "Fortitude",
-        descricao: "As longtime bodyguards and soldiers for the other clans, the Gangrel have benefited hugely from Fortitude. The Discipline can give them a sense of fearlessness, as it allows them to hunt across harsh terrain and take bullets and knife blades without worry."
+        descricao: "Como guarda-costas e soldados de longa data para os outros clãs, os Gangrel se beneficiaram enormemente da Fortitude. A Disciplina pode dar-lhes uma sensação de destemor, pois permite-lhes caçar em terrenos difíceis e receber balas e lâminas de faca sem preocupação."
       },
       {
-        nome: "Protean",
-        descricao: "Gangrel are known for their mastery of Protean, as few other clans possess its gifts. Straddling the line between vampirism and shapeshifting, the Discipline allows a Gangrel to take on the physical properties of another creature, or in other ways change their physical shape."
+        nome: "Metamorfose",
+        descricao: "Os Gangrel são conhecidos por seu domínio de Metamorfose, já que poucos outros clãs possuem seus dons. Cruzando a linha entre o vampirismo e a mudança de forma, a Disciplina permite que um Gangrel assuma as propriedades físicas de outra criatura ou, de outras maneiras, altere sua forma física."
       }
     ],
-    perdicao: "Gangrel relate to their Beast much as other Kindred relate to the Gangrel: suspicious partnership. In frenzy, Gangrel gain one or more animal features: a physical trait, a smell, or a behavioral tic. These features last for one more night afterward. Each feature reduces one Attribute by 1 point. The number of features a Gangrel manifests equals their Bane Severity.",
+    perdicao: "Os Gangrel se relacionam com sua Besta da mesma forma que os outros Membros se relacionam com os Gangrel: uma parceria suspeita. No frenesi, os Gangrel ganham uma ou mais características animais: um traço físico, um cheiro ou um tique comportamental. Essas características duram mais uma noite depois disso. Cada característica reduz um Atributo em 1 ponto. O número de características que um Gangrel manifesta é igual à sua Severidade da Perdição.",
     fome: {
-      nome: "The Wild",
-      descricao: "When a Gangrel suffers a Compulsion, the call of the wild becomes overwhelming. The vampire must move to be alone or in nature and can only hunt using predatory animal instinct. Any social actions that are not predatory in nature cost a two-dice penalty until the Compulsion is satisfied."
+      nome: "A Natureza Selvagem",
+      descricao: "Quando um Gangrel sofre uma Compulsão, o chamado da natureza se torna avassalador. O vampiro deve se isolar para ficar sozinho ou na natureza e só pode caçar usando o instinto animal predatório. Quaisquer ações sociais que não sejam de natureza predatória custam uma penalidade de dois dados até que a Compulsão seja satisfeita."
     }
   },
 
   {
     id: "hecata",
     nome: "Hecata",
-    alcunhas: ["Necromancers", "Devil-Kindred", "Lazarenes", "The Clan of Death"],
+    alcunhas: ["Necromantes", "Membros-Demônios", "Lazarenos", "O Clã da Morte"],
     simbolo: "☠",
     cor: "#2E4A3E",
-    citacao: "The Kindred are simply one expression of death, a still-vital consciousness clad in a flesh of fading lividity, or even vitality… and such expressions can be reinterpreted, as it were.",
-    resumo: "A motley collection of necromantic vampire bloodlines, the Hecata clan are united in the pursuit of a single subject: Death. They are students of the afterlife and resurrectionists of the dead — or worse. Selling their services to the highest bidder, there are few who can hide from the surveillance of those who can summon and command the very spirits of the deceased.",
-    historia: "The Hecata are anomalous among the Kindred clans, in that they are practically a sect unto themselves, a clan consisting of strange bloodlines and even some genuine familial ties, all built upon the reverence of and occasional subjugation of death itself. Comprising everything from ancestor-worshiping Old World crime families to effigy-wielding priests to degenerate flesh-eating monsters, the Hecata clan has an unwholesome fascination with the mortal coil in common among its member bloodlines. A morbid ritual recently bound together these disparate consanguinities into a 'united' clan proper. Hecata subscribe to a cyclical philosophy in regards to the Embrace, which they symbolize by the three faces of Death, Rot, and Rebirth.",
+    citacao: "Os Membros são simplesmente uma expressão da morte, uma consciência ainda vital vestida em uma carne de lividez decadente, ou mesmo de vitalidade… e tais expressões podem ser reinterpretadas, por assim dizer.",
+    resumo: "Uma coleção heterogênea de linhagens vampíricas necromânticas, o clã Hecata está unido na busca de um único assunto: a Morte. Eles são estudantes do pós-vida e ressurreicionistas dos mortos — ou pior. Vendendo seus serviços a quem pagar mais, há poucos que conseguem se esconder da vigilância daqueles que podem invocar e comandar os próprios espíritos dos falecidos.",
+    historia: "Os Hecata são anômalos entre os clãs de Membros, no sentido de que são praticamente uma seita em si mesmos, um clã que consiste em linhagens estranhas e até mesmo em alguns laços familiares genuínos, todos construídos sobre a reverência e a subjugação ocasional da própria morte. Compreendendo desde famílias criminosas do Velho Mundo que adoram ancestrais até sacerdotes que empunham efígies e monstros degenerados comedores de carne, o clã Hecata tem em comum uma fascinação doentia pela matéria mortal entre suas linhagens membras. Um ritual mórbido uniu recentemente essas consanguinidades díspares em um clã 'unificado' propriamente dito. Os Hecata subscrevem uma filosofia cíclica em relação ao Abraço, que simbolizam pelas três faces da Morte, Decomposição e Renascimento.",
     disciplinas: [
       {
-        nome: "Auspex",
-        descricao: "Hecata often regard Auspex as perception of fate. Reading an aura becomes an exercise in discerning how the individual's attitudes steer them toward their fate. It's also a Discipline that requires a degree of finesse, from sensing unseen ghosts to reading the spiritual history of an object."
+        nome: "Auspício",
+        descricao: "Os Hecata frequentemente consideram o Auspício como a percepção do destino. Ler uma aura torna-se um exercício para discernir como as atitudes do indivíduo o guiam em direção ao seu destino. É também uma Disciplina que exige um certo grau de sutileza, desde sentir fantasmas invisíveis até ler a história espiritual de um objecto."
       },
       {
         nome: "Fortitude",
-        descricao: "Who better to exalt the physical durability of the undead form? Fortitude may manifest as the futility of hacking away at an already-dead corpse to a grand mastery over — and avoidance of — Death's very laws."
+        descricao: "Quem melhor para exaltar a durabilidade física da forma morta-viva? A Fortitude pode se manifestar desde a futilidade de retalhar um cadáver já morto até um grande domínio sobre — e evasão de — as próprias leis da Morte."
       },
       {
-        nome: "Oblivion",
-        descricao: "Oblivion is among the most mysterious of Disciplines, as it can reach past the veil of the afterlife. Through its use, the Hecata might interrogate a ghost or set it to torment a rival. They might rot a mortal's flesh with a touch or drive a meddling kine to a bleak reward."
+        nome: "Alheamento",
+        descricao: "O Alheamento está entre as Disciplinas mais misteriosas, pois pode alcançar além do véu do pós-vida. Através de seu uso, os Hecata podem interrogar um fantasma ou instigá-lo a atormentar um rival. Eles podem apodrecer a carne de um mortal com um toque ou conduzir um gado intrometido a uma recompensa sombria."
       }
     ],
-    perdicao: "The Hecata inflict a notoriously painful Kiss. The fangs of the Lazarenes bring not bliss, but agony. Victims caught unawares will violently resist unless restrained, and few people submit willingly. When drinking directly from a victim, Hecata may only take harmful drinks, resulting in blood loss. Even those coerced or willing must succeed in a Stamina + Resolve test against Difficulty 2 + Bane Severity in order not to strain against the pain.",
+    perdicao: "Os Hecata inflictam um Beijo notoriamente doloroso. As presas os Lazarenos trazem não o êxtase, mas a agonia. Vítimas pegas de surpresa resistirão violentamente, a menos que sejam contidas, e poucas pessoas se submetem voluntariamente. Ao beber diretamente de uma vítima, os Hecata só podem dar goles dolorosos, resultando em perda de sangue. Mesmo aqueles coagidos ou dispostos devem ser bem-sucedidos em um teste de Vigor + Determinação contra Dificuldade 2 + Severidade da Perdição para não se debaterem contra a dor.",
     fome: {
-      nome: "Morbidity",
-      descricao: "The vampire experiences an immediate need to move something from life to death or vice versa. Any action not dedicated to ending or resurrecting something is taken at a two-dice penalty. This subject doesn't have to be a person, or even a living thing, but can include objects or even more abstract things such as an idea or a conversation. The Compulsion lasts until the vampire manages to kill or return something to life."
+      nome: "Morbidade",
+      descricao: "O vampiro experimenta uma necessidade imediata de mover algo da vida para a morte ou vice-versa. Qualquer ação que não seja dedicada a encerrar ou ressuscitar algo é realizada com uma penalidade de dois dados. Este alvo não precisa ser uma pessoa, ou mesmo um ser vivo, mas pode incluir objetos ou até coisas mais abstratas, como uma ideia ou uma conversa. A Compulsão dura até que o vampiro consiga matar ou devolver algo à vida."
     }
   },
 
   {
     id: "lasombra",
     nome: "Lasombra",
-    alcunhas: ["The Clan of Night", "Magisters", "Keepers", "Shadows"],
+    alcunhas: ["O Clã da Noite", "Magistrados", "Guardiões", "Sombras"],
     simbolo: "♛",
     cor: "#1A0A2E",
-    citacao: "For certain, I am ever your ally, but I must resign myself to the shadows, otherwise they'll know the true threat our combined might presents.",
-    resumo: "Creatures subtly at odds with mundane reality, Lasombra vampires are expected to triumph at any cost. Ruthlessness is a sought-after trait in progeny, making their reputation as betraying interlopers well deserved. Most do not seek attention, preferring to act as puppeteers, powers behind the proverbial throne. To a Shadow, the ends justify any means.",
-    historia: "From the shadows, the Keepers orchestrate their schemes, pulling the strings of 'lesser' Kindred, manipulating them as they would marionettes on strings, enacting the shadow-play of the Eternal Struggle. Lasombra greatly esteem accomplishment, especially in matters by which they might gain power over others. They do not enjoy risk, and Keepers have quite rightly earned a reputation for shrewd planning and cold calculation. Historically, the Lasombra have influenced every sect: early rebels in the Anarch Revolt, warlords of the Sabbat in the Americas, and redoubtable recruits into the Camarilla during this modern era of the Second Inquisition.",
+    citacao: "Com certeza, serei sempre seu aliado, mas devo me resignar às sombras, caso contrário eles saberão a verdadeira ameaça que nosso poder combinado apresenta.",
+    resumo: "Criaturas sutilmente em desacordo com a realidade mundana, espera-se que os vampiros Lasombra triunfem a qualquer custo. A crueldade é um traço procurado em suas proles, fazendo com que sua reputação de intrusos traidores seja bem merecida. A maioria não busca atenção, preferindo agir como manipuladores, poderes por trás do proverbial trono. Para uma Sombra, os fins justificam quaisquer meios.",
+    historia: "A partir das sombras, os Guardiões orquestram seus esquemas, puxando as cordas de Membros 'inferiores', manipulando-os como se fossem marionetes em fios, encenando o jogo de sombras da Luta Eterna. Os Lasombra estimam grandemente as realizações, especialmente em assuntos pelos quais possam ganhar poder sobre os outros. Eles não gostam de riscos, e os Guardiões ganharam, com inteira justiça, uma reputação de planejamento astuto e cálculo frio. Historicamente, os Lasombra influenciaram todas as seitas: rebeldes precoces na Revolta Anarquista, senhores da guerra do Sabá nas Américas e recrutas formidáveis na Camarilla durante esta era moderna da Segunda Inquisição.",
     disciplinas: [
       {
-        nome: "Dominate",
-        descricao: "The Lasombra rely on their ability to crush wills and command obedience without the genteel affectations to which some of the Damned pretend. The callous way in which they exert this Discipline on victims often earns antipathy from other Kindred, yet few deny the Magisters' ability in brainwashing and subjugating prey."
+        nome: "Dominação",
+        descricao: "Os Lasombra confiam em sua habilidade de esmagar vontades e comandar obediência sem os afetos gentis que alguns dos Amaldiçoados fingem possuir. A maneira cruel como exercem esta Disciplina nas vítimas frequentemente rende a antipatia de outros Membros, mas poucos negam a habilidade dos Magistrados em fazer lavagem cerebral e subjugar suas presas."
       },
       {
-        nome: "Oblivion",
-        descricao: "The ability to manipulate shadows allows the Lasombra to observe, strike, and escape without ever having to confront their victim, or to employ entities darker than death for the same purpose. Many claim there's a cost to one's soul for using Oblivion, or that overindulging it is why the Lasombra appear strangely in reflections and modern media formats."
+        nome: "Alheamento",
+        descricao: "A habilidade de manipular sombras permite que os Lasombra observem, golpeiem e escapem sem nunca ter que confrontar sua vítima, ou empregar entidades mais sombrias que a morte para o mesmo propósito. Muitos afirmam que há um custo para a alma de alguém ao usar o Alheamento, ou que o excesso de indulgência nele é a razão pela qual os Lasombra aparecem de forma estranha em reflexos e formatos de mídia modernos."
       },
       {
-        nome: "Potence",
-        descricao: "When forced to resort to physical violence, Magisters may favor popping an enemy's skull with their hands, driving a boot through a punk's stomach, or ripping a door off its hinges to command respect and fear. Few Lasombra use Potence for feeding, considering it a vulgar exercise to manually grab and hold a vessel."
+        nome: "Potência",
+        descricao: "Quando forçados a recorrer à violência física, os Magistrados podem preferir estourar o crânio de um inimigo com as próprias mãos, enfiar uma bota no estômago de um punk ou arrancar uma porta das dobradiças para impor respeito e medo. Poucos Lasombra usam Potência para se alimentar, considerando um exercício vulgar agarrar e segurar manualmente um recipiente."
       }
     ],
-    perdicao: "Anyone seeing the reflection or recording of a Lasombra vampire can instantly recognize them for what they are, provided they know what they're looking for. In addition, use of modern communication technology, including making a simple phone call, requires a Technology test at Difficulty 2 + Bane Severity as microphones have similar problems with the voice of a Lasombra as cameras with their image. Avoiding electronic vampire detection systems is also done at a penalty equal to Bane Severity.",
+    perdicao: "Qualquer pessoa que veja o reflexo ou a gravação de um vampiro Lasombra pode reconhecê-lo instantaneamente pelo que é, desde que saiba o que está procurando. Além disso, o uso de tecnologia moderna de comunicação, incluindo fazer uma simples chamada telefônica, requer um teste de Tecnologia com Dificuldade 2 + Severidade da Perdição, já que os microfones apresentam problemas semelhantes com a voz de um Lasombra assim como as câmeras com sua imagem. Evitar sistemas eletrônicos de detecção de vampiros também é feito com uma penalidade igual à Severidade da Perdição.",
     fome: {
-      nome: "Ruthlessness",
-      descricao: "Lasombra despise failure, associating it with poor planning or a personal declivity. When affected by this compulsion, their Blood urges them toward any act conceivable to reach their goals. The next time the vampire fails any action they receive a two-dice penalty to any and all rolls until a future attempt at the same action succeeds, or the scene ends."
+      nome: "Crueldade",
+      descricao: "Os Lasombra desprezam o fracasso, associando-o a um planejamento inadequado ou a uma fraqueza pessoal. Quando afetados por esta compulsão, seu Sangue os impele a qualquer ato concebível para alcançar seus objetivos. A próxima vez que o vampiro falhar em qualquer ação, ele receberá uma penalidade de dois dados em toda e qualquer jogada até que uma tentativa futura da mesma ação seja bem-sucedida ou a cena termine."
     }
   },
 
   {
     id: "malkavian",
     nome: "Malkavian",
-    alcunhas: ["The Clan of the Moon", "Lunatics", "Madmen", "Jesters", "Oracles", "Dervishes", "Visionaries", "Children of Malkav"],
+    alcunhas: ["O Clã da Lua", "Lunáticos", "Loucos", "Bobos", "Oráculos", "Dervixes", "Visionários", "Filhos de Malkav"],
     simbolo: "☽",
     cor: "#4A0E6E",
-    citacao: "We're not clowns, Jeanette. We're not here to amuse the other Kindred.",
-    resumo: "Psychologists would diagnose the children of Malkav with schizophrenia, depression, obsessive compulsive disorder, or post-traumatic stress disorder. In reality, they have all of these things and none. Like the 'wise madmen' of poetry their derangement stems from seeing too much of the world at once, from understanding too deeply, and feeling emotions that are too strong to bear.",
-    historia: "It has long been the misconception that few Kindred families are as disparate as the Clan of the Moon. Other clans see them and reason, 'they are each mad, so why should their respective origins matter?' To the Malkavians, origins matter a great deal. One of the gifts the Malkavians look for in a mortal is 'second sight' — the ability to interpret dreams, perceive spirits, or unerringly predict future events. They are also fascinated by the 'broken' — individuals who have been changed by traumatic experiences. Some Malkavians claim there is a common factor to their madness; that they are all psychically linked through a communal wavelength known as the cobweb or madness network.",
+    citacao: "Não somos palhaços, Jeanette. Não estamos aqui para divertir os outros Membros.",
+    resumo: "Os psicólogos diagnosticariam os filhos de Malkav com esquizofrenia, depressão, transtorno obsessivo-compulsivo ou transtorno de estresse pós-traumático. Na realidade, eles têm todas essas coisas e nenhuma. Como os 'loucos sábios' da poesia, sua perturbação decorre de ver demais do mundo de uma só vez, de compreender profundamente e sentir emoções fortes demais para suportar.",
+    historia: "Há muito tempo existe o equívoco de que poucas famílias de Membros são tão díspares quanto o Clã da Lua. Outros clãs os veem e raciocinam: 'cada um deles é louco, então por que suas respectivas origens deveriam importar?' Para os Malkavianos, as origens importam muito. Um dos dons que os Malkavianos procuram em um mortal é a 'segunda vista' — a habilidade de interpretar sonhos, perceber espíritos ou prever eventos futuros infalivelmente. Eles também são fascinados pelos 'quebrados' — indivíduos que foram mudados por experiências traumáticas. Alguns Malkavianos afirmam que existe um fator comum em sua loucura; que estão todos psiquicamente ligados através de um comprimento de onda comunitário conhecido como a teia ou a rede da loucura.",
     disciplinas: [
       {
-        nome: "Auspex",
-        descricao: "Malkavians use Auspex to enhance their senses, strengthening their sight or hearing to a supernatural level, or to determine a mortal's fears, illusions, and mental weaknesses, so they can play on them horribly as they prepare to feed."
+        nome: "Auspício",
+        descricao: "Os Malkavianos usam Auspício para aguçar seus sentidos, fortalecendo sua visão ou audição a um nível sobrenatural, ou para determinar os medos, ilusões e fraquezas mentais de um mortal, para que possam jogar com eles horrivelmente enquanto se preparam para se alimentar."
       },
       {
-        nome: "Dominate",
-        descricao: "Some Malkavians use Dominate to lift all distractions from a victim's mind, completely enthralling them; others use the Discipline to draw forth or inflict psychoses, through the infamous variant known as Dementation."
+        nome: "Dominação",
+        descricao: "Alguns Malkavianos usam Dominação para afastar todas as distrações da mente de uma vítima, cativando-a completamente; outros usam a Disciplina para extrair ou infligir psicoses, através da infame variante conhecida como Demência."
       },
       {
-        nome: "Obfuscate",
-        descricao: "The Malkavians do not advertise their use of Obfuscate, conveniently allowing many Kindred to forget they even have access to this Discipline. Some Malkavians secrete themselves in the houses, wards, and care homes of the kine, watching the sleeping faces before discreetly feeding."
+        nome: "Ofuscação",
+        descricao: "Os Malkavianos não anunciam o uso de Ofuscação, permitindo convenientemente que muitos Membros se esqueçam de que eles têm acesso a esta Disciplina. Alguns Malkavianos se escondem nas casas, alas e lares de idosos do gado, observando os rostos adormecidos antes de se alimentarem discretamente."
       }
     ],
-    perdicao: "Afflicted by their lineage, all Malkavians are cursed with at least one type of mental derangement. When the Malkavian suffers a Bestial Failure or a Compulsion, their curse comes to the fore. Suffer a penalty equal to the character's Bane Severity to one category of dice pools (Physical, Social, or Mental) for the entire scene.",
+    perdicao: "Afligidos por sua linhagem, todos os Malkavianos são amaldiçoados com pelo menos um tipo de perturbação mental. Quando o Malkaviano sofre uma Falha Bestial ou uma Compulsão, sua maldição vem à tona. Sofra uma penalidade igual à Severidade da Perdição do personagem em uma categoria de paradas de dados (Físico, Social ou Mental) durante toda a cena.",
     fome: {
-      nome: "Delusion",
-      descricao: "The vampire's madness bubbles irrepressibly to the surface. The vampire must act on one of their Convictions with absolute, immediate certainty, regardless of the situation. All actions not directly related to following this Conviction cost a two-dice penalty until the Compulsion ends."
+      nome: "Delírio",
+      descricao: "A loucura do vampiro borbulha irreprimivelmente para a superfície. O vampiro deve agir de acordo com uma de suas Convicções com certeza absoluta e imediata, independentemente da situação. Todas as ações não relacionadas diretamente ao cumprimento desta Convicção custam uma penalidade de dois dados até que a Compulsão termine."
     }
   },
 
   {
     id: "ministry",
-    nome: "The Ministry",
-    alcunhas: ["Serpents", "The Clan of Faith", "The Clan of Lies", "Setites"],
+    nome: "O Ministério",
+    alcunhas: ["Serpentes", "O Clã da Fé", "O Clã das Mentiras", "Setitas"],
     simbolo: "🐍",
     cor: "#1C3A1C",
-    citacao: "You call me a liar, a tempter, and a degenerate, but all of your supposed insults are simply the weight of the chains in which you have continued to shackle yourself.",
-    resumo: "The Ministry always has something to offer. This often cult-like clan recruits those able to employ temptation as a weapon. They Embrace those with the will and means to sway, entrap, and ultimately liberate their targets from whatever they seek: the victim's possessions, allegiance, or even faith. To the Serpents, everything has a price.",
-    historia: "Part clan, part cult, the Ministry occupies a strange niche in Kindred society. To their own minds, the Ministry serves the purpose of liberating individuals from uncritically accepting the burden of 'sin,' whether in the form of religious doctrine, social stigma, or even the Traditions of the Damned. To the Ministry mind, questioning is itself a sacrament. Without sin, what value has righteousness? The way of the Ministry is to challenge a prevailing morality, to ask 'Why is this forbidden?' Perhaps the largest faction of the clan has appropriated the Egyptian god Set, with whom the elders of the clan claim a connection or even consanguinity — thus their sobriquet of Setites.",
+    citacao: "Você me chama de mentiroso, de tentador e de degenerado, mas todos os seus supostos insultos são simplesmente o peso das correntes com as quais você continuou a se acorrentar.",
+    resumo: "O Ministério sempre tem algo a oferecer. Este clã, frequentemente semelhante a um culto, recruta aqueles capazes de empregar a tentação como uma arma. Eles Abraçam aqueles com a vontade e os meios para influenciar, enredar e, por fim, libertar seus alvos daquilo que procuram: os bens da vítima, sua lealdade ou até mesmo sua fé. Para as Serpentes, tudo tem um preço.",
+    historia: "Parte clã, parte culto, o Ministério ocupa um nicho estranho na sociedade dos Membros. Em suas próprias mentes, o Ministério serve ao propósito de libertar os indivíduos de aceitarem acriticamente o fardo do 'pecado', seja na forma de doutrina religiosa, estigma social ou mesmo as Tradições dos Amaldiçoados. Para a mente do Ministério, questionar é em si um sacramento. Sem o pecado, que valor tem a retidão? O caminho do Ministério é desafiar a moralidade predominante, perguntar 'Por que isso é proibido?' Talvez a maior facção do clã tenha se apropriado do deus egípcio Set, com quem os anciões do clã afirmam ter uma conexão ou mesmo consanguinidade — daí o seu apelido de Setitas.",
     disciplinas: [
       {
-        nome: "Obfuscate",
-        descricao: "Ministry Kindred use this Discipline to discover the beliefs, outlooks, and vices of vampires and mortals alike, to facilitate their exploitation and liberation. Powerful Ministers also often wear the faces of trustworthy figures and friends to better lure prey into their shrines and temples."
+        nome: "Ofuscação",
+        descricao: "Os Membros do Ministério usam esta Disciplina para descobrir as crenças, perspectivas e vícios de vampiros e mortais, para facilitar sua exploração e libertação. Ministros poderosos também costumam usar os rostos de figuras confiáveis e amigos para melhor atrair as presas para seus santuários e templos."
       },
       {
-        nome: "Presence",
-        descricao: "For many Ministers in the modern nights, this is their favored ability, offering a power with a finesse that satisfies even the self-styled enforcers of the Masquerade. Serpents use Presence with great prowess, wielding majestic gestures and resounding speeches that cut to the hearts of a congregation."
+        nome: "Presença",
+        descricao: "Para muitos Ministros nas noites modernas, esta é a sua habilidade favorita, oferecendo um poder com uma sutileza que satisfaz até mesmo os autoproclamados executores da Máscara. As Serpentes usam Presença com grande destreza, empunhando gestos majestosos e discursos ressonantes que tocam os corações de uma congregação."
       },
       {
-        nome: "Protean",
-        descricao: "The Ministers use this ability to awe observers but also have use of its many novel ways of escaping harm. They will often adopt the form of a snake over that of a wolf, but can meld with the earth to avoid the sun alongside any Gangrel."
+        nome: "Metamorfose",
+        descricao: "Os Ministros usam esta habilidade para impressionar os observadores, mas também se utilizam de suas muitas maneiras inovadoras de escapar do perigo. Eles costumam adotar a forma de uma cobra em vez de a de um lobo, mas podem se fundir com a terra para evitar o sol ao lado de qualquer Gangrel."
       }
     ],
-    perdicao: "The Blood of a Minister abhors the light. When exposed to direct illumination, whether natural or artificial, members of the clan recoil. Ministers receive a penalty equal to their Bane Severity to all dice pools when subjected to bright light directed straight at them. Also, add their Bane Severity to Aggravated damage taken from sunlight.",
+    perdicao: "O Sangue de um Ministro abomina a luz. Quando expostos à iluminação direta, seja natural ou artificial, os membros do clã recuam. Os Ministros recebem uma penalidade igual à sua Severidade da Perdição em todas as paradas de dados quando submetidos a uma luz brilhante direcionada diretamente para eles. Além disso, adicione sua Severidade da Perdição ao dano Agravado recebido pela luz solar.",
     fome: {
       nome: "Transgression",
-      descricao: "The prevailing wisdom of the Clan of Faith is that everyone's mind and spirit are bound by invisible chains of their own making. Their Blood chafing at these bindings, the Minister suffers a burning need to break them. The vampire receives a two-dice penalty to all dice pools not relating to enticing someone (including themselves) to break a Chronicle Tenet or personal Conviction, causing at least one Stain and ending this Compulsion."
+      descricao: "A sabedoria predominante do Clã da Fé é que a mente e o espírito de todos estão limitados por correntes invisíveis criadas por eles mesmos. Com seu Sangue irritado por essas amarras, o Ministro sofre uma necessidade ardente de quebrá-las. O vampiro recebe uma penalidade de dos dados em todas as paradas de dados que não se refiram a induzir alguém (incluindo a si mesmo) a quebrar um Princípio da Crônica ou Convicção pessoal, causando pelo menos uma Mácula e encerrando esta Compulsão."
     }
   },
 
   {
     id: "nosferatu",
     nome: "Nosferatu",
-    alcunhas: ["Horrors", "The Clan of the Hidden", "Sewer Rats", "Lepers", "Hives", "Carnies", "Scabs", "Kapos", "Vagrants", "Orloks"],
+    alcunhas: ["Horrores", "O Clã dos Escondidos", "Ratos de Esgoto", "Leprosos", "Colmeias", "Artistas de Circo", "Cascas", "Kapos", "Mendigos", "Orloks"],
     simbolo: "🐀",
     cor: "#2B2B2B",
-    citacao: "We may not be pretty or able to blend in with the kine. We can't pretend to be anything but degenerate monsters. But you know what? That gives us perspectives every one of those other deluded bastards lacks.",
-    resumo: "For the Nosferatu the Embrace is a journey through abjection, as the Blood of the horror gradually deforms the struggling tissues of the human body into grotesque abominations. Weeks of pain result in deformities similar to terrible birth defects, cancer growths, crippling injuries, and leper-like sores. But perhaps pain and humiliation teaches compassion.",
-    historia: "The Nosferatu are the most humane of the Kindred, wearing their curse on the outside rather than the inside. To blend in, some call on the Blood to wear the borrowed faces of their victims or disappear from sight, while others rely on prosthetics and heavy make-up. When the Second Inquisition found SchreckNET, many Kindred secretly proposed a toast to the collapse of the clan. But those who endured and flourished had mastered the arts of secure archiving, physically and online. They bolstered their existing bonds with contacts and clients, and steadily regained the trust of Kindred who value a central information hub for research and the exchange of secret messages.",
+    citacao: "Podemos não ser bonitos ou capazes de nos misturar com o gado. Não podemos fingir ser nada além de monstros degenerados. Mas quer saber de uma coisa? Isso nos dá perspectivas que faltam a cada um daqueles outros bastardos iludidos.",
+    resumo: "Para os Nosferatu, o Abraço é uma jornada através da abjeção, à medida que o Sangue do horror deforma gradualmente os tecidos em luta do corpo humano em abominações grotescas. Semanas de dor resultam em deformidades semelhantes a terríveis defeitos congênitos, crescimentos cancerígenos, lesões incapacitantes e feridas semelhantes às de leprosos. Mas talvez a dor e a humilhação ensinem a compaixão.",
+    historia: "Os Nosferatu são os mais humanos dos Membros, exibindo sua maldição por fora e não por dentro. Para se misturarem, alguns recorrem ao Sangue para usar os rostos emprestados de suas vítimas ou desaparecer de vista, enquanto outros confiam em próteses e maquiagem pesada. Quando a Segunda Inquisição encontrou a SchreckNET, muitos Membros propuseram secretamente um brinde ao colapso do clã. Mas aqueles que resistiram e prosperaram dominaram as artes do arquivamento seguro, fisicamente e online. Eles reforçaram seus laços existentes com contatos e clientes, e recuperaram firmemente a confiança dos Membros que valorizam um centro de informações centralizado para pesquisas e troca de mensagens secretas.",
     disciplinas: [
       {
-        nome: "Animalism",
-        descricao: "The Nosferatu treasure the Discipline of Animalism for its utility in increasing their spy network, gaining familiars, allowing the delivery of messages, and granting the ability to suddenly swarm an opponent with a horde of rats, bugs, or birds."
+        nome: "Animalismo",
+        descricao: "Os Nosferatu valorizam a Disciplina de Animalismo por sua utilidade em aumentar sua rede de espionagem, obter familiares, permitir a entrega de mensagens e conceder a habilidade de repentinamente subjugar um oponente com uma horda de ratos, insetos ou pássaros."
       },
       {
-        nome: "Obfuscate",
-        descricao: "The Nosferatu have mixed opinions on Obfuscate, as the Discipline enables them to blend in with others, but also masquerades that which defines their clan. Some Nosferatu are proud of their unconcealed monstrosity, while others take every effort to hide it."
+        nome: "Ofuscação",
+        descricao: "Os Nosferatu têm opiniões divididas sobre a Ofuscação, já que a Disciplina permite que eles se misturem com os outros, mas também mascara aquilo que define seu clã. Alguns Nosferatu orgulham-se da sua monstruosidade indisfarçável, enquanto outros fazem todos os esforços para a ocultar."
       },
       {
-        nome: "Potence",
-        descricao: "Nosferatu use Potence to rapidly neutralize foes. The Nosferatu understand the merit of hit and run, incapacitating a vessel before feeding and fleeing, or breaking the Anarch Baron's head before vaulting away from their hangout."
+        nome: "Potência",
+        descricao: "Os Nosferatu usam Potência para neutralizar rapidamente os inimigos. Os Nosferatu compreendem o mérito de golpear e correr, incapacitando um recipiente antes de se alimentar e fugir, ou quebrando a cabeça do Barão Anarquista antes de saltar para longe do seu esconderijo."
       }
     ],
-    perdicao: "Hideous and vile, all Nosferatu count as having the Repulsive Flaw (-2) and can never increase their rating in the Looks Merit. In addition, any attempt to disguise themselves as human incurs a penalty to their dice pool equal to their character's Bane Severity (this includes the Obfuscate powers Mask of a Thousand Faces and Impostor's Guise).",
+    perdicao: "Feios e vis, todos os Nosferatu contam como tendo a Defeito Repulsivo (-2) e nunca podem aumentar sua classificação na Qualidade Aparência. Além disso, qualquer tentativa de se disfarçarem como humanos incorre em uma penalidade em sua parada de dados igual à Severidade da Perdição de seu personagem (isso inclui os poderes de Ofuscação Máscara de Mil Faces e Aparência do Impostor).",
     fome: {
-      nome: "Cryptophilia",
-      descricao: "The vampire becomes obsessed with uncovering and possessing secrets. The vampire must spend the scene attempting to discover or steal at least one secret from someone in the scene. Any action not taken toward this goal costs a two-dice penalty. The Compulsion ends when the vampire obtains a secret or the scene ends."
+      nome: "Criptofilia",
+      descricao: "O vampiro torna-se obcecado em descobrir e possuir segredos. O vampiro deve passar a cena tentando descobrir ou roubar pelo menos um segredo de alguém na cena. Qualquer ação que não seja tomada em direção a esse objetivo custa uma penalidade de dois dados. A Compulsão termina quando o vampiro obtém um segredo ou a cena termina."
     }
   },
 
   {
     id: "ravnos",
     nome: "Ravnos",
-    alcunhas: ["Rogues", "Ravens", "Daredevils", "The Haunted"],
+    alcunhas: ["Trapaceiros", "Corvos", "Demolidores", "Os Assombrados"],
     simbolo: "🦅",
     cor: "#3D1A00",
-    citacao: "To dazzle and fade – forever in motion and always on the run.",
-    resumo: "Masters of misdirection, the Ravnos prefer not to fight or bleed for something they can obtain through subtler means. They can charm and vanish within the same mortal breath, and those once fooled quickly learn to question their very senses when in the company of Ravens. Always on the move, the Ravnos can never rest in the same place for long lest their curse light them on fire as they slumber.",
-    historia: "A clan almost annihilated in the opening salvo of the Gehenna War, its embers now grow brighter with each passing night. Others know them as message-bearers, wanderers, and mind-fuckers. Their methods are not brute force, adoration of crowds, or meticulous centuries-spanning plots, but rather wit and panache, artful charm, and outright illusion. While the nomadic habits (and even requirements) of the clan make any kind of proper organization difficult, something like a Ravnos revival is forming. A complex set of signs and signals, known and taught only to members of the clan, helps them find and identify each other.",
+    citacao: "Ofuscar e desaparecer – para sempre em movimento e sempre em fuga.",
+    resumo: "Mestres do drecionamento incorreto, os Ravnos preferem não lutar ou sangrar por algo que podem obter através de meios mais sutis. Eles podem encantar e desaparecer no espaço de um suspiro mortal, e aqueles outrora enganados rapidamente aprendem a questionar seus próprios sentidos quando na companhia de Corvos. Sempre em movimento, os Ravnos nunca podem descansar no mesmo lugar por muito tempo, sob o risco de sua maldição incendiá-los enquanto dormem.",
+    historia: "Um clã quase aniquilado na salva de abertura da Guerra da Gehena, cujas brasas agora brilham mais a cada noite que passa. Outros os conhecem como portadores de mensagens, andarilhos e manipuladores mentais. Seus métodos não são a força bruta, a adoração de multidões ou conspirações meticulosas que duram séculos, mas sim a astúcia e a elegância, o charme artístico e a ilusão direta. Embora os hábitos nômades (e até mesmo exigências) do clã tornem difícil qualquer tipo de organização adequada, algo como um renascimento Ravnos está se formando. Um conjunto complexo de sinais e marcas, conhecido e ensinado apenas aos membros do clã, ajuda-os a encontrar e identificar uns aos outros.",
     disciplinas: [
       {
-        nome: "Animalism",
-        descricao: "The Ravnos maintain an almost affable relationship with animals, especially ravens, foxes, coyotes, spiders, and monkeys. At the Storyteller's discretion, reduce the Difficulty for Animalism tests involving these animals by one and increase it for all other kinds of animals. Employing these familiars as spies, distractions, and occasional companions, a Ravnos is never truly alone on the road."
+        nome: "Animalismo",
+        descricao: "Os Ravnos mantêm uma relação quase afável com os animais, especialmente corvos, raposas, coiotes, aranhas e macacos. A critério do Narrador, reduza em um a Dificuldade para testes de Animalismo que envolvam esses animais e aumente-a para todos os outros tipos de animais. Empregando esses familiares como espiões, distrações e companheiros ocasionais, um Ravnos nunca está verdadeiramente sozinho na estrada."
       },
       {
-        nome: "Obfuscate",
-        descricao: "While many Rogues are able to vanish from sight and remain hidden, the clan is also adept at extending the use of Obfuscate to craft elaborate and sustained hallucinations, effectively using their Presence to propel the properties of the Discipline to encompass more than their own visage."
+        nome: "Ofuscação",
+        descricao: "Embora muitos Trapaceiros sejam capazes de desaparecer de vista e permanecer ocultos, o clã também é adepto de estender o uso da Ofuscação para criar alucinações elaboradas e sustentadas, usando efetivamente sua Presença para impulsionar as propriedades da Disciplina para abranger mais do que sua própria imagem."
       },
       {
-        nome: "Presence",
-        descricao: "The go-to method when natural charm and persuasion isn't enough. Few Daredevils are without at least some measure of this Discipline. They make frequent use of Presence to procure victims in a pinch, and the Discipline also has a part to play in hallucinatory powers."
+        nome: "Presença",
+        descricao: "O método padrão quando o charme natural e a persuasão não são suficientes. Poucos Demolidores estão sem pelo menos alguma medida desta Disciplina. Eles fazem uso frequente da Presença para conseguir vítimas em um piscar de olhos, e a Disciplina também tem um papel a desempenhar em poderes alucinatórios."
       }
     ],
-    perdicao: "The Ravnos are doomed. The sun's fire that incinerated their founder rages through the Blood of the clan, erupting from their very flesh if they ever settle down for long. If they slumber in the same place more than once in seven nights, roll a number of dice equal to their Bane Severity. They receive Aggravated damage equal to the number of 10s (critical results) rolled as they scorch from within. Two resting places need to be at least a mile apart to avoid triggering the Bane.",
+    perdicao: "Os Ravnos estão condenados. O fogo do sol que incinerou seu fundador rage através do Sangue do clã, irrompendo de sua própria carne se eles se estabelecerem por muito tempo. Se eles dormirem no mesmo lugar mais de uma vez em sete noites, role um número de dados igual à sua Severidade da Perdição. Eles recebem dano Agravado igual ao número de 10s (resultados críticos) rolados à medida que queimam por dentro. Dois locais de descanso precisam estar a pelo menos um quilômetro e meio de distância para evitar ativar a Perdição.",
     fome: {
-      nome: "Tempting Fate",
-      descricao: "The vampire is driven by their Blood to court danger. The next time the vampire is faced with a problem to solve, any attempt at a solution short of the most daring or dangerous incurs a two-dice penalty. Suitably flashy and risky attempts can even merit bonus dice for this occasion. The Compulsion persists until the problem is solved or further attempts become impossible."
+      nome: "Desafiar o Destino",
+      descricao: "O vampiro é impelido por seu Sangue a cortejar o perigo. A próxima vez que o vampiro for confrontado com um problema para resolver, qualquer tentativa de solução que não seja a mais ousada ou perigosa incorrerá em uma penalidade de dois dados. Tentativas adequadamente chamativas e arriscadas podem até render dados de bônus para esta ocasião. A Compulsão persiste até que o problema seja resolvido ou novas tentativas se tornem impossíveis."
     }
   },
 
   {
     id: "salubri",
     nome: "Salubri",
-    alcunhas: ["Cyclops", "Soul-Thieves", "Dajjals", "Saulot's Progeny"],
+    alcunhas: ["Ciclopes", "Ladrões de Almas", "Dajjals", "Prole de Saulot"],
     simbolo: "👁",
     cor: "#1A3A5C",
-    citacao: "To make one's haven in the vale of sorrows and forever tread a path of thorns.",
-    resumo: "Most of their kind lost to undead usurpers, the highly desirable Blood of the hunted Salubri is a prize to other vampires. This, and their reluctance to Embrace, makes them rare in the modern nights. They often recruit those on the edge of death, believing their curse can provide the worthy a second chance, and they count some of the most humane vampires among their ranks.",
-    historia: "The Salubri are arguably no longer even a clan, their progenitor, so it is told, having succumbed to the fangs of a more ambitious usurper who built his own Clan Tremere with that purloined Blood. Theirs is a legacy of tragedy but also a bitter lesson in the millennia-spanning Eternal Struggle. Every Salubri bears a third eye in the center of their forehead, the indicator of their lineage. According to their custom, Salubri sires Embrace only when they reach Golconda, thereby passing on their curse anew each time. Salubri childer are few — it is whispered that only seven ever exist at one time.",
+    citacao: "Fazer o seu refúgio no vale das dores e trilhar para sempre um caminho de espinhos.",
+    resumo: "Com a maior parte de sua espécie perdida para usurpadores mortos-vivos, o altamente desejável Sangue dos caçados Salubri é um prêmio para outros vampiros. Isso, e sua relutância em Abraçar, os torna raros nas noites modernas. Eles frequentemente recrutam aqueles que estão à beira da morte, acreditando que sua maldição pode fornecer aos dignos uma segunda chance, e contam com alguns dos vampiros mais humanos entre suas fileiras.",
+    historia: "Os Salubri indiscutivelmente já nem sequer são um clã, tendo seu progenitor, segundo se conta, sucumbido às presas de um usurpador mais ambicioso que construiu seu próprio Clã Tremere com aquele Sangue roubado. O deles é um legado de tragédia, mas também uma lição amarga na Luta Eterna que se estende por milênios. Cada Salubri carrega um terceiro olho no centro da testa, o indicador de sua linhagem. De acordo com seus costumes, os senhores Salubri Abraçam apenas quando alcançam a Golconda, transmitindo assim sua maldição novamente a cada vez. As crias Salubri são poucas — sussurra-se que apenas sete existem ao mesmo tempo.",
     disciplinas: [
       {
-        nome: "Auspex",
-        descricao: "Much of the storied wisdom of the Salubri comes from being able to perceive beyond the ken of less observant Kindred. Considered by a philosophical mind, the hidden truths of the world reveal themselves."
+        nome: "Auspício",
+        descricao: "Grande parte da célebre sabedoria dos Salubri vem de serem capazes de perceber além do alcance de Membros menos observadores. Consideradas por uma mente filosófica, as verdades ocultas do mundo se revelam."
       },
       {
-        nome: "Dominate",
-        descricao: "The Salubri use Dominate to unburden others of the horrors of being a vampire or from witnessing the atrocities Kindred may commit. Whether erasing troubling memories or bolstering individuals against the undesired consequences of their actions, the Salubri have developed the ability to apply this Discipline as a balm."
+        nome: "Dominação",
+        descricao: "Os Salubri usam Dominação para livrar os outros dos horrores de ser um vampiro ou de testemunhar as atrocidades que os Membros podem cometer. Seja apagando memórias perturbadoras ou fortalecendo os indivíduos contra as consequências indesejadas de suas ações, os Salubri desenvolveram a habilidade de aplicar esta Disciplina como um bálsamo."
       },
       {
         nome: "Fortitude",
-        descricao: "A clan so despised needs every advantage it can to survive the modern nights, and the Salubri have also learned to will forth their own hardiness as a boon to others' well-being."
+        descricao: "Um clã tão desprezado precisa de todas as vantagens possíveis para sobreviver às noites modernas, e os Salubri também aprenderam a manifestar sua própria resistência como um benefício para o bem-estar dos outros."
       }
     ],
-    perdicao: "The Salubri are hunted: Kindred of other clans are especially appreciative of Salubri vitae. When a non-Salubri partakes of the blood of a Cyclops, they often find it difficult to pull themselves away. Consuming enough to abate at least one Hunger level requires a hunger frenzy test at Difficulty 2 + the Salubri's Bane Severity. Additionally, the third eye that Saulot opened passes down through the bloodline every time a Salubri Embraces. Any time a Salubri activates a Discipline power, the third eye weeps vitae, triggering hunger frenzy tests from nearby vampires with Hunger 4 or more.",
+    perdicao: "Os Salubri são caçados: Membros de outros clãs apreciam especialmente a vitae Salubri. Quando um não-Salubri partilha do sangue de um Ciclope, frequentemente acha difícil afastar-se. Consumir o suficiente para abater pelo menos um nível de Fome requer um teste de frenesi de fome com Dificuldade 2 + Severidade da Perdição do Salubri. Além disso, o terceiro olho que Saulot abriu é transmitido através da linhagem toda vez que um Salubri Abraça. Sempre que um Salubri ativa um poder de Disciplina, o terceiro olho chora vitae, ativando testes de frenesi de fome em vampiros próximos com Fome 4 ou mais.",
     fome: {
-      nome: "Affective Empathy",
-      descricao: "When a Salubri suffers a Compulsion, the Kindred becomes overwhelmed with empathy for a personal problem that afflicts someone in the scene, and seeks to further its resolution. Any action not taken toward mitigating that personal tragedy incurs a two-dice penalty. The Compulsion persists until the sufferer's burden is eased or a more immediate crisis supersedes it or the end of the scene."
+      nome: "Empatia Afetiva",
+      descricao: "Quando um Salubri sofre uma Compulsão, o Membro fica oprimido pela empatia por um problema pessoal que aflige alguém na cena e busca promover sua resolução. Qualquer ação que não seja tomada para mitigar essa tragédia pessoal incorre em uma penalidade de dois dados. A Compulsão persiste até que o fardo da vítima seja aliviado ou uma crise mais imediata o substitua, ou até o fim da cena."
     }
   },
 
   {
     id: "toreador",
     nome: "Toreador",
-    alcunhas: ["Divas", "The Clan of the Rose", "Degenerates", "Artists", "Harlots", "Arikelites", "Hedonists", "Sensates", "Perverts"],
+    alcunhas: ["Divas", "O Clã da Rosa", "Degenerados", "Artistas", "Prostitutas", "Arikelitas", "Hedonistas", "Sensitivos", "Pervertidos"],
     simbolo: "🌹",
     cor: "#8B0066",
-    citacao: "Beauty is power, and love can make anyone do just about anything. And that is the promise of the Toreador. They can make even the dead feel something raw, something real.",
-    resumo: "Cursed by their unbridled sensuality, the divas are obsessed by aesthetic perfection. But to dismiss the Toreador as wanton perverts or shallow artists is the last mistake a Kindred will ever make. Beauty is power, and love can make anyone do just about anything.",
-    historia: "Clan Toreador has ever preached selectiveness in its rituals of the Embrace. The clan elders stress time and again that the clan requires pioneers among the arts and every kind of avant-garde. For this reason, many Toreador emerge from the ranks of accomplished artists. To the Toreador, art encompasses all forms of entertainment and stimulation. The clan courts the greatest actors, singers, writers, dancers, and even sex workers. Despite the custom of Embracing only the best, the Toreador fixation on beauty and innocence has caused many a diva to make a fledgling in haste, resulting in shallow hedonists and one-hit wonders. The clan still rides high, leading the Camarilla alongside the Ventrue and Tremere.",
+    citacao: "A beleza é poder, e o amor pode fazer qualquer um fazer praticamente qualquer coisa. E essa é a promessa dos Toreador. Eles podem fazer até os mortos sentirem algo puro, algo real.",
+    resumo: "Amaldiçoadas por sua sensualidade desenfreada, as divas são obcecadas pela perfeição estética. Mas descartar os Toreador como pervertidos devassos ou artistas superficiais é o último erro que um Membro cometerá na vida. A beleza é poder, e o amor pode fazer qualquer um fazer praticamente qualquer coisa.",
+    historia: "O Clã Toreador sempre pregou a seletividade em seus rituais do Abraço. Os anciões do clã enfatizam repetidas vezes que o clã necessita de pioneiros entre as artes e todos os tipos de vanguarda. Por esta razão, muitos Toreador emergem das fileiras de artistas talentosos. Para os Toreador, a arte abrange todas as formas de entretenimento e estimulação. O clã corteja os maiores atores, cantores, escritores, bailarinos e até profissionais do sexo. Apesar do costume de Abraçar apenas os melhores, a fixação dos Toreador pela beleza e inocência fez com que muitas divas criassem um neófito apressadamente, resultando em hedonistas superficiais e sucessos de uma nota só. O clã ainda se mantém no topo, liderando a Camarilla ao lado dos Ventrue e Tremere.",
     disciplinas: [
       {
-        nome: "Auspex",
-        descricao: "Toreador are ever on the hunt for exquisite experiences and use Auspex to identify the most susceptible vessels and those who might, through their feelings and temperament, offer new tastes and sensations to the drinker during the feed."
+        nome: "Auspício",
+        descricao: "Os Toreador estão sempre à caça de experiências requintadas e usam Auspício para identificar os recipientes mais suscetíveis e aqueles que possam, através dos seus sentimentos e temperamento, oferecer novos sabores e sensações ao bebedor durante a alimentação."
       },
       {
-        nome: "Celerity",
-        descricao: "The Toreador claim they are not combatants, but few move as swiftly as the degenerate using Celerity to cut an opponent to ribbons before they have even had time to draw their weapon. Toreador often use Celerity to enhance artistic or performative skills."
+        nome: "Celeridade",
+        descricao: "Os Toreador afirmam que não são combatentes, mas poucos se movem tão rapidamente quanto o degenerado que usa Celeridade para cortar um oponente em pedaços antes mesmo que ele tenha tempo de sacar sua arma. Os Toreador frequentemente usam Celeridade para aprimorar habilidades artísticas ou performáticas."
       },
       {
-        nome: "Presence",
-        descricao: "The Toreador master the Discipline of Presence, often using it in concert with Auspex to manipulate the emotions of Kindred and kine. Presence can guarantee an appreciative audience or cause the failure of another artist."
+        nome: "Presença",
+        descricao: "Os Toreador dominam a Disciplina de Presença, frequentemente usando-a em conjunto com Auspício para manipular as emoções de Membros e do gado. A Presença pode garantir um público apreciativo ou causar o fracasso de outro artista."
       }
     ],
-    perdicao: "Toreador desire beauty so intensely that they suffer in its absence. While a Toreador character finds itself in less than beautiful surroundings, lose the equivalent of their Bane Severity in dice from dice pools to use Disciplines. This obsession with aesthetics also causes divas to lose themselves in moments of beauty — a bestial failure often results in a rapt trance.",
+    perdicao: "Os Toreador desejam a beleza tão intensamente que sofrem na sua ausência. Enquanto um personagem Toreador se encontra em ambientes menos que belos, perde o equivalente à sua Severidade da Perdição em dados nas paradas de dados para usar Disciplinas. Esta obsessão com a estética também faz com que as divas se percam em momentos de beleza — uma falha bestial frequentemente resulta num transe de arrebatamento.",
     fome: {
-      nome: "Obsession",
-      descricao: "Something in the scene captures the Toreador's undivided attention. The vampire becomes captivated by a person, object, piece of art, or any aesthetic quality in the scene, and must spend at least two turns doing nothing but appreciating it. After this, the Toreador is free to act normally, but will find it difficult to pay attention to anything else. Any action not relating to the object of fascination costs a two-dice penalty."
+      nome: "Obsessão",
+      descricao: "Algo na cena captura a atenção exclusiva do Toreador. O vampiro fica cativado por uma pessoa, objeto, obra de arte ou qualquer qualidade estética na cena, e deve passar pelo menos dois turnos sem fazer nada além de apreciá-la. Depois disso, o Toreador está livre para agir normalmente, mas achará difícil prestar atenção a qualquer outra coisa. Qualquer ação que não se refira ao objeto de fascínio custa uma penalidade de dois dados."
     }
   },
 
   {
     id: "tremere",
     nome: "Tremere",
-    alcunhas: ["Usurpers", "Warlocks", "Hemetics", "Thaumaturges", "Transgressors", "The Broken Clan", "Blood Witches"],
+    alcunhas: ["Usurpadores", "Feiticeiros", "Herméticos", "Taumaturgos", "Transgressores", "O Clã Partido", "Bruxas de Sangue"],
     simbolo: "⊙",
     cor: "#6B0000",
-    citacao: "We were never noble. Our clan consists of mortals who sought power they didn't deserve. Perhaps it's time we Embrace those who love magic for its own sake.",
-    resumo: "A Hermetic mage in eighth century Romania, Tremere was the leader of a cabal of magick users feared for their obsession with knowledge and power. Unable to accept his own mortality, Tremere instigated the most terrifying magickal experiments ever conducted, damning himself and his followers to a hell of their own making.",
-    historia: "After the Second Inquisition destroyed the Prime Chantry in Vienna in 2008, the Tremere fell from gray eminences to personae non gratae in many regions. The arrogance of the Pyramid had made the Usurpers few friends. Without the Pyramid ordering them into rank and value, the warlocks find themselves competing with their fellow Kindred and, increasingly, with each other for anything that might allow them to regain some of their former power. The term 'mercenary magus' is becoming increasingly widespread, as warlocks who were formerly Bound by the will of their masters find themselves free to serve for whatever price they choose.",
+    citacao: "Nunca fomos nobres. Nosso clã consiste em mortais que buscaram um poder que não mereciam. Talvez seja hora de Abraçarmos aqueles que amam a magia por si mesma.",
+    resumo: "Um mago Hermético na Romênia do século VIII, Tremere era o líder de uma cabala de praticantes de magia temidos por sua obsessão por conhecimento e poder. Incapaz de aceitar a própria mortalidade, Tremere instigou os experimentos mágicos mais aterrorizantes já conduzidos, condenando a si mesmo e a seus seguidores a um inferno criado por eles mesmos.",
+    historia: "Depois que a Segunda Inquisição destruiu a Capela Primária em Viena em 2008, os Tremere caíram de eminências pardas para personae non gratae em muitas regiões. A arrogância da Pirâmide fizera com que os Usurpadores conquistassem poucos amigos. Sem a Pirâmide ordenando-os em posições e valores, os feiticeiros encontram-se competindo com seus companheiros Membros e, cada vez mais, uns com os outros por qualquer coisa que possa permitir-lhes recuperar parte do seu antigo poder. O termo 'mago mercenário' está se tornando cada vez mais difundido, à medida que os feiticeiros que antes estavam Vinculados pela vontade de seus senhores se veem livres para servir pelo preço que escolherem.",
     disciplinas: [
       {
-        nome: "Auspex",
-        descricao: "Tremere use Auspex to perceive the auras of others, search for evidence of magical essences and important objects left behind, and to communicate with each other across vast distances without fear of being overheard."
+        nome: "Auspício",
+        descricao: "Os Tremere usam Auspício para perceber as auras dos outros, procurar evidências de essências mágicas e objetos importantes deixados para trás, e para comunicar uns com os outros através de vastas distâncias sem medo de serem ouvidos."
       },
       {
-        nome: "Blood Sorcery",
-        descricao: "Master thaumaturges, the Tremere's expertise in blood magick makes them a valued, if mistrusted, pillar of the Camarilla. Using Blood Sorcery, they can convey devastating attacks on an opponent's mind and body, defend themselves, and ease their feeding."
+        nome: "Feitiçaria de Sangue",
+        descricao: "Mestres taumaturgos, a experiência dos Tremere em magia de sangue faz deles um pilar valioso, embora desconfiado, da Camarilla. Usando Feitiçaria de Sangue, eles podem desferir ataques devastadores contra a mente e o corpo de um oponente, defender-se e facilitar sua alimentação."
       },
       {
-        nome: "Dominate",
-        descricao: "The Tremere will do almost anything for the sake of knowledge and influence, and Dominate is the Discipline that lets them get away with it. When attempting to feed, a Tremere will show little compunction against using the Discipline to force a mortal into baring their throat."
+        nome: "Dominação",
+        descricao: "Os Tremere farão quase tudo por conhecimento e influência, e Dominação é a Disciplina que permite que eles saiam impunes disso. Ao tentar se alimentar, um Tremere mostrará escassos escrúpulos em usar a Disciplina para forçar um mortal a expor sua garganta."
       }
     ],
-    perdicao: "Once the clan was defined by a rigid hierarchy of Blood Bonds. But after the fall of Vienna, their Blood has recoiled and aborted all such connections. Tremere vitae can no longer Blood Bond other Kindred, though they themselves can be Bound by Kindred from other clans. A Tremere can still bind mortals and ghouls, though the corrupted vitae must be drunk an additional number of times equal to the vampire's Bane Severity for the bond to form.",
+    perdicao: "Antigamente, o clã era definido por uma hierarquia rígida de Laços de Sangue. Mas após a queda de Viena, seu Sangue recuou e abortou todas as conexões desse tipo. A vitae Tremere não pode mais criar Laço de Sangue com outros Membros, embora eles próprios possam ser Vinculados por Membros de outros clãs. Um Tremere ainda pode vincular mortais e carniçais, embora a vitae corrompida deva ser bebida um número adicional de vezes igual à Severidade da Perdição do vampiro para que o laço se forme.",
     fome: {
-      nome: "Perfectionism",
-      descricao: "Nothing but the best will do. The Tremere must accomplish the next task they undertake with complete success — partial success is failure. If they fail, they must try again if at all possible. Any action that is not a reattempt of the failed action costs a two-dice penalty until they try again or the scene ends."
+      nome: "Perfeccionismo",
+      descricao: "Nada menos que o melhor servirá. O Tremere deve realizar a próxima tarefa que empreender com sucesso completo — sucesso parcial é fracasso. Se falharem, deverão tentar novamente, se for de todo possível. Qualquer ação que não seja uma nova tentativa da ação fracassada custa uma penalidade de dois dados até que tentem novamente ou a cena termine."
     }
   },
 
   {
     id: "tzimisce",
     nome: "Tzimisce",
-    alcunhas: ["Dragons", "The Old Clan", "Voivodes", "Stokers"],
+    alcunhas: ["Dragões", "O Velho Clã", "Voivodes", "Fomentadores"],
     simbolo: "🐉",
     cor: "#003320",
-    citacao: "Not to lead, not to triumph, but to rule — to own utterly.",
-    resumo: "To the Tzimisce, possession is all. They aim to dominate and own the subject of their possessiveness, jealously guarding it like their namesake dragon would its hoard. Everything from land, people, cults, companies, or gangs can fall under the covetous claws of a Dragon.",
-    historia: "The clan's charges have traditionally been defined geographically, such as a land or a regional people, but as Transylvanian properties dwindle they extend their obsession to gangs or business chains or even military units. This relentless possessiveness extends as well to the physical form of the Tzimisce, who consider themselves the ultimate owners of their bodies, even beyond the limitations of the Curse of Caine. Many Dragons practice a specialization of the Protean Discipline known as Vicissitude that allows them to rework their bodies and those of subjects and even less-willing victims. The Tzimisce participated vigorously in the Anarch Revolt, and were one of the founding clans of the Sabbat.",
+    citacao: "Não para liderar, não para triunfar, mas para governar — possuir completamente.",
+    resumo: "Para os Tzimisce, a posse é tudo. Eles visam dominar e possuir o objeto de sua possessividade, guardando-o zelosamente como o dragão de seu nome faria com seu tesouro. Tudo, desde terras, pessoas, cultos, empresas ou gangues, pode cair sob as garras cobiçosas de um Dragão.",
+    historia: "Os encargos do clã têm sido tradicionalmente definidos geograficamente, como uma terra ou um povo regional, mas à medida que as propriedades na Transilvânia diminuem, eles estendem sua obsessão para gangues, redes de negócios ou mesmo unidades militares. Esta possessividade implacável estende-se também à forma física dos Tzimisce, que se consideram os donos definitivos dos seus corpos, mesmo além das limitações da Maldição de Caim. Muitos Dragões praticam uma especialização da Disciplina de Metamorfose conhecida como Vicissitude, que lhes permite remodelar seus corpos e os de seus súditos e até de vítimas menos dispostas. Os Tzimisce participaram vigorosamente na Revolta Anarquista e foram um dos clãs fundadores do Sabá.",
     disciplinas: [
       {
-        nome: "Animalism",
-        descricao: "Some Tzimisce cultivate Animalism as an extension of their oneness with their domains. Others see it as a tool to better command hosts of lesser beasts in order to claim those domains. In any case, Tzimisce have long felt an affinity with the more bestial denizens of their ancestral lands."
+        nome: "Animalismo",
+        descricao: "Alguns Tzimisce cultivam o Animalismo como uma extensão da sua unidade com os seus domínios. Outros veem-no como uma ferramenta para melhor comandar hordas de feras inferiores de modo a reivindicar esses domínios. Em qualquer caso, os Tzimisce sentem há muito tempo uma afinidade com os habitantes mais bestiais das suas terras ancestrais."
       },
       {
-        nome: "Dominate",
-        descricao: "The perfect Discipline for enforcing one's edicts through sheer mental force. Dominate not only helps the Dragons seize the object of their obsession, but also conditions long-term servitors into extensions of the Fiend's unquestionable will."
+        nome: "Dominação",
+        descricao: "A Disciplina perfeita para impor editais através de pura força mental. Dominação não apenas ajuda os Dragões a se apoderarem do objeto de sua obsessão, mas também condiciona servidores de longo prazo a se tornarem extensões da vontade inquestionável do Demônio."
       },
       {
-        nome: "Protean",
-        descricao: "As masters of their own physical forms, the Tzimisce use Protean to force themselves into other shapes, especially those associated with many of the ancestral lands of the Old Clan. Many Tzimisce practice the methods of Vicissitude, which allows them to transcend the rote forms of Protean and treat their own bodies and those of their subjects as primal clay."
+        nome: "Metamorfose",
+        descricao: "Como mestres de suas próprias formas físicas, os Tzimisce usam Metamorfose para se forçarem em outras formas, especialmente aquelas associadas a muitas das terras ancestrais do Velho Clã. Muitos Tzimisce praticam os métodos da Vicissitude, que lhes permite transcender as formas mecânicas de Metamorfose e tratar os seus próprios corpos e os dos seus súditos como argila primordial."
       }
     ],
-    perdicao: "The Tzimisce are grounded: Each Tzimisce must choose a specific charge — a physical domain, a group of people, an organization, or even something more esoteric — but clearly defined and limited. The Kindred must spend their daysleep surrounded by their chosen charge. If they do not, they sustain aggravated Willpower damage equal to their Bane Severity upon waking the following night.",
+    perdicao: "Os Tzimisce são territorialistas: cada Tzimisce deve escolher um encargo específico — um domínio físico, um grupo de pessoas, uma organização ou até algo mais esotérico — mas claramente definido e limitado. O Membro deve passar o seu repouso diurno cercado pelo encargo escolhido. Se não o fizer, sofrerá dano Agravado na Força de Vontade igual à sua Severidade da Perdição ao acordar na noite seguinte.",
     fome: {
-      nome: "Covetousness",
-      descricao: "When a Tzimisce suffers a Compulsion, the Kindred becomes obsessed with possessing something in the scene, desiring to add it to their proverbial hoard. This can be anything from an object to a piece of property to an actual person. Any action not taken toward this purpose incurs a two-dice penalty. The Compulsion persists until ownership is established or the object of desire becomes unattainable."
+      nome: "Cobiça",
+      descricao: "Quando um Tzimisce sofre uma Compulsão, o Membro fica obcecado em possuir algo na cena, desejando adicioná-lo ao seu tesouro proverbial. Isto pode ser qualquer coisa, desde um objeto até uma propriedade ou uma pessoa real. Qualquer ação que não seja tomada em direção a este propósito incorre em uma penalidade de dois dados. A Compulsão persiste até que a propriedade seja estabelecida ou o objeto de desejo se torne inalcançável."
     }
   },
 
   {
     id: "ventrue",
     nome: "Ventrue",
-    alcunhas: ["The Clan of Kings", "Blue Bloods", "Tyrants", "Warlords", "Patricians", "Borgias", "the Cult of Mithras"],
+    alcunhas: ["O Clã dos Reis", "Sangues-Azuis", "Tiranos", "Senhores da Guerra", "Patrícios", "Borgias", "o Culto de Mithras"],
     simbolo: "♜",
     cor: "#00008B",
-    citacao: "You will come to understand that this clan is destined to rule. We have been emperors, kings and queens, and now we are the heads of global corporations. The others look to us for leadership and we provide it, for we are the best equipped to do so.",
-    resumo: "In their own eyes, only the Clan of Kings has the restraint, the wisdom, the control, and the pedigree to lead their kind through the night. Throughout their time as god-kings of ancient Babylon and lords and ladies of the Dark Ages to their contemporary roles as guardians of royal blood, majority shareholders, and campaign fund backers, they have been obsessed with the impulse to rule.",
-    historia: "Clan Ventrue has long been the leaders of the Camarilla, holding more positions of power than any other clan, and they are loath to give that up. The Ventrue believe in the strength of tradition and lineage. The Embrace is one of their most important rituals, and the choice of childe affects the way other members of the clan treat the sire. Ventrue therefore aim to Embrace overachievers, politically or financially powerful kine, or those with a talent that sets them apart from the masses. The Ventrue are the establishment. They set and maintain the rules, punishing those who break them. The uncomfortable truth is that without them, the Masquerade, and the Camarilla with it, would have fallen long ago.",
+    citacao: "Você passará a entender que este clã está destinado a governar. Fomos imperadores, reis e rainhas, e agora somos os chefes de corporações globais. Os outros recorrem a nós em busca de liderança e nós a fornecemos, pois somos os mais bem equipados para o fazer.",
+    resumo: "Aos seus próprios olhos, apenas o Clã dos Reis tem a contenção, a sabedoria, o controle e o pedigree para liderar sua espécie através da noite. Ao longo de sua trajetória como reis-deuses da antiga Babilônia e lordes e ladys da Idade Das Trevas até seus papéis contemporâneos como guardiões de sangue real, acionistas majoritários e apoiadores de fundos de campanha, eles têm sido obcecados pelo impulso de governar.",
+    historia: "O Clã Ventrue há muito tempo lidera a Camarilla, ocupando mais posições de poder do que qualquer outro clã, e eles relutam em abrir mão disso. Os Ventrue acreditam na força da tradição e da linhagem. O Abraço é um dos seus rituais mais importantes, e a escolha da cria afeta a forma como os outros membros do clã tratam o senhor. Os Ventrue, portanto, visam Abraçar pessoas de alto desempenho, gado política ou financeiramente poderoso, ou aqueles com um talento que os diferencie das massas. Os Ventrue são o sistema. Eles estabelecem e mantêm as regras, punindo aqueles que as quebram. A verdade desconfortável é que, sem eles, a Máscara, e a Camarilla com ela, já teriam caído há muito tempo.",
     disciplinas: [
       {
-        nome: "Dominate",
-        descricao: "The Ventrue consider themselves the masters of this Discipline, using it primarily to exert their will on vassals and kine. When feeding, a Ventrue may command a mortal to bare their neck, or use Dominate to erase all memory of a feeding. Ventrue also expertly use this Discipline to protect the Masquerade."
+        nome: "Dominação",
+        descricao: "Os Ventrue consideram-se os mestres desta Disciplina, usando-a principalmente para exercer a sua vontade sobre vassalos e sobre o gado. Ao se alimentar, um Ventrue pode ordenar a um mortal que exponha o pescoço, ou usar Dominação para apagar toda a memória de uma alimentação. Os Ventrue também usam habilmente esta Disciplina para proteger a Máscara."
       },
       {
         nome: "Fortitude",
-        descricao: "Fortitude enables the Ventrue to keep their thrones even when armies array against them, and to weather every blade, bullet, and bomb. Where other Kindred might run short on vitae, the Ventrue resist the environment and take their fill."
+        descricao: "A Fortitude permite aos Ventrue manterem os seus tronos mesmo quando os exércitos se alinham contra eles, e resistirem a todas as lâminas, balas e bombas. Onde outros Membros podem ficar sem vitae, os Ventrue resistem ao ambiente e saciam a sua Fome."
       },
       {
-        nome: "Presence",
-        descricao: "The Ventrue seek to tame the court and build the love and devotion of others toward their rule. The Discipline is also used by the Ventrue who wants others to see how easy they acquire vessels. The clan values conservation of time and resources, and Presence allows a hungry blue blood to be efficient when luring their prey."
+        nome: "Presença",
+        descricao: "Os Ventrue procuram domar a corte e construir o amor e a devoção dos outros em relação ao seu governo. A Disciplina também é usada pelo Ventrue que quer que os outros vejam a facilidade com que adquire recipientes. O clã valoriza a conservação de tempo e recursos, e a Presença permite que um sangue-azul faminto seja eficiente ao atrair a sua presa."
       }
     ],
-    perdicao: "The Ventrue are in possession of rarefied palates. When a Ventrue drinks blood from any mortal outside their preference, a profound exertion of will is required or the blood taken surges back up as scarlet vomit. Preferences range greatly, from Ventrue who can only feed from genuine brunettes, individuals of Swiss descent, or homosexuals, to others who can only feed from soldiers or meth users. If you want your character to feed from anything but their preferred victim, you must spend Willpower points equal to the character's Bane Severity.",
+    perdicao: "Os Ventrue possuem paladares rarefeitos. Quando um Ventrue bebe sangue de qualquer mortal fora de sua preferência, é exigido um profundo esforço de vontade, caso contrário o sangue ingerido retorna como um vômito escarlate. As preferências variam muito, desde Ventrue que só conseguem se alimentar de morenas legítimas, indivíduos de ascendência suíça ou homossexuais, até outros que só conseguem se alimentar de soldados ou usuários de metanfetamina. Se quiser que o seu personagem se alimente de algo que não seja a sua vítima preferida, deverá gastar pontos de Força de Vontade iguais à Severidade da Perdição do personagem.",
     fome: {
-      nome: "Arrogance",
-      descricao: "The vampire must be in complete command of the scene. If the vampire is not already in a position of leadership or authority, they must take one, by force if necessary. Any action that doesn't serve to assert or maintain their dominance incurs a two-dice penalty. The Compulsion ends when the vampire is the unquestioned leader of the scene, or it ends."
+      nome: "Arrogância",
+      descricao: "O vampiro deve estar no controle total da cena. Se o vampiro já não estiver em uma posição de liderança ou autoridade, deverá assumir uma, pela força se necessário. Qualquer ação que não sirva para afirmar ou manter a sua dominância incorre em uma penalidade de dois dados. A Compulsão termina quando o vampiro é o líder inquestionável da cena, ou a cena termina."
     }
   }
 ];
 
-// Export for use in site
+// Exportar para uso no site
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = clans;
 }
