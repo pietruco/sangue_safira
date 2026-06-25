@@ -1,238 +1,1809 @@
+// data.js — Sangue & Safira | Disciplinas V5 (pt-BR)
+// Fontes: Vampiro: A Máscara Corebook + Players Guide
+
 const DISCIPLINES = {
-  "Animalismo": {
-    descricao: "Disciplina que permite ao vampiro se comunicar e controlar animais, além de manipular a Besta em outras criaturas — incluindo vampiros.",
+
+  // ─────────────────────────────────────────────
+  // ANIMALISMO
+  // ─────────────────────────────────────────────
+  animalismo: {
+    descricao: "Animalismo é a capacidade de se comunicar com animais, dominar a Besta interior de outros seres e tornar criaturas em extensões da própria vontade. Vampiros que dominam essa disciplina frequentemente encontram mais conforto entre feras do que entre humanos.",
     habilidades: [
-      {nivel:1,amalgama:"-",nome:"Laço Familiar",resumo:"Crie um laço especial com um companheiro animal específico.",custo:"Alimentar Animal + 3 Noites",dados:"Carisma + Empatia",resist:"-",mecanica:"Só pode ter um vínculo familiar por vez. Vínculo só é perdido na morte do animal. O animal tem um pouco de sangue de vampiro então suas funções básicas são ligeiramente aumentadas.",duracao:"Morte"},
-      {nivel:1,amalgama:"-",nome:"Sentir a Besta",resumo:"Sinta hostilidade e efeitos sobrenaturais.",custo:"Passivo",dados:"Determinação + Animalismo",resist:"Autocontrole + Subterfúgio",mecanica:"Uma vitória permite sentir o nível de hostilidade do alvo, saber se é um vampiro ou outra criatura sobrenatural, assim como seu nível de fome.",duracao:"-"},
-      {nivel:2,amalgama:"Ausp. 1",nome:"Mensageiro Animal",resumo:"Use seu familiar para transmitir uma mensagem para alguém.",custo:"CS",dados:"-",resist:"-",mecanica:"Caso o alvo precise ser encontrado o animal fará um teste de Determinação + Sobrevivência/Manha.",duracao:"Busca"},
-      {nivel:2,amalgama:"-",nome:"Atavismo",resumo:"Reverta a situação de um animal adestrado para seu estado feral.",custo:"CS",dados:"Autocontrole + Animalismo",resist:"-",mecanica:"É preciso ter contato físico/visual/auditivo.",duracao:"Dif.Teste + 1 horas/rodadas"},
-      {nivel:2,amalgama:"-",nome:"Sussurros Selvagens",resumo:"Forma uma linha de comunicação de duas mãos com um animal.",custo:"CS",dados:"Manipulação/Carisma + Animalismo",resist:"-",mecanica:"A ação não tem CS se for utilizada no próprio familiar.",duracao:"Cena"},
-      {nivel:3,amalgama:"Domin. 1",nome:"Comandar Mensageiro",resumo:"Utilize suas habilidades de Dominação através de seu familiar.",custo:"Vide Habil.",dados:"Vide Habil.",resist:"Vide Habil.",mecanica:"O nível da habilidade de Dominação não pode ultrapassar o seu nível de Animalismo.",duracao:"-"},
-      {nivel:3,amalgama:"-",nome:"Suculência Animal",resumo:"Passa a se sacear com animais sem penalidades.",custo:"Passivo",dados:"-",resist:"-",mecanica:"Um quadrado a mais de fome é conquistado ao se alimentar de animais. Recebe -2 de penalização de Potência de Sangue ao se alimentar de animais.",duracao:"-"},
-      {nivel:3,amalgama:"-",nome:"Praga Feral",resumo:"Marque um alvo para ser o alvo de animais próximos.",custo:"CS",dados:"Manipulação + Animalismo",resist:"Autocontrole + Empatia",mecanica:"O alvo é penalizado por Dif.Teste em atributos Mentais e Sociais e fica extremamente fácil de rastrear.",duracao:"Uma noite"},
-      {nivel:3,amalgama:"-",nome:"Repressão Bestial",resumo:"Force um vampiro a abrir mão da besta ou deixe um mortal letárgico.",custo:"CS",dados:"Carisma + Animalismo",resist:"Vigor + Determinação",mecanica:"Contra vampiros dura 1 + Dif.Teste turnos/horas. Cancela uma disciplina específica de um vampiro.",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Odor da Presa",resumo:"Marque e rastreie um mortal que observou uma quebra de Máscara.",custo:"CS",dados:"Determinação + Animalismo",resist:"-",mecanica:"Algumas horas em sucesso. Um dia completo se houve sucesso crítico.",duracao:"Cena"},
-      {nivel:3,amalgama:"Ofusc. 2",nome:"Enxame Não Vivo",resumo:"Seus efeitos de Animalismo se extendem a enxames de insetos.",custo:"Passivo",dados:"-",resist:"-",mecanica:"Enxames são tratados como alvo único para todos os efeitos.",duracao:"-"},
-      {nivel:4,amalgama:"-",nome:"Consumar Espírito",resumo:"Possua o controle do corpo de um animal.",custo:"CS",dados:"Manipulação + Animalismo",resist:"-",mecanica:"É gratuito e sem duração ao ser usado em seu familiar.",duracao:"Cena / -"},
-      {nivel:4,amalgama:"-",nome:"Controlar Matilha",resumo:"Influencie animais de uma grande área a se comportar da maneira desejada.",custo:"x CS",dados:"Autocontrole + Animalismo",resist:"-",mecanica:"A quantidade de sucessos determina o quanto os animais serão influenciados. Pode testar mais CS para aumentar a área.",duracao:"Noite"},
-      {nivel:5,amalgama:"-",nome:"Domínio Animal",resumo:"Comande ativamente grupos de animais.",custo:"2 CS",dados:"Carisma + Animalismo",resist:"-",mecanica:"Os animais te obedecem claramente dentro de seus limites físicos. Os animais não vêm ao seu encontro, precisam já estar na cena.",duracao:"Cena / Conclusão"},
-      {nivel:5,amalgama:"-",nome:"Coagir o Temperamento",resumo:"Aumente ou diminua a dificuldade para resistir à Frenesi para vampiros à sua volta.",custo:"CS",dados:"Manipulação + Animalismo",resist:"-",mecanica:"Cada Dif.Teste aumenta/diminui em 1 a dificuldade.",duracao:"Efeito"},
-      {nivel:5,amalgama:"-",nome:"Trazer a Besta",resumo:"Transfira seu frenesi ou terror para uma vítima.",custo:"CS",dados:"Raciocínio + Animalismo",resist:"Autocontrole + Determinação",mecanica:"Não pode transferir frenesi causado pela fome.",duracao:"Duração do Frenesi"},
-      {nivel:5,amalgama:"-",nome:"Caminhar Espiritual",resumo:"Prolonga o efeito de Consumar Espírito entre animais.",custo:"-",dados:"-",resist:"-",mecanica:"A habilidade pode ser transferida sem você precisar retornar ao seu corpo, de animal para animal.",duracao:"-"}
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Vincular Fâmulo",
+        resumo: "Cria um vínculo mental com um animal através de um Laço de Sangue, tornando-o um fâmulo leal e facilitando o uso de outras habilidades de Animalismo sobre ele.",
+        custo: "O animal deve receber o Sangue do usuário em três noites separadas (cada uma exige uma Jogada de Despertar); após isso, o custo de manutenção é desprezível.",
+        dados: "Carisma + Animali­smo",
+        resist: "—",
+        mecanica: "Dar ordens simples sem Sussurros Selvagens exige Carisma + Animalismo (Dificuldade 2; aumente conforme a complexidade). Um vampiro só pode ter um fâmulo por vez, mas pode obter um novo se o atual morrer. Fâmulos não envelhecem enquanto receberem Sangue regularmente. O vínculo só é rompido pela morte.",
+        duracao: "Permanente (até a morte do animal)"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Sentir a Besta",
+        resumo: "O vampiro detecta a Besta presente em mortais, vampiros e outros sobrenaturais, percebendo natureza, fome e hostilidade do alvo.",
+        custo: "Grátis",
+        dados: "Determinação + Animalismo vs. Compostura + Subterfúgio",
+        resist: "Compostura + Subterfúgio",
+        mecanica: "Uma vitória revela o nível de hostilidade do alvo e se ele possui uma Besta sobrenatural (vampiro ou lobisomem). Uma vitória crítica revela o tipo exato de criatura e seu nível de Fome ou Fúria. Pode ser usada passivamente, alertando o usuário sobre intenções agressivas nas proximidades.",
+        duracao: "Passiva"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Sussurros Selvagens",
+        resumo: "Permite comunicação bidirecional com animais — o vampiro pode conversar, persuadir e até convocar criaturas da área.",
+        custo: "Uma Jogada de Despertar por tipo de animal escolhido para a cena (gratuito com fâmulo); permite uma convocação e comunicação ilimitada.",
+        dados: "Manipulação + Animalismo (persuasão) / Carisma + Animalismo (convocação)",
+        resist: "—",
+        mecanica: "Comunicação simples não exige teste. Persuadir um animal a prestar um serviço requer Manipulação + Animalismo (Dificuldade 3 para tarefas simples, até 6 para missões suicidas). Convocar animais usa Carisma + Animalismo; a Dificuldade depende da raridade dos animais na área. Uma vitória crítica convoca a maioria, senão todos os animais do tipo na região. Animais convocados obedecem, mas fogem ou atacam se ameaçados.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 2,
+        amalgama: "Auspício 1",
+        nome: "Mensageiro Animal",
+        resumo: "O fâmulo carrega uma mensagem curta até uma pessoa designada, entregando-a com a voz do vampiro assim que estabelece contato visual.",
+        custo: "Uma Jogada de Despertar por noite",
+        dados: "Determinação + Streetwise/Sobrevivência do fâmulo (se o alvo estiver escondido ou em local desconhecido)",
+        resist: "Inteligência + Streetwise/Sobrevivência (alvo tentando se esconder)",
+        mecanica: "O vampiro sussurra uma única frase ao fâmulo e informa o alvo. Se o local for desconhecido, o fâmulo deve rastrear o alvo (Dificuldade 2, ou resistido pelo alvo). A tentativa pode ser feita uma vez por noite. A mensagem é entregue assim que o fâmulo faz contato visual, e então o fâmulo retorna.",
+        duracao: "Uma ou mais noites, conforme o tempo de busca"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Sucosidade Animal",
+        resumo: "O vampiro sacia mais Fome ao se alimentar de animais. Consumir o próprio fâmulo concede sustento excepcional e absorve um fragmento de seu traço primário.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "Alimentar-se de animais sacia 1 Fome adicional e o vampiro conta seu Potencial de Sangue como dois níveis mais baixo para fins de penalidades ao saciar Fome com sangue animal. Consumir o fâmulo sacia 4 de Fome (independente do tamanho) — este ato nunca remove o último dado de Fome. Além disso, aumenta em 2 pontos o Atributo mais associado ao animal (a critério do Narrador), ex.: gato pode aumentar Destreza ou Compostura; cão pode aumentar Carisma ou Determinação. O bônus dura até a próxima alimentação ou até a Fome atingir 5.",
+        duracao: "Passiva / até a próxima alimentação"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Apaziguar a Besta",
+        resumo: "O vampiro cruza os olhares com um alvo e suprime temporariamente sua Besta interior — mortais ficam apáticos e vampiros perdem o acesso a surtos bestiais.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Carisma + Animalismo vs. Vigor + Determinação",
+        resist: "Vigor + Determinação",
+        mecanica: "Vitória contra mortal: incapacitado pela cena com letargia severa; age apenas para se preservar. Vitória contra vampiro: impede Surtos de Sangue e o alvo não acumula críticos sujos enquanto a Besta estiver suprimida; dura um turno mais um turno por ponto de margem. Vitória crítica contra vampiro: também encerra o Frenesi ativo.",
+        duracao: "Uma cena (mortais) / 1 turno + margem (vampiros)"
+      },
+      {
+        nivel: 3,
+        amalgama: "Ofuscação 2",
+        nome: "Colmeia Viva",
+        resumo: "Estende o controle animal a enxames de insetos (moscas, baratas etc.), tratando o enxame como uma criatura única — vampiros Nosferatu frequentemente os alojam no próprio corpo.",
+        custo: "Sem custo adicional",
+        dados: "—",
+        resist: "—",
+        mecanica: "Estende todas as habilidades de Animalismo (antes restritas a vertebrados) a enxames de insetos. O vampiro pode vincular o enxame como fâmulo e até alojá-lo em cavidades do próprio corpo, tornando-o indetectável por qualquer meio inferior a raio-X. Enxames têm Saúde 5 e pool de 8 dados para resistir ataques. Dano Superficial de Briga; chamas e inseticida causam dano Agravado. Úteis para espionagem, distração (−2 dados para o alvo enxameado) ou intimidação de mortais (+1 a +3 dados em pools de Intimidação).",
+        duracao: "Passiva"
+      },
+      {
+        nivel: 3,
+        amalgama: "Dominação 1",
+        nome: "Comando do Mensageiro",
+        resumo: "O vampiro usa Compelir ou Mesmerizar através do fâmulo, impondo sua vontade ao destinatário da mensagem.",
+        custo: "Nenhum custo adicional",
+        dados: "Ver Compelir ou Mesmerizar (rating de Dominação não pode exceder o de Animalismo do usuário)",
+        resist: "Ver Compelir ou Mesmerizar",
+        mecanica: "Requer o poder Mensageiro Animal como pré-requisito e Compelir ou Mesmerizar como pré-requisito. O teste de Compelir ou Mesmerizar é realizado assim que o fâmulo faz contato visual com o alvo. Siga as regras normais desses poderes de Dominação.",
+        duracao: "Ver Mensageiro Animal"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Praga de Feras",
+        resumo: "O vampiro marca um indivíduo, tornando-o o foco de toda atenção animal da área — bestas e pragas o perseguem, latem, bicam e arranham, dificultando suas ações.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Manipulação + Animalismo vs. Compostura + Trato com Animais",
+        resist: "Compostura + Trato com Animais",
+        mecanica: "Vitória: o alvo sofre penalidade de dados a todas as pools de Perícia igual à margem pelo resto da noite, a menos que se isole fisicamente dos animais. O alvo também fica mais fácil de rastrear (bônus igual à margem para qualquer perseguidor). A penalidade não se aplica a conflitos físicos (os animais não são suicidas), mas retorna após a briga cessar.",
+        duracao: "Uma noite"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Subjugar o Espírito",
+        resumo: "O vampiro transfere completamente sua mente para o corpo de um animal, controlando seus sentidos e ações — mesmo durante o dia, caso consiga ficar acordado.",
+        custo: "Uma Jogada de Despertar (gratuito com fâmulo)",
+        dados: "Manipulação + Animalismo (Dificuldade 4)",
+        resist: "—",
+        mecanica: "Vitória: habita o corpo do animal por uma cena. Vitória crítica: pode habitá-lo indefinidamente. O corpo do vampiro fica imóvel como em torpor. Ver o sol exige teste de frenesi de terror, mas a luz solar não afeta o animal. Dano ao corpo original encerra o transe e libera o animal. A morte do animal encerra o transe e causa 1 nível de dano Agravado de Vontade pelo choque.",
+        duracao: "Uma cena / indefinidamente (ver acima)"
+      },
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Influenciar o Rebanho",
+        resumo: "O vampiro influencia o humor geral de todos os animais em uma ampla área, inclinando-os da indiferença total à agressão indiscriminada.",
+        custo: "Uma ou mais Jogadas de Despertar",
+        dados: "Compostura + Animalismo",
+        resist: "—",
+        mecanica: "O vampiro decide o comportamento desejado e faz o teste. Com 1 sucesso os animais mal são afetados; com 5 são completamente dominados pelo impulso, desde dormir tranquilamente até atacar qualquer coisa sem provocação. Qualquer tentativa mundana de controlar os animais tem Dificuldade aumentada em igual número de sucessos. A área afetada é do tamanho aproximado de um campo de futebol; Jogadas de Despertar adicionais estendem a área, até 5 para uma pequena cidade.",
+        duracao: "Uma noite"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Domínio Animal",
+        resumo: "O controle do vampiro sobre as feras é tão absoluto que pode comandar bandos e rebanhos inteiros como extensões do próprio corpo — centenas de animais podem dar suas vidas a um gesto.",
+        custo: "Duas Jogadas de Despertar",
+        dados: "Carisma + Animalismo",
+        resist: "—",
+        mecanica: "Escolha um tipo de animal e faça o teste com Dificuldade conforme natureza dos animais e ordem dada (ex.: dispersar corvos para buscar um alvo, Dificuldade 3; ataque suicida de cães contra outro vampiro, Dificuldade 5). O poder não convoca animais — compele os já presentes. O vampiro pode ordenar que retornem após cumprir a missão.",
+        duracao: "Uma cena ou até a diretiva ser cumprida (o que vier primeiro)"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Despertar o Temperamento Bestial",
+        resumo: "O vampiro exerce influência sutil sobre a Besta de todos os vampiros presentes, podendo agitar ou acalmar os instintos vampíricos de toda Cainita ao alcance da voz.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Manipulação + Animalismo (Dificuldade 3)",
+        resist: "—",
+        mecanica: "O vampiro decide agitar ou acalmar, cantarola suavemente e faz o teste. Cada sucesso na margem aumenta ou reduz em 1 a Dificuldade de resistir ao Frenesi para todos os outros vampiros ao alcance da voz. Se a Dificuldade for reduzida, vampiros já em Frenesi podem fazer um novo teste para resistir, saindo do estado se tiverem sucesso.",
+        duracao: "Enquanto o usuário continuar cantarolando"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Projetar a Besta",
+        resumo: "No momento de um Frenesi de terror ou fúria, o vampiro projeta sua Besta a um sujeito próximo, que experimenta o Frenesi no lugar do usuário.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Perspicácia + Animalismo vs. Compostura + Determinação",
+        resist: "Compostura + Determinação",
+        mecanica: "Em vez de jogar Vontade para resistir ao Frenesi, o vampiro joga Perspicácia + Animalismo vs. Compostura + Determinação do alvo. Se o usuário falhar, ele entra em Frenesi normalmente. Em caso de vitória, o alvo experimenta o Frenesi. Estímulos posteriores ainda podem provocar Frenesi no usuário, mas ele pode usar o poder novamente enquanto tiver Jogadas de Despertar e alvos disponíveis. Este poder não pode transferir um Frenesi de Fome.",
+        duracao: "Duração do Frenesi"
+      }
     ]
   },
-  "Auspício": {
-    descricao: "Disciplina da percepção extrassensorial. Permite ao vampiro ler auras, sentir o sobrenatural, rastrear alvos e até mesmo ler mentes.",
+
+  // ─────────────────────────────────────────────
+  // AUSPÍCIO
+  // ─────────────────────────────────────────────
+  auspicio: {
+    descricao: "Auspício aguça os sentidos além dos limites mortais, permite sondar mentes, perceber o que está oculto e vislumbrar o futuro. Seus usuários são espertos e paranóicos — uma vez que a verdade está ao seu alcance, é impossível parar de buscá-la.",
     habilidades: [
-      {nivel:1,amalgama:"-",nome:"Sentidos Aguçados",resumo:"Aumente o natural dos sentidos.",custo:"-",dados:"Raciocínio + Determinação",resist:"-",mecanica:"Se passar no teste, adicione Auspícios para todos os testes que envolvam algum dos sentidos. Duração pode aumentar em 1 sempre que acabar com o uso de Força de Vontade.",duracao:"Dif.Teste + 1 hora/turno"},
-      {nivel:1,amalgama:"-",nome:"Sentir o Invisível",resumo:"Sinta atividades sobrenaturais a sua volta.",custo:"-",dados:"Raciocínio/Determinação + Auspícios",resist:"Parada Relevante",mecanica:"Raciocínio é usado contra alvos em Ofuscação vs Raciocínio + Ofuscação. Buscas normais são ativadas passivamente e envolvem Determinação.",duracao:"-"},
-      {nivel:2,amalgama:"Fort. 1",nome:"Panacea",resumo:"Cure Força de Vontade e acalme os nervos do alvo.",custo:"CS",dados:"Autocontrole + Auspícios",resist:"-",mecanica:"Precisa entrar em contato com o sangue do alvo. Se usado em mais de um alvo na mesma noite, cada subsequente custa Força de Vontade igual a metade do número de sucessos.",duracao:"-"},
-      {nivel:2,amalgama:"-",nome:"Premonição",resumo:"Tenha uma visão do futuro.",custo:"- / CS",dados:"Determinação + Auspícios",resist:"-",mecanica:"O narrador pode ativar essa habilidade como um sexto sentido de graça ou pode ser ativada com um CS, para usar a habilidade focada em um alvo.",duracao:"-"},
-      {nivel:2,amalgama:"-",nome:"Revelar Temperamento",resumo:"Sinta o cheiro da Ressonância de um alvo.",custo:"CS",dados:"Inteligência + Auspícios",resist:"Autocontrole + Subterfúgio",mecanica:"Revela a característica do sangue de um humano e, se usado em um vampiro, revela as características e tempo de sua última alimentação.",duracao:"Cena"},
-      {nivel:2,amalgama:"Dom. 1",nome:"Caçada Enervante",resumo:"Rastreie um alvo.",custo:"CS",dados:"Determinação + Auspícios",resist:"-",mecanica:"Precisa estar em contato com sangue/objeto pessoal do alvo. A vítima pode fazer um teste de Raciocínio + Percepção para perceber que está sendo rastreada.",duracao:"Dif.Teste Noites"},
-      {nivel:3,amalgama:"Anim. 2",nome:"Visão do Verme",resumo:"Receba ou envie sentidos para um animal.",custo:"CS",dados:"Determinação + Animalismo",resist:"-",mecanica:"Funciona em grupos de animais, mas sem filtro.",duracao:"Cena"},
-      {nivel:3,amalgama:"Obl. 1",nome:"Falha Fatal",resumo:"Encontre uma fraqueza específica do alvo.",custo:"CS",dados:"Inteligência + Auspícios",resist:"Autocontrole/Vigor + Subterfúgio",mecanica:"Autocontrole é usado para fraquezas mentais e Vigor para fraquezas físicas.",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Mapear a Alma",resumo:"Colha uma informação sobre o alvo.",custo:"CS",dados:"Inteligência + Auspícios",resist:"Autocontrole + Subterfúgio",mecanica:"Pode ser utilizado em um alvo ou em uma multidão.",duracao:"Turno"},
-      {nivel:3,amalgama:"-",nome:"Dividir Sentidos",resumo:"Invada a mente do alvo e sinta o que ele está sentindo.",custo:"CS",dados:"Determinação + Auspícios",resist:"-",mecanica:"Você vê, sente, ouve tudo que o alvo percebe mas não consegue influenciar nada disso. O Vampiro escolhe quais e quantos sentidos quer perceber.",duracao:"Cena"},
-      {nivel:4,amalgama:"-",nome:"Toque do Espírito",resumo:"Ao tocar um objeto inanimado retire informações sobre ele.",custo:"CS",dados:"Inteligência + Auspícios",resist:"-",mecanica:"Pode ser usado em objetos e no solo. Retire informações do que foi feito com o objeto e as emoções e intenções da pessoa que o manipulou.",duracao:"Turno"},
-      {nivel:5,amalgama:"-",nome:"Clarividência",resumo:"Expanda sua mente e reúna informações de uma área.",custo:"CS",dados:"Inteligência + Auspícios",resist:"-",mecanica:"O vampiro entra em um transe e consegue sentir as coisas e reunir informações em até uma quadra de distância sobre tudo que estiver acontecendo ali.",duracao:"Transe (Força de Vontade)"},
-      {nivel:5,amalgama:"Dom. 3",nome:"Possessão",resumo:"Tome controle a força de um corpo mortal.",custo:"2 CS",dados:"Determinação + Auspícios",resist:"Determinação + Inteligência",mecanica:"Você controla completamente as ações do alvo mortal, porém não consegue ler sua mente ou revisitar memórias.",duracao:"Até Finalizar"},
-      {nivel:5,amalgama:"-",nome:"Telepatia",resumo:"Leia mentes e transmita pensamentos.",custo:"CS / + FdV",dados:"Determinação + Auspícios",resist:"Raciocínio + Subterfúgio",mecanica:"Não há necessidade de realizar um teste caso só queira transmitir o próprio pensamento. Há custo de CS para ler mentes e se for um vampiro é preciso gastar FdV.",duracao:"Um Minuto por CS"},
-      {nivel:5,amalgama:"Dom. 3",nome:"Desenterrar a Alma Bestial",resumo:"Remova uma Mácula ou proteja o alvo de recebê-las.",custo:"2CS + 1 Mácula",dados:"Determinação + Auspícios",resist:"-",mecanica:"A habilidade só funciona em vampiros com Humanidade menor do que a do usuário.",duracao:"Sessão"}
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Sentidos Aguçados",
+        resumo: "Os sentidos do vampiro atingem grau sobrenatural — visão no escuro total, audição ultrassônica e olfato capaz de sentir o medo da presa.",
+        custo: "Grátis (ver abaixo)",
+        dados: "Perspicácia + Determinação",
+        resist: "—",
+        mecanica: "Adiciona o nível de Auspício a todas as jogadas de percepção. Exposição a sensações extremas (barulho alto, luz intensa, cheiros avassaladores) enquanto o poder está ativo exige Perspicácia + Determinação (Dificuldade 3+) para amortecer os sentidos a tempo — falha causa −3 dados em todas as jogadas baseadas em percepção pelo resto da cena. Manter o poder ativo por mais de uma cena em ambientes de alto estímulo pode exigir gasto de Vontade, a critério do Narrador.",
+        duracao: "Até ser desativado"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Sentir o Invisível",
+        resumo: "Os sentidos do vampiro se sintonizam com dimensões além do mundano, detectando presenças ocultas — vampiros em Ofuscação, espíritos, fantasmas ou magia dormente.",
+        custo: "Grátis",
+        dados: "Perspicácia + Auspício ou Determinação + Auspício",
+        resist: "Perspicácia + Ofuscação (ex.)",
+        mecanica: "O Narrador faz uma jogada oculta de Perspicácia + Auspício contra Dificuldade que ele mesmo escolhe quando há algo sobrenatural escondido. Contra uma entidade ativamente se escondendo, é uma disputa cega (o Narrador pede 'jogue X dados'). Se o vampiro busca ativamente, usa Determinação + Auspício. Ex.: detectar vampiro em Ofuscação = Perspicácia + Auspício vs. Perspicácia + Ofuscação.",
+        duracao: "Passiva"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Premonição",
+        resumo: "O vampiro experimenta flashes de insight — arrepios, inspiração súbita ou visões vívidas que o afastam do perigo ou revelam verdades esquecidas.",
+        custo: "Grátis ou uma Jogada de Despertar",
+        dados: "Determinação + Auspício",
+        resist: "—",
+        mecanica: "Sempre que o Narrador julgar adequado, o personagem recebe uma dica súbita: encontra uma pista perdida, é avisado de uma armadilha etc. Limite sugerido: uma premonição por cena (mesmo que mais de um personagem tenha o poder). O usuário também pode provocar ativamente uma premonição focando em um assunto — faz uma Jogada de Despertar e joga Determinação + Auspício; o número de sucessos determina o nível de insight.",
+        duracao: "Passiva"
+      },
+      {
+        nivel: 2,
+        amalgama: "Fortitude 1",
+        nome: "Panaceia",
+        resumo: "O vampiro acalma o tumulto mental ou emocional de um sujeito, restaurando um fragmento de firmeza — especialmente eficaz em mortais antes de se alimentar.",
+        custo: "Uma Jogada de Despertar (+ Vontade conforme circunstâncias)",
+        dados: "Compostura + Auspício (Dificuldade 2)",
+        resist: "—",
+        mecanica: "O vampiro joga Compostura + Auspício contra Dificuldade 2 e restaura níveis de dano Superficial de Vontade iguais à margem. Alternativamente, restaura 1 nível de dano Agravado de Vontade a cada 3 sucessos. Usar em mortais também os acalma ou alivia seu estado emocional turbulento. O uso leva um turno inteiro; passar a cena inteira reduz a Dificuldade para 0. Não pode ser usado em si mesmo. Um sujeito só pode ser afetado uma vez por noite. Usar em mais de um sujeito por noite causa ao usuário dano Superficial de Vontade igual a metade dos sucessos da margem para cada sujeito adicional.",
+        duracao: "N/A"
+      },
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Revelar Temperamento",
+        resumo: "O vampiro fareja a Ressonância do alvo, qualquer Discrasia que ele carregue, e se outro vampiro se alimentou dele recentemente — além da Ressonância da última vítima desse vampiro.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Inteligência + Auspício vs. Compostura + Subterfúgio",
+        resist: "Compostura + Subterfúgio",
+        mecanica: "Com o poder ativo, jogue Inteligência + Auspício vs. Compostura + Subterfúgio do alvo. Vitória revela a Ressonância do mortal e quaisquer particularidades do sangue, incluindo Dyscrasias. Vitória crítica também concede +2 dados nas interações com o alvo pela cena (o usuário adapta sua abordagem ao estado emocional do mortal). Contra vampiro: vitória revela a Ressonância do último mortal de quem se alimentou; vitória crítica fornece um quadro mais detalhado, revelando o método e Tipo de Predador do vampiro.",
+        duracao: "Uma cena"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Sondar a Alma",
+        resumo: "Focando em uma pessoa, o vampiro percebe o estado de sua psique como uma aura de cores cambiantes, revelando estado emocional, Ressonância e traços sobrenaturais.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Inteligência + Auspício vs. Compostura + Subterfúgio",
+        resist: "Compostura + Subterfúgio",
+        mecanica: "Vitória: o Narrador responde verdadeiramente um número de perguntas igual à margem sobre a aura e psique do alvo, incluindo: estado emocional, Ressonância no sangue, se é vampiro/lobisomem/ghoul/sobrenatural, se está sob influência de Feitiçaria de Sangue, se cometeu diablerie no último ano. Vitória crítica: revela algo inesperado. Para varredura de multidão, jogue contra Dificuldade conforme tamanho da multidão e distrações externas.",
+        duracao: "Um turno ou a critério do Narrador"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Compartilhar os Sentidos",
+        resumo: "O vampiro adentra a mente de um mortal ou vampiro e experimenta o que ele vê, ouve e sente, mantendo plena consciência de seus próprios arredores.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Determinação + Auspício (Dificuldade 3)",
+        resist: "Perspicácia + Determinação (para expulsar o intruso)",
+        mecanica: "Jogue Determinação + Auspício (Dificuldade 3; pode ser maior por distância ou distração). O alvo normalmente não percebe a intrusão, mas Sentir o Invisível pode revelar o passageiro. Para expulsar o intruso, a vítima deve vencer uma disputa de Perspicácia + Determinação vs. Perspicácia + Determinação do intruso. Um usuário expulso não pode tentar novamente até a próxima noite. Pode ser usado a distâncias maiores em alguém que ainda carregue o Sangue do usuário no corpo.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 3,
+        amalgama: "Oblívio 1",
+        nome: "Falha Fatal",
+        resumo: "Observando a sutil obra da entropia, o vampiro detecta o ponto fraco de um alvo — uma fissura em sua defesa mental ou uma vulnerabilidade em sua armadura física.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Inteligência + Auspício vs. Compostura ou Vigor + Subterfúgio",
+        resist: "Compostura (fraquezas mentais) ou Vigor (físicas) + Subterfúgio",
+        mecanica: "O usuário passa um turno observando o alvo e faz o teste. Vitória revela como atacá-lo melhor, expondo a menor pool defensiva em qualquer categoria, e concede +2 dados em ataques contra essa pool. Se o usuário informar outros sobre a fraqueza, eles ganham +1 dado.",
+        duracao: "Uma cena"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Toque do Espírito",
+        resumo: "Ao tocar um objeto inanimado ou o chão de um local, o vampiro percebe o resíduo emocional deixado por quem manuseou aquele objeto ou visitou aquele lugar.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Inteligência + Auspício",
+        resist: "—",
+        mecanica: "Jogue Inteligência + Auspício contra Dificuldade conforme a informação buscada (Dificuldade 3 para emoção do usuário de uma arma usada há poucos dias; até 6+ para sentir as circunstâncias em que uma carta de 300 anos foi escrita). Cada ponto de margem permite sentir aproximadamente um detentor anterior e suas circunstâncias, contando do mais recente para o mais antigo.",
+        duracao: "Um turno"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Clarividência",
+        resumo: "Em transe leve, o vampiro varre uma área urbana e reúne em minutos informações que levariam dias de investigação — e pode monitorar eventos em andamento.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Inteligência + Auspício",
+        resist: "—",
+        mecanica: "Jogue Inteligência + Auspício contra Dificuldade conforme segurança e atividade da área (3 para a própria mansão; 7+ para um quarteirão desconhecido em cidade grande). O usuário adiciona seu nível base de Refúgio em dados extras ao usar Clarividência no próprio refúgio. O Narrador responde perguntas sobre entradas e saídas da área, o que as pessoas viram e ouviram, fofoca local, choques e impressões recentes. Pode-se monitorar eventos em andamento, mas o vampiro deve permanecer na área. O jogador pode fazer aproximadamente uma pergunta por ponto de margem; informações deliberadamente ocultas consomem mais de um ponto. Vitória crítica revela algo importante independentemente das perguntas feitas.",
+        duracao: "Poucos minutos (coleta) / até uma noite (vigilância)"
+      },
+      {
+        nivel: 5,
+        amalgama: "Dominação 3",
+        nome: "Possessão",
+        resumo: "O vampiro despoja a vontade de um mortal e habita completamente seu corpo, usando-o como o próprio — podendo inclusive experimentar luz solar, comida e sexualidade negadas pela morte.",
+        custo: "Duas Jogadas de Despertar",
+        dados: "Determinação + Auspício vs. Determinação + Inteligência",
+        resist: "Determinação + Inteligência",
+        mecanica: "Só funciona em mortais. Se for ghoul, deve ser Ligado ao usuário. Requer contato visual. O usuário entra em disputa de Determinação + Auspício vs. Determinação + Inteligência do alvo para habitar o corpo. Falha total: o alvo fica imune a novas tentativas durante a história. O corpo do vampiro cai em torpor. O vampiro pode usar Auspício, Presença e Dominação através do corpo possuído. Para manter a Possessão durante o dia, deve permanecer acordado. Dano Agravado ao possuído arrisca encerrar a Possessão (Determinação + Auspício, Dificuldade 2 + dano sofrido). Morte do possuído causa imediatamente 3 níveis de dano Agravado de Vontade. O poder não concede leitura de mentes, acesso às perícias ou maneirismos do alvo; impersonar o alvo exige Manipulação + Atuação vs. Perspicácia + Intuição.",
+        duracao: "Até ser encerrado voluntária ou involuntariamente"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Telepatia",
+        resumo: "No mais alto nível de Auspício, o vampiro lê mentes e projeta pensamentos. Mentes mortais são relativamente acessíveis; mentes não-mortas exigem esforço maior.",
+        custo: "Uma Jogada de Despertar (+ 1 Vontade contra vampiros não-consententes)",
+        dados: "Determinação + Auspício vs. Perspicácia + Subterfúgio",
+        resist: "Perspicácia + Subterfúgio",
+        mecanica: "Projetar pensamentos não exige teste (mas requer linha de visão). Para ler a mente de um mortal: Determinação + Auspício vs. Perspicácia + Subterfúgio enquanto olha nos olhos (mortal consentente: sem teste). Vitória: descobre pensamentos superficiais como fluxo de imagens; margem maior permite sondar memórias mais profundas. Vitória crítica: quadro coerente dos pensamentos e intenções atuais. Para vampiro não-consentente: gaste 1 Vontade antes de jogar.",
+        duracao: "Aproximadamente 1 minuto por Jogada de Despertar; cena inteira com sujeito consentente"
+      },
+      {
+        nivel: 5,
+        amalgama: "Dominação 3",
+        nome: "Aliviar a Alma Bestial",
+        resumo: "Compartilha a serenidade moral do vampiro com um Cainita arrependido, removendo Manchas ou erguendo escudos psicológicos — mas submete a mente do sujeito à do usuário.",
+        custo: "Duas Jogadas de Despertar + 1 Mancha",
+        dados: "Compostura + Auspício vs. Humanidade do sujeito",
+        resist: "Humanidade do sujeito",
+        mecanica: "Pré-requisito: Panaceia. O vampiro passa uma cena em reclusão com o sujeito e joga Compostura + Auspício vs. Humanidade do sujeito. Para cada sucesso na margem: remove 1 Mancha do sujeito OU ergue um 'escudo' que cancela 1 Mancha futura (1:1). Exemplo: margem 3 em sujeito sem Manchas cancela até 3 Manchas adquiridas na mesma sessão. Vitória crítica: o usuário pode abrir mão dos benefícios acima e restaurar 1 ponto de Humanidade ao sujeito (cada vampiro pode receber esse benefício apenas uma vez na existência). Só funciona em vampiros; falha automaticamente se o sujeito tiver Humanidade maior que o usuário. Pelo resto da sessão, o sujeito fica entorpecido (parte da mente mesclada ao usuário) e qualquer Dominação usada pelo usuário no sujeito tem sucesso automático sem contato visual. Ao fim da sessão, escudos não utilizados são perdidos; Manchas removidas e Humanidade restaurada permanecem.",
+        duracao: "Uma sessão"
+      }
     ]
   },
-  "Celeridade": {
-    descricao: "Disciplina da velocidade sobrenatural. Permite ao vampiro mover-se, atacar e reagir muito além dos limites humanos.",
+
+  // ─────────────────────────────────────────────
+  // CELERIDADE
+  // ─────────────────────────────────────────────
+  celeridade: {
+    descricao: "Celeridade permite ao vampiro mover-se e reagir em velocidade sobrenatural, tornando-o um predador letal e quase impossível de atingir. Mais do que velocidade pura, os vampiros que a empregam parecem pensar tão rápido quanto agem.",
     habilidades: [
-      {nivel:1,amalgama:"-",nome:"Graça Felina",resumo:"Passe automaticamente em testes que envolvam equilíbrio.",custo:"-",dados:"-",resist:"-",mecanica:"Não funciona em objetos que não aguentem seu peso.",duracao:"-"},
-      {nivel:1,amalgama:"-",nome:"Suavidade Fluída",resumo:"Rerrole seu nível de Sangue em testes de Destreza ou Celeridade.",custo:"-",dados:"-",resist:"-",mecanica:"-",duracao:"-"},
-      {nivel:1,amalgama:"-",nome:"Reflexos Rápidos",resumo:"Tenha seus reflexos amplificados.",custo:"-",dados:"-",resist:"-",mecanica:"Os vampiros não sofrem penalidade contra armas de fogo por não terem cobertura em combates. Reagindo a eventos com presteza sobre-humana.",duracao:"-"},
-      {nivel:2,amalgama:"-",nome:"Rapidez",resumo:"Adicione seu nível de Celeridade para testes fora de combate que envolvam Destreza.",custo:"- / CS",dados:"-",resist:"-",mecanica:"Pode ser usado para se defender em combate, porém custa um CS por rodada.",duracao:"Cena"},
-      {nivel:2,amalgama:"-",nome:"Trabalho Ágil",resumo:"Termine um trabalho específico que levaria longas horas em alguns minutos.",custo:"CS",dados:"-",resist:"-",mecanica:"Este poder não funciona durante combate.",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Piscadela",resumo:"Encurte a distância até um alvo em um piscar de olhos.",custo:"CS",dados:"Destreza + Atletismo",resist:"-",mecanica:"O usuário só pode se mover em linha reta e talvez faça testes de dificuldade de acordo com o terreno.",duracao:"Turno"},
-      {nivel:3,amalgama:"-",nome:"Travessia",resumo:"Mova-se rápido o suficiente para subir em superfícies verticais ou líquidas.",custo:"CS",dados:"Destreza + Atletismo",resist:"-",mecanica:"Há um limite de distância a ser informado pelo narrador.",duracao:"Turno"},
-      {nivel:3,amalgama:"-",nome:"Costurar",resumo:"Remova a penalidade de dado ao se defender de múltiplos alvos no mesmo turno de combate.",custo:"CS",dados:"-",resist:"-",mecanica:"O usuário ainda pode adicionar seus dados de Celeridade em todos os testes.",duracao:"Cena"},
-      {nivel:4,amalgama:"-",nome:"Momento Embaçado",resumo:"Ataques contra o usuário que tenham menos sucessos que seu nível de Celeridade sempre erram automaticamente.",custo:"CS por turno",dados:"-",resist:"-",mecanica:"Funciona passivamente contra poderes que não permitem testes de defesa.",duracao:"Enquanto Ativa"},
-      {nivel:4,amalgama:"-",nome:"Rascunho de Elegância",resumo:"Transforma o próprio sangue em uma poção de velocidade para outros vampiros.",custo:"CS",dados:"-",resist:"-",mecanica:"Cada vampiro que beber a poção deve fazer um CS. O alvo ganha nível de Celeridade igual à metade do usuário e todos os poderes que ele tinha até aquele nível.",duracao:"Noite"},
-      {nivel:4,amalgama:"Ausp. 2",nome:"Mira Infalível",resumo:"Desacelere o tempo para mirar em qualquer alvo como se ele estivesse parado.",custo:"CS",dados:"-",resist:"-",mecanica:"O alvo não pode realizar uma rolagem de defesa e seu ataque sempre tem dificuldade 1.",duracao:"Ataque"},
-      {nivel:4,amalgama:"Ofus. 4",nome:"Golpe Imperceptível",resumo:"Desapareça e reapareça aplicando um golpe surpresa.",custo:"2 CS",dados:"Destreza + Celeridade",resist:"Raciocínio + Percepção",mecanica:"Se passar no teste, o ataque recebe os bônus de um ataque surpresa: o alvo não pode defender e você adiciona seu nível de Celeridade em sucessos.",duracao:"Ataque"},
-      {nivel:5,amalgama:"-",nome:"Golpe Relâmpago",resumo:"Realize um ataque desarmado ou com armas brancas na velocidade do som.",custo:"CS",dados:"-",resist:"-",mecanica:"Não há teste para passar, o ataque causa dano sem permitir defesa ao alvo.",duracao:"Ataque"},
-      {nivel:5,amalgama:"-",nome:"Fração de Segundos",resumo:"Sua velocidade é tão grande que você sente os eventos antes de eles acontecerem.",custo:"CS",dados:"-",resist:"-",mecanica:"Você pode interromper o narrador para retornar alguns segundos no tempo e mudar o que você fez ou realizar uma ação antes de que algo seja dito ou feito.",duracao:"Uma Ação"}
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Graça Felina",
+        resumo: "O vampiro adquire equilíbrio e graça iguais ou superiores aos de acrobatas de nível mundial, caminhando e correndo sobre beiradas e fios sem esforço.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "O usuário passa automaticamente em qualquer teste baseado em Destreza ou Atletismo necessário para manter equilíbrio. Não permite equilibrar-se em superfície que não suporte seu peso.",
+        duracao: "Passiva"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Reflexos Rápidos",
+        resumo: "O vampiro percebe eventos instantaneamente e reage com alacridez sobre-humana — capaz de tentar esquivar de flechas e até balas sem cobertura.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "Com este poder, vampiros não sofrem penalidade em suas pools defensivas pela falta de cobertura contra ataques de Armas de Fogo. Também podem executar uma ação menor (ver p. 298 do corebook) no valor de até 2 dados por turno — como preparar ou recarregar uma arma — gratuitamente.",
+        duracao: "Passiva"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Velocidade",
+        resumo: "O domínio da Celeridade permite ao vampiro mover-se e reagir em velocidade vertiginosa.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Adiciona o nível de Celeridade à pool do usuário para testes de Destreza não-combativos. Uma vez por turno, pode fazer isso também ao se defender com Destreza + Atletismo.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Trabalho Acelerado",
+        resumo: "O vampiro realiza tarefas demoradas com velocidade cegante — dedos e mãos borram enquanto escreve, conserta ou constrói em tempo recorde.",
+        custo: "Uma Jogada de Despertar",
+        dados: "N/A",
+        resist: "—",
+        mecanica: "Quando ativo, o vampiro completa tarefas relacionadas a Perícias que levariam turnos inteiros em questão de segundos, podendo tratar uma ação completa como ação menor (ver p. 298 do corebook). Não pode ser usado para acelerar ataques, defesas ou qualquer tarefa ativamente resistida — mas permite, por exemplo, arrombar uma fechadura e ainda disparar uma arma (com penalidade de −2 dados para a segunda ação).",
+        duracao: "Uma cena"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Piscar",
+        resumo: "O vampiro avança sobre um inimigo em linha reta, cobrindo qualquer distância até 50 metros em um piscar de olhos — para observadores despreparados, parece teletransporte.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Destreza + Atletismo (ou conforme necessário)",
+        resist: "—",
+        mecanica: "O vampiro move-se em linha reta até 50 m e ainda tem tempo de agir (ex.: atacar) no mesmo turno. Se o terreno for perigoso, requer Destreza + Atletismo para não tropeçar. Vampiros que usam Piscar para engajar agem como se já estivessem em contato ao início do turno. O Narrador pode chamar outras disputas conforme necessário.",
+        duracao: "Um turno"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Travessia",
+        resumo: "Com velocidade ofuscante, o vampiro corre ou escala qualquer superfície — inclusive paredes verticais e, por distância limitada, sobre a água.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Destreza + Atletismo",
+        resist: "—",
+        mecanica: "Destreza + Atletismo contra Dificuldade 3 (superfície inclinada com tração) até 6 (superfície vertical escorregadia, água aberta). Cada ponto de margem avança o vampiro mais longe; margem 0 alcança um alvo próximo. Regra geral: mais de 60 m sobre água ou mais de 30 andares provavelmente excede o alcance do poder.",
+        duracao: "Um turno"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Tecer",
+        resumo: "O vampiro move-se rápido o bastante para perceber projéteis — facas, flechas ou balas — como objetos lentos e desviá-los à vontade.",
+        custo: "Uma Jogada de Despertar",
+        dados: "N/A",
+        resist: "—",
+        mecanica: "Pré-requisito: Reflexos Rápidos. O usuário não sofre diminuição de dados ao se defender de múltiplos ataques à distância com Destreza + Atletismo. Também pode adicionar seu nível de Celeridade a todas essas tentativas enquanto o poder está ativo.",
+        duracao: "Uma cena"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Draught de Elegância",
+        resumo: "O Sangue do vampiro fica saturado com o poder da Celeridade, transferindo parte desse poder a quem beber diretamente de suas veias.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Beber um volume de Sangue equivalente a uma Jogada de Despertar diretamente do usuário concede ao bebedor Celeridade temporária igual a metade dos pontos de Celeridade do doador (arredondado para baixo), incluindo os mesmos poderes não-Amalgama até esse nível.",
+        duracao: "Uma noite; para vampiros, até a próxima alimentação ou ao atingir Fome 5"
+      },
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Momentum Desfocado",
+        resumo: "O movimento do vampiro torna-se um borrão inquieto, tornando extremamente difícil atingi-lo — mesmo quando não está atento ao oponente ou se defendendo ativamente.",
+        custo: "Uma Jogada de Despertar por turno",
+        dados: "N/A",
+        resist: "—",
+        mecanica: "Ataques que obtêm menos sucessos do que o nível de Celeridade do usuário sempre erram, independentemente do resultado de qualquer teste de defesa ou esquiva (se houver). Funciona também contra ataques-surpresa ou outros ataques que normalmente não permitem defesa, como Golpe Relâmpago. Ativar exige uma Jogada de Despertar; manter ativo exige uma Jogada adicional por turno.",
+        duracao: "Até o usuário deixar expirar"
+      },
+      {
+        nivel: 4,
+        amalgama: "Auspício 2",
+        nome: "Pontaria Infalível",
+        resumo: "O mundo ao redor parece desacelerar e o vampiro pode mirar e disparar qualquer arma como se o alvo estivesse completamente parado.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Use antes de fazer um ataque à distância. O alvo não rola para esquivar ou se defender; faça o ataque contra Dificuldade 1. Um oponente com Celeridade 5 pode anular este poder fazendo sua própria Jogada de Despertar, defendendo-se à mesma velocidade.",
+        duracao: "Um único ataque"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Golpe Relâmpago",
+        resumo: "Mais rápido do que os olhos podem acompanhar, o vampiro atinge com punho ou arma branca de modo que o oponente não consegue se defender nem esquivar.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Use antes de fazer um ataque de Briga ou Armas Brancas. O oponente não rola para esquivar ou se defender; faça o ataque contra Dificuldade 1. Um oponente com Celeridade 5 pode anular este poder fazendo sua própria Jogada de Despertar, defendendo-se à mesma velocidade.",
+        duracao: "Um único ataque"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Fração de Segundo",
+        resumo: "A velocidade do vampiro se iguala à sua percepção sobrecarregada, permitindo-lhe reagir a eventos ao redor num piscar de olho — armadilhas são burladas antes mesmo de se armarem.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "O jogador pode sobrescrever a narração do Narrador, dentro do razoável. Pode fazer o personagem atravessar uma porta antes que ela feche, contornar uma emboscada após ela ser ativada, rolar para fora de uma explosão etc. A ação deve ser razoável e não levar mais que alguns segundos em tempo real. O Narrador decide quais Perícias, se houver, precisam ser testadas para concluir a ação.",
+        duracao: "Aproximadamente uma ação, a critério do Narrador"
+      },
+      {
+        nivel: 5,
+        amalgama: "Ofuscação 4",
+        nome: "Golpe Invisível",
+        resumo: "Este poder letal combina Piscar e elementos de Desaparecer de Ofuscação — o vampiro some à vista e surge instantaneamente atrás do inimigo para desferir um golpe fatal.",
+        custo: "Duas Jogadas de Despertar",
+        dados: "Destreza + Celeridade vs. Perspicácia + Consciência",
+        resist: "Perspicácia + Consciência",
+        mecanica: "Pré-requisito: Piscar. Combina Piscar com elementos do poder Desaparecer de Ofuscação. Para os observadores o vampiro parece sumir; o alvo é pego de surpresa (ataque-surpresa). A menos que a vítima vença Perspicácia + Consciência contra Destreza + Celeridade do usuário, ela não pode se defender e o ataque é feito contra Dificuldade 1. Se o atacante falhar no teste, ainda realiza um ataque normal como Piscar. Sujeito às mesmas restrições de movimento de Piscar.",
+        duracao: "Um turno"
+      }
     ]
   },
-  "Dominação": {
-    descricao: "Disciplina do controle mental. Permite ao vampiro comandar mortais e vampiros, apagar memórias e reescrever a mente de suas vítimas.",
+
+  // ─────────────────────────────────────────────
+  // DOMINAÇÃO
+  // ─────────────────────────────────────────────
+  dominacao: {
+    descricao: "Dominação concede ao vampiro controle sobre ações e memórias alheias, forçando criaturas vivas a atos que jamais realizariam por vontade própria. É a Besta em sua forma mais cruel e controladora.",
     habilidades: [
-      {nivel:1,amalgama:"-",nome:"Nublar Memória",resumo:"Faça alguém esquecer os últimos momentos vividos.",custo:"-",dados:"Carisma + Dominação",resist:"Raciocínio + Determinação",mecanica:"Nenhuma rolagem é necessária se o alvo for um mortal despreparado.",duracao:"Para Sempre"},
-      {nivel:1,amalgama:"-",nome:"Compelir",resumo:"Emita um comando único e simples a um alvo.",custo:"-",dados:"Carisma + Dominação",resist:"Inteligência + Determinação",mecanica:"Nenhuma rolagem é necessária se o alvo for um mortal despreparado. O comando deve ser simples, com a mensagem transmitida em uma única sentença.",duracao:"Cena"},
-      {nivel:1,amalgama:"Fort. 1",nome:"Devoção Eslávica",resumo:"Os alvos que estão sob seu Domínio resistem mais facilmente à tentativa de Domínio de outros vampiros.",custo:"-",dados:"-",resist:"-",mecanica:"Qualquer tentativa de teste sofre uma penalidade equivalente ao nível do usuário de Fortitude.",duracao:"-"},
-      {nivel:2,amalgama:"-",nome:"Impressionar",resumo:"Imponha comandos mais complexos.",custo:"CS",dados:"Manipulação + Dominação",resist:"Inteligência + Determinação",mecanica:"Nenhuma rolagem é necessária se o alvo for um mortal despreparado. Se o comando for contra sua natureza ou o fizer se ferir, ele pode rolar para resistir.",duracao:"-"},
-      {nivel:2,amalgama:"Ofus. 2",nome:"Demência",resumo:"Leve a mente do alvo à insanidade temporariamente.",custo:"CS",dados:"Manipulação + Dominação",resist:"Autocontrole + Inteligência",mecanica:"Para conseguir usar esse poder o usuário deve estar tendo uma conversa estabelecida com o alvo, onde ele está focado.",duracao:"Cena"},
-      {nivel:2,amalgama:"-",nome:"Favor do Domitor",resumo:"Torna extremamente difícil que alguém Enlaçado resista aos seus comandos.",custo:"CS",dados:"-",resist:"-",mecanica:"Ao usar a habilidade ela fica passiva no alvo durante um mês. Durante o mês, o Laço de Sangue não se enfraquece mesmo se não houver Beijo.",duracao:"Mês"},
-      {nivel:3,amalgama:"-",nome:"Mente Elusiva",resumo:"Reescreva um detalhe de uma memória específica do alvo.",custo:"CS",dados:"Manipulação + Dominação",resist:"Inteligência + Determinação",mecanica:"Cada ponto de sucesso no teste permite que um detalhe ou uma memória a mais sejam atingidos.",duracao:"Para Sempre"},
-      {nivel:3,amalgama:"-",nome:"Diretriz Submersa",resumo:"Implante uma ordem específica na mente de uma pessoa que persiste até ser completa.",custo:"-",dados:"-",resist:"-",mecanica:"Melhora a habilidade Impressionar para que o efeito só passe quando efetivamente houver realização da tarefa.",duracao:"-"},
-      {nivel:4,amalgama:"Feit. 2",nome:"Domínio Ancestral",resumo:"Faça com que um vampiro aja da forma que você sugerir.",custo:"CS",dados:"Manipulação + Dominação",resist:"Inteligência + Determinação",mecanica:"Para cada geração de diferença o alvo ganha/perde um dado na hora de resistir.",duracao:"Cena"},
-      {nivel:4,amalgama:"-",nome:"Implantar Sugestão",resumo:"Mude a personalidade ou uma crença de um alvo temporariamente.",custo:"CS",dados:"Manipulação + Dominação",resist:"Autocontrole + Determinação",mecanica:"Nenhuma rolagem é necessária se o alvo for um mortal despreparado, a não ser que quebre uma crença muito sólida.",duracao:"Cena"},
-      {nivel:4,amalgama:"-",nome:"Racionalizar",resumo:"Convença as vítimas de sua Dominação de que foi ideia delas o tempo todo.",custo:"-",dados:"-",resist:"-",mecanica:"Não há mais confusão sobre o que aconteceu.",duracao:"-"},
-      {nivel:4,amalgama:"-",nome:"Tabula Rasa",resumo:"Apague as memórias de alguém ao ponto de ele não saber mais quem era.",custo:"2 CS",dados:"Determinação + Dominação",resist:"Autocontrole + Determinação",mecanica:"O alvo não pode regredir a ponto de esquecer como fazer suas atividades básicas de sobrevivência.",duracao:"Para Sempre"},
-      {nivel:5,amalgama:"-",nome:"O Chamado de Lethe",resumo:"Apague o equivalente a semanas da memória de alguém.",custo:"CS",dados:"Manipulação + Dominação",resist:"Inteligência + Determinação",mecanica:"Mortais não preparados não podem nem tentar resistir ao teste. Com comandos verbais o vampiro pode escolher que somente memórias de um tema específico sejam apagadas.",duracao:"Para Sempre"},
-      {nivel:5,amalgama:"-",nome:"Manipulação em Massa",resumo:"Extenda o alcance de suas habilidades de Dominação para múltiplos alvos ao mesmo tempo.",custo:"CS",dados:"-",resist:"-",mecanica:"O alvo a resistir será o mais forte do grupo. Somente poderão ser afetadas vítimas que tiverem contato visual com o usuário.",duracao:"-"},
-      {nivel:5,amalgama:"-",nome:"Decreto Final",resumo:"Melhora os efeitos de Dominação para poder ir contra crenças primordiais do alvo.",custo:"Mácula",dados:"-",resist:"-",mecanica:"Comandos de encerrar a própria vida são SEMPRE resistidos, independente do alvo.",duracao:"-"}
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Nublar a Memória",
+        resumo: "Com a palavra 'Esqueça!', o vampiro faz a vítima Dominada apagar o momento atual e os últimos minutos — suficiente para encobrir uma alimentação superficial.",
+        custo: "Grátis",
+        dados: "Carisma + Dominação vs. Perspicácia + Determinação",
+        resist: "Perspicácia + Determinação",
+        mecanica: "Sem teste contra mortal despreparado. Contra vítima resistindo ou outro vampiro, jogue Carisma + Dominação vs. Perspicácia + Determinação. Nenhuma nova memória é formada; pressionada, a vítima percebe que lhe faltam alguns minutos.",
+        duracao: "Indefinida"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Compelir",
+        resumo: "Com contato visual, o vampiro emite um comando único e breve — não mais que uma frase curta — que deve ser cumprido à risca no mesmo turno.",
+        custo: "Grátis",
+        dados: "Carisma + Dominação vs. Inteligência + Determinação",
+        resist: "Inteligência + Determinação",
+        mecanica: "Sem teste contra mortal despreparado. Exige disputa contra vítima resistindo, vítima já Dominada na mesma cena, outro vampiro ou se o comando vai contra a natureza da vítima. O Narrador pode interpretar comandos ambíguos de forma inesperada ou desfavorável; alternativamente, o comando confunde a vítima e falha. Comandos que resultam em morte ou dano grave óbvio falham automaticamente (a menos que Terminal Decretado esteja ativo).",
+        duracao: "Não mais que uma cena"
+      },
+      {
+        nivel: 1,
+        amalgama: "Fortitude 1",
+        nome: "Devoção Servil",
+        resumo: "Quem já está sob o domínio mental do vampiro tem a mente fortalecida contra interferências de outros Cainitas.",
+        custo: "Sem custo adicional",
+        dados: "—",
+        resist: "—",
+        mecanica: "Qualquer tentativa de terceiros de usar Dominação em um personagem que já está sob a influência da Dominação do vampiro sofre uma penalidade de dados igual ao nível de Fortitude do vampiro.",
+        duracao: "Passiva"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Mesmerizar",
+        resumo: "O vampiro emite comandos complexos à vítima, exigindo silêncio relativo e contato visual; as instruções devem ser executadas imediatamente e sem condicionais.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Manipulação + Dominação vs. Inteligência + Determinação",
+        resist: "Inteligência + Determinação",
+        mecanica: "Sem teste contra mortal despreparado. Exige disputa contra vítima resistindo ou outro vampiro. Comandos contra a natureza da vítima também exigem disputa. As instruções devem ser executadas imediatamente — nenhuma condicional (ex.: 'se você ver Henrique, entregue o documento') pois isso exigiria cognição.",
+        duracao: "Até o comando ser cumprido ou a cena terminar (o que vier primeiro)"
+      },
+      {
+        nivel: 2,
+        amalgama: "Ofuscação 2",
+        nome: "Dementação",
+        resumo: "Escondida entre linhas e inflexões de uma conversa casual, a influência do vampiro faz a vítima aflorar seus demônios internos — levando-a à agitação crescente e eventual colapso.",
+        custo: "Uma Jogada de Despertar por cena",
+        dados: "Manipulação + Dominação vs. Compostura + Inteligência",
+        resist: "Compostura + Inteligência",
+        mecanica: "Após engajar-se em conversa com a vítima, o usuário ativa o poder. Pela cena, pode atacar um único indivíduo por turno em uma disputa de Manipulação + Dominação vs. Compostura + Inteligência, causando dano Superficial de Vontade. Um mortal que fica Comprometido por este poder sofre um colapso nervoso ou episódio psicótico (forma determinada pela Ressonância, a critério do Narrador). Um vampiro que fica Comprometido deve imediatamente sucumbir a uma Compulsão escolhida pelo usuário do poder. Para afetar múltiplas vítimas, é necessária uma Jogada de Despertar separada para cada uma.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 2,
+        amalgama: "Fortitude 1",
+        nome: "Favor do Dominador",
+        resumo: "Enquanto condicionado com o Favor do Dominador, um servo com Laço de Sangue acha muito mais difícil agir contra seu mestre.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Jogadas de Defiance de servos voluntariosos sob efeito do Favor do Dominador são feitas com penalidade de −3 dados, e os servos não podem gastar Vontade nelas. Além disso, falha total em uma jogada de Defiance significa que o Laço de Sangue não enfraquece naquele mês.",
+        duracao: "Um mês"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "A Mente Esquecida",
+        resumo: "O vampiro reescreve faixas inteiras de memória da vítima, descrevendo verbalmente as novas lembranças enquanto mantém contato visual e atenção ininterruptos.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Manipulação + Dominação vs. Inteligência + Determinação",
+        resist: "Inteligência + Determinação",
+        mecanica: "O usuário joga uma disputa. Cada ponto de margem permite adicionar ou remover uma memória adicional. A vítima recorda as edições vagamente — pensamentos nebulosos que se desfazem sob questionamento próximo. Vitória crítica: cria uma impressão perfeita, tão real quanto qualquer memória verdadeira. O poder não permite investigar as memórias verdadeiras da vítima — é como pintar cegamente sobre uma tela.",
+        duracao: "Indefinida"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Racionalizar",
+        resumo: "As vítimas agora acreditam que tudo o que fizeram sob influência da Dominação foi por vontade própria e defendem essas ações com convicção.",
+        custo: "Sem custo adicional",
+        dados: "—",
+        resist: "Perspicácia + Consciência (Dificuldade 5, para a vítima questionar a si mesma)",
+        mecanica: "Se pressionada sobre suas crenças, a vítima pode fazer um teste de Perspicácia + Consciência (Dificuldade 5). Uma vitória a faz questionar sua própria declaração — e talvez sua sanidade. Exposição prolongada a este poder pode causar trauma mental severo.",
+        duracao: "Indefinida"
+      },
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Diretiva Submersa",
+        resumo: "Ao usar Mesmerizar, o vampiro implanta uma sugestão pós-hipnótica que permanece dormente até um estímulo específico ocorrer — pode jamais expirar.",
+        custo: "Sem custo adicional",
+        dados: "—",
+        resist: "—",
+        mecanica: "Funciona como Mesmerizar, embora o Narrador possa querer fazer as jogadas secretamente. Não há como saber se a sugestão funcionou até as condições serem satisfeitas. O estímulo pode ser uma data específica, uma pessoa, uma frase ouvida etc. Só pode haver uma sugestão ativa por vítima.",
+        duracao: "Passiva (sem expiração)"
+      },
+      {
+        nivel: 4,
+        amalgama: "Feitiçaria de Sangue 2",
+        nome: "Domínio Ancestral",
+        resumo: "Vampiros de grande idade e potência exertem sua vontade pelo próprio Sangue, sem precisar de contato visual ou comunicação verbal — compelindo um descendente a agir em seu nome.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Manipulação + Dominação vs. Determinação + Ocultismo",
+        resist: "Determinação + Ocultismo",
+        mecanica: "Pré-requisito: Mesmerizar. Numa disputa bem-sucedida, a vítima cumpre a solicitação desde que não implique auto-dano. Para cada geração que separa o usuário de seu alvo, o vampiro resistindo ganha um dado adicional. Vampiros instintivamente sabem que um ancestral os está manipulando. Não exige contato visual nem comando verbal, mas está sujeito a todas as demais limitações de Dominação.",
+        duracao: "Até o comando ser cumprido ou a cena terminar (o que vier primeiro)"
+      },
+      {
+        nivel: 4,
+        amalgama: "Presença 1",
+        nome: "Implantar Sugestão",
+        resumo: "O vampiro altera a própria personalidade ou opiniões do sujeito temporariamente — fazendo-o desejar um estranho, abandonar sua família, desconfiar de suas próprias crenças, ou simplesmente querer uma cerveja.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Manipulação + Dominação vs. Compostura + Determinação",
+        resist: "Compostura + Determinação",
+        mecanica: "Sem teste contra mortal despreparado. Mortal preparado ou vampiro requer disputa de Manipulação + Dominação vs. Compostura + Determinação. Mudanças radicais nas crenças centrais (ex.: fazer um pacifista se tornar violento) também merecem resistência, mesmo de mortais despreparados. A sugestão dura uma cena, após a qual a vítima sai do estado.",
+        duracao: "Uma cena"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Manipulação em Massa",
+        resumo: "O vampiro comanda agora grupos inteiros de mortais — e em alguns casos até grupos de vampiros — emitindo instruções ou manipulando memórias de todos ao mesmo tempo.",
+        custo: "Uma Jogada de Despertar adicional ao custo do poder amplificado",
+        dados: "—",
+        resist: "—",
+        mecanica: "O vampiro pode amplificar qualquer um de seus outros poderes para afetar um grupo de pessoas (mortais ou vampiros) ao mesmo tempo. Todas as vítimas precisam ver os olhos do usuário. O usuário faz qualquer jogada necessária apenas uma vez — contra o oponente mais forte do grupo.",
+        duracao: "Conforme o poder amplificado"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Decreto Terminal",
+        resumo: "O vampiro não está mais limitado pelo instinto de autopreservação das vítimas — pode agora emitir comandos que levam diretamente à morte ou ferimento grave do alvo.",
+        custo: "Sem custo adicional de Fome; o custo de Humanidade pode ser severo",
+        dados: "—",
+        resist: "—",
+        mecanica: "Comandos terminais agora devem ser resistidos (ver poderes individuais para as jogadas envolvidas), em vez de falhar automaticamente. Mortais podem ser ordenados a se suicidar, pular de telhados ou engolir veneno. Vampiros podem, com algum esforço, ser forçados a entrar no fogo ou na luz solar.",
+        duracao: "Passiva"
+      }
     ]
   },
-  "Feitiçaria de Sangue": {
-    descricao: "Disciplina da magia hemática. Permite ao vampiro manipular o sangue como arma, escudo e ferramenta para extrair segredos e alterar a realidade.",
+
+  // ─────────────────────────────────────────────
+  // FORTITUDE
+  // ─────────────────────────────────────────────
+  fortitude: {
+    descricao: "Fortitude concede ao vampiro resistência sobre-humana a dano físico e mental. Poucos vampiros sobrevivem além de um século sem ao menos um traço dessa disciplina em um mundo onde a violência é comum e nem os Cainitas estão seguros.",
     habilidades: [
-      {nivel:1,amalgama:"-",nome:"Vitae Corrosiva",resumo:"Transforma seu sangue em algo corrosivo.",custo:"CS",dados:"-",resist:"-",mecanica:"Não funciona contra pele de mortos-vivos e criaturas sobrenaturais. Somente materiais sólidos e pele humana.",duracao:"-"},
-      {nivel:1,amalgama:"-",nome:"Molde o Sacramento",resumo:"Molde o sangue para formar um desenho ou escrita.",custo:"- / CS",dados:"Manipulação + Feitiçaria",resist:"-",mecanica:"Se utilizar o próprio sangue, custa um CS.",duracao:"Cena"},
-      {nivel:1,amalgama:"-",nome:"Gosto por Sangue",resumo:"Ao provar sangue, descubra algumas características.",custo:"- / CS",dados:"Determinação + Feitiçaria",resist:"-",mecanica:"Descobre coisas como ressonância, potência, geração, criatura de origem e se o alvo já cometeu diablerie.",duracao:"-"},
-      {nivel:2,amalgama:"-",nome:"Maldição do Sangue",resumo:"Aumente a Perdição de outro vampiro.",custo:"CS",dados:"Inteligência + Feitiçaria",resist:"Vigor + Autocontrole",mecanica:"Aumente a penalidade em Dif.Teste.",duracao:"Até Dormir"},
-      {nivel:2,amalgama:"-",nome:"Extinguir Vitae",resumo:"Aumente a fome de outro vampiro.",custo:"CS",dados:"Inteligência + Feitiçaria",resist:"Vigor + Autocontrole",mecanica:"A vítima pode descobrir quem usou a habilidade contra ela com um teste de Inteligência + Ocultismo.",duracao:"-"},
-      {nivel:2,amalgama:"-",nome:"Vasculhar Segredos",resumo:"Leia e aprenda uma vasta quantidade de conhecimento em segundos.",custo:"CS",dados:"Inteligência + Feitiçaria",resist:"-",mecanica:"O conteúdo precisa estar disponível de fácil acesso ao vampiro, seja em livros ou na internet.",duracao:"-"},
-      {nivel:3,amalgama:"-",nome:"Sangue de Potência",resumo:"Aumente a potência de sangue temporariamente.",custo:"CS",dados:"Determinação + Feitiçaria",resist:"-",mecanica:"Esse poder pode permitir que seja ultrapassado o limite estabelecido pela geração.",duracao:"Cena/Noite"},
-      {nivel:3,amalgama:"-",nome:"Toque do Escorpião",resumo:"Transforma o próprio sangue em um veneno paralisante.",custo:"x CS",dados:"Força + Feitiçaria",resist:"Vigor + Ocultismo/Fortitude",mecanica:"Um mortal que sofrer com o veneno se torna inconsciente imediatamente. Vampiros que não passarem no teste são paralisados.",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Laço Transitivo",resumo:"Aumenta as propriedades do laço de sangue.",custo:"CS",dados:"-",resist:"-",mecanica:"Torna mais fácil de realizar um abraço sem causar tantos danos ao alvo, ou no caso dos Tremere, torna possível novamente realizar um abraço.",duracao:"-"},
-      {nivel:3,amalgama:"-",nome:"Ondas Cardíacas",resumo:"Manipule um sangue específico para que o alvo que o consumir possa ser manipulado por você.",custo:"CS",dados:"-",resist:"-",mecanica:"Você pode imbuir compulsões específicas ao alvo, ou vontades/ideias.",duracao:"-"},
-      {nivel:4,amalgama:"-",nome:"Roubo de Vitae",resumo:"Manipule o sangue de uma vítima a sair do corpo para que você se alimente.",custo:"CS",dados:"Raciocínio + Feitiçaria",resist:"Raciocínio + Ocultismo",mecanica:"Quando é um sucesso, a vítima entra no mesmo estado de torpor de um Beijo normal.",duracao:"Alimentação"},
-      {nivel:4,amalgama:"-",nome:"Égide de Sangue",resumo:"Forme uma barreira protetora feita de sangue.",custo:"x CS",dados:"-",resist:"-",mecanica:"Para cada CS o usuário pode diminuir em até 5 pontos de dano tomados. Pode ser encerrada a qualquer momento.",duracao:"Cena"},
-      {nivel:5,amalgama:"-",nome:"Carícia de Baal",resumo:"Transforma seu próprio sangue no mais mortal dos venenos.",custo:"x CS",dados:"Força + Feitiçaria",resist:"Vigor + Ocultismo/Fortitude",mecanica:"Se usado em um mortal ele morrerá ao tomar 1 ponto de dano. Ao usar em um Vampiro ele toma dano equivalente ao Dif.Teste.",duracao:"Cena"},
-      {nivel:5,amalgama:"-",nome:"Caldeirão de Sangue",resumo:"Frite a vítima por dentro com seu próprio sangue.",custo:"CS + Mácula",dados:"Determinação + Feitiçaria",resist:"Autocontrole + Ocultismo/Fortitude",mecanica:"Se usado em um mortal ele morrerá ao tomar 1 ponto de dano. Ao usar em um Vampiro ele toma dano equivalente ao Dif.Teste.",duracao:"Turno"},
-      {nivel:5,amalgama:"-",nome:"Reclamar Vitae",resumo:"Retire a propriedade Não Viva de Ghouls.",custo:"Mácula",dados:"-",resist:"-",mecanica:"Mesmo a distância, faça um ghoul retornar ao mundo dos mortos instantaneamente.",duracao:"-"}
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Resiliência",
+        resumo: "O vampiro é dotado de resistência sobrenatural, ampliando seu limiar de dano.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "O usuário adiciona seu nível de Fortitude à trilha de Saúde.",
+        duracao: "Passiva"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Mente Inabalável",
+        resumo: "Uma capacidade mística de resistir a tentativas de influência — seja charme mundano, coerção ou poderes sobrenaturais como Dominação e Presença.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "O usuário adiciona seus pontos de Fortitude como dados extras em qualquer jogada para resistir a coerção, intimidação, sedução ou qualquer outra tentativa de dobrar sua mente contra sua vontade. Funciona também contra habilidades sobrenaturais como Dominação e Presença.",
+        duracao: "Passiva"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Resistência",
+        resumo: "O vampiro ignora danos que incapacitariam outros da sua espécie — embora não proteja contra banes ou dano Agravado.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Subtraia o nível de Fortitude do defensor de todo dano Superficial sofrido. Isso ocorre antes de dividir o dano pela metade e não pode reduzir o dano abaixo de 1.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 2,
+        amalgama: "Animali­smo 1",
+        nome: "Feras Resistentes",
+        resumo: "O vampiro compartilha um fragmento de sua resistência sobrenatural com os animais que influencia, tornando enxames e grandes bestas quase tão resistentes quanto ele próprio.",
+        custo: "Grátis (fâmulo); Uma Jogada de Despertar (outros animais)",
+        dados: "Vigor + Animalismo (para animais não-fâmulos, Dificuldade 3)",
+        resist: "—",
+        mecanica: "O vampiro estende seus poderes de Fortitude a animais afetados por seu Animalismo. Qualquer animal assim imbuído ganha pontos de Saúde adicionais iguais aos pontos de Fortitude do vampiro. Usar em fâmulo é gratuito e automático. Para outros animais, faça uma Jogada de Despertar e um teste de Vigor + Animalismo (Dificuldade 3); o usuário pode fortalecer um animal por ponto de margem. Quando o efeito termina, remove-se primeiro a Saúde não marcada — o que pode matar o animal.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 2,
+        amalgama: "Auspício 1",
+        nome: "Vitalização da Cura",
+        resumo: "O vampiro fortalece a capacidade do próprio Sangue de curar feridas mortais. Seres vivos que bebem seu vitae se recuperam com velocidade surpreendente.",
+        custo: "Nenhum além das Jogadas de Despertar para dar Sangue",
+        dados: "N/A",
+        resist: "—",
+        mecanica: "Usar vitae para curar os vivos (ver p. 139 do corebook) cura 3 níveis de Dano Agravado por Jogada de Despertar em vez de apenas 1. Outros efeitos (tornar-se ghoul, risco de Laço de Sangue) permanecem inalterados.",
+        duracao: "Passiva"
+      },
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Perseverança da Terra",
+        resumo: "Quase impossível de mover quando ativo — o vampiro extrai força da terra, enraizando-se no lugar.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Quando ativo, a única maneira de o vampiro se mover é por vontade própria. Isso não o torna resistente a dano — ainda pode ser esmagado, despedaçado ou destruído, assim como o chão sob seus pés.",
+        duracao: "Uma cena ou até o usuário optar por encerrar"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Desafiar o Bane",
+        resumo: "O vampiro se prepara para resistir temporariamente a fogo e luz solar, além de outros ferimentos graves que ameaçariam a Morte Final.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Perspicácia + Sobrevivência (para ativar reflexivamente)",
+        resist: "—",
+        mecanica: "O usuário pode converter um número de danos Agravados sofridos igual ao seu nível de Fortitude em dano Superficial durante a cena. Não pode curar esse dano Superficial pelo resto da cena. O poder converte um número de danos por cena, não por ferida ou ataque. Pode ser renovado com outra Jogada de Despertar. Se surpreendido, pode ativar reflexivamente com Perspicácia + Sobrevivência (Dificuldade 3) ao receber dano Agravado — falha: não ativa; sucesso: deve fazer uma Jogada de Despertar para pagar o custo.",
+        duracao: "Uma cena ou até expirar (o que vier primeiro)"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Fortalecer a Fachada Interior",
+        resumo: "Em vez de endurecer o corpo, este poder protege os pensamentos e emoções do vampiro contra bisbilhotice sobrenatural — sua mente parece completamente em branco e sua aura, plana.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "Aumenta a Dificuldade de usar Sondar a Alma (Auspício 3), Telepatia (Auspício 5) e poderes similares no usuário em metade do nível de Fortitude (arredondado para cima). Se as regras permitirem ao usuário resistir a esses poderes, ele adiciona seu nível de Fortitude à pool em vez disso.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 3,
+        amalgama: "Auspício 1",
+        nome: "Valeren",
+        resumo: "O vampiro projeta sua Fortitude para fora, usando o poder do próprio Sangue para curar as feridas de outro vampiro.",
+        custo: "Uma Jogada de Despertar (+ Saúde adicional conforme as circunstâncias)",
+        dados: "Inteligência + Fortitude (Dificuldade 2)",
+        resist: "—",
+        mecanica: "O vampiro joga Inteligência + Fortitude contra Dificuldade 2 e cura níveis de dano Superficial de Saúde iguais à margem. Alternativamente, cura 1 nível de dano Agravado de Saúde a cada 3 sucessos na margem. O uso leva um turno inteiro; passar a cena inteira reduz a Dificuldade para 0. Não pode ser usado em si mesmo; só funciona em vampiros. Um sujeito só pode ser afetado uma vez por noite. Curar mais de um sujeito por noite causa ao usuário dano Superficial de Saúde igual a metade dos sucessos da margem para cada sujeito adicional.",
+        duracao: "N/A"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Draught de Resistência",
+        resumo: "O Sangue do vampiro fica saturado com o poder da Fortitude, transferindo parte desse poder a quem beber diretamente de suas veias.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Beber um volume de Sangue equivalente a uma Jogada de Despertar diretamente do usuário concede ao bebedor Fortitude temporária igual a metade dos pontos de Fortitude do doador (arredondado para baixo), incluindo os mesmos poderes até esse nível.",
+        duracao: "Uma noite; para vampiros, até a próxima alimentação ou ao atingir Fome 5"
+      },
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Escamas de Górgona",
+        resumo: "A Ressonância do sangue no sistema do vampiro concede defesas variadas contra poderes de outros Cainitas ou protege contra fraquezas comuns dos vampiros.",
+        custo: "Uma Jogada de Despertar",
+        dados: "N/A",
+        resist: "—",
+        mecanica: "Na ativação, o vampiro ganha imunidades ou resistências dependendo da Ressonância do sangue da última refeição: Colérico: uma estaca cravada no coração se decompõe ou vira cinzas ao fim da cena, libertando imediatamente o vampiro da paralisia (a Ressonância é perdida); Melancólico: dano Agravado de Saúde causado por fogo é reduzido para Superficial (a Ressonância é perdida após reduzir 4 níveis de dano); Fleumático: o vampiro ganha +4 dados para resistir a poderes de Auspício que revelariam algo sobre ele ou seu conhecimento (dura uma cena, Ressonância perdida); Sanguíneo: dano Agravado de Saúde causado por luz solar é reduzido para Superficial (a Ressonância é perdida após reduzir 4 níveis de dano).",
+        duracao: "Até a cena terminar ou a Ressonância ser consumida (o que vier primeiro)"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Carne de Mármore",
+        resumo: "O Sangue faz a pele do vampiro endurecer com brilho marmóreo — ainda flexível mas capaz de parar quase qualquer golpe antes de quebrar e se reformar.",
+        custo: "Duas Jogadas de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Com este poder ativo, o vampiro ignora a primeira fonte de dano físico em cada turno — incluindo fogo, mas não luz solar. Se houver dúvida sobre qual fonte é 'a primeira', o Narrador decide pela narrativa ou o vampiro ignora a fonte mais danosa do turno. Uma vitória crítica em uma jogada de ataque ignora este poder.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Força da Dor",
+        resumo: "Ferimentos e impairments agora apenas alimentam os poderes do vampiro — quanto mais machucado, mais forte e veloz se torna.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Ao ativar o poder, o vampiro não sofre mais penalidades de dados por dano de Saúde sofrido (como Comprometimento físico). Além disso, pode aumentar em 1 ponto um Atributo Físico (atributos derivados não são afetados) para cada nível de dano na trilha de Saúde — Agravado ou Superficial. Os Atributos do usuário não podem exceder um valor igual ao seu Surto de Sangue + 6 por meio desta habilidade.",
+        duracao: "Uma cena"
+      }
     ]
   },
-  "Fortitude": {
-    descricao: "Disciplina da resistência sobrenatural. Permite ao vampiro suportar danos físicos e mentais que destruiriam qualquer outra criatura.",
+
+  // ─────────────────────────────────────────────
+  // FEITIÇARIA DE SANGUE
+  // ─────────────────────────────────────────────
+  feiticaria: {
+    descricao: "Feitiçaria de Sangue — ou 'Taumaturgia' para os Tremere, 'Quietus' para os Banu Haqim — torna o próprio vitae em arma, veneno, ácido ou ferramenta mágica. É a única Disciplina que também desbloqueia a capacidade de realizar Rituais.",
     habilidades: [
-      {nivel:1,amalgama:"-",nome:"Resistência Fluente",resumo:"Rerrole seu CS em testes que envolvam Vigor ou Fortitude uma vez.",custo:"-",dados:"-",resist:"-",mecanica:"Uma única rerrolagem por teste.",duracao:"-"},
-      {nivel:1,amalgama:"-",nome:"Resiliência",resumo:"Adicione seu nível de Fortitude na sua trilha de Vitalidade.",custo:"-",dados:"-",resist:"-",mecanica:"-",duracao:"-"},
-      {nivel:1,amalgama:"-",nome:"Mente Resiliente",resumo:"Adicione seu nível de Fortitude em testes de resistência mental.",custo:"-",dados:"-",resist:"-",mecanica:"-",duracao:"-"},
-      {nivel:2,amalgama:"-",nome:"Perseverança Pétrea",resumo:"Se torne uma rocha imóvel incapaz de tirarem do lugar.",custo:"CS",dados:"-",resist:"-",mecanica:"Apesar de não ser movível, ainda pode sofrer dano, assim como o solo aos seus pés também pode ser danificado.",duracao:"Cena"},
-      {nivel:2,amalgama:"Anim. 1",nome:"Besta Vigorosa",resumo:"Divida sua resistência com seu familiar, tornando-o resistente.",custo:"CS",dados:"Vigor + Animalismo",resist:"-",mecanica:"O animal adiciona seu nível de Fortitude em testes de resistência e defesa.",duracao:"Cena"},
-      {nivel:2,amalgama:"Ausp. 1",nome:"Vitae Envigorante",resumo:"Cura mortais mais rapidamente usando seu sangue.",custo:"CS",dados:"-",resist:"-",mecanica:"O risco de formar um Ghoul ou um Enlace ainda existem.",duracao:"-"},
-      {nivel:2,amalgama:"Pot. 2",nome:"Obstinação",resumo:"Mantenha a postura ao ser atingido por forças externas.",custo:"CS",dados:"Vigor + Sobrevivência",resist:"-",mecanica:"Diminua o dano sofrido pela metade. Qualquer dano de queda é reduzido em seu nível de Fortitude antes de ser dividido pela metade.",duracao:"Cena"},
-      {nivel:2,amalgama:"-",nome:"Dureza",resumo:"Subtraia sua Fortitude de qualquer dano que você tomar.",custo:"CS",dados:"-",resist:"-",mecanica:"Dividir por dois nunca pode resultar em valor menor do que 1.",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Desafiar Perdição",resumo:"Converta qualquer dano Agravado tomado em dano Superficial.",custo:"CS",dados:"Raciocínio + Sobrevivência",resist:"-",mecanica:"Ao usar essa habilidade não é possível curar dano superficial durante o restante da cena.",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Fortificar o Interior",resumo:"Aumenta a dificuldade para ações de domínio sobre sua mente em metade da sua Fortitude.",custo:"-",dados:"-",resist:"-",mecanica:"-",duracao:"-"},
-      {nivel:3,amalgama:"-",nome:"Selar a Mandíbula",resumo:"Você pode ignorar os dados de fome, porém se você falhar no CS sua parada de dados diminui equivalente.",custo:"2 CS",dados:"-",resist:"-",mecanica:"Se a parada de dados for reduzida a zero um Frenesi de Fúria se inicia.",duracao:"Cena"},
-      {nivel:3,amalgama:"Ausp. 1",nome:"Valeren",resumo:"Cure um vampiro lesionado.",custo:"CS",dados:"Inteligência + Fortitude",resist:"-",mecanica:"Cure danos superficiais equivalentes aos sucessos. Sucessos críticos permitem cura de danos agravados igual a metade do valor. Um mesmo alvo não pode receber essa habilidade mais de uma vez por noite.",duracao:"-"},
-      {nivel:4,amalgama:"-",nome:"Esboço do Vigor",resumo:"Transforme seu sangue em uma poção de vigor para os outros.",custo:"CS",dados:"-",resist:"-",mecanica:"Cada consumidor faz um teste de CS, eles recebem suas habilidades de Fortitude igual a metade do seu nível e todas as suas habilidades até o nível em questão.",duracao:"Noite"},
-      {nivel:4,amalgama:"-",nome:"Escamas da Górgona",resumo:"Ressonâncias agora tem efeitos diferentes em você.",custo:"CS",dados:"-",resist:"-",mecanica:"Colérico te permite escapar de estacas. Melancólico reduz dano de fogo. Fleumático te fortalece contra Auspícios. Sanguíneo diminui dano de luz solar.",duracao:"Cena"},
-      {nivel:4,amalgama:"-",nome:"Estilhaçar",resumo:"Ao diminuir dano com Dureza, o alvo sofre esse dano.",custo:"CS",dados:"-",resist:"-",mecanica:"Armas de contato quebram caso seu nível seja igual ou maior ao dano recebido.",duracao:"Ataque"},
-      {nivel:5,amalgama:"-",nome:"Carne de Mármore",resumo:"Ignore completamente a primeira fonte de dano que você tomar todo turno, que não seja de luz solar.",custo:"2CS",dados:"-",resist:"-",mecanica:"Sucessos críticos ignoram essa habilidade.",duracao:"Cena"},
-      {nivel:5,amalgama:"-",nome:"Proeza pela Dor",resumo:"Ignore completamente suas penalidades por dano e aumente um atributo por quadrado de dano marcado.",custo:"CS",dados:"-",resist:"-",mecanica:"O atributo não pode ultrapassar um valor máximo de Potência de Sangue + 6.",duracao:"Cena"}
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Vitae Corrosivo",
+        resumo: "O vampiro altera as propriedades de parte do seu Sangue, tornando-o altamente corrosivo a substâncias mortas — capaz de dissolver a maioria dos objetos até virar fumaça com tempo e Sangue suficientes.",
+        custo: "Uma ou mais Jogadas de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Sem teste adicional. O usuário concentra-se por um turno e força Sangue através de um ferimento aberto (geralmente autoinfligido). Derrama então o Sangue sobre um objeto não-vivo (exceto carne não-viva de Cainitas) para corrodi-lo. Cada Jogada de Despertar corrói aproximadamente 35 cm de matéria em todas as direções a partir do ponto de contato (leva cerca de 5 minutos; mais tempo em metais macios como cobre ou ferro fundido). Metais mais duros como ligas e aço apenas ficam marcados e deformados — se isso os enfraquece significativamente é a critério do Narrador.",
+        duracao: "N/A"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Sabor do Sangue",
+        resumo: "Ao provar uma gota de sangue, o usuário descobre traços básicos de quem lhe pertence — Ressonância, tipo de criatura e potência.",
+        custo: "Grátis",
+        dados: "Determinação + Feitiçaria de Sangue (Dificuldade 3)",
+        resist: "—",
+        mecanica: "O usuário esfrega o sangue na língua e faz o teste. Com vitória: determina a Ressonância e intensidade do sangue humano, e identifica se pertence a mortal, ghoul, vampiro ou outra criatura sobrenatural. Provar vitae também determina o Potencial de Sangue relativo (e portanto a faixa geracional provável) do vampiro. Vitória crítica: revela se o sujeito já cometeu diablerie, e a geração exata (dentro de uma) do vampiro. Se o usuário conhece a criatura sobrenatural em questão, pode identificá-la especificamente com vitória crítica.",
+        duracao: "N/A"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Extinguir o Vitae",
+        resumo: "O usuário remove intencionalmente as propriedades vivificantes de parte do Sangue de outro vampiro — elevando sua Fome à medida que as reservas internas se solidificam em impotência.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Inteligência + Feitiçaria de Sangue vs. Vigor + Compostura",
+        resist: "Vigor + Compostura",
+        mecanica: "O usuário joga uma disputa de Inteligência + Feitiçaria vs. Vigor + Compostura de um vampiro alvo em linha de visão enquanto se concentra por um turno e gesticula sutilmente. Vitória: aumenta a Fome do alvo em 1. Vitória crítica: aumenta em 2. A vítima pode discernir quem a está afligindo fazendo Inteligência + Ocultismo vs. Perspicácia + Subterfúgio (se puder ver o usuário).",
+        duracao: "N/A"
+      },
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Vasculhar Segredos",
+        resumo: "O Feiticeiro de Sangue libera riachos do próprio Sangue sintonizados para buscar informações sobre um assunto escolhido, varrendo vastas quantidades de texto em minutos.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Inteligência + Feitiçaria de Sangue",
+        resist: "—",
+        mecanica: "O usuário faz uma Jogada de Despertar e testa Inteligência + Feitiçaria de Sangue contra Dificuldade definida pelo Narrador: de 2 para uma única carta em um escritório comum até 5 para informações cifradas em uma vasta biblioteca. Informações supernaturalmente ocultas aumentam ainda mais a Dificuldade. O tempo gasto depende do tamanho da área: um único cômodo pode ser vasculhado em minutos; uma biblioteca requer horas ou a noite inteira. O objeto vasculhado fica manchado de sangue depois. O poder não confere a capacidade de decifrar linguagens desconhecidas ou códigos. Se o conhecimento for em formatos não escritos (pinturas, músicas, disquetes antigos), funciona a critério do Narrador, com Dificuldade provavelmente maior.",
+        duracao: "Uma noite ou até a informação ser encontrada (o que vier primeiro)"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Sangue de Potência",
+        resumo: "O vampiro concentra seu Sangue, aumentando temporariamente seu Potencial de Sangue.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Determinação + Feitiçaria de Sangue (Dificuldade 2 + Potencial de Sangue atual)",
+        resist: "—",
+        mecanica: "Vitória: aumenta o Potencial de Sangue em 1 pela cena. Vitória crítica: aumenta em 2. O vampiro pode usar este poder para exceder seu limite geracional de Potencial de Sangue durante a duração.",
+        duracao: "Uma cena ou uma noite"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Toque do Escorpião",
+        resumo: "O vampiro transmuta parte do próprio Sangue em veneno paralisante capaz de afetar mortais e vampiros — pode revestir armas ou ser cuspido no alvo.",
+        custo: "Uma ou mais Jogadas de Despertar",
+        dados: "Força + Feitiçaria de Sangue vs. Vigor + Ocultismo ou Fortitude",
+        resist: "Vigor + Ocultismo (ou Vigor + Fortitude para vampiros com essa Disciplina)",
+        mecanica: "Concentra-se por um turno e força Sangue através de um ferimento aberto. Cada Jogada de Despertar produz veneno suficiente para revestir uma arma cortante ou encher uma bocada para cuspir. Cuspir exige Destreza + Atletismo (pode ser esquivado como ataque à distância). Se atingir, jogue Força + Feitiçaria vs. Vigor + Ocultismo. Vitória: o veneno causa a margem em dano Agravado a mortais e dano Superficial não-dividido a vampiros. Um mortal que sofra ao menos 1 ponto de dano desmaia inconsciente. O veneno transmitido diretamente de veia a presas garante acerto automático! Não pode envenenar bebidas (dissolve-se em líquidos) nem ser injetado por mordida (diferença de pressão). Não pode ser usado com armas de fogo à distância. O veneno permanece potente por uma cena.",
+        duracao: "O veneno permanece potente por uma cena"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Roubo de Vitae",
+        resumo: "Por meios místicos, o vampiro abre um ferimento em uma artéria principal de uma vítima mortal, fazendo o sangue jorrar pelo ar diretamente até a boca aberta do usuário — mantendo a vítima subjugada como se sob o Beijo.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Perspicácia + Feitiçaria de Sangue vs. Perspicácia + Ocultismo",
+        resist: "Perspicácia + Ocultismo",
+        mecanica: "O usuário faz um gesto de chamado em direção a uma vítima mortal em linha de visão e joga a disputa. Vitória: abre uma ferida arterial e o vampiro começa a se alimentar à distância. O usuário não pode fazer mais nada enquanto se alimenta, mas pode fazê-lo no dobro da velocidade normal (triplo com vitória crítica) graças à pressão sorceira. A ferida se fecha sozinha ao final, quer a vítima tenha morrido ou não. (Alvo com proteção corporal total como traje hazmat sangra estaticamente para dentro do traje.) Extremamente espetacular — potencial violação da Máscara enquanto em andamento.",
+        duracao: "Uma alimentação"
+      },
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Égide de Sangue",
+        resumo: "O vampiro força seu vitae a formar uma barreira física protetora — uma folha tremulante de Sangue que se move por conta própria para interceptar e absorver projéteis.",
+        custo: "Uma ou mais Jogadas de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "O usuário expende Sangue equivalente a uma ou mais Jogadas de Despertar. Para cada Jogada, a barreira flutuante pode reduzir o dano de ataques à distância recebidos em 5. O efeito é automático: o vitae intercepta cada projétil numa chuva de sangue, se reformando enquanto o poder estiver ativo. Quando a proteção se esgota, o Sangue torna-se inerte espalhado pela área.",
+        duracao: "Uma cena ou até os níveis de dano serem gastos (o que vier primeiro)"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Carícia de Baal",
+        resumo: "O vampiro transmuta seu Sangue em veneno extremamente agressivo — letal para mortais e Cainitas igualmente.",
+        custo: "Uma ou mais Jogadas de Despertar",
+        dados: "Força + Feitiçaria de Sangue vs. Vigor + Ocultismo ou Fortitude",
+        resist: "Vigor + Ocultismo (ou Fortitude em vez de Ocultismo para vampiros)",
+        mecanica: "Usa o mesmo sistema e restrições de Toque do Escorpião, com dano aumentado. Se atingir: jogue Força + Feitiçaria vs. Vigor + Ocultismo. Vitória: o veneno causa a margem em dano Agravado de Saúde a mortais e vampiros igualmente. Mortal com ao menos 1 ponto de dano morre instantaneamente. Se um vampiro alvo sofrer dano Agravado, jogue a disputa novamente; vitória coloca o vampiro em torpor na próxima vez em que dormir.",
+        duracao: "O veneno permanece potente por uma cena"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Caldeirão de Sangue",
+        resumo: "Faz o sangue da vítima ferver dentro das próprias veias, causando dano massivo e dor excruciante com um toque.",
+        custo: "Uma Jogada de Despertar + 1 (ou mais) Manchas",
+        dados: "Determinação + Feitiçaria de Sangue vs. Compostura + Ocultismo ou Fortitude",
+        resist: "Compostura + Ocultismo (ou Compostura + Fortitude para vampiros)",
+        mecanica: "O usuário paga o custo e toca a vítima (Destreza + Atletismo em combate), jogando a disputa. Vitória: cada ponto de margem causa 1 ponto de dano Agravado à vítima. Mortais com ao menos 1 ponto de dano morrem gritando. Vampiros vítimas ganham 1 Fome por ponto de dano infligido, até Fome 5.",
+        duracao: "Um turno"
+      }
     ]
   },
-  "Ofuscação": {
-    descricao: "Disciplina do ocultamento e da ilusão. Permite ao vampiro tornar-se invisível, criar alucinações e manipular a percepção de suas vítimas.",
+
+  // ─────────────────────────────────────────────
+  // OFUSCAÇÃO
+  // ─────────────────────────────────────────────
+  ofuscacao: {
+    descricao: "Ofuscação funciona por meio de mesmerismo ambiente de baixo nível — observadores veem o vampiro mas suas mentes escolhem ignorá-lo. A ilusão falha se o vampiro forçar demais a situação ou se engajar em ação violenta.",
     habilidades: [
-      {nivel:1,amalgama:"-",nome:"Manto de Sombras",resumo:"Enquanto você permanecer parado, você fica extremamente difícil de ser percebido.",custo:"-",dados:"-",resist:"-",mecanica:"-",duracao:"Cena"},
-      {nivel:1,amalgama:"-",nome:"Truque de Mãos",resumo:"Faça com que outros alvos ignorem completamente a presença de um objeto pequeno em suas mãos.",custo:"-",dados:"-",resist:"-",mecanica:"Sentir o Invisível pode burlar essa habilidade.",duracao:"Cena"},
-      {nivel:1,amalgama:"-",nome:"Silêncio da Morte",resumo:"Elimine completamente o som que o usuário faz.",custo:"-",dados:"-",resist:"-",mecanica:"Sons causados por coisas externas ainda são gerados normalmente.",duracao:"Cena"},
-      {nivel:2,amalgama:"-",nome:"Cache",resumo:"Esconda um objeto de tamanho médio que não precisa estar sendo segurado pelo usuário.",custo:"CS",dados:"-",resist:"-",mecanica:"Pode ter seu efeito estendido ao custo de mais CS.",duracao:"Cena"},
-      {nivel:2,amalgama:"Pres. 1",nome:"Alquimerismo",resumo:"Crie uma curta, porém bastante realista, alucinação.",custo:"CS",dados:"Manipulação + Ofuscação",resist:"Autocontrole + Raciocínio",mecanica:"Pode ser usada durante combate, mas somente uma única vez por alvo.",duracao:"Turno"},
-      {nivel:2,amalgama:"Anim. 1",nome:"Passagem Fantasmagórica",resumo:"O usuário pode tornar imperceptível a trilha deixada por um animal.",custo:"CS",dados:"-",resist:"-",mecanica:"Sentir o Invisível pode burlar essa habilidade.",duracao:"Sessão"},
-      {nivel:2,amalgama:"-",nome:"Passagem Invisível",resumo:"O usuário agora pode se mover enquanto se mantém imperceptível.",custo:"CS",dados:"-",resist:"-",mecanica:"Essa habilidade vai falhar se antes de utilizada o usuário estiver sendo observado com atenção.",duracao:"Cena"},
-      {nivel:2,amalgama:"Ausp. 2",nome:"Ventriloquismo",resumo:"Faça com que somente seu alvo ouça sua voz mesmo a distância.",custo:"CS",dados:"Raciocínio + Ofuscação",resist:"Determinação + Autocontrole",mecanica:"Pode ser usado em qualquer alvo, mas pode ser resistido.",duracao:"Cena"},
-      {nivel:2,amalgama:"Ausp. 1",nome:"Fala Dupla",resumo:"Fale uma coisa em voz alta, mas faça com que seu alvo ouça uma mensagem diferente.",custo:"CS",dados:"Autocontrole + Ofuscação",resist:"Raciocínio + Auspícios",mecanica:"Qualquer pessoa presente que esteja focada na conversa pode tentar resistir para perceber a fala escondida.",duracao:"Fala"},
-      {nivel:3,amalgama:"Pres. 2",nome:"Fata Morgana",resumo:"Transforme suas alucinações em coisas mais duradouras e elaboradas.",custo:"CS",dados:"Manipulação + Ofuscação",resist:"Autocontrole + Raciocínio",mecanica:"Somente pessoas muito conscientes ou vampiros podem resistir ao teste.",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Fantasma na Máquina",resumo:"Permite que os efeitos de Ofuscação sejam transmitidos por tecnologia.",custo:"-",dados:"-",resist:"-",mecanica:"Se visto depois em uma foto ou vídeo, a imagem fica embaçada e difícil de discernir.",duracao:"-"},
-      {nivel:3,amalgama:"-",nome:"Máscara de Mil Faces",resumo:"Transforma sua aparência e presença como alguém qualquer aos outros.",custo:"CS",dados:"-",resist:"-",mecanica:"Esse poder permite que o usuário se comunique e interaja enquanto se mantém anônimo.",duracao:"Cena"},
-      {nivel:3,amalgama:"Dom. 1",nome:"Máscara do Isolamento",resumo:"Force a habilidade Máscara de Mil Faces em um alvo.",custo:"CS",dados:"Manipulação + Ofuscação",resist:"Carisma + Sagacidade",mecanica:"Caso o usuário, por um motivo qualquer, se torne consciente do efeito, ele termina imediatamente.",duracao:"Noite"},
-      {nivel:3,amalgama:"Dom. 1",nome:"Labirinto Mental",resumo:"Remova qualquer senso de direção e localização de um alvo.",custo:"1-3 CS",dados:"Carisma + Ofuscação",resist:"Raciocínio + Determinação",mecanica:"É necessário firmar contato visual. O custo varia de acordo com a familiaridade da pessoa com o local.",duracao:"Noite"},
-      {nivel:3,amalgama:"Dom. 2",nome:"Fantasia da Mente",resumo:"Esconda e/ou troque as emoções visualizadas por poderes de invasão de mente.",custo:"CS",dados:"Inteligência + Ofuscação",resist:"-",mecanica:"A dificuldade do teste depende do quão complexa é a emoção que o usuário quer aparentar.",duracao:"Cena"},
-      {nivel:4,amalgama:"Ausp. 3",nome:"Esconder",resumo:"Torne imperceptível um objeto inanimado.",custo:"CS",dados:"Inteligência + Ofuscação",resist:"-",mecanica:"Esse poder não pode afetar nada maior do que um sobrado ou algo que se mova por conta própria.",duracao:"Noite x Sucesso"},
-      {nivel:4,amalgama:"-",nome:"Desaparecer",resumo:"Agora você pode ativar habilidades de sumiço mesmo quando é observado de perto.",custo:"-",dados:"Raciocínio + Ofuscação",resist:"Raciocínio + Percepção",mecanica:"Esse poder não afeta as memórias de vampiros, mas a visão fica nublada por alguns segundos quando você some.",duracao:"-"},
-      {nivel:5,amalgama:"-",nome:"Manto da Unificação",resumo:"Usa um manto de sombras para esconder você e seus aliados.",custo:"Raciocínio + CS",dados:"-",resist:"-",mecanica:"Essa habilidade estende o efeito de ofuscações a um número de aliados equivalentes ao seu Raciocínio.",duracao:"-"},
-      {nivel:5,amalgama:"-",nome:"Postura do Impostor",resumo:"Tenha a aparência convincente de outra pessoa.",custo:"CS",dados:"Raciocínio + Ofuscação",resist:"Manipulação + Performance",mecanica:"A face que será copiada deve ser estudada com atenção e visibilidade por pelo menos 5 minutos e por múltiplos ângulos.",duracao:"Cena"}
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Manto de Sombras",
+        resumo: "Parado e em silêncio, o usuário se funde às sombras ao redor. Apenas meios mecânicos ou sobrenaturais podem detectá-lo enquanto não se mover.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "Siga as regras gerais de Ofuscação. O efeito dura até o usuário se mover ou ser detectado por outros meios. Requer algum tipo de cobertura visual.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Silêncio da Morte",
+        resumo: "Silencia completamente o usuário, anulando todos os sons produzidos por ele — popular entre os Banu Haqim.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "O usuário silencia seus passos, roupas, pequenas colisões e demais sons de sua pessoa. Torna o vampiro indetectável a observadores que só poderiam notá-lo pelo som (ex.: outro andar de uma casa). Não elimina sons que o usuário produz além de seu espaço pessoal (atirar ou derrubar objetos, bater portas etc.). Ao contrário de outras habilidades de Ofuscação, funciona somente para o sentido da audição — mas opera de forma mais robusta. Falha nisso: apenas Sentir o Invisível (Auspício 1) pode detectar o usuário.",
+        duracao: "Uma cena"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Passagem Invisível",
+        resumo: "O vampiro pode agora se mover enquanto permanece oculto — funcionalmente invisível dentro das limitações normais de Ofuscação.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Enquanto o usuário não emitir odores avassaladores e nenhum som além de um sussurro, o poder funciona automaticamente. Apenas se a atenção de um observador for diretamente atraída para o usuário é que ele pode tentar uma jogada de detecção. Não pode ser usado para desaparecer enquanto está sendo observado ativamente — falha automaticamente nesse caso. Sentir o Invisível (Auspício 1) também pode detectar o vampiro oculto.",
+        duracao: "Uma cena ou até ser detectado"
+      },
+      {
+        nivel: 2,
+        amalgama: "Presença 1",
+        nome: "Quimerstria",
+        resumo: "O vampiro cria alucinações breves mas vívidas, distraindo e atraindo a atenção dos afetados — um único sentido de cada vez.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Manipulação + Ofuscação vs. Compostura + Perspicácia",
+        resist: "Compostura + Perspicácia",
+        mecanica: "O vampiro joga Manipulação + Ofuscação. Todos despreparados e em linha de visão elegíveis a experimentar a alucinação ficam distraídos, perdendo 2 dados na próxima ação. Além disso, aqueles que falharem em Compostura + Perspicácia perdem sua próxima ação ativa (mas ainda podem se defender e resistir, com penalidade de −2 dados). Ao contrário de outros poderes de Presença, pode ser usado durante conflito físico como combate — mas alvos só podem ser afetados uma vez por conflito. A alucinação nunca pode ser gravada ou transmitida (ex.: via Fantasma na Máquina).",
+        duracao: "Um turno"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Fantasma na Máquina",
+        resumo: "O usuário pode transmitir os efeitos de Ofuscação através de mídia eletrônica, aparecendo invisível ou mascarado em transmissões ao vivo.",
+        custo: "Sem custo adicional",
+        dados: "—",
+        resist: "—",
+        mecanica: "Nenhuma jogada adicional ao ser visualizado em transmissão ao vivo — observadores são tratados como se estivessem presentes. O observador adiciona +3 à sua Dificuldade em testes para identificar o usuário em filme, vídeo, fotos ou similares tirados durante Ofuscação ativa. O usuário também ganha 3 dados extras em pools usadas para contornar vigilância eletrônica automatizada.",
+        duracao: "Conforme o poder usado"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Máscara dos Mil Rostos",
+        resumo: "Em vez de desaparecer, o vampiro passa a parecer um desconhecido discreto — alguém esperado a estar na área — permitindo interação social sem levantar suspeitas.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Sem teste. Qualquer um que veja o vampiro enxerga um rosto anônimo e inesquecível do mesmo gênero e estatura aproximada. As roupas assumem a blandeza adequada ao ambiente. Não fornece identificação específica nem enganar verificações de identidade. Não funciona contra pessoas que não esperariam ver ninguém ou que seriam hostis a qualquer desconhecido. Sentir o Invisível (Auspício 1) pode romper o poder normalmente.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 3,
+        amalgama: "Presença 2",
+        nome: "Fata Morgana",
+        resumo: "O vampiro cria alucinações elaboradas que afetam qualquer sentido — todos ao alcance veem, ouvem e sentem o que o usuário imaginar.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Manipulação + Ofuscação",
+        resist: "Inteligência + Consciência (vs. Manipulação + Presença para desacreditar)",
+        mecanica: "Jogue Manipulação + Ofuscação contra Dificuldade igual a 1 mais o número de sentidos que a alucinação visa (alucinação audio-visual = Dificuldade 3; experiência de cinco sentidos = 6). Alucinações visuais pequenas/discretas são mais fáceis; tamanho de cômodo aumenta a Dificuldade em 1; tamanho de casa em 2; e assim por diante. Não há limite de vítimas simultâneas, mas o alvo deve conseguir ver o usuário (ou vice-versa). Vampiros e sobrenaturais podem tentar não acreditar (Inteligência + Consciência vs. Manipulação + Presença). Qualquer tentativa de interagir com a alucinação a rompe para todos. Os efeitos NÃO podem bloquear linha de visão, cegar, ensurdecer, causar dano físico real, ser gravados por câmeras, nem ocorrer fora das leis físicas aparentes do ambiente. Alucinações que poderiam causar Frenesi aplicam o mesmo teste com Dificuldade 1 mais baixa que o real.",
+        duracao: "Uma cena, a menos que o vampiro opte por encerrá-la antes"
+      },
+      {
+        nivel: 3,
+        amalgama: "Dominação 1",
+        nome: "Labirinto Mental",
+        resumo: "Remove todo senso de direção e localização de uma vítima, aprisionando-a efetivamente em seu ambiente atual — seja uma casa, uma boate ou o porão do vampiro.",
+        custo: "Uma ou Três Jogadas de Despertar",
+        dados: "Carisma + Ofuscação vs. Perspicácia + Determinação",
+        resist: "Perspicácia + Determinação",
+        mecanica: "O vampiro estabelece contato visual e joga a disputa (vampiros de geração mais baixa podem negar com Vontade como em Dominação). Vitória: a vítima encontra dificuldade em sair do prédio onde está. Duas Jogadas de Despertar adicionais permitem usar o poder em um único cômodo ou ambiente externo denso (canteiro de obras, floresta). Mortais não podem tentar escapar. Criaturas sobrenaturais podem fazer Determinação + Consciência por cena usando os sucessos iniciais do vampiro como Dificuldade, sofrendo 1 ponto de dano Superficial de Vontade por sucesso faltante. Esse teste não pode se beneficiar de Trabalho em Equipe. O poder termina se o ambiente se tornar perigoso (ex.: pega fogo), a menos que o vampiro tenha Terminal Decretado.",
+        duracao: "Uma noite"
+      },
+      {
+        nivel: 3,
+        amalgama: "Dominação 2",
+        nome: "Máscara Mental",
+        resumo: "O vampiro cria a ilusão de uma persona completamente diferente, ocultando seus verdadeiros pensamentos e sentimentos de qualquer um que use poderes sobrenaturais para ler sua mente, aura ou estado mental.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Inteligência + Ofuscação",
+        resist: "—",
+        mecanica: "O usuário joga Inteligência + Ofuscação contra Dificuldade de 1 a 3 (ou mais), dependendo da sofisticação do disfarce: 1 representa simples mascaramento do estado emocional; 3 ou mais cria personas alternativas elaboradas com pensamentos e memórias falsas. A margem da vitória é adicionada como Dificuldade a qualquer tentativa de 'ler' o usuário. Falhar em atingir a Dificuldade adicional faz o leitor ver apenas a personalidade falsa criada pelo usuário, sem qualquer indício de que está sendo enganado.",
+        duracao: "Uma cena"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        amalgama: "Auspício 3",
+        nome: "Ocultar",
+        resumo: "Oculta um objeto inanimado — uma porta, um carro ou uma pequena casa — criando um efeito hipnótico duradouro que faz as pessoas simplesmente ignorá-lo.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Inteligência + Ofuscação",
+        resist: "Perspicácia + Auspício vs. Inteligência + Ofuscação do usuário (para detectar com Sentir o Invisível)",
+        mecanica: "O vampiro toca o objeto e joga Inteligência + Ofuscação contra Dificuldade 2 (ocultar um anel em gaveta cheia de bijuterias) até 6 (ocultar uma casa no meio de uma praça aberta), conforme tamanho e localização do alvo. O poder dura uma noite; cada ponto de margem oculta o objeto por uma noite adicional. Também oculta qualquer pessoa ou coisa dentro do objeto (ex.: pessoas em um carro ou galpão) enquanto o observador permanecer do lado de fora. Não funciona em objetos maiores que uma casa de dois andares ou em qualquer objeto em movimento por meios próprios (como um carro em movimento).",
+        duracao: "Uma noite + uma noite por ponto de margem"
+      },
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Desaparecer",
+        resumo: "O vampiro pode ativar Manto de Sombras e Passagem Invisível mesmo sob observação direta — parecendo sumir num piscar de olhos, com até a memória tornando-se vaga e indistinta.",
+        custo: "Conforme o poder aumentado",
+        dados: "Perspicácia + Ofuscação vs. Perspicácia + Consciência",
+        resist: "Perspicácia + Consciência",
+        mecanica: "Pré-requisito: Manto de Sombras. Ao desaparecer na frente de um mortal, jogue Perspicácia + Ofuscação vs. Perspicácia + Consciência. Vitória: o observador questiona se o vampiro esteve lá; sua memória fica turva sobre o assunto. Vitória crítica: o vampiro desaparece completamente da memória do observador. Não afeta memórias de vampiros, mas qualquer vitória os oculta como se tivessem ativado o poder sem ser observados. Só pode ser usado uma vez por cena.",
+        duracao: "Conforme o poder aumentado"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Ocultar o Bando",
+        resumo: "O vampiro estende o manto de Ofuscação sobre companheiros, ocultando um grupo inteiro.",
+        custo: "Uma Jogada de Despertar além do custo do poder estendido",
+        dados: "—",
+        resist: "—",
+        mecanica: "O vampiro pode estender seu poder de Ofuscação a um número de sujeitos adicionais disposto a participar igual ao seu nível de Perspicácia, mais um para cada Jogada de Despertar adicional realizada. O poder de Ofuscação usado pode ser qualquer um que o usuário conheça; todos os membros do grupo contam como tendo usado por conta própria, usando o nível de Ofuscação do vampiro ocultante quando necessário. Membros do grupo ainda percebem uns aos outros. Se qualquer membro (exceto o usuário) for revelado, o resto permanece oculto. Se o usuário for revelado, todos são revelados.",
+        duracao: "Conforme o poder estendido"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Guisa do Impostor",
+        resumo: "Com preparação cuidadosa, o vampiro pode parecer um indivíduo específico de qualquer estatura e gênero — incluindo voz e maneirismos.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Perspicácia + Ofuscação / Manipulação + Atuação",
+        resist: "—",
+        mecanica: "Pré-requisito: Máscara dos Mil Rostos. O usuário deve estudar o rosto a ser copiado por pelo menos 5 minutos, de diferentes ângulos. Mais 10 minutos de observação são necessários para imitar voz e maneirismos. O Narrador faz um teste oculto de Perspicácia + Ofuscação (Dificuldade 4). Falha: a semelhança é pouco convincente e qualquer pessoa próxima ao alvo imitado percebe algo errado automaticamente. Vitória: ilusão convincente, mas o usuário deve fazer Manipulação + Atuação para imitar fala e maneirismos. Vitória crítica: ilusão perfeita, sem teste adicional necessário. Sentir o Invisível (Auspício 1) pode romper a máscara.",
+        duracao: "Uma cena"
+      }
     ]
   },
-  "Oblívio": {
-    descricao: "Disciplina das trevas e da morte. Permite ao vampiro manipular sombras, interagir com o mundo espiritual e invocar o poder do esquecimento.",
+
+  // ─────────────────────────────────────────────
+  // OBLÍVIO
+  // ─────────────────────────────────────────────
+  oblivio: {
+    descricao: "Oblívio canaliza as artes mais sombrias — sombras e antimorte como armas. Seus praticantes correm o risco de perder a alma e a Humanidade para algo mais sombrio que a morte e duplamente faminto. Cada Jogada de Despertar que resultar em '1' ou '10' causa uma Mancha além de qualquer Fome ganha.",
     habilidades: [
-      {nivel:1,amalgama:"-",nome:"Do Pó ao Pó",resumo:"Destrua um corpo morto, dissolvendo-o.",custo:"CS",dados:"Vigor + Oblívio",resist:"Vigor + Medicina/Fortitude",mecanica:"Se o corpo não for algo reanimado, não há teste de resistência e em três turnos ele desaparece sem deixar rastros.",duracao:"-"},
-      {nivel:1,amalgama:"-",nome:"Grilhões",resumo:"Permite que o vampiro identifique um Grilhão Sobrenatural.",custo:"-",dados:"Raciocínio + Oblívio",resist:"-",mecanica:"Durante o uso, o usuário recebe uma penalidade de -2 em Percepção, Raciocínio e Determinação.",duracao:"Cena"},
-      {nivel:1,amalgama:"-",nome:"Visão do Oblívio",resumo:"Veja claramente na escuridão e perceba a presença de fantasmas.",custo:"-",dados:"-",resist:"-",mecanica:"Enquanto estiver usando, todos os atributos sociais recebem uma penalidade de -2.",duracao:"Cena"},
-      {nivel:1,amalgama:"-",nome:"Manto Sombrio",resumo:"+2 de Bônus para testes de Furtividade e Intimidação contra mortais.",custo:"-",dados:"-",resist:"-",mecanica:"-",duracao:"-"},
-      {nivel:2,amalgama:"Pot. 2",nome:"Braços de Ahriman",resumo:"Conjure apêndices de sombras que podem ser controlados e tangíveis, porém o usuário fica imóvel.",custo:"CS",dados:"Raciocínio + Oblívio",resist:"-",mecanica:"Os apêndices não têm trilha de vitalidade e conseguem ser escapados ou destruídos sem testes.",duracao:"Cena / Destruídos"},
-      {nivel:2,amalgama:"Ausp. 2",nome:"Previsão Fatal",resumo:"Aumente a chance de que um mortal seja azarado e se lesione por forças externas.",custo:"CS",dados:"Determinação + Oblívio",resist:"Raciocínio + Ocultismo",mecanica:"Para cada sucesso além do teste de resistência o alvo recebe 1 de dano Agravado. O Vampiro não pode interagir com o alvo de forma alguma senão a habilidade é cancelada.",duracao:"24 Horas"},
-      {nivel:2,amalgama:"Ausp. 2",nome:"Precognição Fatal",resumo:"Veja a forma como um ser mortal irá morrer.",custo:"CS",dados:"Determinação + Oblívio",resist:"-",mecanica:"O vampiro tem de conseguir enxergar ou ouvir o alvo para realizar a habilidade.",duracao:"Até completo ou evitado"},
-      {nivel:2,amalgama:"-",nome:"Conjuração de Sombras",resumo:"Expande a sombra de seu corpo criando uma aura de penalidade no alvo afetado.",custo:"CS",dados:"-",resist:"-",mecanica:"Sua sombra pode se expandir até o dobro do seu nível de Oblívio em metros. Alvos sobre sua sombra sofrem penalidade de -2 em testes sociais.",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Aura do Decaimento",resumo:"Usando sua conexão com o Oblívio você pode fazer plantas murcharem, animais e humanos adoecerem.",custo:"CS",dados:"Vigor + Oblívio",resist:"Vigor + Medicina/Fortitude",mecanica:"Comidas apodrecidas causam 2 de dano superficial. Pessoas e animais doentes recebem uma penalidade de -2 em Atributos Sociais.",duracao:"Cena"},
-      {nivel:3,amalgama:"Fort. 2",nome:"Banquete da Paixão",resumo:"Permite que o vampiro satisfaça sua fome com a Paixão das Wraiths.",custo:"-",dados:"Determinação + Oblívio",resist:"Determinação + Autocontrole",mecanica:"A fome aliviada dura somente uma noite.",duracao:"-"},
-      {nivel:3,amalgama:"-",nome:"Perspectiva da Penumbra",resumo:"Projete algum de seus sentidos em qualquer sombra que esteja em sua linha de visão.",custo:"CS",dados:"-",resist:"-",mecanica:"Pode ser percebida com Perceber o Invisível.",duracao:"Cena"},
-      {nivel:3,amalgama:"Ausp. 1",nome:"Servente Sombrio",resumo:"Use as sombras para espionar ou assustar o alvo.",custo:"CS",dados:"-",resist:"-",mecanica:"O Servente não tem uma consciência própria e é desfeito ao entrar em contato com um ambiente bastante iluminado.",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Toque do Oblívio",resumo:"Murcha uma parte do corpo do alvo ao toque.",custo:"CS",dados:"-",resist:"-",mecanica:"O alvo deve estar sendo tocado pelo usuário. A depender do efeito realizado pode resultar em uma Mácula.",duracao:"Turno"},
-      {nivel:4,amalgama:"-",nome:"Praga Necrótica",resumo:"Manifeste uma doença no alvo.",custo:"CS",dados:"Inteligência + Oblívio",resist:"Vigor + Medicina/Fortitude",mecanica:"A doença não pode ser tratada por meios médicos, somente irá passar ao consumir vitae.",duracao:"Turno / Duração"},
-      {nivel:4,amalgama:"-",nome:"Manto Stígio",resumo:"Faça com que uma sombra em sua visão se espalhe criando uma área de total escuridão.",custo:"CS",dados:"-",resist:"-",mecanica:"A sombra pode aumentar a um tamanho de até duas vezes Oblívio metros.",duracao:"Cena"},
-      {nivel:4,amalgama:"-",nome:"Engate Umbral",resumo:"Usando a sombra da vítima, você cria um portal que a transporta até seus braços.",custo:"CS + Mácula",dados:"Raciocínio + Oblívio",resist:"Destreza + Raciocínio",mecanica:"Um mortal despreparado fica completamente apavorado sem reagir. Já um vampiro pode testar para Fúria ou Frenesi com dificuldade 4.",duracao:"Ação"},
-      {nivel:5,amalgama:"-",nome:"Passo Sombrio",resumo:"O usuário pode entrar em uma sombra e reaparecer em outra dentro de sua linha de visão.",custo:"CS",dados:"-",resist:"-",mecanica:"Um alvo que concorde pode ser transportado junto do usuário.",duracao:"Turno"},
-      {nivel:5,amalgama:"-",nome:"Dívida Paga",resumo:"Reintroduza uma doença da qual a vítima já havia se recuperado.",custo:"2 CS",dados:"Vigor + Oblívio",resist:"Vigor + Medicina/Fortitude",mecanica:"Se a vítima for um morto-vivo, essa habilidade remove o poder de não envelhecer e a criatura expele todo o vitae imediatamente.",duracao:"Variável"},
-      {nivel:5,amalgama:"-",nome:"Avatar Tenebroso",resumo:"Transforma seu corpo em uma sombra capaz de se mover por qualquer superfície.",custo:"2 CS",dados:"-",resist:"-",mecanica:"O usuário não sofre dano nessa forma, com exceção de luz solar e fogo.",duracao:"Cena"},
-      {nivel:5,amalgama:"-",nome:"Espírito a Murchar",resumo:"Destrói o espírito de um alvo até que ele se torne uma casca vazia.",custo:"2CS + Mácula",dados:"Determinação + Oblívio",resist:"Determinação + Ocultismo/Fortitude",mecanica:"-",duracao:"-"}
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Cinzas às Cinzas",
+        resumo: "Permite ao vampiro destruir um cadáver — fresco ou de longa data — introduzindo seu vitae no corpo.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Vigor + Oblívio vs. Vigor + Medicina ou Fortitude (se o cadáver estiver animado)",
+        resist: "Vigor (ou Vigor + Fortitude para cadáveres animados com Fortitude)",
+        mecanica: "O vampiro faz a Jogada de Despertar e introduz o vitae no cadáver. Sem animação: o corpo se desintegra em 3 turnos sem teste. Se animado: jogue Vigor + Oblívio vs. Vigor do cadáver. Vitória: o cadáver se dissolve em 5 turnos menos a margem (mínimo 1; cadáveres em dissolução sofrem Comprometimento físico). Vitória crítica: desintegra imediatamente. Falha total: o cadáver fica imune a este poder de qualquer usuário.",
+        duracao: "Variável"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "O Elo Vinculante",
+        resumo: "O vampiro identifica objetos ou locais importantes para fantasmas — 'elos' que os prendem à existência. Elos emanam auras variáveis detectáveis por visão, olfato e outros sentidos.",
+        custo: "Grátis",
+        dados: "Perspicácia + Oblívio",
+        resist: "—",
+        mecanica: "Na ativação, os sentidos do usuário sintonizam-se sobrenatural-mente com as energias dos elos, identificando essas auras por visão, olfato e outros sentidos. Enquanto o poder está em uso, o vampiro fica distraído de outras atividades: −2 penalidade em jogadas de Destreza e Perspicácia.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Visão do Oblívio",
+        resumo: "Os olhos do vampiro ficam completamente negros, permitindo ver claramente na escuridão total e perceber fantasmas que não estão ativamente se ocultando.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "Na ativação, o usuário ignora todas as penalidades de pouca luz, incluindo as de origem sobrenatural. Ainda precisa dos olhos para ver — vendas e similares funcionam normalmente. Fantasmas presentes e não tentando se ocultar tornam-se visíveis. Os olhos completamente negros conferem −2 dados em interações sociais com mortais enquanto ativos.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Manto de Sombra",
+        resumo: "Aplicando sutilmente a influência do Oblívio sobre sombras ambientes, o usuário mascara sua aparência ou parece mais sombrio e ameaçador.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "O vampiro ganha +2 dados em jogadas de Furtividade, bem como em Intimidação contra mortais.",
+        duracao: "Passiva"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        amalgama: "Potência 2",
+        nome: "Braços de Ahriman",
+        resumo: "O vampiro convoca extensões sombreadas de pontos não iluminados da área — sombras locais que se estendem para agarrar ou sufocar vítimas.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Perspicácia + Oblívio",
+        resist: "—",
+        mecanica: "O usuário gasta um turno e paga o custo, convocando as extensões. Usando-as, pode realizar ataques de contusão e agarrão contra alvos distantes a cada turno subsequente. Braços adicionais podem ser criados dividindo a pool de dados, permitindo engajar múltiplos oponentes. As sombras usam Perspicácia + Oblívio do vampiro para atacar e causam dano Superficial ou agarrão, adicionando metade do nível de Potência do usuário (arredondado para cima) como bônus de dano. O vampiro não pode fazer mais nada além de controlar as sombras enquanto este poder está ativo. Podem ser usadas para ações simples (abrir portas, puxar alavancas), mas nada tão avançado quanto digitar ou controlar veículos. As extensões têm comprimento (em metros) igual ao dobro dos pontos de Oblívio do usuário (movem-se por superfícies, não pelo ar). Só podem ser dispersas por luz intensa (tocha poderosa ou luz solar) — mas uma Perspicácia + Oblívio bem-sucedida contra Dificuldade 3 permite às sombras evitar a luz por um turno.",
+        duracao: "Uma cena ou até ser encerrado ou destruído"
+      },
+      {
+        nivel: 2,
+        amalgama: "Auspício 2",
+        nome: "Predição Fatal",
+        resumo: "O vampiro tece fios invisíveis de entropia a uma vítima mortal, aumentando as chances de ela sofrer dano ou morte dentro de um dia e uma noite.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Determinação + Oblívio vs. Perspicácia + Ocultismo",
+        resist: "Perspicácia + Ocultismo",
+        mecanica: "O vampiro faz a disputa contra um alvo mortal em linha de visão. Para cada sucesso na margem, o alvo sofre 1 ponto de dano Agravado em algum momento nas próximas 24 horas. A fonte pode ser qualquer coisa, de doença repentina a acidentes bizarros — mas o vampiro não deve interagir, direta ou indiretamente, com a vítima, sob risco de cancelar o poder. O uso do poder é invisível, embora um observador possa detectar algo de errado com Perspicácia + Ocultismo (Dificuldade 3). Só funciona em mortais (incluindo ghouls) — vampiros já estão mortos e são muito mais resistentes a manipulações de entropia.",
+        duracao: "Uma noite e um dia — 24 horas"
+      },
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Projetar Sombra",
+        resumo: "O poder extrai a escuridão interior do usuário para projetar uma sombra sobrenatural de seu próprio corpo — de onde manifestar outros poderes, independentemente da iluminação ambiente.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Ativar o poder conjura uma sombra sobrenatural do corpo do vampiro. Enquanto ativo, o usuário projeta essa sombra, que não pode ser removida exceto por luz solar direta. Observadores percebem a sombra projetada sem fonte de luz visível com Perspicácia + Consciência (Dificuldade 3). O vampiro pode direcionar sua sombra, alongando-a ou distorcendo-a (mas não desconectando-a) à vontade — embora às vezes ela aja por conta própria, a critério do Narrador. Para fins de outros poderes como Perspectiva de Sombra, o praticante pode estender a sombra até duas vezes seu nível de Oblívio em metros/jardas. Para qualquer pessoa de pé no alcance da sombra, o dano de Vontade de conflitos sociais aumenta em 1 (após dividir dano Superficial pela metade).",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Onde o Véu se Afina",
+        resumo: "Vampiros com afinidade pelo Oblívio podem sentir onde o véu entre o mundo dos vivos e o mundo dos mortos está mais fraco — em locais onde o véu é mais fino, o uso de Oblívio fica facilitado.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Inteligência + Oblívio (Dificuldade 3)",
+        resist: "—",
+        mecanica: "Após a Jogada de Despertar, jogue Inteligência + Oblívio. Vitória: determina a densidade do véu em sua área próxima (até um prédio inteiro ou ponto de referência). Vitória crítica: revela se a densidade do véu mudou recentemente. Falha total: o poder sai pela culatra e fornece uma leitura falsa. Sem este poder, usuários de Oblívio não podem se beneficiar de um afinalamento do véu — embora penalidades se apliquem a critério do Narrador.",
+        duracao: "Um turno"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Aura de Decadência",
+        resumo: "Cainitas com forte conexão ao Oblívio afetam o mundo ao redor — plantas murcham, animais e humanos adoecem, comida apodrece. Não acelera o apodrecimento de coisas já mortas.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Vigor + Oblívio (Dificuldade 3) vs. Vigor + Medicina ou Fortitude (para criaturas vivas)",
+        resist: "Vigor + Medicina (ou Vigor + Fortitude)",
+        mecanica: "Com vitória na jogada de Vigor + Oblívio (Dificuldade 3), material orgânico e inorgânico não-inteligente dentro de 5 metros sofre — plantas enegrecem e morrem, comida apodrece em embalagens, tijolos começam a desmoronar. Materiais afetados podem tornar-se tóxicos se ingeridos (causam 2 de dano Superficial de Saúde na cena seguinte a cada cena até serem tratados com Inteligência + Medicina, Dificuldade 3). Qualquer ser vivo capturado na aura entra em uma disputa de Vigor + Medicina vs. a jogada de ativação do vampiro; para cada ponto de margem do vampiro, a vítima sofre 1 ponto de dano Superficial de Saúde não-dividido, aplicado gradualmente durante a cena. Aplicações repetidas na mesma cena não afetam a Saúde de mortais já afetados. Qualquer um com olfato detecta um odor de apodrecimento emanando do vampiro — −2 dados em qualquer jogada Social do vampiro enquanto o poder está ativo.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 3,
+        amalgama: "Fortitude 2",
+        nome: "Banquete de Paixões",
+        resumo: "O vampiro pode se alimentar das paixões de wraiths em vez de sangue, reduzindo sua Fome ao absorver as emoções que prendem os mortos à existência.",
+        custo: "Grátis",
+        dados: "Determinação + Oblívio vs. Determinação + Compostura (do wraith)",
+        resist: "Determinação + Compostura (do wraith)",
+        mecanica: "Um vampiro com este poder pode drenar um wraith de sua paixão enquanto estiver a 3 metros ou menos dele. Disputa de Determinação + Oblívio vs. Determinação + Compostura do wraith. Vitória: o wraith sofre 1 ponto de dano Agravado de Vontade e a Fome do vampiro é reduzida em 1. Alimentar-se de um wraith pode causar uma Mancha, a critério do Narrador (a paixão consumida embota a razão de ser do wraith, potencialmente enviando-o por um caminho de atos autodestrutivos). O Narrador determina o número de paixões que um wraith possui (embora cinco ou mais seja raro); pode determinar que o wraith se torna um espectro assassino incontrolável ao ter todas as paixões consumidas.",
+        duracao: "Passiva"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Perspectiva de Sombra",
+        resumo: "O vampiro projeta seus sentidos para qualquer sombra em linha de visão, vendo e ouvindo como se estivesse escondido em qualquer parte dela.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Após a Jogada de Despertar, a presença dos sentidos do vampiro na sombra é indetectável por qualquer meio exceto sobrenatural (como Sentir o Invisível). Enquanto ativo, o vampiro percebe tanto seus arredores quanto o que pode ser captado pela Perspectiva de Sombra, como olhar por uma tela ou buraco. Inclui a própria sombra, conforme manipulada por Projetar Sombra.",
+        duracao: "Até uma cena"
+      },
+      {
+        nivel: 3,
+        amalgama: "Auspício 1",
+        nome: "Servo das Sombras",
+        resumo: "O vampiro dá vida independente a uma parte de sua própria sombra, usando-a para espionar ou perturbar inimigos.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Nenhum",
+        resist: "—",
+        mecanica: "O servo não tem mente própria, mas segue os comandos mentais do criador. Viaja à velocidade de corrida e consegue facilmente deslizar por baixo de portas, escalar paredes ou penetrar em qualquer fresta, embora não possa suportar áreas muito iluminadas. Também pode se agarrar a veículos em movimento; seu alcance é limitado apenas pela distância que consegue percorrer em uma noite. Ouve e vê tudo em suas proximidades e pode transmitir as informações assim que for reabsorvido na sombra do criador. O servo-sombra só pode ser dispersado por luz intensa (tocha poderosa ou luz solar), mas uma Perspicácia + Oblívio bem-sucedida contra Dificuldade 3 permite que o servo evite a luz por um turno.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Toque do Oblívio",
+        resumo: "O vampiro pode danificar e aleijá-lo com um único toque, envelhecendo catastroficamente a parte do corpo afetada — pode murchar um membro, amassar uma garganta ou cegar um par de olhos.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Força + Briga (para agarrar a vítima resistindo)",
+        resist: "—",
+        mecanica: "Após a Jogada de Despertar, o vampiro agarra sua vítima (requer Força + Briga se a vítima estiver tentando evitar). Uma vez agarrada, a vítima sofre 2 níveis de dano Agravado e um ferimento incapacitante. Se infligido a um braço ou perna, o membro fica permanentemente inutilizado (mortais precisam de longa reabilitação; vampiros podem curar como dano Agravado normal). Da mesma forma, Toque do Oblívio pode tornar o alvo mudo, surdo ou cego. O Narrador pode decidir que infligir tal mutilação justifica Manchas.",
+        duracao: "Um turno"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Praga Necrótica",
+        resumo: "Pelo toque, o vampiro contamina o sangue de uma vítima mortal com uma doença que assola seu corpo — e pode torná-la contagiosa.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Inteligência + Oblívio vs. Vigor + Vigor ou Fortitude",
+        resist: "Vigor (ou Vigor + Fortitude para criaturas com Fortitude)",
+        mecanica: "O vampiro faz a Jogada de Despertar e joga Inteligência + Oblívio enquanto toca a vítima mortal. Vítima fraca (bebê, idosa, doente, se recuperando de doença, moribunda, com 3 ou menos caixas de Saúde não marcadas): infectada automaticamente. Vítima saudável: faz um teste de Vigor (com Fortitude pode usar Vigor + Fortitude), resistindo se rolar mais sucessos que o vampiro. Vítimas da doença sofrem 1 ponto de dano Agravado de Saúde no início de cada cena após a infecção. A vítima sofre a doença por um número de cenas igual ao nível de Oblívio do usuário. Esse dano não pode ser tratado medicamente (de origem sobrenatural), mas pode ser curado bebendo vitae. Vitória crítica na ativação: o usuário pode tornar a doença contagiosa por toque, com vítimas subsequentes sofrendo a doença por um turno a menos do que a vítima pela qual foram infectadas.",
+        duracao: "Um turno para ativar; duração variável da condição"
+      },
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Mortalha Estigia",
+        resumo: "Sombras próximas se expandem e o vampiro envolve a área em uma camada de escuridão — sons ficam abafados, e mortais aprisionados são drenados de sua vitalidade.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "O usuário faz a Jogada de Despertar e passa um turno concentrando-se, espalhando a sombra pelas superfícies desejadas. O efeito cobre uma área circular com raio igual ao dobro do nível de Oblívio do usuário em metros/jardas, centrado no usuário ou em um ponto em sua linha de visão. Qualquer um capturado na Mortalha Estigia recebe −3 dados em todas as jogadas, a menos que possua a habilidade de ver através da escuridão sobrenatural. Qualquer mortal capturado sofre 1 nível de dano Superficial por cada turno que permanecer dentro dela, devido ao sufocamento do poder.",
+        duracao: "Uma cena"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Passo das Sombras",
+        resumo: "Entrando em uma sombra próxima, o usuário desaparece e reaparece em outra sombra mais distante — possivelmente tocando brevemente o Labirinto entre os mundos.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "O vampiro deve entrar em uma sombra grande o suficiente para cobri-lo e emerge de outra um turno depois. A sombra alvo deve estar em linha de visão (ou percebida por meios místicos, como Perspectiva de Sombra). É possível levar outra pessoa através da passagem — a menos que seja voluntária, deve ser mantida por um agarrão bem-sucedido. Se uma Mancha for incorrida pelo uso deste poder, o passageiro também recebe uma.",
+        duracao: "Um turno"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Destino Cumprido",
+        resumo: "Este poder permite que o vampiro reintroduza doenças já curadas em vítimas, quebre ossos há muito cicatrizados e revogue a imunidade de envelhecimento de ghouls — tudo à distância.",
+        custo: "Duas Jogadas de Despertar",
+        dados: "Vigor + Oblívio vs. Vigor + Vigor ou Fortitude",
+        resist: "Vigor × 2 (ou Vigor + Fortitude)",
+        mecanica: "O vampiro faz duas Jogadas de Despertar enquanto reveste as palmas e o rosto de sangue, recordando o rosto dos alvos. Em uma disputa bem-sucedida de Vigor + Oblívio vs. Vigor × 2 da vítima (ou Vigor + Fortitude para criaturas com Fortitude), o indivíduo alvo é afetado por uma condição grave que sofreu e se recuperou historicamente (ex.: câncer tratado, osso quebrado, doença — incluindo a obtida por Praga Necrótica), com quaisquer efeitos debilitantes dessa condição ocorrendo imediatamente. Se a vítima for um ghoul, este poder remove sua imunidade ao envelhecimento e elimina qualquer vitae em seu sistema — ghouls mais velhos podem morrer ou até desintegrar no local. Vitória crítica: pode matar a vítima parando completamente seu coração, se o usuário desejar. Falha total: o vampiro não pode mais usar este poder contra aquele indivíduo.",
+        duracao: "Variável, dependendo se a condição é tratável"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Avatar Tenebroso",
+        resumo: "O vampiro transforma sua própria substância na de uma sombra — uma mancha bidimensional de escuridão capaz de deslizar por qualquer superfície e através de frestas minúsculas.",
+        custo: "Duas Jogadas de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "A transformação leva um turno (durante o qual o vampiro não pode fazer nada mais). Concluída, o vampiro pode mover-se à velocidade de caminhada por qualquer superfície ou parede, impedido apenas por barreiras hermeticamente seladas. Vampiros usando Avatar Tenebroso podem envolver vítimas, causando −3 em todas as pools de dados da vítima e sufocando mortais como em Mortalha Estigia. Se envolvendo um mortal, o vampiro pode se alimentar dele sem penetrar a pele com as presas. Praticantes deste poder não sofrem dano de fontes físicas, mas podem ser afetados por fogo e luz solar normalmente. Disciplinas Mentais ainda podem ser usadas a critério do Narrador.",
+        duracao: "Uma cena ou até ser encerrado"
+      }
     ]
   },
-  "Potência": {
-    descricao: "Disciplina da força sobre-humana. Permite ao vampiro superar os limites físicos, causando dano devastador e realizando feitos impossíveis de força bruta.",
+
+  // ─────────────────────────────────────────────
+  // POTÊNCIA
+  // ─────────────────────────────────────────────
+  potencia: {
+    descricao: "Potência é força vitae-amplificada acima e além de qualquer outro vampiro. Mais que apenas bater em coisas, é a habilidade do vampiro de forçar seu corpo a realizar ações impossíveis para mortais.",
     habilidades: [
-      {nivel:1,amalgama:"-",nome:"Força Fluente",resumo:"Rerrole dados de CS uma única vez em testes de Força ou Potência.",custo:"-",dados:"-",resist:"-",mecanica:"-",duracao:"-"},
-      {nivel:1,amalgama:"-",nome:"Corpo Letal",resumo:"Ataques desarmados causam dano Agravado em mortais e ignoram 1 nível de armadura para cada nível de Potência.",custo:"-",dados:"-",resist:"-",mecanica:"-",duracao:"-"},
-      {nivel:1,amalgama:"-",nome:"Salto Habilidoso",resumo:"Salte mais alto e mais longe do que o habitual.",custo:"-",dados:"-",resist:"-",mecanica:"Distância de até três vezes Potência em metros.",duracao:"-"},
-      {nivel:2,amalgama:"-",nome:"Destreza",resumo:"Some Potência ao dano desarmado e metade de Potência em dano corpo a corpo armado.",custo:"CS",dados:"-",resist:"-",mecanica:"-",duracao:"Cena"},
-      {nivel:2,amalgama:"-",nome:"Aperto Implacável",resumo:"Ganhe uma força de aperto sobrenatural.",custo:"CS",dados:"-",resist:"-",mecanica:"Alvos não conseguem se desvencilhar de você, a não ser que tenham força comparável.",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Alimentação Brutal",resumo:"Transforme o ato de se alimentar em uma brutalidade excêntrica que dura míseros segundos.",custo:"-",dados:"-",resist:"-",mecanica:"Contra mortais é mecanicamente instantâneo. Contra vampiros, diminua pela metade o número de turnos que levaria.",duracao:"Alimentação"},
-      {nivel:3,amalgama:"Pres. 3",nome:"Fagulha do Ódio",resumo:"O usuário pode adicionar Potência ao realizar ações de Intimidação ou Liderança.",custo:"-",dados:"-",resist:"-",mecanica:"-",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Pegada Sinistra",resumo:"Fortalece ainda mais o aperto, permitindo que escale superfícies sólidas, se pendure no teto ou arranque pedaços de coisas fixas.",custo:"CS",dados:"-",resist:"-",mecanica:"O uso dessa habilidade deixa marcas muito claras.",duracao:"Cena"},
-      {nivel:3,amalgama:"-",nome:"Destruidor",resumo:"Dobra o bônus de Potência em ações que envolvam Força ou Atletismo.",custo:"-",dados:"-",resist:"-",mecanica:"Não pode ser usada contra alvos mortais ou criaturas.",duracao:"Cena"},
-      {nivel:4,amalgama:"-",nome:"Rascunho da Força",resumo:"Transforma o próprio sangue em uma poção de força para outros vampiros.",custo:"CS",dados:"-",resist:"-",mecanica:"Cada vampiro que beber a poção deve fazer um CS. O alvo ganha nível de Potência igual à metade do usuário.",duracao:"Noite"},
-      {nivel:4,amalgama:"-",nome:"Pouso Forçado",resumo:"Ao cair após usar Salto Habilidoso cause dano em área.",custo:"CS",dados:"Força + Potência",resist:"Destreza + Atletismo",mecanica:"Se a falha do oponente for de 3+, eles são derrubados.",duracao:"Ataque"},
-      {nivel:5,amalgama:"-",nome:"Choque Terreno",resumo:"Atinge o chão e cria uma onda de choque.",custo:"2 CS",dados:"-",resist:"-",mecanica:"Todos os alvos atingidos são derrubados ao chão. Essa habilidade só pode ser utilizada uma única vez por cena.",duracao:"Ataque"},
-      {nivel:5,amalgama:"-",nome:"Punho de Caim",resumo:"Inflige dano Agravado em mortais e criaturas sempre que causar dano.",custo:"CS",dados:"-",resist:"-",mecanica:"-",duracao:"Cena"},
-      {nivel:5,amalgama:"-",nome:"Martelo Sutil",resumo:"Projeta toda sua força para um ponto específico do corpo do alvo.",custo:"-",dados:"-",resist:"-",mecanica:"Acertar partes do corpo com pouco movimento, como tronco, cabeça, abdome, fornece um bônus de +4 ao causar dano.",duracao:"-"}
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Corpo Letal",
+        resumo: "O usuário é capaz de causar ferimentos horrendos a mortais, rasgando pele e quebrando ossos com as próprias mãos.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "Os ataques desarmados do usuário podem causar dano Agravado de Saúde a mortais, se desejado. Também ignoram um nível de armadura por nível de Potência do usuário.",
+        duracao: "Passiva"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Salto Elevado",
+        resumo: "Possuindo força infernal além de braços e punhos, o usuário pode saltar muito mais alto e mais longe do que qualquer mortal.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "O usuário pode saltar um número de metros igual a três vezes seu nível de Potência verticalmente, e cinco vezes horizontalmente. Não precisa de corrida para realizar esses saltos.",
+        duracao: "Passiva"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Proeza",
+        resumo: "Vampiros com Potência ganham força muito maior do seu Sangue do que os que não a possuem.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Quando ativado, adiciona o nível de Potência do usuário ao valor de dano de ataques desarmados e a façanhas de Força.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Garras Implacáveis",
+        resumo: "O aperto do vampiro torna-se impossível de soltar — uma vez que prende algo, é quase impossível desalojá-lo.",
+        custo: "Uma Jogada de Despertar",
+        dados: "N/A",
+        resist: "—",
+        mecanica: "O vampiro adiciona seu nível de Potência como sucessos automáticos em qualquer tentativa que envolva segurar algo. Isso inclui tentativas de manter um agarrão — embora o teste inicial de agarrão não se beneficie deste bônus.",
+        duracao: "Uma cena"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Alimentação Brutal",
+        resumo: "Conhecida como o 'Beijo Selvagem', este poder permite usar força infernal ao drenar uma vítima — em segundos, o atacante engole torrentes de sangue enquanto a mutila.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "O vampiro pode drenar um humano completamente em segundos, geralmente em um único turno. Cada ponto de Fome saciado causa 1 ponto de dano Agravado de Saúde à vítima, pois vasos sanguíneos estouram e órgãos se contundem e rompem internamente. Usar Alimentação Brutal em um vampiro causa apenas dano Superficial de Saúde aos seus órgãos mortos e inertes. Em combate, Alimentação Brutal vem imediatamente após um ataque bem-sucedido de Briga usando presas. A vítima sofre primeiro o dano de mordida, depois o dano deste poder. Armadura não protege contra Alimentação Brutal, pois as feridas são (pelo menos inicialmente) principalmente internas.",
+        duracao: "Uma alimentação"
+      },
+      {
+        nivel: 3,
+        amalgama: "Presença 3",
+        nome: "Faísca de Fúria",
+        resumo: "Combinando Potência e Presença, o vampiro pode incitar raiva e até Frenesi em espectadores — tão facilmente quanto admiração ou pavor.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Manipulação + Potência",
+        resist: "Compostura + Inteligência (para vampiros alvo de Frenesi forçado)",
+        mecanica: "Quando ativo, o usuário pode adicionar seu nível de Potência a qualquer tentativa de instigar ou incitar uma pessoa ou multidão à violência. Além disso, o usuário pode ativar este poder e jogar Manipulação + Potência vs. Compostura + Inteligência de outro vampiro. Se vencer, o vampiro opositor deve fazer um teste de Frenesi de Fúria com Dificuldade 3.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Destruidor",
+        resumo: "O vampiro é capaz de exercer força violenta e indiscriminada sobre um objeto estático para destroçá-lo, esmigalhá-lo e destruí-lo.",
+        custo: "Grátis",
+        dados: "N/A",
+        resist: "—",
+        mecanica: "Pré-requisito: Proeza. O usuário conta seu nível de Potência duas vezes ao usar Proeza para façanhas de força que envolvam dano ou destruição de um objeto inanimado. Enquanto o lead-up para convocar essa força o torna inútil em uma briga, é muito útil quando uma porta barra o caminho, um carro precisa ser imobilizado, ou um exemplo precisa ser dado a uma estátua ofensiva.",
+        duracao: "Como Proeza"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Draught de Força",
+        resumo: "O Sangue do vampiro fica saturado com o poder da Potência, transferindo parte desse poder a quem beber diretamente de suas veias.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Beber um volume de Sangue equivalente a uma Jogada de Despertar diretamente do usuário concede ao bebedor Potência temporária igual a metade dos pontos de Potência do doador (arredondado para baixo), incluindo os mesmos poderes até esse nível.",
+        duracao: "Uma noite; para vampiros, até a próxima alimentação ou ao atingir Fome 5"
+      },
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Aterrisagem Catastrófica",
+        resumo: "Tendo aperfeiçoado suas capacidades, o vampiro agora cai em estilo épico de seu Salto Elevado — parando de forma imparável e causando dano a qualquer um ao redor.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Força + Potência",
+        resist: "Destreza + Atletismo (de cada alvo na área de efeito)",
+        mecanica: "Pré-requisito: Salto Elevado. Ao usar Salto Elevado, o vampiro pode ativar Aterrisagem Catastrófica e causar dano em uma pequena área de efeito. Qualquer um dentro de um raio de 3 metros fica sujeito a um ataque de Força + Potência do usuário contra sua Destreza + Atletismo, sofrendo Dano Superficial igual à margem. Qualquer um sofrendo 3 ou mais níveis de dano ou com falha total em seu teste de defesa é derrubado.",
+        duracao: "N/A"
+      },
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Garras de Parede",
+        resumo: "Concentrando força sobrenatural nos dedos dos pés e das mãos, o vampiro se agarra e enterra suas extremidades em quase qualquer superfície, permitindo-lhe escalar e até pendurar de paredes e tetos.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Um vampiro usando este poder passa automaticamente em qualquer teste de Perícia para escalar uma superfície não-metálica. O usuário também pode escalar revestimento de cobre, bronze ou outros metais mais macios, a critério do Narrador. Superfícies finas de vidro podem quebrar sob a tensão. Da mesma forma, pode pendurar de uma parede ou teto por até uma cena — embora apenas vampiros descalços possam se pendurar pelos pés. A escalada ou pendurar deixa rastros óbvios detectáveis por qualquer um com Inteligência + Investigação (Dificuldade 2). Detectar rastros de Garras de Parede em vidro nem mesmo requer uma jogada.",
+        duracao: "Uma cena"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Toque da Terra",
+        resumo: "Sua força uma força elemental, o vampiro pode cravar punho ou pé no chão criando uma onda de choque que derruba oponentes.",
+        custo: "Duas Jogadas de Despertar",
+        dados: "—",
+        resist: "Destreza + Atletismo (Dificuldade 3)",
+        mecanica: "Nenhum teste adicional necessário para criar a onda de choque (o chão é difícil de errar). Qualquer um dentro de um raio de 5 metros deve fazer Destreza + Atletismo (Dificuldade 3). Vitória crítica: sem efeito. Vitória: desequilíbrado — perde a ação atual. Falha: cai de bruços — perde a ação atual; deve gastar um turno se levantando. Qualquer um preparado para o Toque da Terra (como companheiros do usuário) pode deslocar seus resultados um nível para cima. Este poder causa dano colateral significativo. Se usado no chão, a terra racha. Se usado internamente, móveis quebram e espelhos estilhaçam. Em qualquer coisa além do andar térreo, o assoalho pode quebrar, fazendo todos no raio cair para o andar de baixo. Este poder só pode ser usado uma vez por cena.",
+        duracao: "Um uso"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Punho de Caim",
+        resumo: "As mãos nuas do vampiro podem infligir ferimentos gravíssimos, letais tanto a mortais quanto a vampiros — capazes de desmembrar, empalar, decapitar e até arrancar corações.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Por uma cena, o usuário pode infligir dano Agravado de Saúde a mortais e sobrenaturais igualmente durante ataques de Briga, literalmente rasgando a carne e arrancando os membros dos oponentes com as próprias mãos.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Martelo Sutil",
+        resumo: "Impregnado de proeza inumana, cada parte do corpo do vampiro torna-se capaz de projetar a soma de sua força — um estalar de dedo pode transmitir o poder de um soco completo.",
+        custo: "Grátis",
+        dados: "N/A",
+        resist: "—",
+        mecanica: "Realizar ataques corpo-a-corpo desarmados ou façanhas de força agora conta como ações menores de 2 dados (ver Ações Menores no corebook, p. 298). Um personagem só pode realizar uma ação menor de Martelo Sutil por turno, e não pode fazer mais ataques no mesmo turno. A capacidade de concentrar toda a própria força em qualquer parte do corpo também tem outros benefícios: qualquer façanha de força onde o movimento do usuário seja limitado (como quebrar algemas) recebe +4 dados ou mais, a critério do Narrador.",
+        duracao: "Passiva"
+      }
     ]
   },
-  "Presença": {
-    descricao: "Disciplina da influência emocional. Permite ao vampiro fascinar, aterrorizar, seduzir e comandar multidões apenas com sua presença.",
+
+  // ─────────────────────────────────────────────
+  // PRESENÇA
+  // ─────────────────────────────────────────────
+  presenca: {
+    descricao: "Presença afeta as emoções dos sujeitos — não as mentes. As vítimas são cônscias (ao contrário da Dominação) mas imprevisíveis. O efeito não se transmite eletronicamente a menos que o usuário possua Magnetismo Estelar. Em combate, apenas Olhar Pavoroso e Majestade têm efeito.",
     habilidades: [
-      {nivel:1,amalgama:"-",nome:"Admiração",resumo:"Adicione seu valor de Presença a qualquer teste envolvendo Persuasão, Performance ou Carisma.",custo:"-",dados:"-",resist:"-",mecanica:"Uma vez que o efeito termina, o alvo retorna a sua situação inicial de opinião.",duracao:"Cena"},
-      {nivel:1,amalgama:"-",nome:"Assustar",resumo:"Adicione seu valor de Presença a qualquer teste envolvendo Intimidação.",custo:"-",dados:"-",resist:"-",mecanica:"Não pode ser utilizada ao mesmo tempo de Admiração e vice-versa.",duracao:"Cena"},
-      {nivel:1,amalgama:"Protenismo. 1",nome:"Olhos da Serpente",resumo:"Imobilize a vítima ao fazer contato visual.",custo:"-",dados:"Carisma + Presença",resist:"Raciocínio + Autocontrole",mecanica:"Um alvo vampiro pode quebrar a paralisia ao gastar FdV em turnos subsequentes ao primeiro após a falha.",duracao:"Cena / Contato Visual"},
-      {nivel:2,amalgama:"-",nome:"Beijo Persistente",resumo:"Ao realizar um Beijo ou se alimentar, você adiciona um bônus a atributos sociais da vítima.",custo:"-",dados:"-",resist:"-",mecanica:"O bônus é equivalente a metade da presença arredondada para cima, após o final da duração, a vítima sofre uma penalidade equivalente ao bônus por um período.",duracao:"Noites x Presença"},
-      {nivel:2,amalgama:"-",nome:"Melpominee",resumo:"Use habilidades de presença sem precisar ver o alvo, somente usando sua voz.",custo:"-",dados:"-",resist:"-",mecanica:"Não funciona com habilidades que tenham alguma ativação específica como um Beijo.",duracao:"-"},
-      {nivel:3,amalgama:"Dom. 3",nome:"Limpar a Área",resumo:"Acalme uma área e todos os mortais dentro dela.",custo:"CS",dados:"Autocontrole + Presença",resist:"Raciocínio + Autocontrole",mecanica:"Pode atingir um número de pessoas igual ao seu nível de Autocontrole.",duracao:"-"},
-      {nivel:3,amalgama:"-",nome:"Olhar Putrefato",resumo:"Instigue medo em um alvo e faça com que ele tenha vontade de fugir.",custo:"CS",dados:"Carisma + Presença",resist:"Autocontrole + Determinação",mecanica:"Um crítico contra um alvo vampiro significa que o alvo faz um teste de Frenesi de Terror com dificuldade 3.",duracao:"Turno"},
-      {nivel:3,amalgama:"-",nome:"Entrelaçamento",resumo:"Influencie alguém a entrar em um estado de mente que ele só pense na felicidade e prazer do usuário.",custo:"CS",dados:"Carisma + Presença",resist:"Raciocínio + Autocontrole",mecanica:"O usuário recebe bônus equivalente à sua Presença em testes sociais contra o alvo. Se um pedido que fira o alvo for feito, o teste precisa ser refeito.",duracao:"Hora"},
-      {nivel:3,amalgama:"Ausp. 1",nome:"Voz Lançada",resumo:"Você pode arremessar sua voz ou deixar sua voz em um local, transmitindo uma mensagem ou uma habilidade.",custo:"CS",dados:"-",resist:"-",mecanica:"Uma rolagem somente é necessária equivalente à habilidade a ser usada pelo vampiro.",duracao:"Cena"},
-      {nivel:3,amalgama:"Ofus. 3",nome:"Rosto do Amor Verdadeiro",resumo:"A vítima vai perceber o usuário como um mortal por quem ele tem fortes emoções.",custo:"CS",dados:"Manipulação + Presença",resist:"Autocontrole + Raciocínio",mecanica:"Pode gerar máculas caso dependa do nível de intimidade com a vítima e das ações sendo feitas.",duracao:"Cena"},
-      {nivel:4,amalgama:"Dom. 1",nome:"Voz Irresistível",resumo:"A voz do usuário é suficiente para que use Dominação no alvo.",custo:"-",dados:"-",resist:"-",mecanica:"Não funciona através de tecnologia.",duracao:"-"},
-      {nivel:4,amalgama:"Ausp. 3",nome:"Magnum Opus",resumo:"Imbua peças artísticas com sua Presença.",custo:"x CS",dados:"Carisma/Manipulação + Ofício",resist:"-",mecanica:"Plateias precisam rolar Autocontrole + Determinação para resistir aos seus efeitos.",duracao:"Objeto"},
-      {nivel:4,amalgama:"-",nome:"Impregnar a Construção",resumo:"Aumente o alcance de sua Presença para todo um edifício.",custo:"-",dados:"-",resist:"-",mecanica:"Se o vampiro estiver presente, ele se torna o foco ao invés da construção.",duracao:"-"},
-      {nivel:4,amalgama:"-",nome:"Invocar",resumo:"Convoque alguém até você que já tenha sofrido algum uso de sua Presença ou provou de seu vitae.",custo:"CS",dados:"Manipulação + Presença",resist:"Inteligência + Autocontrole",mecanica:"A vítima não se prejudica financeiramente ou se machuca para conseguir chegar até você.",duracao:"Noite"},
-      {nivel:4,amalgama:"-",nome:"Parceiro",resumo:"Forneça alcance de sua Presença para que um aliado sirva como meio de transmissão.",custo:"CS",dados:"-",resist:"-",mecanica:"Caso dois usuários usem o mesmo poder de Presença, o efeito ainda é o de uso único, não há bônus.",duracao:"-"},
-      {nivel:5,amalgama:"-",nome:"Majestade",resumo:"Todos que olharem para o usuário entram em choque e não conseguem agir a não ser que seja para se auto preservar.",custo:"2 CS",dados:"Carisma + Presença",resist:"Autocontrole + Determinação",mecanica:"Caso o teste de resistência seja vencedor, o alvo ganha 1 + Dif.Teste turnos para resistir, tendo que testar novamente após.",duracao:"Cena"},
-      {nivel:5,amalgama:"-",nome:"Magnetismo Estelar",resumo:"Permite o uso de habilidades de Presença através de tecnologia, como transmissões de rádio ou TV.",custo:"CS extra",dados:"-",resist:"-",mecanica:"Não funciona em coisas gravadas, tem que ser ao vivo.",duracao:"-"}
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Fascínio",
+        resumo: "Qualquer um na presença do vampiro sente atenção inexplicavelmente atraída para ele — seus argumentos se tornam mais convincentes e pontos de vista alheios cedem.",
+        custo: "Grátis",
+        dados: "Manipulação + Presença vs. Compostura + Inteligência",
+        resist: "Compostura + Inteligência",
+        mecanica: "Adiciona o nível de Presença a qualquer jogada de Perícia envolvendo Persuasão ou Atuação, além de outras jogadas de Carisma a critério do Narrador. Qualquer um ciente de que está sendo afetado pode resistir com Compostura + Inteligência vs. Manipulação + Presença do usuário. Vitória: o alvo resiste por uma cena. Vitória crítica: imune pela noite inteira. Quando o poder expira, as vítimas revertem para suas opiniões anteriores. Efeitos de Presença não se acumulam — usar Fascínio e Encantamento no mesmo sujeito só adiciona o nível de Presença uma vez para quaisquer jogadas de Persuasão baseadas em Social.",
+        duracao: "Uma cena ou até ser intencionalmente encerrado"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Intimidar",
+        resumo: "Em vez de atrair, o vampiro usa a Presença para repelir — parecendo ameaçador e exalando uma aura de menace suficiente para fazer a maioria dos mortais evitar sua atenção.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "Determinação + Compostura (Dificuldade 2 para atacar o usuário)",
+        mecanica: "Adiciona o nível de Presença do usuário a qualquer jogada de Intimidação. Atacar o usuário requer uma jogada de Determinação + Compostura (Dificuldade 2). Vampiros não podem usar Fascínio e Intimidar simultaneamente.",
+        duracao: "Uma cena ou até ser intencionalmente encerrado"
+      },
+      {
+        nivel: 1,
+        amalgama: "Protean 1",
+        nome: "Olhos da Serpente",
+        resumo: "Os olhos do vampiro se transformam em orbes fendados e serpentinos — capazes de congelar no lugar mortais que cruzem o olhar com o vampiro.",
+        custo: "Grátis",
+        dados: "Carisma + Presença vs. Perspicácia + Compostura (para vampiros)",
+        resist: "Perspicácia + Compostura (apenas para vampiros)",
+        mecanica: "Ao capturar o olhar de um mortal (ver p. 255 do corebook), o vampiro pode imobilizá-lo, mantendo-o congelado enquanto o próprio vampiro mantiver contato visual. O efeito só pode ser mantido em uma vítima por vez, e termina se ela sofrer dano ou for removida à força. A vítima ainda pode falar, mas não gritar. Para paralisar um vampiro, o usuário deve vencer uma disputa de Carisma + Presença vs. Perspicácia + Compostura. O vampiro vítima pode escapar da paralisia em qualquer turno após o primeiro gastando um ponto de Vontade.",
+        duracao: "Até o contato visual ser quebrado ou a cena terminar"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Beijo Duradouro",
+        resumo: "O Beijo do vampiro já induz quase-êxtase em mortais, mas este poder transforma a experiência em vício — os alimentados ficam obcecados e chegam a buscar o vampiro para novas alimentações.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "Vontade (Dificuldade = nível de Presença do usuário)",
+        mecanica: "O vampiro pode optar por usar ou não este poder em cada alimentação. O usuário adiciona dados iguais ao seu nível de Presença a qualquer pool subsequente assistida pelo Atributo Carisma contra o sujeito mordido. Um mortal alimentado com este poder pode fazer um teste de Vontade (Dificuldade = nível de Presença do usuário) toda semana para resistir. Vencer por três semanas consecutivas quebra o efeito — assim como uma única vitória crítica.",
+        duracao: "Até ser resistido com sucesso"
+      },
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Melpominee",
+        resumo: "A voz do usuário torna-se como a de uma sereia — capaz de encantar ou aterrorizar por si só, sem o usuário precisar estar presente, apenas ao alcance do ouvido.",
+        custo: "Grátis",
+        dados: "N/A",
+        resist: "—",
+        mecanica: "O vampiro é capaz de usar Fascínio, Intimidar, Olhar Pavoroso, Encantamento e Majestade através da voz sozinha. Não precisa ver o alvo, e o alvo não precisa estar em sua presença — apenas perto o suficiente para ouvir sua voz. A voz não retém sua habilidade se gravada ou transmitida eletronicamente.",
+        duracao: "N/A"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Olhar Pavoroso",
+        resumo: "Expondo brevemente sua natureza vampírica, o usuário infunde um único sujeito com terror absoluto — mortais são subjugados ou fogem apavorados; vampiros se submetem como cães apaleados ou fogem em Rötshreck.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Carisma + Presença vs. Compostura + Determinação",
+        resist: "Compostura + Determinação",
+        mecanica: "Exibindo presas e um trejeito predatório, jogue a disputa. Falha: mortais ficam impossibilitados de agir exceto em sua própria defesa, recuando por um turno. Vampiros: sem efeito. Vitória: mortais fogem com medo. Vampiros: incapazes de agir exceto em sua própria defesa por um turno, a menos que gastem Vontade igual à margem de vitória do usuário (mínimo 1). Vitória crítica: mortais congelam ou se curvam em posição fetal. Vampiros devem fazer um teste de Frenesi de terror (Dificuldade 3) — se vencerem, ainda sofrem o efeito de vitória normal.",
+        duracao: "Um turno"
+      },
+      {
+        nivel: 3,
+        amalgama: "Auspício 1",
+        nome: "Voz Projetada",
+        resumo: "O vampiro pode fazer sua voz emanar de qualquer ponto em linha de visão — seja sussurro ou grito — e até deixá-la em um local para continuar atraindo ou aterrorizando quem se aproximar.",
+        custo: "Uma Jogada de Despertar",
+        dados: "N/A",
+        resist: "—",
+        mecanica: "Nenhuma jogada necessária, além da Jogada de Despertar. Se usar este poder em combinação com Voz Irresistível, Melpominee ou poderes similares, deve jogar normalmente. A voz pode ser deixada em uma localização, continuando a atrair ou aterrorizar aqueles que se aproximam, dependendo do poder usado.",
+        duracao: "Uma cena"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Encantamento",
+        resumo: "O vampiro foca seu fascínio sobrenatural em uma única pessoa, instilando nela fascinação ou infatuação semelhante ao apaixonamento ou ao encontro com um ídolo de vida inteira.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Carisma + Presença vs. Compostura + Perspicácia",
+        resist: "Compostura + Perspicácia",
+        mecanica: "O vampiro só precisa chamar a atenção do sujeito e vencer a disputa. O efeito dura aproximadamente 1 hora mais 1 por ponto de margem. O vampiro pode renovar o efeito indefinidamente, mas uma falha encerra o efeito e torna o sujeito imune pelo resto da noite. Após o sucesso, o usuário adiciona dados iguais ao seu nível de Presença a qualquer pool de dados Social contra o sujeito encantado. Pedidos que resultem em dano óbvio ao sujeito ou seus entes queridos, ou que se oponham aos Princípios do sujeito, falham automaticamente e exigem um teste imediato de disputa de poderes — ou o Encantamento falha imediatamente.",
+        duracao: "1 hora + 1 por ponto de margem"
+      },
+      {
+        nivel: 4,
+        amalgama: "Dominação 1",
+        nome: "Voz Irresistível",
+        resumo: "A Presença do usuário torna-se um conduto para a Dominação — o vampiro agora só precisa que sua voz seja ouvida para empregar poderes de Dominação.",
+        custo: "Sem custo adicional",
+        dados: "—",
+        resist: "—",
+        mecanica: "A voz do usuário por si só é agora suficiente para Dominar um alvo. Isso não se aplica a vozes transmitidas por meios eletrônicos como telefones, televisão ou interfones de apartamentos.",
+        duracao: "Passiva"
+      },
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Permear o Edifício",
+        resumo: "Enquanto presente em um prédio ou local similar, o vampiro pode estender os poderes de Fascínio, Intimidar e Majestade pela própria estrutura do edifício — todos no prédio são afetados como se o vampiro estivesse presente.",
+        custo: "N/A",
+        dados: "Conforme o poder transmitido",
+        resist: "—",
+        mecanica: "Qualquer um que veja o prédio de fora ou que esteja presente dentro precisa resistir ao poder usado como se o vampiro estivesse presente — a menos que o vampiro esteja à vista, caso em que ele próprio se torna o foco. Como um prédio geralmente não faz jogadas de Perícia, aplique os bônus a qualquer reação que a vítima tiver ao lugar. Uma boate sob influência de Fascínio terá filas pelo quarteirão; um refúgio sob Intimidar afastará todos exceto os investigadores mais obstinados. O uso de Majestade deve ser feito com extrema cautela, pois os resultados podem ser espetaculares e voláteis.",
+        duracao: "Conforme o poder transmitido"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Convocar",
+        resumo: "O vampiro pode chamar para si qualquer pessoa — mortal ou vampiro — sobre quem já usou Fascínio, Encantamento ou Majestade, ou que tenha provado seu Sangue ao menos uma vez.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Manipulação + Presença vs. Compostura + Inteligência",
+        resist: "Compostura + Inteligência",
+        mecanica: "O vampiro precisa se concentrar por 5 minutos pensando na pessoa a ser convocada, depois joga a disputa. Vitória: o alvo ouve a convocação mas pode ou não atendê-la. Vitória crítica: o alvo chega tão rapidamente quanto possível, exceto em caso de risco imediato ao bem-estar. O alvo sabe quem o está convocando e a localização atual do usuário. A convocação dura uma noite; o vampiro pode repeti-la noite após noite se necessário. Qualquer Convocado sente uma atração ao convocador e tenta alcançá-lo — mas sem se colocar em risco físico ou financeiro real.",
+        duracao: "Uma noite"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Majestade",
+        resumo: "No pináculo da Disciplina, o vampiro amplifica seu porte a níveis sobrenaturais — seja de beleza dilacerante, terror monstruoso ou comando absoluto. Todos que o veem ficam paralisados ou curvam a cabeça em submissão.",
+        custo: "Duas Jogadas de Despertar",
+        dados: "Carisma + Presença vs. Compostura + Determinação",
+        resist: "Compostura + Determinação",
+        mecanica: "Pessoas na presença do usuário só podem encarar, boquiabertas, ou desviar os olhos com medo ou submissão. Qualquer um que queira agir de qualquer forma em oposição ao usuário — exceto por autopreservação — deve vencer uma disputa de Compostura + Determinação vs. Carisma + Presença do vampiro. Vitória: permite um turno de liberdade mais um turno por ponto de margem; somente uma vitória crítica resiste ao efeito para a cena inteira.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Magnetismo Estelar",
+        resumo: "Os poderes de Presença do usuário agora afetam pessoas que o visualizam em transmissões ao vivo ou ouvem sua voz pelo telefone — mas imagens e mensagens gravadas não retêm o efeito.",
+        custo: "Uma Jogada de Despertar adicional",
+        dados: "—",
+        resist: "—",
+        mecanica: "Fascínio, Intimidar e Encantamento podem ser transmitidos por transmissões ao vivo através de telas ou telefones. Se Encantamento for usado, o nome da vítima deve ser pronunciado claramente, pois este poder só afeta uma pessoa por vez. Qualquer outra pessoa assistindo à mesma transmissão apenas acha o usuário charmoso, mas não de forma sobrenatural.",
+        duracao: "Conforme o poder usado"
+      }
     ]
   },
-  "Proteanismo": {
-    descricao: "Disciplina da transmutação física. Permite ao vampiro remodelar seu próprio corpo, transformar-se em animais e até mesmo derreter no solo.",
+
+  // ─────────────────────────────────────────────
+  // PROTEANISMO
+  // ─────────────────────────────────────────────
+  proteanismo: {
+    descricao: "Proteanismo permite ao vampiro mutar, mudar de forma e tornar-se um predador cada vez mais letal. Os poderes que transformam o corpo também afetam roupas, itens ingeridos e pequenos acessórios — por isso os praticantes tendem a viajar leve.",
     habilidades: [
-      {nivel:1,amalgama:"-",nome:"Olhar da Fera",resumo:"Permite que o usuário enxergue na escuridão completa.",custo:"-",dados:"-",resist:"-",mecanica:"Quando ativado também fornece +2 dados em testes de Intimidação contra mortais.",duracao:"Desejo"},
-      {nivel:1,amalgama:"-",nome:"Peso Pena",resumo:"Transforma o peso do usuário em algo tão leve quanto uma pena.",custo:"-",dados:"Raciocínio + Sobrevivência",resist:"-",mecanica:"Parada de dados somente é utilizada quando ativada como reação, para diminuir a força de um impacto ou queda.",duracao:"Desejo"},
-      {nivel:2,amalgama:"-",nome:"Armas Bestiais",resumo:"Prolongue suas unhas tornando-as garras.",custo:"CS",dados:"-",resist:"-",mecanica:"Adiciona +2 em rolagens de ataque desarmados.",duracao:"Cena"},
-      {nivel:2,amalgama:"Dom. 2",nome:"Vicissitude",resumo:"Esculpa sua própria carne, modificando algum membro seu.",custo:"CS",dados:"Determinação + Proteanismo",resist:"-",mecanica:"Cada sucesso no teste permite uma 'unidade de mudança', a critério do narrador.",duracao:"Permanente"},
-      {nivel:2,amalgama:"-",nome:"Beijo da Serpente",resumo:"Quando realizando um Beijo, você pode reinjetar o próprio sangue de volta na pessoa.",custo:"CS",dados:"-",resist:"-",mecanica:"Ativa ressonância e causa danos em habilidades de mutação de sangue da Feitiçaria de Sangue.",duracao:"Cena"},
-      {nivel:2,amalgama:"Fort. 1",nome:"Gole Falso",resumo:"Previna completamente que sangue entre em seu organismo.",custo:"CS",dados:"-",resist:"-",mecanica:"O sangue deve ser regurgitado ao final da cena, ou durar mais uma cena ao custo de mais um CS.",duracao:"Cena +"},
-      {nivel:3,amalgama:"-",nome:"Derreter à Terra",resumo:"Derreta, se juntando ao solo.",custo:"CS",dados:"-",resist:"-",mecanica:"Só pode ser usado em superfícies naturais ou artificiais porosas, como asfalto. O vampiro pode ficar nessa forma por até um dia ou até ser perturbado.",duracao:"Depende"},
-      {nivel:3,amalgama:"Dom. 2",nome:"Moldar a Carne",resumo:"Expanda o uso de Vicissitude para ser usado em corpos terceiros.",custo:"CS",dados:"Determinação + Proteanismo",resist:"Vigor + Determinação",mecanica:"Teste só é feito em um alvo que não quer ser submetido ao procedimento. Mesmas regras de Vicissitude se aplicam aqui.",duracao:"Permanente"},
-      {nivel:3,amalgama:"-",nome:"Transformação",resumo:"Se transforme em um animal de massa próxima a sua.",custo:"CS",dados:"-",resist:"-",mecanica:"Usuário ganha os atributos físicos equivalentes ao do animal escolhido.",duracao:"Cena"},
-      {nivel:3,amalgama:"Feit. 2",nome:"Absorção Visceral",resumo:"Absorva os restos mortais de sangue ou de mortos-vivos, para limpar completamente a cena.",custo:"CS",dados:"Força + Proteanismo",resist:"-",mecanica:"Fome pode ser reduzida em 1 para cada corpo absorvido, mas nunca a zero.",duracao:"Um turno por corpo"},
-      {nivel:4,amalgama:"Dom. 2",nome:"Forma Horripilante",resumo:"Se transforme em um corpo monstruoso.",custo:"CS",dados:"-",resist:"-",mecanica:"Mudanças equivalentes ao nível de Proteanismo do usuário, qualquer crítico nesse teste é considerado um Crítico Bestial.",duracao:"Cena"},
-      {nivel:4,amalgama:"-",nome:"Metamorfose",resumo:"Melhora Transformação para poder se tornar um animal ainda maior.",custo:"CS",dados:"-",resist:"-",mecanica:"Mesmas regras se aplicam.",duracao:"-"},
-      {nivel:5,amalgama:"Feit. 2",nome:"Forma do Sangue",resumo:"Se transforme em uma massa amorfa de sangue.",custo:"CS",dados:"-",resist:"-",mecanica:"Pode ser consumido, criando laços de sangue. Pode ser percebido a depender do teste do usuário de Raciocínio + Percepção.",duracao:"Cena"},
-      {nivel:5,amalgama:"Fort. 2",nome:"Coração das Trevas",resumo:"Permite que um vampiro retire seu próprio coração e o armazene em um local adequado.",custo:"-",dados:"-",resist:"-",mecanica:"Coração só pode ser destruído por fogo ou luz solar. Se tomar dano equivalente à trilha de vitalidade do vampiro, ele entra em torpor.",duracao:"Eterno"},
-      {nivel:5,amalgama:"-",nome:"Mestre das Formas",resumo:"Permite que o vampiro se torne qualquer forma animal e até mesmo de vários animais ao mesmo tempo.",custo:"CS",dados:"-",resist:"-",mecanica:"-",duracao:"-"},
-      {nivel:5,amalgama:"-",nome:"Névoa",resumo:"Se transforme em uma nuvem de névoa.",custo:"1-3 CS",dados:"-",resist:"-",mecanica:"Essa habilidade leva até 3 turnos para se completar, mas pode ser acelerada com uso de mais CS.",duracao:"Cena"},
-      {nivel:5,amalgama:"Anim. 2",nome:"Um com a Terra",resumo:"Melhora a habilidade Derreter à Terra. Agora o vampiro não tem limitantes de material.",custo:"2 CS",dados:"-",resist:"-",mecanica:"Vampiro agora pode se misturar à qualquer tipo de superfície, até mesmo vertical.",duracao:"Dia"},
-      {nivel:5,amalgama:"-",nome:"Coração Irrestrito",resumo:"O coração retirado do vampiro agora se move dificultando dano.",custo:"-",dados:"-",resist:"-",mecanica:"-",duracao:"-"}
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Olhos da Besta",
+        resumo: "O vampiro imana um brilho sobrenatural vermelho aos olhos, concedendo visão perfeita mesmo na ausência total de luz.",
+        custo: "Grátis",
+        dados: "—",
+        resist: "—",
+        mecanica: "Nenhuma jogada necessária para ativar. Enquanto ativo, o usuário ignora qualquer penalidade de visão imposta pela escuridão — incluindo sobrenatural. A aparência inumana dos olhos confere +2 dados em pools de Intimidação contra mortais.",
+        duracao: "Enquanto desejado"
+      },
+      {
+        nivel: 1,
+        amalgama: null,
+        nome: "Peso da Pena",
+        resumo: "O vampiro pode reduzir sua massa e densidade efetivas, tornando-se quase sem peso — evitando sensores de pressão e dano de quedas, colisões ou ser arremessado.",
+        custo: "Grátis",
+        dados: "Perspicácia + Sobrevivência",
+        resist: "—",
+        mecanica: "Se o vampiro tiver tempo para se preparar, nenhuma jogada é necessária. Como reação (ex.: durante uma queda súbita), ativar o poder requer Perspicácia + Sobrevivência (Dificuldade 3). Enquanto ativo, o vampiro é imune a dano de quedas, colisões e ser arremessado. O usuário também evita ativar dispositivos que dependem de pressão, a critério do Narrador. Não pode ser usado para saltos mais longos, pois a força do vampiro é proporcionalmente reduzida.",
+        duracao: "Enquanto desejado"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        amalgama: null,
+        nome: "Armas Selvagens",
+        resumo: "O vampiro pode estender suas armas naturais a proporções monstruosas — unhas que se tornam garras terríveis ou presas que se alongam como punhais.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Nenhuma jogada necessária para ativar. Quando ativado, o vampiro adiciona um modificador de +2 ao dano de Briga e causa dano Agravado de Saúde a mortais. O dano Superficial infligido por Armas Selvagens não é dividido pela metade.",
+        duracao: "Uma cena"
+      },
+      {
+        nivel: 2,
+        amalgama: "Dominação 2",
+        nome: "Vicissitude",
+        resumo: "Raro fora do Clã Tzimisce, este poder permite ao vampiro moldar pele, músculos e até ossos à vontade — o resultado às vezes é perturbadoramente belo, às vezes monstruoso.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Determinação + Protean",
+        resist: "—",
+        mecanica: "Jogue Determinação + Protean. Cada sucesso permite uma única alteração de Vicissitude — mas o total de alterações não pode exceder o nível de Protean do usuário, independentemente do número de aplicações ou sucessos. Cada alteração causa a perda de 1 ponto de Atributo Físico do usuário (nenhum Atributo pode ser reduzido abaixo de 1). Cada uso leva um turno inteiro. Alterações possíveis incluem: Redistribuição (adiciona 1 ponto a qualquer Atributo Físico, máx. 5; mudanças são visíveis mas não ameaçam a Máscara), Armas (única por sujeito; ganha arma equivalente a leve perfurante ou contundente pesado [+2 de Dano]), Armadura (converte pontos em armadura: 1 ponto = 2 pontos de valor de armadura, máx. 6), Aparência (levar uma cena inteira e teste de Destreza + Habilidade; Dificuldade 3 para ocultar identidade, 4 para melhorar Aparência, 5 para imitar pessoa específica). Alterações são curadas como dano Agravado, com cada alteração equivalente a um nível de dano.",
+        duracao: "Permanente"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Fundir-se à Terra",
+        resumo: "Tornando-se um com o solo, o vampiro afunda na terra — permanecendo ciente de seus arredores (exceto durante o sono diurno) e emergindo na noite seguinte, a menos que esteja em torpor.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Nenhum teste necessário, mas o vampiro deve estar em superfície natural: rochas, terra bruta, grama etc. Não funciona em concreto, asfalto ou outras superfícies artificiais. Leva um turno para afundar na terra, deixando para trás objetos carregados no topo do solo. Na terra, o vampiro está ciente de seus arredores — exceto durante o sono diurno, quando perturbações (escavação, barulhos altos) podem acordá-lo ou não como todos os vampiros.",
+        duracao: "Um dia ou mais, ou até ser perturbado"
+      },
+      {
+        nivel: 3,
+        amalgama: "Dominação 2",
+        nome: "Fabricar Carne",
+        resumo: "Estendendo o domínio sobre a carne, o vampiro pode infligir suas manipulações nos corpos alheios — temido por sua reputação de tortura inumana, embora alguns o usem para aprimorar servos e aliados.",
+        custo: "Uma Jogada de Despertar",
+        dados: "Determinação + Protean vs. Vigor + Determinação (sujeito não-disposto)",
+        resist: "Vigor + Determinação (sujeito não-disposto)",
+        mecanica: "Pré-requisito: Vicissitude. Para usar este poder, o usuário deve trabalhar sem interrupção no sujeito, que portanto deve estar disposto ou contido. Para sujeito disposto, siga o mesmo sistema de Vicissitude. Sujeito não-disposto pode resistir com Vigor + Determinação — a margem do usuário conta como sucessos de Vicissitude. Cada uso leva uma cena inteira. O total de alterações não pode exceder o nível de Protean do usuário, independentemente do número de aplicações ou sucessos. Em caso de múltiplos usuários trabalhando em um único sujeito, conte apenas o nível de Protean mais alto.",
+        duracao: "Permanente"
+      },
+      {
+        nivel: 3,
+        amalgama: null,
+        nome: "Metamorfose",
+        resumo: "O vampiro assume a forma de um animal de tamanho aproximado à sua massa original, ganhando atributos e sentidos naturais da criatura.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Nenhum teste necessário. A transformação leva um turno (durante o qual o usuário não pode fazer outras ações). O vampiro pode assumir apenas um tipo de animal (geralmente lobo, às vezes um grande felino ou uma cobra gigante), geralmente associado a seu clã ou ao tipo de presa mais comum. O animal, embora geralmente um exemplar espetacular da espécie, não mostra sinais de natureza sobrenatural a um observador comum. Ao transformar: ganha Atributos Físicos, sentidos e Perícias nativas do animal, além dos limites naturais de comunicação e manipulação daquela criatura. O vampiro pode usar outras Disciplinas (Auspício, Animalismo, Celeridade, Fortitude, Potência e Protean; Dominação, Ofuscação e Presença apresentam problemas; Feitiçaria de Sangue não está disponível).",
+        duracao: "Uma cena, a menos que encerrada voluntariamente antes"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        amalgama: null,
+        nome: "Metamorfose Avançada",
+        resumo: "Este poder concede uma forma animal adicional ao usuário, desta vez permitindo também alterar o próprio tamanho — vampiros comumente se transformam em morcegos, ratos ou insetos.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Pré-requisito: Metamorfose. Mesmo sistema de Metamorfose.",
+        duracao: "Uma cena, a menos que encerrada voluntariamente antes"
+      },
+      {
+        nivel: 4,
+        amalgama: "Dominação 2",
+        nome: "Forma Horrível",
+        resumo: "Com tal domínio do corpo que supera as limitações naturais, o vampiro assume uma forma verdadeiramente monstruosa — garras terríveis, presas salientes, músculos cordados e feições distorcidas.",
+        custo: "Uma Jogada de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "Pré-requisito: Vicissitude. A Forma Horrível leva um turno inteiro para ativar — durante o qual o vampiro só pode se defender, usando suas pools de dados pré-Forma Horrível. Então concede ao vampiro um número de alterações gratuitas de Vicissitude (nenhum ponto de Atributo é perdido) igual ao seu nível de Protean. Podem ser gastas em Redistribuição, Armas e Armadura. Com a Besta tão perto da superfície, quaisquer críticos rolados enquanto usando Forma Horrível para qualquer razão são considerados críticos sujos, e qualquer teste de frenesi realizado é em Dificuldade +2. O vampiro também assume uma aparência inegavelmente inumana e é incapaz de comunicar-se além de grunhidos, silvos e rugidos.",
+        duracao: "Uma cena, a menos que encerrada voluntariamente antes"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "Forma de Névoa",
+        resumo: "O vampiro adquire o poder lendário de se transformar em nuvem de névoa — perceptível ao olho mas intocável por qualquer coisa exceto fogo, luz solar e agressão sobrenatural.",
+        custo: "Um a três Jogadas de Despertar",
+        dados: "—",
+        resist: "—",
+        mecanica: "A transformação leva 3 turnos (pode ser acelerada com Jogadas de Despertar adicionais, na proporção de uma Jogada por turno salvo). Na forma de névoa, o vampiro se move à velocidade de caminhada e percebe seus arredores por meios místicos como se estivesse presente normalmente. Não pode fazer contato visual nem falar. Pode usar apenas Disciplinas que não requeiram forma física ou presença, a critério do Narrador. Só pode ser danificado por luz solar, fogo e ataques sobrenaturais imateriais (como certos Rituais). Cabe por tubulações, frestas e rachaduras.",
+        duracao: "Uma cena, a menos que encerrada voluntariamente antes"
+      },
+      {
+        nivel: 5,
+        amalgama: null,
+        nome: "O Coração Desvinculado",
+        resumo: "Tendo dominado o Protean, o interior do usuário torna-se maleável — o coração se destaca e se move livremente dentro do peito, tornando o vampiro extremamente difícil de empalar e permitindo libertar-se da paralisia.",
+        custo: "Grátis",
+        dados: "Força + Determinação (Dificuldade 5, para se libertar da paralisia)",
+        resist: "—",
+        mecanica: "Aumenta a Dificuldade de qualquer teste não-combativo para empalar o vampiro em 3. Em combate de Armas Brancas, apenas uma vitória crítica do atacante faz a estaca penetrar o coração do usuário. Mesmo se empalado, o usuário pode fazer uma Jogada de Despertar e jogar Força + Determinação (Dificuldade 5) uma vez por hora. Uma vitória significa que ele se liberta da paralisia enquanto a estaca é expulsa do corpo. Não pode tentar essa expulsão de estaca com Fome 5.",
+        duracao: "Passiva"
+      },
+      {
+        nivel: 5,
+        amalgama: "Animali­smo 2",
+        nome: "Um com a Terra",
+        resumo: "O Cainita possui tal domínio sobre a própria forma que pode estendê-la ao próprio domínio — não apenas mergulhando na terra, mas mantendo consciência sobrenatural de eventos em até um quilômetro ao redor.",
+        custo: "Duas Jogadas de Despertar",
+        dados: "Perspicácia + Animalismo (para eventos discretos ou ocultos)",
+        resist: "Pool de dados oponente relevante (para eventos ocultos)",
+        mecanica: "Pré-requisito: Fundir-se à Terra. Como Fundir-se à Terra, exceto que o vampiro não está limitado pela composição da superfície — pode descansar dentro de paredes de mansões, sob tábuas de assoalho ou sob poças de 'água morta'. Adicionalmente, em um raio de aproximadamente um quilômetro a partir de onde o corpo do vampiro fundiu-se à terra, o vampiro pode experimentar qualquer estímulo sensorial nessa área — ouvir conversas, sentir cheiros, etc. O vampiro experimenta esses sentidos através da presença de animais, por menores que sejam, nas proximidades dos eventos. Se eventos forem discretos ou intencionalmente ocultos, é necessário Perspicácia + Animalismo vs. a pool de dados oponente relevante. Emergir deste estado antes do anoitecer do dia seguinte requer Determinação + Protean (Dificuldade 4) e pode levar até uma hora — vitória crítica permite emergir instantaneamente.",
+        duracao: "Um dia ou mais, ou até ser fisicamente perturbado"
+      }
     ]
   }
 };
