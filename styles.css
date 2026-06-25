@@ -1,0 +1,126 @@
+:root {
+  --bg:#07030a;--bg2:#100818;--bg3:#180d20;--bg-card:#0f0814;
+  --blood:#8b0000;--blood2:#c41230;--blood3:#e8183a;
+  --gold:#c8962a;--gold2:#e8b84a;
+  --text:#d4c4b0;--text2:#8a7a6a;--text3:#5a4a3a;
+  --border:rgba(139,0,0,0.2);--border2:rgba(139,0,0,0.45);
+  --sidebar-w:280px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'IM Fell English',Georgia,serif;font-size:17px;line-height:1.7;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--blood) 20%,var(--blood2) 50%,var(--blood) 80%,transparent);z-index:1000;box-shadow:0 0 20px rgba(196,18,48,0.6),0 0 40px rgba(139,0,0,0.3)}
+.bg-texture{position:fixed;inset:0;background-image:radial-gradient(ellipse at 20% 50%,rgba(139,0,0,0.04) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(100,0,80,0.04) 0%,transparent 60%);pointer-events:none;z-index:0}
+.layout{display:flex;min-height:100vh;position:relative;z-index:1}
+#sidebar{width:var(--sidebar-w);min-height:100vh;background:linear-gradient(180deg,#0a0310 0%,#070215 50%,#0a0318 100%);border-right:1px solid var(--border2);position:fixed;top:0;left:0;bottom:0;z-index:100;overflow-y:auto;display:flex;flex-direction:column;transition:transform 0.35s cubic-bezier(.4,0,.2,1)}
+#sidebar::after{content:'';position:absolute;top:0;right:0;width:1px;height:100%;background:linear-gradient(180deg,transparent,var(--blood2) 30%,var(--blood) 50%,var(--blood2) 70%,transparent);opacity:0.5}
+.sidebar-brand{padding:32px 20px 24px;text-align:center;border-bottom:1px solid var(--border);position:relative}
+.sidebar-brand::after{content:'✦ ✦ ✦';display:block;font-size:10px;color:var(--blood);letter-spacing:8px;margin-top:10px}
+.brand-title{font-family:'Cinzel Decorative',serif;font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:0.08em;line-height:1.3;text-shadow:0 0 20px rgba(200,150,42,0.4)}
+.brand-sub{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--blood2);margin-top:6px}
+.sidebar-section-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--text3);padding:16px 20px 6px}
+#clanNav{flex:1;padding:6px 0 20px}
+.clan-nav-item{display:flex;align-items:center;gap:10px;padding:9px 20px;cursor:pointer;transition:background 0.15s,color 0.15s,border-color 0.15s;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.06em;color:var(--text2);border-left:2px solid transparent;user-select:none}
+.clan-nav-item:hover{background:rgba(139,0,0,0.08);color:var(--text);border-left-color:var(--blood)}
+.clan-nav-item.active{background:rgba(139,0,0,0.14);color:var(--gold2);border-left-color:var(--blood2)}
+.nav-symbol{font-size:14px;width:20px;text-align:center;opacity:0.8}
+.nav-name{flex:1}
+.nav-arrow{font-size:10px;opacity:0;transform:translateX(-4px);transition:opacity 0.15s,transform 0.15s;color:var(--blood2)}
+.clan-nav-item:hover .nav-arrow,.clan-nav-item.active .nav-arrow{opacity:1;transform:translateX(0)}
+.sidebar-footer{padding:14px 20px;border-top:1px solid var(--border);font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text3);text-align:center}
+#main{margin-left:var(--sidebar-w);flex:1;min-height:100vh}
+.intro-page{padding:80px 60px;max-width:820px}
+.page-eyebrow{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:var(--blood2);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.page-eyebrow::before{content:'';width:40px;height:1px;background:var(--blood2)}
+.intro-title{font-family:'Cinzel Decorative',serif;font-size:38px;font-weight:900;line-height:1.1;color:var(--gold2);text-shadow:0 0 40px rgba(200,150,42,0.2);margin-bottom:10px}
+.intro-subtitle{font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.2em;color:var(--blood2);margin-bottom:40px}
+.blood-divider{display:flex;align-items:center;gap:16px;margin:32px 0}
+.blood-divider::before,.blood-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--blood))}
+.blood-divider::after{background:linear-gradient(90deg,var(--blood),transparent)}
+.blood-divider-icon{color:var(--blood2);font-size:14px}
+.intro-text{font-size:17px;color:var(--text2);line-height:1.8;margin-bottom:20px;font-style:italic}
+.clan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:48px}
+.clan-thumb{background:var(--bg-card);border:1px solid var(--border);padding:20px 16px 18px;text-align:center;cursor:pointer;transition:border-color 0.2s,transform 0.15s,box-shadow 0.2s;position:relative;overflow:hidden}
+.clan-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(139,0,0,0.1) 0%,transparent 70%);opacity:0;transition:opacity 0.2s}
+.clan-thumb:hover{border-color:var(--blood2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(139,0,0,0.15)}
+.clan-thumb:hover::before{opacity:1}
+.clan-thumb-symbol{font-size:28px;display:block;margin-bottom:10px}
+.clan-thumb-name{font-family:'Cinzel',serif;font-size:12px;font-weight:600;letter-spacing:0.08em;color:var(--text);line-height:1.3}
+.clan-thumb-nick{font-family:'Inter',sans-serif;font-size:10px;color:var(--text3);margin-top:5px;font-style:italic}
+.clan-page{animation:fadeIn 0.35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.clan-header{padding:60px 60px 48px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.clan-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,var(--clan-color,#8b0000) 0%,transparent 55%),linear-gradient(180deg,rgba(7,3,10,0) 0%,rgba(7,3,10,0.8) 100%);opacity:0.08;pointer-events:none}
+.clan-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,var(--blood2) 0%,transparent 60%);opacity:0;animation:heartbeat 0.6s ease-out forwards;pointer-events:none}
+@keyframes heartbeat{0%{opacity:0.15;transform:scale(0.8)}40%{opacity:0.06;transform:scale(1.1)}100%{opacity:0;transform:scale(1.2)}}
+.clan-header-inner{position:relative;display:flex;align-items:flex-start;gap:32px;max-width:800px}
+.clan-big-symbol{font-size:64px;line-height:1;flex-shrink:0;filter:drop-shadow(0 4px 20px rgba(0,0,0,0.8))}
+.clan-header-text{flex:1}
+.clan-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.35em;text-transform:uppercase;color:var(--blood2);margin-bottom:10px}
+.clan-name{font-family:'Cinzel Decorative',serif;font-size:36px;font-weight:900;color:var(--gold2);line-height:1.1;text-shadow:0 0 30px rgba(200,150,42,0.15)}
+.clan-alcunhas{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.alcunha-pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blood2);border:1px solid rgba(196,18,48,0.3);background:rgba(139,0,0,0.08);padding:3px 10px}
+.clan-quote{margin-top:20px;font-style:italic;font-size:16px;color:var(--text2);border-left:2px solid var(--blood);padding-left:16px;max-width:520px;line-height:1.6}
+.clan-nav-bar{display:flex;align-items:center;gap:10px;padding:14px 60px;border-bottom:1px solid var(--border);background:rgba(7,3,10,0.8);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+.back-btn{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:5px 8px;transition:color 0.15s}
+.back-btn:hover{color:var(--blood2)}
+.breadcrumb-sep{color:var(--text3);font-size:12px}
+.breadcrumb-current{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.1em;color:var(--gold)}
+.clan-body{display:grid;grid-template-columns:1fr 300px;max-width:1100px}
+.clan-main{padding:44px 60px;border-right:1px solid var(--border)}
+.clan-side{padding:44px 36px}
+.section-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--blood2);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent)}
+.clan-resumo{font-size:18px;color:var(--text);line-height:1.75;margin-bottom:44px}
+.clan-historia{font-size:16px;color:var(--text2);line-height:1.8;margin-bottom:44px}
+.disciplinas-destaque{margin:0 0 44px}
+.disc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.disc-card{background:var(--bg-card);border:1px solid var(--border);border-top:2px solid var(--blood);padding:20px 18px 16px;display:flex;flex-direction:column;gap:10px;transition:border-color 0.2s,box-shadow 0.2s}
+.disc-card:hover{border-color:var(--blood2);box-shadow:0 4px 20px rgba(139,0,0,0.15)}
+.disc-card-nome{font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--gold2);letter-spacing:0.06em;display:flex;align-items:center;gap:8px}
+.disc-card-nome::before{content:'⬥';color:var(--blood2);font-size:9px;flex-shrink:0}
+.disc-card-desc{font-size:13px;color:var(--text2);line-height:1.55;flex:1}
+.disc-card-btn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--blood2);background:none;border:1px solid rgba(196,18,48,0.3);padding:6px 12px;cursor:pointer;transition:background 0.15s,color 0.15s;align-self:flex-start;margin-top:4px}
+.disc-card-btn:hover{background:rgba(139,0,0,0.15);color:var(--gold2);border-color:var(--blood2)}
+.side-card{background:var(--bg-card);border:1px solid var(--border);border-top:2px solid var(--blood);padding:20px;margin-bottom:20px}
+.side-card-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--blood2);margin-bottom:12px}
+.perdicao-item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.perdicao-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.perdicao-nome{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;color:var(--gold);margin-bottom:6px}
+.perdicao-text{font-size:13px;color:var(--text2);line-height:1.6;font-style:italic}
+.fome-nome{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;color:var(--gold);margin-bottom:8px}
+.fome-text{font-size:13px;color:var(--text2);line-height:1.65}
+.disc-page{animation:fadeIn 0.3s ease}
+.disc-page-header{padding:50px 60px 40px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.disc-page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,var(--blood) 0%,transparent 60%);opacity:0.05;pointer-events:none}
+.disc-page-inner{position:relative;max-width:800px}
+.disc-page-title{font-family:'Cinzel Decorative',serif;font-size:32px;font-weight:900;color:var(--gold2);margin-bottom:8px}
+.disc-page-sub{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--blood2)}
+.disc-page-body{padding:40px 60px;max-width:1100px}
+.hab-level-group{margin-bottom:36px}
+.hab-level-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--blood2);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.hab-level-title::before{content:'';width:24px;height:1px;background:var(--blood2)}
+.hab-level-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent)}
+.hab-cards{display:flex;flex-direction:column;gap:10px}
+.hab-card{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--blood);padding:18px 20px;transition:border-color 0.15s}
+.hab-card:hover{border-color:var(--blood2);border-left-color:var(--blood2)}
+.hab-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px}
+.hab-card-nome{font-family:'Cinzel',serif;font-size:14px;font-weight:600;color:var(--gold2);letter-spacing:0.04em}
+.hab-card-amalgama{font-family:'Inter',sans-serif;font-size:10px;color:var(--blood2);background:rgba(139,0,0,0.1);border:1px solid rgba(196,18,48,0.2);padding:2px 8px;white-space:nowrap;align-self:flex-start}
+.hab-card-resumo{font-size:14px;color:var(--text);line-height:1.55;margin-bottom:10px;font-style:italic}
+.hab-card-mecanica{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:10px}
+.hab-card-meta{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.hab-meta-item{display:flex;flex-direction:column;gap:2px}
+.hab-meta-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text3)}
+.hab-meta-val{font-size:12px;color:var(--text2)}
+.hab-custo-badge{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);background:rgba(200,150,42,0.08);border:1px solid rgba(200,150,42,0.2);padding:2px 8px;display:inline-block}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--blood);border-radius:2px}
+::-webkit-scrollbar-thumb:hover{background:var(--blood2)}
+#menuToggle{display:none;position:fixed;top:18px;left:18px;z-index:200;background:var(--bg2);border:1px solid var(--border2);padding:8px 11px;cursor:pointer;flex-direction:column;gap:5px}
+#menuToggle span{display:block;width:20px;height:1px;background:var(--blood2)}
+#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:99}
+.ornament{text-align:center;color:var(--blood);font-size:12px;letter-spacing:12px;padding:16px 0;opacity:0.6}
+@media(max-width:900px){.clan-body{grid-template-columns:1fr}.clan-main{border-right:none;border-bottom:1px solid var(--border)}.disc-cards{grid-template-columns:1fr}}
+@media(max-width:680px){#menuToggle{display:flex}#sidebar{transform:translateX(-100%)}#sidebar.open{transform:translateX(0);box-shadow:6px 0 40px rgba(0,0,0,0.8)}#overlay.open{display:block}#main{margin-left:0}.intro-page{padding:40px 24px}.intro-title{font-size:26px}.clan-header{padding:40px 24px 36px}.clan-nav-bar{padding-left:24px;padding-right:24px}.clan-main{padding:32px 24px}.clan-side{padding:28px 24px}.disc-page-header{padding:36px 24px 28px}.disc-page-body{padding:28px 24px}}
