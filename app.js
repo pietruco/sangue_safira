@@ -2,19 +2,28 @@ const $ = id => document.getElementById(id);
 let currentClan = null;
 let currentDisc = null;
 
-// Mapa seguro de chaves para evitar problemas com caracteres especiais em onclick inline
-const _discHandlers = {};
-
 document.addEventListener('DOMContentLoaded', () => {
   buildNav();
   renderIntro();
   setupMobile();
+
+  // Diagnóstico: loga todas as chaves disponíveis no console
+  console.log('[S&S] DISCIPLINES carregado:', typeof DISCIPLINES !== 'undefined' ? Object.keys(DISCIPLINES) : 'NÃO DEFINIDO');
+  console.log('[S&S] CLANS carregado:', typeof CLANS !== 'undefined' ? CLANS.map(c=>c.id) : 'NÃO DEFINIDO');
 });
 
-// Expõe globalmente para onclick inline
 window.showClan  = showClan;
 window.showDisc  = showDisc;
 window.showIntro = showIntro;
+window._btnDisc  = _btnDisc;
+
+// Armazena pares [discKey, clanId] indexados por inteiro simples
+const _btnMap = [];
+
+function _btnDisc(idx) {
+  const [discKey, clanId] = _btnMap[idx];
+  showDisc(discKey, clanId);
+}
 
 function buildNav() {
   $('clanNav').innerHTML = CLANS.map(c => `
@@ -59,16 +68,16 @@ function showClan(id) {
   $('discDetail').style.display = 'none';
   $('clanDetail').style.display = 'block';
 
-  // Registra handlers indexados numericamente para evitar problemas com
-  // chaves contendo acentos ou caracteres especiais dentro de onclick=""
-  const discCards = c.disciplinas.map((d, i) => {
-    const handlerId = `${id}_disc_${i}`;
-    _discHandlers[handlerId] = () => showDisc(d.key, c.id);
+  // Registra cada disciplina no _btnMap e usa o índice no onclick
+  const discCards = c.disciplinas.map(d => {
+    const idx = _btnMap.length;
+    _btnMap.push([d.key, c.id]);
+    console.log(`[S&S] Botão ${idx}: key="${d.key}" clanId="${c.id}"`);
     return `
       <div class="disc-card">
         <div class="disc-card-nome">${d.nome}</div>
         <div class="disc-card-desc">${d.descricao}</div>
-        <button class="disc-card-btn" onclick="_discHandlers['${handlerId}']()">Ver Habilidades →</button>
+        <button class="disc-card-btn" onclick="_btnDisc(${idx})">Ver Habilidades →</button>
       </div>`;
   }).join('');
 
@@ -132,35 +141,45 @@ function showClan(id) {
 }
 
 function showDisc(discKey, clanId) {
-  // Busca tolerante: tenta a chave exata, depois em minúsculas, depois normalizada
+  console.log('[S&S] showDisc chamado com key:', JSON.stringify(discKey), 'clanId:', clanId);
+  console.log('[S&S] Chaves em DISCIPLINES:', Object.keys(DISCIPLINES));
+
+  // Busca tolerante: exata → minúsculas → sem acento
   let disc = DISCIPLINES[discKey];
   if (!disc) disc = DISCIPLINES[discKey.toLowerCase()];
   if (!disc) disc = DISCIPLINES[_normalize(discKey)];
+  if (!disc) {
+    // Tenta encontrar qualquer chave que contenha o discKey normalizado
+    const norm = _normalize(discKey);
+    const found = Object.keys(DISCIPLINES).find(k => _normalize(k) === norm);
+    if (found) disc = DISCIPLINES[found];
+  }
 
   if (!disc) {
-    console.error('Disciplina não encontrada. Chave recebida:', JSON.stringify(discKey));
-    console.error('Chaves disponíveis:', Object.keys(DISCIPLINES));
+    console.error('[S&S] Disciplina NÃO encontrada para key:', JSON.stringify(discKey));
+    alert(`Disciplina não encontrada: "${discKey}"\n\nChaves disponíveis:\n${Object.keys(DISCIPLINES).join(', ')}`);
     return;
   }
 
   currentDisc = discKey;
-
   $('introPage').style.display  = 'none';
   $('clanDetail').style.display = 'none';
   $('discDetail').style.display = 'block';
 
-  // Agrupa habilidades por nível
   const levels = {};
   disc.habilidades.forEach(h => {
     if (!levels[h.nivel]) levels[h.nivel] = [];
     levels[h.nivel].push(h);
   });
 
-  // Título visível: usa o nome da disciplina do clã, se disponível
   const clan = CLANS.find(x => x.id === clanId);
   const discNome = clan
     ? (clan.disciplinas.find(d => d.key === discKey)?.nome || _titularize(discKey))
     : _titularize(discKey);
+
+  // Botão de voltar — idx no _btnMap
+  const backIdx = _btnMap.length;
+  _btnMap.push([null, clanId]); // marcador de "volta"
 
   const levelsHTML = Object.keys(levels).sort((a, b) => a - b).map(lv => `
     <div class="hab-level-group">
@@ -188,14 +207,10 @@ function showDisc(discKey, clanId) {
       </div>
     </div>`).join('');
 
-  // Registra o handler de volta ao clã
-  const backId = `back_to_${clanId}`;
-  _discHandlers[backId] = () => showClan(clanId);
-
   $('discDetail').innerHTML = `
     <div class="disc-page">
       <div class="clan-nav-bar">
-        <button class="back-btn" onclick="_discHandlers['${backId}']()">← Voltar ao Clã</button>
+        <button class="back-btn" onclick="showClan('${clanId}')">← Voltar ao Clã</button>
         <span class="breadcrumb-sep">/</span>
         <span class="breadcrumb-current">${discNome}</span>
       </div>
@@ -234,8 +249,6 @@ function setupMobile() {
   });
 }
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
-
 function _metaItem(label, val, isCusto = false) {
   if (!val || val === '-') return '';
   const inner = isCusto
@@ -244,15 +257,10 @@ function _metaItem(label, val, isCusto = false) {
   return `<div class="hab-meta-item"><span class="hab-meta-label">${label}</span>${inner}</div>`;
 }
 
-// Remove acentos e converte para minúsculas — útil para busca tolerante de chaves
 function _normalize(str) {
-  return str
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '');
+  return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-// Capitaliza a primeira letra para exibição quando o nome não está disponível
 function _titularize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
