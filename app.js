@@ -2,15 +2,24 @@ const $ = id => document.getElementById(id);
 let currentClan = null;
 let currentDisc = null;
 
+// Mapa seguro de chaves para evitar problemas com caracteres especiais em onclick inline
+const _discHandlers = {};
+
 document.addEventListener('DOMContentLoaded', () => {
   buildNav();
   renderIntro();
   setupMobile();
 });
 
+// Expõe globalmente para onclick inline
+window.showClan  = showClan;
+window.showDisc  = showDisc;
+window.showIntro = showIntro;
+
 function buildNav() {
   $('clanNav').innerHTML = CLANS.map(c => `
-    <div class="clan-nav-item ${currentClan?.id===c.id?'active':''}" onclick="showClan('${c.id}')">
+    <div class="clan-nav-item ${currentClan?.id === c.id ? 'active' : ''}"
+         onclick="showClan('${c.id}')">
       <span class="nav-symbol">${c.simbolo}</span>
       <span class="nav-name">${c.nome}</span>
       <span class="nav-arrow">›</span>
@@ -28,7 +37,7 @@ function renderIntro() {
       <p class="intro-text">Selecione um clã para explorar suas origens, disciplinas, o sabor único de sua fome e a perdição que aguarda no fundo de cada noite.</p>
       <div class="blood-divider"><span class="blood-divider-icon">🩸</span></div>
       <div class="clan-grid">
-        ${CLANS.map(c=>`
+        ${CLANS.map(c => `
           <div class="clan-thumb" onclick="showClan('${c.id}')">
             <span class="clan-thumb-symbol">${c.simbolo}</span>
             <span class="clan-thumb-name">${c.nome}</span>
@@ -40,23 +49,30 @@ function renderIntro() {
 }
 
 function showClan(id) {
-  const c = CLANS.find(x=>x.id===id);
-  if(!c) return;
+  const c = CLANS.find(x => x.id === id);
+  if (!c) return;
   currentClan = c;
   currentDisc = null;
   buildNav();
-  $('introPage').style.display='none';
-  $('discDetail').style.display='none';
-  $('clanDetail').style.display='block';
 
-  const discHTML = c.disciplinas.map(d=>`
-    <div class="disc-card">
-      <div class="disc-card-nome">${d.nome}</div>
-      <div class="disc-card-desc">${d.descricao}</div>
-      <button class="disc-card-btn" onclick="showDisc('${d.key}','${c.id}')">Ver Habilidades →</button>
-    </div>`).join('');
+  $('introPage').style.display = 'none';
+  $('discDetail').style.display = 'none';
+  $('clanDetail').style.display = 'block';
 
-  const perdicoesHTML = c.perdicoes.map(p=>`
+  // Registra handlers indexados numericamente para evitar problemas com
+  // chaves contendo acentos ou caracteres especiais dentro de onclick=""
+  const discCards = c.disciplinas.map((d, i) => {
+    const handlerId = `${id}_disc_${i}`;
+    _discHandlers[handlerId] = () => showDisc(d.key, c.id);
+    return `
+      <div class="disc-card">
+        <div class="disc-card-nome">${d.nome}</div>
+        <div class="disc-card-desc">${d.descricao}</div>
+        <button class="disc-card-btn" onclick="_discHandlers['${handlerId}']()">Ver Habilidades →</button>
+      </div>`;
+  }).join('');
+
+  const perdicoesHTML = c.perdicoes.map(p => `
     <div class="perdicao-item">
       <div class="perdicao-nome">${p.nome}</div>
       <p class="perdicao-text">${p.texto}</p>
@@ -75,7 +91,7 @@ function showClan(id) {
           <div class="clan-header-text">
             <div class="clan-eyebrow">Clã</div>
             <h2 class="clan-name">${c.nome}</h2>
-            <div class="clan-alcunhas">${c.alcunhas.map(a=>`<span class="alcunha-pill">${a}</span>`).join('')}</div>
+            <div class="clan-alcunhas">${c.alcunhas.map(a => `<span class="alcunha-pill">${a}</span>`).join('')}</div>
             <blockquote class="clan-quote">${c.citacao}</blockquote>
           </div>
         </div>
@@ -87,7 +103,7 @@ function showClan(id) {
           <div class="blood-divider"><span class="blood-divider-icon">✦</span></div>
           <p class="section-label">Disciplinas</p>
           <div class="disciplinas-destaque">
-            <div class="disc-cards">${discHTML}</div>
+            <div class="disc-cards">${discCards}</div>
           </div>
           <div class="blood-divider"><span class="blood-divider-icon">✦</span></div>
           <p class="section-label">História</p>
@@ -108,29 +124,45 @@ function showClan(id) {
       <div class="ornament" style="padding:32px 0">✦ ✦ ✦</div>
     </div>`;
 
-  $('main').scrollTo(0,0);
+  $('main').scrollTo(0, 0);
   const active = document.querySelector('.clan-nav-item.active');
-  if(active) active.scrollIntoView({block:'nearest',behavior:'smooth'});
+  if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   $('sidebar').classList.remove('open');
   $('overlay').classList.remove('open');
 }
 
 function showDisc(discKey, clanId) {
-  const disc = DISCIPLINES[discKey];
-  if(!disc) { console.error('Discipline not found:', discKey); return; }
+  // Busca tolerante: tenta a chave exata, depois em minúsculas, depois normalizada
+  let disc = DISCIPLINES[discKey];
+  if (!disc) disc = DISCIPLINES[discKey.toLowerCase()];
+  if (!disc) disc = DISCIPLINES[_normalize(discKey)];
+
+  if (!disc) {
+    console.error('Disciplina não encontrada. Chave recebida:', JSON.stringify(discKey));
+    console.error('Chaves disponíveis:', Object.keys(DISCIPLINES));
+    return;
+  }
+
   currentDisc = discKey;
 
-  $('introPage').style.display='none';
-  $('clanDetail').style.display='none';
-  $('discDetail').style.display='block';
+  $('introPage').style.display  = 'none';
+  $('clanDetail').style.display = 'none';
+  $('discDetail').style.display = 'block';
 
+  // Agrupa habilidades por nível
   const levels = {};
   disc.habilidades.forEach(h => {
-    if(!levels[h.nivel]) levels[h.nivel] = [];
+    if (!levels[h.nivel]) levels[h.nivel] = [];
     levels[h.nivel].push(h);
   });
 
-  const levelsHTML = Object.keys(levels).sort((a,b)=>a-b).map(lv => `
+  // Título visível: usa o nome da disciplina do clã, se disponível
+  const clan = CLANS.find(x => x.id === clanId);
+  const discNome = clan
+    ? (clan.disciplinas.find(d => d.key === discKey)?.nome || _titularize(discKey))
+    : _titularize(discKey);
+
+  const levelsHTML = Object.keys(levels).sort((a, b) => a - b).map(lv => `
     <div class="hab-level-group">
       <div class="hab-level-title">Nível ${lv}</div>
       <div class="hab-cards">
@@ -138,31 +170,39 @@ function showDisc(discKey, clanId) {
           <div class="hab-card">
             <div class="hab-card-header">
               <div class="hab-card-nome">${h.nome}</div>
-              ${h.amalgama&&h.amalgama!=='-'?`<span class="hab-card-amalgama">Amalgama: ${h.amalgama}</span>`:''}
+              ${h.amalgama && h.amalgama !== '-'
+                ? `<span class="hab-card-amalgama">Amalgama: ${h.amalgama}</span>`
+                : ''}
             </div>
             <div class="hab-card-resumo">${h.resumo}</div>
-            ${h.mecanica&&h.mecanica!=='-'?`<div class="hab-card-mecanica">${h.mecanica}</div>`:''}
+            ${h.mecanica && h.mecanica !== '-'
+              ? `<div class="hab-card-mecanica">${h.mecanica}</div>`
+              : ''}
             <div class="hab-card-meta">
-              ${h.custo&&h.custo!=='-'?`<div class="hab-meta-item"><span class="hab-meta-label">Custo</span><span class="hab-custo-badge">${h.custo}</span></div>`:''}
-              ${h.dados&&h.dados!=='-'?`<div class="hab-meta-item"><span class="hab-meta-label">Dados</span><span class="hab-meta-val">${h.dados}</span></div>`:''}
-              ${h.resist&&h.resist!=='-'?`<div class="hab-meta-item"><span class="hab-meta-label">Resistência</span><span class="hab-meta-val">${h.resist}</span></div>`:''}
-              ${h.duracao&&h.duracao!=='-'?`<div class="hab-meta-item"><span class="hab-meta-label">Duração</span><span class="hab-meta-val">${h.duracao}</span></div>`:''}
+              ${_metaItem('Custo',       h.custo,  true)}
+              ${_metaItem('Dados',       h.dados)}
+              ${_metaItem('Resistência', h.resist)}
+              ${_metaItem('Duração',     h.duracao)}
             </div>
           </div>`).join('')}
       </div>
     </div>`).join('');
 
+  // Registra o handler de volta ao clã
+  const backId = `back_to_${clanId}`;
+  _discHandlers[backId] = () => showClan(clanId);
+
   $('discDetail').innerHTML = `
     <div class="disc-page">
       <div class="clan-nav-bar">
-        <button class="back-btn" onclick="showClan('${clanId}')">← Voltar ao Clã</button>
+        <button class="back-btn" onclick="_discHandlers['${backId}']()">← Voltar ao Clã</button>
         <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current">${discKey}</span>
+        <span class="breadcrumb-current">${discNome}</span>
       </div>
       <div class="disc-page-header">
         <div class="disc-page-inner">
           <div class="disc-page-sub">Disciplina</div>
-          <h2 class="disc-page-title">${discKey}</h2>
+          <h2 class="disc-page-title">${discNome}</h2>
           <p style="margin-top:14px;font-size:16px;color:var(--text2);line-height:1.7;font-style:italic;max-width:600px">${disc.descricao}</p>
         </div>
       </div>
@@ -170,16 +210,17 @@ function showDisc(discKey, clanId) {
       <div class="ornament" style="padding:32px 0">✦ ✦ ✦</div>
     </div>`;
 
-  $('main').scrollTo(0,0);
+  $('main').scrollTo(0, 0);
 }
 
 function showIntro() {
-  currentClan=null; currentDisc=null;
+  currentClan = null;
+  currentDisc = null;
   buildNav();
-  $('introPage').style.display='block';
-  $('clanDetail').style.display='none';
-  $('discDetail').style.display='none';
-  $('main').scrollTo(0,0);
+  $('introPage').style.display  = 'block';
+  $('clanDetail').style.display = 'none';
+  $('discDetail').style.display = 'none';
+  $('main').scrollTo(0, 0);
 }
 
 function setupMobile() {
@@ -191,4 +232,27 @@ function setupMobile() {
     $('sidebar').classList.remove('open');
     $('overlay').classList.remove('open');
   });
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+function _metaItem(label, val, isCusto = false) {
+  if (!val || val === '-') return '';
+  const inner = isCusto
+    ? `<span class="hab-custo-badge">${val}</span>`
+    : `<span class="hab-meta-val">${val}</span>`;
+  return `<div class="hab-meta-item"><span class="hab-meta-label">${label}</span>${inner}</div>`;
+}
+
+// Remove acentos e converte para minúsculas — útil para busca tolerante de chaves
+function _normalize(str) {
+  return str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+// Capitaliza a primeira letra para exibição quando o nome não está disponível
+function _titularize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
