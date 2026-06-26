@@ -1329,7 +1329,141 @@ const DISCIPLINES = {
         mecanica: "A transformação leva um turno (durante o qual o vampiro não pode fazer nada mais). Concluída, o vampiro pode mover-se à velocidade de caminhada por qualquer superfície ou parede, impedido apenas por barreiras hermeticamente seladas. Vampiros usando Avatar Tenebroso podem envolver vítimas, causando −3 em todas as pools de dados da vítima e sufocando mortais como em Mortalha Estigia. Se envolvendo um mortal, o vampiro pode se alimentar dele sem penetrar a pele com as presas. Praticantes deste poder não sofrem dano de fontes físicas, mas podem ser afetados por fogo e luz solar normalmente. Disciplinas Mentais ainda podem ser usadas a critério do Narrador.",
         duracao: "Uma cena ou até ser encerrado"
       }
+    ],
+
+    // ── Cerimônias ────────────────────────────────
+    cerimonias_intro: "Cerimônias são o equivalente do Oblívio aos Rituais de Feitiçaria de Sangue, funcionando de forma similar com as exceções abaixo. Salvo indicação contrária, realizar uma Cerimônia exige uma Checagem de Sangue, cinco minutos por nível para executar, e uma vitória no teste de Determinação + Oblívio (Dificuldade = nível da Cerimônia + 1). Cerimônias geralmente requerem ingredientes ou sacrifícios adicionais para misturar ao vitae do executante. Ghouls de praticantes de Oblívio, ou sangues-finos, podem obter acesso temporário a poderes de Oblívio, mas não a Cerimônias. Cada Cerimônia tem um poder de Oblívio como pré-requisito. Na criação do personagem, o jogador pode escolher uma Cerimônia de Nível 1 se possuir ao menos um poder de Oblívio listado como pré-requisito daquela Cerimônia. Personagens podem comprar novas Cerimônias ao custo de nível da Cerimônia × 3 pontos de experiência, desde que atendam ao pré-requisito de poder. Aprender novas Cerimônias durante o jogo requer tanto experiência quanto tempo, além de um professor que já conheça a Cerimônia. Espere que uma Cerimônia leve pelo menos o quadrado de seu nível em semanas para ser aprendida.",
+
+    cerimonias: [
+
+      // NÍVEL 1
+      {
+        nivel: 1,
+        nome: "Dom da Falsa Vida",
+        prerequisito: "Cinzas às Cinzas",
+        resumo: "O vampiro anima um cadáver — ou um grupo deles — para realizar tarefas simples, únicas ou repetitivas.",
+        ingredientes: "Um corpo humano (ou múltiplos), uma pequena mistura de sangue, fleuma e bile.",
+        processo: "Após aplicar a mistura no(s) cadáver(es) e realizar a Cerimônia, os corpos animam em uma forma de falsa vida. Seguem um único comando simples do vampiro — desde que o cadáver seja fisicamente capaz de executá-lo, como 'varra o chão', 'segure esta porta fechada' ou 'caminhe pelo perímetro da casa'. Não têm capacidade de pensar ou calcular; comandos condicionais ou complexos como 'ataque a próxima pessoa a entrar por este arco', 'dirija este carro' ou 'construa um casebre' não funcionam. Podem ser direcionados a um alvo específico se o usuário apontar para ele.",
+        mecanica: "O vampiro faz o teste de Cerimônia. Com vitória: anima um número de cadáveres igual ao seu nível de Oblívio, ou ao número de corpos preparados (o que for menor). Vitória crítica: dobra o nível de Oblívio para fins de determinar cadáveres animados. A animação do cadáver inconsciente termina quando é destruído ou conclui sua tarefa. Esses cadáveres não se defendem de ataques e apodrecem normalmente — a Cerimônia não lhes concede imunidade aos elementos ou ao tempo.",
+        custo: "Uma Checagem de Sangue",
+        dados: "Determinação + Oblívio (Dificuldade 2)",
+        resist: "—",
+        duracao: "Até o cadáver ser destruído ou concluir sua tarefa"
+      },
+      {
+        nivel: 1,
+        nome: "Invocar Espírito",
+        prerequisito: "O Elo Vinculante",
+        resumo: "Convoca um espírito do Submundo para a presença do vampiro.",
+        ingredientes: "Um dos elos do wraith alvo (ver O Elo Vinculante), uma foto ou outra representação visual do wraith ou seu nome assinado, e o vitae do executante.",
+        processo: "O necromante derrama seu vitae sobre o elo de um wraith e, estudando a foto ou assinatura, chama o nome do wraith em voz alta. O wraith sente o chamado de seu elo e inicia uma jornada de seu local no Submundo até o do executante. Embora a geografia tenha escalas diferentes no Submundo, uma jornada ainda pode levar várias noites se o espírito estiver do outro lado do mundo. Se o véu for fino o suficiente no local de invocação, o wraith é puxado através dele pela força do elo. O wraith invocado não tem obrigação de servir ao vampiro ao ser chamado — pode agir com hostilidade se sentir que o vampiro ameaça seu elo, ou pode ser grato pela invocação e pela possibilidade de companhia.",
+        mecanica: "O executante aplica o vitae no elo e faz o teste de Cerimônia de Oblívio. O wraith não pode atravessar o véu se ele for impenetrável no local da Cerimônia. Mover o elo após a Cerimônia não ajuda — a capacidade do wraith de atravessar o véu desaparece se o elo deixar o local. O wraith desaparece ao final da cena a menos que uma Cerimônia separada seja usada para compeli-lo ou vinculá-lo. Wraiths invocados desta forma não se manifestam fisicamente, mas como sombras nas paredes — silhuetas vacilantes de suas formas em vida, das quais podem emergir vozes. Wraiths falam as mesmas línguas que falavam em vida.",
+        custo: "Uma Checagem de Sangue",
+        dados: "Determinação + Oblívio",
+        resist: "—",
+        duracao: "Até o final da cena, a menos que compelido ou vinculado"
+      },
+
+      // NÍVEL 2
+      {
+        nivel: 2,
+        nome: "Despertar o Servo Homúnculo",
+        prerequisito: "Onde o Véu se Afina",
+        resumo: "O vampiro cria servos e espiões a partir de partes do corpo — mãos, crânios — ou pequenos animais mortos como ratos ou raposas.",
+        ingredientes: "A parte do corpo ou carcaça do animal, a arma usada para cortá-la/matá-la, uma pequena mistura de urina, fezes e sêmen.",
+        processo: "O executante reveste uma lâmina (ou outro dispositivo adequado) no nojento coquetel de fluidos corporais e usa-a para cortar o apêndice alvo de seu membro ou corpo de origem, ou mata o pequeno animal (não pode ser maior que um cão pequeno e não pode voar, independentemente de ter asas). Após massagear vitae no alvo, ele ganha vida como um servo homúnculo, incondicionalmente leal ao seu mestre.",
+        mecanica: "O necromante faz o teste de Cerimônia de Oblívio. Com vitória: ganha um servo homúnculo que espia, segue ou intimida por comando do necromante. Se se afastar mais de 100 metros do vampiro, fica inerte, acordando apenas quando o vampiro entrar nesse raio. Permanece ativo por um número de noites igual ao número de sucessos. Vitória crítica: mantém o servo ativo para sempre. Falha total: destrói todos os componentes da Cerimônia. A maioria dos homúnculos pode escalar paredes, saltar (mesmo sem membros) e se ocultar com eficácia. Não pode falar nem realizar ações que exijam pensamento profundo, mas pode comunicar telepaticamente imagens únicas, odores ou sons ao criador.",
+        custo: "Uma Checagem de Sangue",
+        dados: "Determinação + Oblívio",
+        resist: "—",
+        duracao: "Uma noite por sucesso, ou permanentemente com vitória crítica"
+      },
+      {
+        nivel: 2,
+        nome: "Compelir Espírito",
+        prerequisito: "Onde o Véu se Afina",
+        resumo: "Permite ao vampiro dobrar um wraith à sua vontade, forçando-o a realizar tarefas.",
+        ingredientes: "O elo de um wraith, o vitae do executante, e um item (ou ameaça) suficiente para danificar o elo.",
+        processo: "O vampiro deve estar em proximidade com um wraith — tipicamente através de Invocar Espírito. O necromante joga um punhado de seu próprio vitae na direção do wraith enquanto encosta um item destrutivo no elo (uma faca, um martelo, uma arma) ou profere ameaças verbais que o wraith acredita. O vampiro e o wraith travam um duelo de vontades.",
+        mecanica: "Faça um teste de Cerimônia de Oblívio vs. Determinação + Autocontrole do wraith. Se o vampiro não tiver como ameaçar fisicamente o elo, também faça Manipulação + Intimidação (Dificuldade = Determinação + Autocontrole do wraith). Se o necromante vencer ambas as jogadas: pode comandar o wraith a realizar um número de tarefas moderadamente difíceis (espionar, pesquisar, responder perguntas com honestidade etc.) igual ao número de sucessos na jogada de Cerimônia. A cada dois sucessos, pode ordenar uma tarefa difícil (atacar alguém, fazer algo repugnante etc.). Vitória crítica: pode exigir qualquer ação do wraith. O wraith permanece a serviço do vampiro até o final da crônica ou até cumprir os comandos, momento em que retorna ao Submundo com inimizade eterna pelo necromante. Se o wraith vencer qualquer disputa, o vampiro sofre a margem em dano Superficial de Saúde e o wraith retorna ao Submundo. A compulsão sobre o wraith termina imediatamente se o vampiro o atacar. Se o vampiro danificar o elo ameaçado, o wraith sofre 1 a 3 de dano Agravado de Vontade e é enviado de volta ao Submundo como um espectro assassino.",
+        custo: "Uma Checagem de Sangue",
+        dados: "Determinação + Oblívio vs. Determinação + Autocontrole do wraith",
+        resist: "Determinação + Autocontrole do wraith",
+        duracao: "Até o final da crônica ou até os comandos serem cumpridos"
+      },
+
+      // NÍVEL 3
+      {
+        nivel: 3,
+        nome: "Hospedar Espírito",
+        prerequisito: "Aura de Decadência",
+        resumo: "O vampiro abre seu próprio corpo à possessão por um wraith — ganhando físico aprimorado, acesso a memórias e os conselhos da voz do espírito em sua mente.",
+        ingredientes: "Um presente como tributo ao wraith (se o wraith o valoriza depende do indivíduo), um inseto parasita e dois dentes extraídos da boca do vampiro.",
+        processo: "O vampiro deve estar em proximidade com um wraith — tipicamente através de Invocar Espírito. O necromante apresenta um tributo ao wraith (álcool derramado no túmulo, uma bolsa de moedas enterrada, ou até a cabeça recém-decapitada de um inimigo do wraith). O vampiro então arranca dois dentes da própria boca — geralmente com alicate — e morde um parasita com os dentes restantes. O vampiro então abre a boca e o wraith pode escolher entrar, habitando o corpo do vampiro.",
+        mecanica: "Faça um teste bem-sucedido de Cerimônia de Oblívio. Se o wraith concordar, entra no corpo do vampiro e pode permanecer por um número de cenas igual aos sucessos. Com o wraith dentro, o vampiro ganha +2 dados em todas as jogadas de Atributo Físico e +2 Saúde até o wraith partir. O vampiro pode ouvir o wraith em sua mente oferecendo conselhos e pode substituir as Perícias do wraith pelas suas, a critério do Narrador. Um wraith pode escolher afirmar sua possessão em vez de agir como passageiro. Se o vampiro resistir, faz Determinação + Autocontrole vs. Determinação + Autocontrole do wraith. Com sucesso: rejeita a influência do wraith. Com falha: o wraith controla o vampiro até o final da cena, embora não possa fazê-lo fazer nada autodestrutivo.",
+        custo: "Uma Checagem de Sangue",
+        dados: "Determinação + Oblívio",
+        resist: "Determinação + Autocontrole (para resistir à possessão do wraith)",
+        duracao: "Um número de cenas igual aos sucessos"
+      },
+      {
+        nivel: 3,
+        nome: "Hordas de Mortos-Vivos",
+        prerequisito: "Aura de Decadência",
+        resumo: "O vampiro levanta um grupo de mortos-vivos agressivos e ambulantes para servi-lo — minions que não apodrece e atacam qualquer um que não seja seu mestre.",
+        ingredientes: "Um cadáver mortal (ou múltiplos) e um sacrifício mortal fresco.",
+        processo: "O vampiro precisa ter um cadáver separado além de um mortal preparado para sacrifício. O vampiro mata a vítima sacrificial, derramando seu sangue sobre o(s) cadáver(es) destinados à animação. Se a Cerimônia for bem-sucedida, os cadáveres se erguem (o sacrifício recente não) e servem aos comandos do vampiro.",
+        mecanica: "Devido à quantidade de sangue derramado, o executante primeiro deve testar para resistir ao frenesi de fome (Dificuldade 2). Faça o teste de Cerimônia, possivelmente incorrendo em Manchas dependendo dos Princípios da crônica. Com vitória: um número de mortos agressivos igual ao nível de Oblívio do necromante ou ao número de corpos preparados (o que for menor) recebe o dom da animação. Cadáveres animados assim não apodrecem e só entram em repouso se comandados pelo vampiro, se o vampiro encontrar a Morte Final, ou se forem destruídos. Os cadáveres animados podem processar ordens moderadamente complexas como 'mate todo mundo que entrar', 'gema se ver alguém passar por aqui' ou 'aterrorize aquele bairro'. Ao contrário dos cadáveres do Dom da Falsa Vida, esses mortos não ficam ociosos sem comandos — em vez disso, atacam qualquer um ao redor exceto seu mestre.",
+        custo: "Uma Checagem de Sangue + possível Mancha",
+        dados: "Determinação + Oblívio",
+        resist: "—",
+        duracao: "Permanente até serem destruídos ou o vampiro morrer"
+      },
+
+      // NÍVEL 4
+      {
+        nivel: 4,
+        nome: "Vincular o Espírito",
+        prerequisito: "Praga Necrótica",
+        resumo: "O vampiro acorrenta um wraith a locais ou pessoas específicas, criando uma assombração permanente cujo estado emocional afeta todos ao redor.",
+        ingredientes: "O elo de um wraith, o sacrifício de um mortal inocente e sal suficiente para circundar uma propriedade ou indivíduo. Se o alvo for um indivíduo, o necromante deve possuir algo de seu corpo (unhas, cabelo, sangue ou pele).",
+        processo: "O vampiro deve já ter um wraith sob controle usando Compelir Espírito. O vampiro mata um mortal inocente perto do local ou pessoa que deseja assombrar. Em seguida, mistura seu vitae com sal suficiente para circundar o alvo, pinta um círculo com a mistura e coloca o elo do wraith dentro do local ou na posse do alvo.",
+        mecanica: "Após as etapas da Cerimônia, o vampiro pode incorrer em Manchas pelo assassinato dependendo dos Princípios da crônica. Faz um teste de Cerimônia de Oblívio que não pode ser resistido (o wraith já deve estar compelido). O wraith fica vinculado ao local ou indivíduo alvo sem duração aplicada. Qualquer emoção que o wraith sinta intensamente durante a vinculação afeta os habitantes do local ou o indivíduo ao qual está vinculado — cada pessoa afetada sofre −2 dados em todas as jogadas para resistir a agir ou sentir como o wraith sente. Um wraith irado pode tornar vampiros mais propensos ao Frenesi; um wraith deprimido pode fazer um mortal parar de se cuidar. O wraith fica vinculado para sempre ao alvo a menos que o vampiro cancele a Cerimônia, o elo se mova da posse do local ou indivíduo, ou o wraith seja destruído. O vínculo também termina se o necromante atacar o wraith.",
+        custo: "Uma Checagem de Sangue + possível Mancha",
+        dados: "Determinação + Oblívio",
+        resist: "—",
+        duracao: "Permanente"
+      },
+      {
+        nivel: 4,
+        nome: "Rasgar o Véu",
+        prerequisito: "Praga Necrótica",
+        resumo: "O vampiro cria uma rasgadura no véu pela qual os wraiths podem passar — trazendo espíritos para o mundo dos vivos para assombrar, possuir e indulgir suas paixões.",
+        ingredientes: "Uma lâmina usada para cortar alguém vivo, giz ou carvão, um lençol de seda e um sacrifício humano.",
+        processo: "O vampiro pendura um lençol de seda sobre uma parede em um local onde a densidade do véu seja padrão, fina ou desgastada. Realiza um sacrifício humano contra o lençol e, enquanto o sangue o cobre, corta-o aberto com a lâmina. A Cerimônia alarga o portal entre o mundo dos vivos e o mundo dos mortos.",
+        mecanica: "O executante realiza o sacrifício, o que pode resultar em Manchas. Devido à quantidade de sangue derramado, o executante deve resistir ao frenesi de fome (Dificuldade 2). Quando corta o lençol de seda, o jogador faz o teste de Cerimônia. Para cada sucesso, a densidade do véu reduz um nível, podendo chegar a ausente. Importante: se a densidade do véu for reduzida a ausente, os wraiths podem se derramar no mundo físico pelo restante da sessão (ou noite). Quando esse período termina, a densidade do véu ausente aumenta para desgastada e o portal fecha.",
+        custo: "Uma Checagem de Sangue + possível Mancha",
+        dados: "Determinação + Oblívio",
+        resist: "—",
+        duracao: "Uma sessão/noite se o véu chegar a ausente"
+      },
+
+      // NÍVEL 5
+      {
+        nivel: 5,
+        nome: "Bênção Lazarena",
+        prerequisito: "Destino Cumprido",
+        resumo: "O necromante traz um corpo recém-morto de volta à vida — não como seus parentes e amigos o lembrariam — convidando um wraith a habitá-lo como hospedeiro permanente.",
+        ingredientes: "Um sacrifício mortal, incenso, o coração de qualquer mamífero e prata em pó.",
+        processo: "O necromante queima incenso para perfumar o ar antes de realizar um ato de sacrifício — cortando o coração da vítima e substituindo pelo coração de outro mamífero (não precisa estar costurado e funcionando para a Cerimônia funcionar). Após derramar pó de prata sobre os olhos abertos do mortal moribundo ou morto, o vampiro convida um wraith a tomar o mortal falecido como hospedeiro. Os wraiths não podem ser forçados a possuir um corpo, mas poucos recusam a oportunidade de andar em sapatos semi-vivos novamente.",
+        mecanica: "Matar um mortal para esta Cerimônia pode incorrer em Manchas. Se o coração substituto também foi tirado de alguém que o vampiro assassinou, esse assassinato também pode incorrer em Manchas. Após um teste bem-sucedido de Cerimônia, um wraith pode entrar no corpo recém-morto e viver nele como se fosse o seu. O wraith deve estar presente durante o ato de sacrifício. O cadáver possuído acorda portando os ferimentos que o mataram, mas o coração substituto funciona (independente de origem ou posicionamento) e o corpo cura 1 ponto de dano de Saúde ao ser possuído. O dano de Saúde restante se recupera com o tempo (como cura vampírica). O corpo não ganha resistências especiais a danos além das Disciplinas que possa ter possuído em vida. O corpo possui os mesmos Atributos Físicos, Disciplinas (se ghoul) e Vantagens que tinha em vida. Atributos Sociais e Mentais, Perícias e qualquer forma de classificação de moralidade correspondem aos do wraith. A possessão dura indefinidamente — ou até o corpo possuído morrer novamente ou o wraith ser exorcizado do hospedeiro.",
+        custo: "Uma Checagem de Sangue + possível Mancha",
+        dados: "Determinação + Oblívio",
+        resist: "—",
+        duracao: "Indefinida"
+      }
     ]
+
   },
 
   // ─────────────────────────────────────────────

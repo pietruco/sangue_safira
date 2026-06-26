@@ -207,6 +207,48 @@ function showDisc(discKey, clanId) {
       </div>
     </div>`).join('');
 
+  // ── Cerimônias (opcional — apenas Oblívio por ora) ──────────────────────────
+  let cerimoniaHTML = '';
+  if (disc.cerimonias && disc.cerimonias.length) {
+    const cLevels = {};
+    disc.cerimonias.forEach(c => {
+      if (!cLevels[c.nivel]) cLevels[c.nivel] = [];
+      cLevels[c.nivel].push(c);
+    });
+
+    const cLevelsHTML = Object.keys(cLevels).sort((a, b) => a - b).map(lv => `
+      <div class="hab-level-group">
+        <div class="hab-level-title">Nível ${lv}</div>
+        <div class="hab-cards">
+          ${cLevels[lv].map(c => `
+            <div class="hab-card">
+              <div class="hab-card-header">
+                <div class="hab-card-nome">${c.nome}</div>
+                <span class="hab-card-amalgama">Pré-req.: ${c.prerequisito}</span>
+              </div>
+              <div class="hab-card-resumo">${c.resumo}</div>
+              ${c.processo ? `<div class="hab-card-mecanica"><strong class="hab-sublabel">Processo</strong><br>${c.processo}</div>` : ''}
+              ${c.mecanica ? `<div class="hab-card-mecanica" style="margin-top:10px"><strong class="hab-sublabel">Sistema</strong><br>${c.mecanica}</div>` : ''}
+              <div class="hab-card-meta">
+                ${_metaItem('Ingredientes', c.ingredientes)}
+                ${_metaItem('Custo',        c.custo, true)}
+                ${_metaItem('Dados',        c.dados)}
+                ${_metaItem('Resistência',  c.resist)}
+                ${_metaItem('Duração',      c.duracao)}
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>`).join('');
+
+    cerimoniaHTML = `
+      <div class="cerimonia-section">
+        <div class="blood-divider" style="margin:48px 0 32px"><span class="blood-divider-icon">☠</span></div>
+        <h3 class="cerimonia-title">Cerimônias</h3>
+        <p class="cerimonia-intro">${disc.cerimonias_intro}</p>
+        ${cLevelsHTML}
+      </div>`;
+  }
+
   $('discDetail').innerHTML = `
     <div class="disc-page">
       <div class="clan-nav-bar">
@@ -221,7 +263,7 @@ function showDisc(discKey, clanId) {
           <p style="margin-top:14px;font-size:16px;color:var(--text2);line-height:1.7;font-style:italic;max-width:600px">${disc.descricao}</p>
         </div>
       </div>
-      <div class="disc-page-body">${levelsHTML}</div>
+      <div class="disc-page-body">${levelsHTML}${cerimoniaHTML}</div>
       <div class="ornament" style="padding:32px 0">✦ ✦ ✦</div>
     </div>`;
 
