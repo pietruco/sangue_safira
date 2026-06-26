@@ -66,42 +66,42 @@ function renderIntro() {
           <div class="cainita-symbol">🦅</div>
           <div class="cainita-nome">Adriel</div>
           <div class="cainita-clan">Ravnos</div>
-          <p class="cainita-bio">Dezesseis anos a serviço de Carmen — não por escolha exatamente, não por coerção exatamente. Ele resolve as situações discretas, faz os trabalhos que ninguém menciona depois. Conhece a mansão e seus segredos melhor do que qualquer outro. Carmen nunca foi cruel com ele, e isso tornou tudo mais difícil de nomear. Ele carrega algo que viu. Ainda não decidiu o que fazer com isso.</p>
+
         </div>
 
         <div class="cainita-card">
           <div class="cainita-symbol">🌹</div>
           <div class="cainita-nome">Flora</div>
           <div class="cainita-clan">Toreador</div>
-          <p class="cainita-bio">A face bonita de um projeto que ela não vê por completo. Carmen a adotou sem pedir permissão e simplesmente começou a agir como se já fosse — e Flora descobriu que é muito difícil recusar algo que ninguém formalmente ofereceu. Vernissages, estreias, festas onde os nomes na lista valem mais do que os pratos servidos. Ela aprendeu a circular, a sorrir do jeito certo. As portas de Barcelona se abrem para ela. O que alimenta tudo isso é uma pergunta que ela ainda não fez em voz alta.</p>
+
         </div>
 
         <div class="cainita-card">
           <div class="cainita-symbol">♜</div>
           <div class="cainita-nome">Xavi A.</div>
           <div class="cainita-clan">Ventrue</div>
-          <p class="cainita-bio">Recrutado por Carmen de algum lugar e por alguma promessa — os Ventrue sempre chegam com propósito declarado e agenda própria. O Clã dos Reis não serve sem razão; ou acreditam que estão guiando, ou precisam de algo que só a posição oferece. O que ele foi prometido e o que espera encontrar em Barcelona são perguntas que só ele pode responder.</p>
+
         </div>
 
         <div class="cainita-card">
           <div class="cainita-symbol">🐀</div>
           <div class="cainita-nome">Ronaldo</div>
           <div class="cainita-clan">Nosferatu</div>
-          <p class="cainita-bio">Os Nosferatu sempre souberam que informação é mais duradoura do que beleza. Numa cidade que Carmen está reconstruindo tijolo por tijolo, alguém que vê o que os outros não veem — e que sabe onde ficam os segredos — é um recurso de valor incalculável. O que o trouxe até aqui, o que sabe e o que escolhe não revelar são as perguntas certas.</p>
+
         </div>
 
         <div class="cainita-card">
           <div class="cainita-symbol">🐺</div>
           <div class="cainita-nome">Albert</div>
           <div class="cainita-clan">Gangrel</div>
-          <p class="cainita-bio">Os Gangrel não dobram para príncipes e raramente ficam onde são colocados. Que Albert esteja em Barcelona — numa mansão, numa coterie, numa estrutura — diz algo sobre o que aconteceu antes ou sobre o que ele espera que aconteça a seguir. Os sobreviventes do caos aprenderam que liberdade sem aliados tem um preço alto. Alguns decidiram que vale a pena pagar. Outros ainda estão calculando.</p>
+
         </div>
 
         <div class="cainita-card">
           <div class="cainita-symbol">☽</div>
           <div class="cainita-nome">Catharina Montenegro</div>
           <div class="cainita-clan">Malkavian</div>
-          <p class="cainita-bio">Os Malkavianos veem o fogo que produz a sombra — e às vezes o que veem os quebra, e às vezes os torna os únicos que realmente entenderam. Catharina chegou a Barcelona trazendo o peso de perceber demais de uma vez. Numa cidade onde Carmen controla muito do que pode ser visto, alguém que enxerga de formas diferentes é simultaneamente valioso e perigoso.</p>
+
         </div>
 
       </div>
