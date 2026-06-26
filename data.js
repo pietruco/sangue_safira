@@ -950,7 +950,469 @@ const DISCIPLINES = {
         mecanica: "O usuário paga o custo e toca a vítima (Destreza + Atletismo em combate), jogando a disputa. Vitória: cada ponto de margem causa 1 ponto de dano Agravado à vítima. Mortais com ao menos 1 ponto de dano morrem gritando. Vampiros vítimas ganham 1 Fome por ponto de dano infligido, até Fome 5.",
         duracao: "Um turno"
       }
-    ]
+    ],
+
+  rituais_intro: `A realização de um ritual requer uma Checagem de Sangue, cinco minutos por nível de execução, e uma rolagem vencedora de Inteligência + Feitiçaria de Sangue (Dificuldade = Nível do ritual + 1). Os rituais geralmente exigem ingredientes adicionais, embora alguns necessitem apenas da concentração ininterrupta do usuário, e frequentemente envolvem a mistura de Sangue com ingredientes escolhidos de acordo com os princípios da magia simpática ou alquimia. Salvo indicação em contrário, o conjurador só pode realizar rituais benéficos em si mesmo.
+
+<strong>Proteções (Wards)</strong>: As Proteções consistem em um glifo ou linha de escrita destinado a repelir um único tipo de sobrenatural — o "intruso". Quando tocadas, causam algo como um choque elétrico na mente e no corpo do intruso, infligindo queimaduras físicas e um súbito acesso de terror. A Proteção não funciona em contato forçado — uma espada protegida não acionará a Proteção ao ferir um intruso, mas o fará se o intruso tentar pegá-la. As Proteções cobrem um espaço de aproximadamente um metro. O conjurador traça o glifo com seu Sangue; uma vez limpo, a Proteção fica invisível. Dura até o objeto ser destruído. Não role o Ritual até o intruso tocar pela primeira vez: vitória causa 1 ponto de dano Agravado; vitória crítica causa 3 pontos. Qualquer intruso que queira tocar novamente deve gastar 1 Força de Vontade e vencer Vigor + Determinação (Dificuldade 4, ou 7 para Proteção de vitória crítica). O poder Sentir o Invisível (Auspício 1) detecta uma Proteção com Inteligência + Auspício vs. Inteligência + Feitiçaria de Sangue do conjurador.
+
+<strong>Círculos de Proteção</strong>: Semelhantes às Proteções, mas pintados no chão. Exigem três vezes os ingredientes de uma Proteção comum, custam três Checagens de Sangue e uma noite inteira para serem inscritos, podendo cobrir até três metros de raio. Uma rolagem com Dificuldade +2 ao final pode fazê-los durar um ano e um dia — caso contrário, se dissipam ao amanhecer. Quando um intruso tenta cruzar, o conjurador joga Inteligência + Feitiçaria de Sangue vs. Força de Vontade do intruso.`,
+
+  rituais: [
+    // ─── NÍVEL 1 ────────────────────────────────────────────────
+    {
+      nivel: 1,
+      nome: "Caminhada no Sangue",
+      resumo: "Expande o poder Sabor do Sangue, permitindo ao usuário aprender detalhes sobre o sujeito estudado — assumindo que ele seja um vampiro.",
+      ingredientes: "Uma taça de prata cheia com Sangue do sujeito (equivalente a uma Checagem de Sangue).",
+      processo: "O usuário mistura seu próprio Sangue com o do sujeito e repete uma ladainha sobre a taça por cerca de uma hora.",
+      mecanica: "Uma vitória revela a geração e o nome do sujeito, bem como o nome de seu sire. Uma vitória crítica também revela quaisquer Laços de Sangue ativos sobre o sujeito, seja como regnante ou thrall.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Instantâneo (informação permanente)"
+    },
+    {
+      nivel: 1,
+      nome: "Agarrar do Inseto",
+      resumo: "O vampiro ganha a habilidade de se agarrar a paredes e tetos como um inseto ou aranha grotesca.",
+      ingredientes: "Uma aranha viva.",
+      processo: "O conjurador enche um frasco com seu próprio Sangue, esmaga a aranha dentro e ingere a mistura. Só pode realizar este ritual em si mesmo.",
+      mecanica: "Um Ritual bem-sucedido concede agarrar em paredes e teto por uma cena; vitória crítica estende para toda a noite. O conjurador move-se a aproximadamente metade da velocidade normal.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Uma cena (vitória crítica: uma noite)"
+    },
+    {
+      nivel: 1,
+      nome: "Forjar Pedra de Sangue",
+      resumo: "Este Ritual resulta em uma Pedra de Sangue — um rastreador mágico ao qual o conjurador sempre conhece a direção e distância geral.",
+      ingredientes: "Um seixo de ferro ou ímã e um litro de sangue de qualquer fonte em uma tigela de prata.",
+      processo: "O usuário derrama seu Sangue no sangue da tigela e recita um canto por uma hora, repetindo nas próximas duas noites. O seixo absorve o sangue ao longo das três noites; ao término, o líquido fica translúcido.",
+      mecanica: "Faça a rolagem ao final da terceira noite. Uma vitória sintoniza a mente do conjurador com a pedra — ele percebe infalivelmente sua direção e distância. O efeito dura até a pedra ser destruída ou uma semana passar. Um conjurador pode rastrear um número de pedras igual ao seu Determinação.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Até a pedra ser destruída ou uma semana se passar"
+    },
+    {
+      nivel: 1,
+      nome: "Despertar com o Frescor do Anoitecer",
+      resumo: "Realizado antes do amanhecer, permite ao conjurador despertar a qualquer sinal de perigo, totalmente alerta como se estivesse acordado durante a noite.",
+      ingredientes: "Ossos queimados e penas de um galo.",
+      processo: "O conjurador mistura as cinzas com seu próprio Sangue e desenha um círculo ao redor do seu local de descanso.",
+      mecanica: "Não role o Ritual a menos que perigo real apareça durante o dia. Se ameaçado, role então — em uma vitória, o vampiro desperta. Pelo tempo da cena, ignora as penalidades diurnas. Vitória crítica: o efeito dura até o amanhecer seguinte.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Uma cena (vitória crítica: até o amanhecer)"
+    },
+    {
+      nivel: 1,
+      nome: "Proteção Contra Ghouls",
+      resumo: "Um Ward que protege o objeto contra ghouls. Qualquer tentativa deles de tocar ou manipular o item aciona o efeito.",
+      ingredientes: "Nada além do Sangue do conjurador.",
+      processo: "O conjurador traça o glifo da Proteção com seu Sangue no objeto escolhido. Siga as regras gerais de Wards.",
+      mecanica: "Usa as regras padrão de Proteções. O intruso é qualquer ghoul. Dano de 1 ponto Agravado (3 em vitória crítica); nova tentativa de toque exige Força de Vontade + vitória em Vigor + Determinação (Dificuldade 4).",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "Vigor + Determinação do intruso (Dificuldade 4)",
+      duracao: "Até o objeto ser destruído"
+    },
+    {
+      nivel: 1,
+      nome: "Sufocar o Medo",
+      resumo: "Este Ritual permite ao conjurador suprimir brevemente seu medo vampírico natural do fogo.",
+      ingredientes: "Um objeto sagrado — crucifixo, Bíblia ou Alcorão.",
+      processo: "O vampiro expõe o símbolo sagrado a uma chama. O objeto não precisa ser destruído, apenas tocado pelo fogo.",
+      mecanica: "Uma rolagem bem-sucedida concede dois dados adicionais em rolagens para resistir ao Rötschreck. Uma vitória crítica elimina a necessidade de qualquer rolagem de Frenesi de terror. O efeito dura uma noite.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Uma noite"
+    },
+    {
+      nivel: 1,
+      nome: "Selar a Marca",
+      resumo: "Tatuagens e cicatrizes normalmente desaparecem durante o sono diurno. Este ritual torna uma modificação corporal permanente na carne vampírica.",
+      ingredientes: "Prata fundida a ser derramada sobre a tatuagem, marca ou modificação corporal.",
+      processo: "O vampiro derrama a prata fundida sobre a marca. O alvo sofre dano da prata, mas uma vez curado, a modificação permanece para sempre.",
+      mecanica: "Um Ritual bem-sucedido torna a modificação permanente e irremovível por qualquer outro meio. Derramar prata fundida inflige 1 ponto de dano Superficial, curado normalmente.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Permanente"
+    },
+
+    // ─── NÍVEL 2 ────────────────────────────────────────────────
+    {
+      nivel: 2,
+      nome: "Como Névoa sobre as Águas",
+      resumo: "O vampiro atravessa qualquer corpo d'água caminhando silenciosamente sobre a superfície como se fosse sem peso, névoa subindo de seus passos.",
+      ingredientes: "Um pedaço de madeira de um navio e água do local.",
+      processo: "O vampiro submerge a madeira no corpo d'água e derrama seu Sangue nela.",
+      mecanica: "Com uma rolagem bem-sucedida, o vampiro caminha sobre a superfície pelo resto da noite. Pode encerrar quando quiser, mas não pode usar o efeito novamente até relançar o Ritual.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Resto da noite"
+    },
+    {
+      nivel: 2,
+      nome: "Cálice Secreto",
+      resumo: "O feiticeiro transforma um objeto mundano em receptáculo para seu Sangue, permitindo armazenar quantidades surpreendentes para uso posterior.",
+      ingredientes: "Um objeto que caiba na mão do conjurador e Sangue do usuário.",
+      processo: "O usuário encharca o objeto com seu Sangue e pronuncia as palavras do Ritual. O objeto absorve o Sangue.",
+      mecanica: "O processo leva uma hora. Uma rolagem bem-sucedida infunde o objeto com Sangue. Para liberar, o conjurador diz a palavra de comando. Cada duas Checagens de Sangue armazenadas saciará 1 Fome. (Uma única Checagem permite a um ghoul obter sua dose ou usar como ingrediente de outro Ritual.)",
+      custo: "Uma Checagem de Sangue por dose armazenada",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Indefinido (até o objeto ser usado ou destruído)"
+    },
+    {
+      nivel: 2,
+      nome: "Comunicar-se com o Sire Cainita",
+      resumo: "O conjurador usa o laço entre sire e childe para abrir um link telepático de comunicação à longa distância.",
+      ingredientes: "Um objeto anteriormente possuído pelo sire e uma tigela de prata com água.",
+      processo: "O conjurador submerge o objeto na água e deixa seu Sangue pingar na tigela, concentrando-se na última memória do sire por até 30 minutos.",
+      mecanica: "Role o Ritual após 15 minutos. Uma vitória permite 10 minutos de comunicação mental silenciosa bidirecional quando mais 15 minutos passarem. Vitória crítica: comunicação imediata. Qualquer grande perturbação em qualquer extremidade encerra a conexão.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "10 minutos"
+    },
+    {
+      nivel: 2,
+      nome: "Olhos de Babel",
+      resumo: "Ao ingerir a língua e um olho de uma pessoa, o conjurador ganha a capacidade de ler e falar qualquer idioma conhecido pela vítima.",
+      ingredientes: "Um olho fresco e a língua de uma pessoa.",
+      processo: "O vampiro mastiga e engole os ingredientes frescos da vítima — isso muito provavelmente incorre em uma Mancha. A Checagem de Sangue permite a dissolução sobrenatural dos ingredientes.",
+      mecanica: "Uma vitória concede a habilidade de ler e falar qualquer idioma da vítima com o mesmo nível de habilidade dela, por uma semana. Vitória crítica: duração estendida para um mês.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Uma semana (vitória crítica: um mês)"
+    },
+    {
+      nivel: 2,
+      nome: "Iluminar o Rastro da Presa",
+      resumo: "O ritual permite ao conjurador perceber os paradeiros anteriores de uma pessoa designada como um rastro sutil e brilhante, visível apenas a ele.",
+      ingredientes: "Uma fita de cetim branca.",
+      processo: "O executor do ritual embebe a fita em seu próprio Sangue e a acende. Uma vez consumida, o ritual entra em efeito.",
+      mecanica: "Se a rolagem for vitória, a fita acende apesar de molhada. Para seguir os rastros, role Inteligência + Sobrevivência contra Dificuldade 6 menos a margem do teste de Ritual. O alvo deve ser conhecido de rosto. O rastro é visível por toda a noite; vitória crítica estende para duas noites.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Uma noite (vitória crítica: duas noites)"
+    },
+    {
+      nivel: 2,
+      nome: "Toque Soporífico",
+      resumo: "O feiticeiro converte seu vitae em um narcótico ativado pelo toque, deixando a vítima desinibida e vulnerável a Disciplinas como Presença e Dominação.",
+      ingredientes: "Uma pequena quantidade de haxixe ou outra substância narcótica.",
+      processo: "A substância é misturada com o Sangue do usuário e esfregada entre os dedos enquanto a encantação é lida. O Ritual leva alguns minutos.",
+      mecanica: "Role o Ritual vs. Vigor + Determinação do alvo no contato. Pelo restante da cena, a vítima sofre penalidade de dados igual à margem de vitória em todos os pools de resistência envolvendo Autocontrole ou Determinação (aplique uma vez se o pool envolver ambos). O vitae narcótico retém sua potência até ser tocado, até o final da cena.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "Vigor + Determinação do alvo",
+      duracao: "Uma cena (ou até ser tocado)"
+    },
+    {
+      nivel: 2,
+      nome: "Proteção Contra Espíritos",
+      resumo: "Um Ward que protege o objeto contra seres incorpóreos como wraiths, fantasmas e espíritos elementais.",
+      ingredientes: "Um punhado de sal (ou pó de tijolo) misturado com Sangue.",
+      processo: "O conjurador traça o glifo da Proteção com a mistura no objeto escolhido. Siga as regras gerais de Wards.",
+      mecanica: "Usa as regras padrão de Proteções. O intruso é qualquer espírito, wraith ou ser incorpóreo. Dano de 1 ponto Agravado (3 em vitória crítica); nova tentativa de toque exige Força de Vontade + vitória em Vigor + Determinação (Dificuldade 4).",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "Vigor + Determinação do intruso (Dificuldade 4)",
+      duracao: "Até o objeto ser destruído"
+    },
+    {
+      nivel: 2,
+      nome: "Círculo de Proteção Contra Ghouls",
+      resumo: "Um Círculo de Proteção pintado no chão que impede a passagem de ghouls.",
+      ingredientes: "Um osso humano mergulhado em Sangue para traçar o círculo.",
+      processo: "O conjurador desenha o Círculo de Proteção no chão com o osso e o Sangue. Usa as regras padrão de Círculos de Proteção.",
+      mecanica: "Usa as regras padrão de Círculos de Proteção (ver introdução). O intruso é qualquer ghoul. Custa três Checagens de Sangue e uma noite inteira. Com rolagem de alta Dificuldade (+2), pode durar um ano e um dia.",
+      custo: "Três Checagens de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "Força de Vontade do intruso",
+      duracao: "Até o amanhecer (ou um ano e um dia com vitória especial)"
+    },
+    {
+      nivel: 2,
+      nome: "Verdade do Sangue",
+      resumo: "Este Ritual cria uma poção mística capaz de separar mentiras da verdade — com poder suficiente para às vezes revelar fatos desconhecidos até pelo próprio sujeito.",
+      ingredientes: "Uma pinta de sangue do sujeito.",
+      processo: "O executor mistura seu próprio Sangue com o do sujeito em um recipiente grande o suficiente para a imersão do dedo.",
+      mecanica: "Em vez da rolagem comum, o conjurador imerge o dedo e faz Determinação + Feitiçaria de Sangue vs. Autocontrole + Ocultismo para cada declaração do sujeito. O primeiro teste fracassado encerra o Ritual. Uma vitória confirma se a declaração é verdadeira (até onde o sujeito sabe). Vitória crítica: o sujeito involuntariamente expande a resposta. A mistura se torna cinzas ao final da cena. Não pode pierçar Memória das Nuvens ou outros poderes de apagamento de memória.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Determinação + Feitiçaria de Sangue",
+      resist: "Autocontrole + Ocultismo do sujeito",
+      duracao: "Uma cena"
+    },
+
+    // ─── NÍVEL 3 ────────────────────────────────────────────────
+    {
+      nivel: 3,
+      nome: "Fogo no Sangue",
+      resumo: "Este Ritual invoca a agonia do fogo no sangue de uma vítima à distância. Calor escaldante percorre as veias e causa dor intensa — mais eficiente do que o Caldeirão de Sangue para incapacitar sem matar.",
+      ingredientes: "Uma amostra do sangue do alvo, uma representação visual dele (foto, pintura ou vídeo) e uma vela de cera vermelha ou isqueiro de ferro.",
+      processo: "O vampiro concentra-se na representação visual e queima a amostra de sangue sobre a chama. O efeito ocorre quase imediatamente.",
+      mecanica: "Role o Ritual vs. Determinação + Fortitude do alvo (ou Determinação + Ocultismo sem Fortitude). Cada ponto de margem é aplicado como dano Superficial que inflige dor excruciante, forçando uma penalidade de dois dados em pools Físicos pelo restante da cena. Vitória crítica: penalidade de três dados. Um alvo Cainita deve fazer Checagem de Sangue pelo dano ao vitae. Uma vítima só pode ser afetada uma vez por noite.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "Determinação + Fortitude (ou Determinação + Ocultismo)",
+      duracao: "Penalidade dura o restante da cena"
+    },
+    {
+      nivel: 3,
+      nome: "Um com a Lâmina",
+      resumo: "O vampiro forja um vínculo místico com uma arma favorita. Ela nunca enferruja ou embota em sua posse — mas se roubada, envelhece rapidamente como um ghoul sem vitae, e pode infligir dano grave ao próprio conjurador se usada contra ele.",
+      ingredientes: "Uma arma de combate corpo a corpo e vitae suficiente do usuário para submergi-la completamente.",
+      processo: "O vampiro submerge a arma em seu vitae e jura um juramento dedicando sua não-vida a ela. A arma deve permanecer submersa sem interrupção até o amanhecer seguinte.",
+      mecanica: "Uma vitória dedica a arma ao usuário misticament. Permanece de qualidade imaculada fora de sua posse. Se ungida novamente com Sangue do usuário (um turno, uma Checagem de Sangue), ganha dois dados de bônus em combate por uma cena. Nunca pode possuir mais de uma arma dedicada — para dedicar outra, a anterior deve ser destruída. Se usada contra o proprietário original, causa dano Agravado mas não ganha dados extras.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Permanente (unção: uma cena)"
+    },
+    {
+      nivel: 3,
+      nome: "Chamado de Dagão",
+      resumo: "Uma técnica aterrorizante dos Banu Haqim: o ritual rompe os vasos sanguíneos da vítima à distância, tendo-a apenas tocado brevemente antes. Mortais morrem violentamente; vampiros devem temer este silencioso exterminador.",
+      ingredientes: "Uma adaga cerimonial incrustada de ouro.",
+      processo: "Primeiro, a vítima deve ser exposta ao Sangue do conjurador — bebendo-o ou por contato com ferida aberta ou pele nua. Após uma hora mas antes de uma semana, o conjurador perfura sua própria pele com a adaga; quando o Sangue atinge o chão, o ritual entra em efeito.",
+      mecanica: "Role Determinação + Feitiçaria de Sangue vs. Vigor + Determinação. Cada ponto de margem causa dano — Agravado para mortais, Superficial para vampiros. O conjurador pode repetir até duas vezes mais, cada vez exigindo Checagem de Sangue adicional.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Determinação + Feitiçaria de Sangue",
+      resist: "Vigor + Determinação do alvo",
+      duracao: "Instantâneo"
+    },
+    {
+      nivel: 3,
+      nome: "Deflexão do Doom de Madeira",
+      resumo: "O vampiro se protege de empalamento. A primeira estaca que tentaria perfurar seu coração se estilhaça antes de penetrar a pele.",
+      ingredientes: "Lascas ou aparas de madeira.",
+      processo: "O vampiro mistura as aparas com seu Sangue e medita em um círculo por uma hora, concluindo ao colocar uma lasca sob sua língua.",
+      mecanica: "Não role o Ritual até o vampiro ser empalado. Em uma vitória, a estaca se estilhaça ao tocar a pele. Vitória crítica: cega o atacante por dois turnos. Só funciona em tentativas genuínas de empalamento — segurar a estaca contra o vampiro não aciona. A proteção dura até o final da noite ou até a lasca ser removida da língua.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Até o final da noite (ou a lasca ser removida)"
+    },
+    {
+      nivel: 3,
+      nome: "Essência do Ar",
+      resumo: "O conjurador cria uma poção de voo limitado. A Camarilla franze o cenho para este Ritual pelo extremo risco de violação da Máscara; sua popularidade diminuiu nas noites modernas.",
+      ingredientes: "Folhas e bagas de beladona.",
+      processo: "O conjurador embebe a beladona em seu Sangue e reduz a mistura sobre uma brasa recitando palavras de poder.",
+      mecanica: "Vitória crítica prepara duas doses. A poção preta resultante retém sua potência por uma noite. Quando ingerida, permite ao conjurador (e somente ele) voar ou pairar à velocidade de corrida por uma cena — velocidade de caminhada ao carregar massa humana. Carregar alguém relutante ou ser puxado para o chão requer Força + Feitiçaria de Sangue vs. Força + Atletismo.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Uma cena (após ser ingerida)"
+    },
+    {
+      nivel: 3,
+      nome: "Andador de Fogo",
+      resumo: "Um ritual doloroso que torna o conjurador e seus camaradas resistentes ao fogo.",
+      ingredientes: "Uma ponta de dedo do conjurador.",
+      processo: "O vampiro corta uma ponta de dedo e a queima com seu Sangue em um cálice dourado. A ponta do dedo recrescerá durante o sono diurno.",
+      mecanica: "Faça Vigor + Determinação (Dificuldade 3) para cortar. Em uma rolagem de Ritual vencedora, uma chama azulada confirma o ritual. Pelo restante da noite, o dano de fogo ao conjurador é reduzido à metade. Pode ser realizado em outros, mas as pontas devem pertencer ao conjurador.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Restante da noite"
+    },
+    {
+      nivel: 3,
+      nome: "Proteção Contra Lupinos",
+      resumo: "Um Ward que protege o objeto contra lobisomens em qualquer forma.",
+      ingredientes: "Um punhado de pó de prata misturado com Sangue.",
+      processo: "O conjurador traça o glifo da Proteção com a mistura de prata e Sangue no objeto escolhido.",
+      mecanica: "Usa as regras padrão de Proteções. O intruso é qualquer lobisomem. Dano de 1 ponto Agravado (3 em vitória crítica); nova tentativa exige Força de Vontade + vitória em Vigor + Determinação (Dificuldade 4).",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "Vigor + Determinação do intruso (Dificuldade 4)",
+      duracao: "Até o objeto ser destruído"
+    },
+    {
+      nivel: 3,
+      nome: "Círculo de Proteção Contra Espíritos",
+      resumo: "Um Círculo de Proteção pintado no chão que impede a passagem de espíritos e seres incorpóreos. Um dos mais comuns em grimórios.",
+      ingredientes: "Uma faca de ferro mergulhada em sal e Sangue para traçar o círculo.",
+      processo: "O conjurador traça o Círculo com a faca de ferro. Um ocultista humano poderia reconstruir uma versão funcional com Inteligência + Ocultismo (Dificuldade 6), mas não poderia conjurá-la sem vitae ou auxílio sobrenatural.",
+      mecanica: "Usa as regras padrão de Círculos de Proteção. O intruso é qualquer espírito ou ser incorpóreo.",
+      custo: "Três Checagens de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "Força de Vontade do intruso",
+      duracao: "Até o amanhecer (ou um ano e um dia com vitória especial)"
+    },
+
+    // ─── NÍVEL 4 ────────────────────────────────────────────────
+    {
+      nivel: 4,
+      nome: "Festa de Cinzas",
+      resumo: "Transforma o sangue na boca do alvo em cinzas por uma noite inteira. Cainitas afetados não conseguem se alimentar.",
+      ingredientes: "Um pedaço de pergaminho com o nome do alvo escrito e queimado, e as cinzas resultantes.",
+      processo: "O conjurador escreve o nome do alvo e queima o pergaminho. Mistura as cinzas com seu Sangue para escrever os sigilos do Ritual.",
+      mecanica: "Role o Ritual vs. Determinação + Força de Vontade do alvo. Em uma vitória, o alvo não pode consumir sangue por uma noite — vomita-o como alimento mortal. Apenas cinzas saciam sua Fome, sem baixá-la abaixo de 3.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "Determinação + Força de Vontade do alvo",
+      duracao: "Uma noite"
+    },
+    {
+      nivel: 4,
+      nome: "Memória Guiada",
+      resumo: "Ao imbibar o Sangue de um Cainita disposto, o vampiro revive memórias do doador guiadas por ele. Viagens guiadas podem desbloquear poderes de Disciplina, Méritos e outros dons do Sangue do doador.",
+      ingredientes: "O vitae de outro vampiro, alecrim seco e papoulas frescas ou miosótis.",
+      processo: "O feiticeiro queima as flores e o alecrim, mistura as cinzas com o vitae doado e bebe o Sangue.",
+      mecanica: "O feiticeiro seleciona um objetivo de Memoriam: • Nível 1 de Disciplina / Mérito de 1 ponto •• Nível 2 / Mérito de 2 pontos ••• Nível 3 / Mérito de 3 pontos. Os dons duram até o final da sessão e não contam contra o limite de poderes. Não podem ser usados como pré-requisito para aprender outros poderes. Penalidades por profundidade temporal: durante ou após a vida mortal −1 dado; menos de um século antes −2 dados; um ou dois séculos −4 dados; três ou mais séculos −6 dados.",
+      custo: "Uma Checagem de Sangue (realizada pelo doador)",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Até o final da sessão"
+    },
+    {
+      nivel: 4,
+      nome: "Correntes Invisíveis de Aprisionamento",
+      resumo: "O feiticeiro prende um sujeito em correntes invisíveis, confinando-o a um único ponto pela duração do Ritual.",
+      ingredientes: "Um elo de corrente.",
+      processo: "O feiticeiro inscreve sigilos no elo com seu Sangue (uma hora de trabalho). O elo pode ser ocultado na pessoa e usado em um alvo futuro — ao chegar a hora, é atirado aos pés do alvo.",
+      mecanica: "Role o Ritual vs. Força + Determinação do alvo. Em uma vitória, o alvo fica imóvel por uma hora por sucesso na margem, enquanto o elo permanecer intacto e dentro de três metros. Um alvo preso sofre penalidade de quatro dados em testes de defesa física e em ações de briga e corpo a corpo. O elo se corrói ao pó ao final do efeito.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "Força + Determinação do alvo",
+      duracao: "Uma hora por sucesso na margem"
+    },
+    {
+      nivel: 4,
+      nome: "Defesa do Refúgio Sagrado",
+      resumo: "O Feiticeiro de Sangue torna-se o soberano sobrenatural de seu domínio, bloqueando o uso de poderes vampíricos por outros dentro do local.",
+      ingredientes: "Selos de ferro embutidos sobre cada porta do edifício.",
+      processo: "O ritual leva três horas. O conjurador embute selos de ferro sobre cada porta, consagra-as com seu vitae e entalha sigilos.",
+      mecanica: "Com uma vitória, bloqueia quaisquer usos de Animalismo, Auspex, Dominação ou Presença — exceto pelo próprio conjurador. As Checagens de Sangue das Disciplinas ainda ocorrem normalmente. O custo de Sangue varia de uma Checagem para um apartamento até cinco para uma mansão. O Ritual dura indefinidamente, mas é quebrado pela destruição de qualquer selo.",
+      custo: "Uma a cinco Checagens de Sangue (conforme o tamanho)",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Indefinido (até um selo ser destruído)"
+    },
+    {
+      nivel: 4,
+      nome: "Olhos do Gavião-Noturno",
+      resumo: "O conjurador possui uma ave carnívora — geralmente um corvo ou ave de rapina — dirigindo seu voo e vendo através de seus olhos.",
+      ingredientes: "Os olhos da ave usada (retirados ao final da cena).",
+      processo: "O conjurador alimenta seu Sangue para a ave e entra em transe.",
+      mecanica: "Uma vitória permite controlar a ave e ver através de seus olhos. Vitória crítica: a ave pode realizar ações simples (pegar objetos, manipular chaves). O conjurador pode usar Disciplinas não-físicas através dela. Não há limite de alcance, mas ao arrancar os olhos ao final da noite o conjurador sofre cegueira por três noites.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Uma cena"
+    },
+    {
+      nivel: 4,
+      nome: "Passagem Incorpórea",
+      resumo: "O conjurador assume forma incorpórea semelhante a um fantasma, passando livremente por objetos e sendo imune a dano físico — mas sem poder interagir materialmente com o mundo.",
+      ingredientes: "Um espelho.",
+      processo: "O conjurador derrama seu Sangue sobre o espelho, canta e o quebra. Deve segurar um caco para manter a forma incorpórea.",
+      mecanica: "Uma vitória torna o conjurador incorpóreo enquanto segura o caco. Fica imune a tudo exceto fogo, luz solar e armas arcanas capazes de dano a espíritos. Pode ser visto e ouvido, mas não pode interagir fisicamente. Não pode Despertar o Sangue enquanto incorpóreo. Pode atravessar paredes, mas apenas em linha reta. Retornar ao estado material dentro de matéria sólida pode causar desde destruição até leve inconveniência — o Narrador decide. O Ritual dura uma cena ou até o caco ser solto.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Uma cena (ou até soltar o caco)"
+    },
+    {
+      nivel: 4,
+      nome: "Proteção Contra Cainitas",
+      resumo: "Um Ward que protege o objeto contra todos os vampiros, exceto o próprio conjurador. Um vampiro com Auspex pode ler o nome do conjurador inscrito nele.",
+      ingredientes: "Cinzas quentes de um fogo ainda ardendo. O conjurador arrisca Frenesi de terror ao trabalhar perto do fogo.",
+      processo: "O conjurador traça o glifo da Proteção com as cinzas e seu Sangue. Não pode inscrever esta Proteção na noite em que sucumbir a um Frenesi.",
+      mecanica: "Usa as regras padrão de Proteções. O intruso é qualquer Cainita exceto o conjurador. Um vampiro pode ler o nome do conjurador no Ward com Inteligência + Auspício vs. Inteligência + Feitiçaria de Sangue.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "Vigor + Determinação do intruso (Dificuldade 4)",
+      duracao: "Até o objeto ser destruído"
+    },
+
+    // ─── NÍVEL 5 ────────────────────────────────────────────────
+    {
+      nivel: 5,
+      nome: "Antebrachia Ignium",
+      resumo: "O conjurador manifesta chamas famintas de sua carne usando um revestimento encantado de vitae como amortecedor. Pode incendiar itens e pessoas usando o fogo em sua pele.",
+      ingredientes: "Vitae suficiente (de qualquer vampiro) para cobrir os braços até os cotovelos, e uma fonte de chama.",
+      processo: "O vampiro imerge os braços no sangue e suporta o impulso de se alimentar ou entrar em Frenesi. Ao extrair os braços, exposição à chama ignita o vitae — o vampiro pode então incendiar alvos.",
+      mecanica: "Se Fome 4 ou mais, teste de Frenesi de fome (Dificuldade 3) para não drenar os ingredientes. Uma vitória no Ritual ignita chamas nos braços, provocando teste de Frenesi de terror (Dificuldade 2) em vampiros próximos, exceto o conjurador. Pode tocar outros com Destreza + Briga para infligir 2 pontos de dano Agravado. Agarramento ignita roupas de ambos — dano contínuo até Autocontrole + Sobrevivência (Dificuldade 3). O conjurador é resistente apenas à chama em seus próprios braços.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Até o conjurador apagar as chamas ou a cena terminar"
+    },
+    {
+      nivel: 5,
+      nome: "Dominação",
+      resumo: "O Feiticeiro de Sangue torna-se o soberano sobrenatural de seu domínio, frustrando o uso de praticamente todas as habilidades vampíricas dentro do local.",
+      ingredientes: "Selos de ferro embutidos sobre cada porta do edifício.",
+      processo: "O ritual leva três horas. O conjurador embute selos de ferro sobre cada porta, consagra com seu vitae e entalha sigilos nas portas.",
+      mecanica: "Com uma vitória, bloqueia Animalismo, Auspex, Dominação e Presença para todos exceto o conjurador. As Checagens de Sangue das Disciplinas ainda ocorrem. O custo varia de uma Checagem para um apartamento até cinco para uma mansão. O Ritual dura indefinidamente, mas é quebrado pela destruição de qualquer selo.",
+      custo: "Uma a cinco Checagens de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Indefinido (até um selo ser destruído)"
+    },
+    {
+      nivel: 5,
+      nome: "Fuga para o Verdadeiro Santuário",
+      resumo: "O conjurador prepara dois círculos místicos e pode viajar instantaneamente de um para o outro. A jornada é de mão única por ativação.",
+      ingredientes: "Dois círculos carbonizados de aproximadamente um metro de diâmetro.",
+      processo: "O conjurador queima os círculos no chão com uma chama aberta. A consagração exige duas horas de canto por noite e duas Checagens de Sangue por três noites consecutivas — doze Checagens no total.",
+      mecanica: "O conjurador entra no círculo de partida, concentra-se por um turno e rola o Ritual (uma tentativa por cena). Em uma vitória, desaparece e reaparece no círculo de saída. Não há limite de distância entre os dois, mas devem estar inscritos no chão de um edifício. Pode transportar uma pessoa ou objeto de massa humana. Danificar qualquer círculo torna ambos inertes. Só pode ter um par funcional por vez.",
+      custo: "12 Checagens de Sangue (construção) + 1 Checagem (ativação)",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Indefinido (até um círculo ser danificado)"
+    },
+    {
+      nivel: 5,
+      nome: "Coração de Pedra",
+      resumo: "O ritual transforma o coração não-morto do conjurador em pedra, tornando-o imune a estacas — mas também completamente sem remorso e insensível a pistas emocionais e sociais.",
+      ingredientes: "Uma laje de pedra e uma vela de cera untada com o Sangue do conjurador.",
+      processo: "O conjurador deita sobre a laje com a vela sobre o peito, deixando-a queimar por uma noite inteira. Quando o fogo atinge o peito, causa 1 ponto de dano Agravado e força rolagem de Frenesi de terror (Dificuldade 3). Se falhar no Frenesi, o ritual termina.",
+      mecanica: "Em uma vitória, o coração literalmente vira pedra. Estacas se quebram ao tentar penetrá-lo. O conjurador subtrai três dados de rolagens de Remorso e de rolagens Sociais ativas (exceto Intimidação e Dominação), não pode empregar Presença, mas ganha três dados de bônus para resistir aos efeitos dessa Disciplina. O efeito é indefinido; para reverter, o conjurador deve repetir o ritual.",
+      custo: "Uma Checagem de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Indefinido (revertido repetindo o ritual)"
+    },
+    {
+      nivel: 5,
+      nome: "Eixo da Dissolução Tardia",
+      resumo: "Uma estaca ritualística que não apenas busca o coração do vampiro, mas causa Morte Final ao atingi-lo. Se necessário, move-se sozinha pelo corpo como uma lasca em direção ao coração.",
+      ingredientes: "Uma estaca esculpida em madeira de sorveira, inscrita com runas malignas.",
+      processo: "O conjurador encharca a estaca com duas Checagens de Sangue de seu Sangue e entoa as runas por uma noite.",
+      mecanica: "Funciona como estaca normal para empalamento padrão. Entretanto, se inserida em qualquer parte do corpo de um vampiro, o Eixo move-se sozinho pelo interior do vampiro em direção ao coração, causando dano ao longo do caminho. O Narrador determina o tempo até atingir o coração com base no ponto de inserção. Ao atingi-lo, o vampiro entra em torpor normalmente — mas o Eixo continua perfurando, causando dano Agravado adicional. Se o coração for destruído, o vampiro experimenta a Morte Final.",
+      custo: "Duas Checagens de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "—",
+      duracao: "Até o Eixo ser removido ou atingir o coração"
+    },
+    {
+      nivel: 5,
+      nome: "Círculo de Proteção Contra Lupinos",
+      resumo: "Um Círculo de Proteção pintado no chão que impede a passagem de lobisomens.",
+      ingredientes: "Uma faca de prata mergulhada em acônito e Sangue para traçar o círculo.",
+      processo: "O conjurador traça o Círculo de Proteção no chão com a faca de prata e as substâncias preparadas.",
+      mecanica: "Usa as regras padrão de Círculos de Proteção. O intruso é qualquer lobisomem.",
+      custo: "Três Checagens de Sangue",
+      dados: "Inteligência + Feitiçaria de Sangue",
+      resist: "Força de Vontade do intruso",
+      duracao: "Até o amanhecer (ou um ano e um dia com vitória especial)"
+    }
+  ]
   },
 
   // ─────────────────────────────────────────────

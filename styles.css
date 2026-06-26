@@ -144,3 +144,70 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
 .ornament{text-align:center;color:var(--blood);font-size:12px;letter-spacing:12px;padding:16px 0;opacity:0.6}
 @media(max-width:900px){.clan-body{grid-template-columns:1fr}.clan-main{border-right:none;border-bottom:1px solid var(--border)}.disc-cards{grid-template-columns:1fr}}
 @media(max-width:680px){#menuToggle{display:flex}#sidebar{transform:translateX(-100%)}#sidebar.open{transform:translateX(0);box-shadow:6px 0 40px rgba(0,0,0,0.8)}#overlay.open{display:block}#main{margin-left:0}.intro-page{padding:40px 24px}.intro-title{font-size:26px}.clan-header{padding:40px 24px 36px}.clan-nav-bar{padding-left:24px;padding-right:24px}.clan-main{padding:32px 24px}.clan-side{padding:28px 24px}.disc-page-header{padding:36px 24px 28px}.disc-page-body{padding:28px 24px}}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   MELHORIAS DE LEGIBILIDADE + RITUAIS — patch adicionado
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── 1. ÁREA DE CONTEÚDO AMPLIADA ────────────────────────────────── */
+.disc-page-body { max-width: 1000px !important; }
+.clan-body      { max-width: 1200px; }
+.intro-page     { max-width: 980px; }
+
+/* ── 2. FONTES MAIORES E LEGÍVEIS ────────────────────────────────── */
+/* Textos de cards de habilidade */
+.hab-card-resumo  { font-size: 17px; line-height: 1.85; }
+.hab-card-mecanica { font-size: 16px; line-height: 1.9; }
+
+/* Descrição da disciplina no header */
+.disc-page-header p { font-size: 17px !important; line-height: 1.8 !important; max-width: 800px !important; }
+
+/* Resumo e história do clã */
+.clan-resumo  { font-size: 19px; line-height: 1.9; }
+.clan-historia { font-size: 17px; line-height: 1.95; }
+
+/* Cards de disciplinas no clã */
+.disc-card-desc { font-size: 15px; line-height: 1.75; }
+
+/* Side cards */
+.perdicao-text { font-size: 15px; line-height: 1.8; }
+.fome-text     { font-size: 15px; line-height: 1.8; }
+
+/* Intro das cerimônias / rituais */
+.cerimonia-intro { font-size: 16px; line-height: 1.9; }
+
+/* Intro da página principal */
+.intro-text { font-size: 19px; line-height: 1.9; }
+
+/* Meta-valores das habilidades */
+.hab-meta-val { font-size: 14px; }
+
+/* ── 3. RITUAIS — estilos específicos ───────────────────────────── */
+/* Título da seção de rituais */
+.cerimonia-title { font-size: 24px; margin-bottom: 20px; }
+
+/* A intro dos rituais fica em caixa delimitada para distinguir das regras */
+.cerimonia-section .cerimonia-intro {
+  background: rgba(139,0,0,0.06);
+  border-left: 3px solid var(--blood2);
+  border-right: 1px solid var(--border);
+  padding: 18px 22px;
+  max-height: 260px;
+  overflow-y: auto;
+  border-radius: 0 2px 2px 0;
+}
+.cerimonia-section .cerimonia-intro::-webkit-scrollbar { width: 4px; }
+.cerimonia-section .cerimonia-intro::-webkit-scrollbar-thumb { background: var(--blood); }
+
+/* Cards de ritual: mesma base dos hab-cards */
+/* (já herdam .hab-card, .hab-card-header, etc.) */
+
+/* ── 4. RESPONSIVO ───────────────────────────────────────────────── */
+@media (min-width: 1200px) {
+  .disc-page-body { max-width: 1100px !important; }
+}
+@media (max-width: 900px) {
+  .hab-card-resumo   { font-size: 16px; }
+  .hab-card-mecanica { font-size: 15px; }
+}
