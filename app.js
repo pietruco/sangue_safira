@@ -38,10 +38,77 @@ function buildNav() {
 function renderIntro() {
   $('introPage').innerHTML = `
     <div class="intro-page">
-      <div class="page-eyebrow">Sangue &amp; Safira · Campanha</div>
-      <h1 class="intro-title">Guia dos Clãs</h1>
-      <div class="intro-subtitle">Vampiro: A Máscara · 5ª Edição</div>
-      <div class="blood-divider"><span class="blood-divider-icon">✦</span></div>
+      <h1 class="intro-campaign-title">Sangue &amp; Safira</h1>
+      <div class="intro-campaign-sub">Campanha · Vampiro: A Máscara · 5ª Edição</div>
+
+      <div class="blood-divider"><span class="blood-divider-icon">🩸</span></div>
+
+      <a class="btn-barcelona" href="https://docs.google.com/document/d/1c6Z9mkb3h51A4mFp_BryMnWlG1iA8CdnOpftjimxWDo/edit?usp=sharing" target="_blank" rel="noopener">
+        ✦ Bem-Vindos à Barcelona ✦
+      </a>
+
+      <div class="blood-divider" style="margin-top:56px"><span class="blood-divider-icon">✦</span></div>
+
+      <h2 class="intro-section-title">Nossos Cainitas</h2>
+
+      <p class="intro-cainitas-text">Barcelona, novembro de 2026. Dezesseis anos após o colapso da Camarilla em São Paulo, a cidade resiste — não por virtude, mas pela presença de alguém que soube ocupar o vácuo antes que o vácuo preenchesse a si mesmo. Carmen Vasquez, Ravnos de geração incerta, construiu aqui algo que se parece com ordem se você não olhar de perto demais. Em torno dela, uma coterie de sobreviventes e recém-chegados — vampiros de clãs e histórias muito diferentes, unidos por um fio que nenhum deles escolheu completamente.</p>
+
+      <div class="cainitas-grid">
+
+        <div class="cainita-card">
+          <div class="cainita-symbol">🦅</div>
+          <div class="cainita-nome">Carmen</div>
+          <div class="cainita-clan">Ravnos</div>
+          <p class="cainita-bio">A arquiteta de tudo. Quarenta anos de aparência e séculos de paciência. Carmen chegou a Barcelona antes de todos os outros e ficou — não por amor à cidade, mas porque viu nela o lugar certo para construir o que vem a seguir. Ela abrigou, empregou, protegeu. Cada favor é um fio que ela segura. Ela nunca mente diretamente. Nunca menciona São Paulo por iniciativa própria. O que ela está construindo tem um nome que ainda não pronunciou em voz alta para todos.</p>
+        </div>
+
+        <div class="cainita-card">
+          <div class="cainita-symbol">🦅</div>
+          <div class="cainita-nome">Adriel</div>
+          <div class="cainita-clan">Ravnos</div>
+          <p class="cainita-bio">Dezesseis anos a serviço de Carmen — não por escolha exatamente, não por coerção exatamente. Ele resolve as situações discretas, faz os trabalhos que ninguém menciona depois. Conhece a mansão e seus segredos melhor do que qualquer outro. Carmen nunca foi cruel com ele, e isso tornou tudo mais difícil de nomear. Ele carrega algo que viu. Ainda não decidiu o que fazer com isso.</p>
+        </div>
+
+        <div class="cainita-card">
+          <div class="cainita-symbol">🌹</div>
+          <div class="cainita-nome">Flora</div>
+          <div class="cainita-clan">Toreador</div>
+          <p class="cainita-bio">A face bonita de um projeto que ela não vê por completo. Carmen a adotou sem pedir permissão e simplesmente começou a agir como se já fosse — e Flora descobriu que é muito difícil recusar algo que ninguém formalmente ofereceu. Vernissages, estreias, festas onde os nomes na lista valem mais do que os pratos servidos. Ela aprendeu a circular, a sorrir do jeito certo. As portas de Barcelona se abrem para ela. O que alimenta tudo isso é uma pergunta que ela ainda não fez em voz alta.</p>
+        </div>
+
+        <div class="cainita-card">
+          <div class="cainita-symbol">♜</div>
+          <div class="cainita-nome">Xavi A.</div>
+          <div class="cainita-clan">Ventrue</div>
+          <p class="cainita-bio">Recrutado por Carmen de algum lugar e por alguma promessa — os Ventrue sempre chegam com propósito declarado e agenda própria. O Clã dos Reis não serve sem razão; ou acreditam que estão guiando, ou precisam de algo que só a posição oferece. O que ele foi prometido e o que espera encontrar em Barcelona são perguntas que só ele pode responder.</p>
+        </div>
+
+        <div class="cainita-card">
+          <div class="cainita-symbol">🐀</div>
+          <div class="cainita-nome">Ronaldo</div>
+          <div class="cainita-clan">Nosferatu</div>
+          <p class="cainita-bio">Os Nosferatu sempre souberam que informação é mais duradoura do que beleza. Numa cidade que Carmen está reconstruindo tijolo por tijolo, alguém que vê o que os outros não veem — e que sabe onde ficam os segredos — é um recurso de valor incalculável. O que o trouxe até aqui, o que sabe e o que escolhe não revelar são as perguntas certas.</p>
+        </div>
+
+        <div class="cainita-card">
+          <div class="cainita-symbol">🐺</div>
+          <div class="cainita-nome">Albert</div>
+          <div class="cainita-clan">Gangrel</div>
+          <p class="cainita-bio">Os Gangrel não dobram para príncipes e raramente ficam onde são colocados. Que Albert esteja em Barcelona — numa mansão, numa coterie, numa estrutura — diz algo sobre o que aconteceu antes ou sobre o que ele espera que aconteça a seguir. Os sobreviventes do caos aprenderam que liberdade sem aliados tem um preço alto. Alguns decidiram que vale a pena pagar. Outros ainda estão calculando.</p>
+        </div>
+
+        <div class="cainita-card">
+          <div class="cainita-symbol">☽</div>
+          <div class="cainita-nome">Catharina Montenegro</div>
+          <div class="cainita-clan">Malkavian</div>
+          <p class="cainita-bio">Os Malkavianos veem o fogo que produz a sombra — e às vezes o que veem os quebra, e às vezes os torna os únicos que realmente entenderam. Catharina chegou a Barcelona trazendo o peso de perceber demais de uma vez. Numa cidade onde Carmen controla muito do que pode ser visto, alguém que enxerga de formas diferentes é simultaneamente valioso e perigoso.</p>
+        </div>
+
+      </div>
+
+      <div class="blood-divider" style="margin-top:56px"><span class="blood-divider-icon">✦</span></div>
+
+      <div class="page-eyebrow" style="margin-top:0">Guia dos Clãs</div>
       <p class="intro-text">Na noite eterna de Vampiro: A Máscara, treze clãs dividem o mundo dos mortos-vivos. Cada um carrega séculos de história, filosofia própria e uma maldição singular — a herança de Caim, o Primeiro Assassino.</p>
       <p class="intro-text">Selecione um clã para explorar suas origens, disciplinas, o sabor único de sua fome e a perdição que aguarda no fundo de cada noite.</p>
       <div class="blood-divider"><span class="blood-divider-icon">🩸</span></div>
