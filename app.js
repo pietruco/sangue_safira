@@ -12,10 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('[S&S] CLANS carregado:', typeof CLANS !== 'undefined' ? CLANS.map(c=>c.id) : 'NÃO DEFINIDO');
 });
 
-window.showClan  = showClan;
-window.showDisc  = showDisc;
-window.showIntro = showIntro;
-window._btnDisc  = _btnDisc;
+window.showClan      = showClan;
+window.showDisc      = showDisc;
+window.showIntro     = showIntro;
+window.showPredador  = showPredador;
+window._btnDisc      = _btnDisc;
 
 // Armazena pares [discKey, clanId] indexados por inteiro simples
 const _btnMap = [];
@@ -39,6 +40,220 @@ const DISC_LIST = [
   {key:'presenca',    nome:'Presença'},
   {key:'proteanismo', nome:'Proteanismo'},
 ];
+
+// ── Predator types data ────────────────────────────────────────
+const PREDADOR_TYPES = [
+  {
+    id: 'gato-de-beco',
+    nome: 'Gato de Beco',
+    icone: '🐱',
+    pool: 'Força + Briga / Raciocínio + Sagacidade',
+    descricao: 'Para estes Cainitas, a violência é o caminho mais curto. O Gato de Beco se alimenta pela força bruta, atacando quem pode quando pode. Intimidação e Dominação mantêm as vítimas em silêncio.',
+    ganhos: ['Especialização em Intimidação (Assaltos) ou Briga (Agarramentos)', 'Um ponto em Celeridade ou Potência', 'Três pontos de Contatos Criminosos'],
+    perdas: ['Perde um ponto de Humanidade']
+  },
+  {
+    id: 'coletor-de-bolsas',
+    nome: 'Coletor de Bolsas',
+    icone: '🩸',
+    pool: 'Inteligência + Sagacidade',
+    descricao: 'O melhor sangue nem sempre vem de um corpo vivo. O Coletor de Bolsas consome sangue preservado, deteriorado ou de cadáveres, graças ao Mérito Estômago de Ferro. Hospitais, bancos de sangue e mercado negro são seus territórios. Ventrue não podem escolher este tipo.',
+    ganhos: ['Especialização em Ladroagem (Arrombamento) ou Sagacidade (Mercado Negro)', 'Um ponto em Feitiçaria de Sangue (apenas Tremere/Banu Haqim), Oblívio (apenas Hecata) ou Ofuscação', 'Mérito de Alimentação (•••) Estômago de Ferro'],
+    perdas: ['Defeito Inimigo (••) — alguém que acredita que este vampiro lhe deve algo']
+  },
+  {
+    id: 'sanguessuga',
+    nome: 'Sanguessuga',
+    icone: '🦷',
+    pool: '— (não é abstraído em rolagem)',
+    descricao: 'Alguns Cainitas rejeitam o sangue mortal e se alimentam do vitae de outros vampiros — por caça, coerção ou como forma de pagamento. Uma prática de alto risco que a maioria da sociedade vampírica condena.',
+    ganhos: ['Especialização em Briga (Cainitas) ou Furtividade (Contra Cainitas)', 'Um ponto em Celeridade ou Proteanismo', 'Potência de Sangue aumentada em um'],
+    perdas: ['Perde um ponto de Humanidade', 'Defeito Segredo Sombrio: Diablerie (••) ou Defeito Rejeitado (••)', 'Defeito de Alimentação (••): Exclusão de Presa (Mortais)']
+  },
+  {
+    id: 'acougueiro',
+    nome: 'Açougueiro',
+    icone: '🏠',
+    pool: 'Manipulação + Subterfúgio',
+    descricao: 'O Açougueiro se alimenta de família e amigos próximos — os seus ou os de outros — mantendo os laços enquanto drena discretamente. A Camarilla proíbe esta prática por ser uma brecha à Máscara esperando para acontecer.',
+    ganhos: ['Especialização em Persuasão (Gaslighting) ou Subterfúgio (Encobrimentos)', 'Um ponto em Dominação ou Animalismo', 'Vantagem Rebanho (••)'],
+    perdas: ['Defeito Segredo Sombrio (•): Açougueiro']
+  },
+  {
+    id: 'consensualista',
+    nome: 'Consensualista',
+    icone: '🤝',
+    pool: 'Manipulação + Persuasão',
+    descricao: 'O Consensualista jamais se alimenta contra a vontade da vítima — seja fingindo uma coleta de sangue, explorando a comunidade kink ou admitindo abertamente o que é. Para a Camarilla, a última abordagem é uma violação da Máscara.',
+    ganhos: ['Especialização em Medicina (Flebotomia) ou Persuasão (Recipientes)', 'Um ponto em Auspício ou Fortitude', 'Um ponto de Humanidade'],
+    perdas: ['Defeito Segredo Sombrio (•): Violador da Máscara', 'Defeito de Alimentação (•): Exclusão de Presa (Não-Consentindo)']
+  },
+  {
+    id: 'fazendeiro',
+    nome: 'Fazendeiro',
+    icone: '🌿',
+    pool: 'Autocontrole + Empatia com Animais',
+    descricao: 'O Fazendeiro se alimenta exclusivamente de animais. A Besta range de fome, mas ele se recusa a matar mortais — exceto nas piores noites. Ventrue e vampiros com Potência de Sangue 3 ou mais não podem escolher este tipo.',
+    ganhos: ['Especialização em Empatia com Animais (animal específico) ou Sobrevivência (Caça)', 'Um ponto em Animalismo ou Proteanismo', 'Um ponto de Humanidade'],
+    perdas: ['Defeito de Alimentação (••): Fazendeiro']
+  },
+  {
+    id: 'osiris',
+    nome: 'Osíris',
+    icone: '👁️',
+    pool: 'Manipulação + Subterfúgio / Intimidação + Fama',
+    descricao: 'Músicos, escritores, líderes de culto — o Osíris é uma celebridade que se alimenta de seus fãs e adoradores. Acesso fácil ao sangue, mas seguidores atraem problemas com autoridades locais e rivais.',
+    ganhos: ['Especialização em Ocultismo (tradição específica) ou Performance (área específica)', 'Um ponto em Feitiçaria de Sangue (apenas Tremere/Banu Haqim) ou Presença', 'Três pontos entre Fama e Rebanho'],
+    perdas: ['Dois pontos entre Defeitos de Inimigos e Defeitos Míticos']
+  },
+  {
+    id: 'homem-de-areia',
+    nome: 'Homem de Areia',
+    icone: '😴',
+    pool: 'Destreza + Furtividade',
+    descricao: 'O Homem de Areia caça mortais enquanto dormem. Usa furtividade e Disciplinas para se alimentar sem ser percebido. Raramente é pego — mas quando é, os problemas são certos.',
+    ganhos: ['Especialização em Medicina (Anestésicos) ou Furtividade (Arrombamento)', 'Um ponto em Auspício ou Ofuscação', 'Um ponto em Recursos'],
+    perdas: []
+  },
+  {
+    id: 'rainha-da-cena',
+    nome: 'Rainha da Cena',
+    icone: '👑',
+    pool: 'Manipulação + Persuasão',
+    descricao: 'Semelhante ao Osíris, mas voltado a uma subcultural específica — moda, street art, música underground. As vítimas o adoram por seu status. Quem suspeita do que ele é simplesmente não é acreditado.',
+    ganhos: ['Especialização em Etiqueta, Liderança ou Sagacidade (cena específica)', 'Um ponto em Dominação ou Potência', 'Vantagem Fama (•)', 'Vantagem Contato (•)'],
+    perdas: ['Defeito de Influência (•): Desprezado (fora de sua subcultural) ou Defeito de Alimentação (•): Exclusão de Presa']
+  },
+  {
+    id: 'sereia',
+    nome: 'Sereia',
+    icone: '💋',
+    pool: 'Carisma + Subterfúgio',
+    descricao: 'A Sereia usa sedução e Disciplinas para atrair presas, alimentando-se sob o pretexto de atos sexuais. Clubes e encontros casuais são seu território natural. No fundo de seus momentos mais sombrios, reconhece o que isso significa.',
+    ganhos: ['Especialização em Persuasão (Sedução) ou Subterfúgio (Sedução)', 'Um ponto em Fortitude ou Presença', 'Mérito Aparência (••): Belo/Bela'],
+    perdas: ['Defeito Inimigo (•): Um amante rejeitado ou parceiro ciumento']
+  },
+  {
+    id: 'extorsionista',
+    nome: 'Extorsionista',
+    icone: '💼',
+    pool: 'Força/Manipulação + Intimidação',
+    descricao: 'O Extorsionista obtém sangue em troca de serviços — proteção, segurança, vigilância. Às vezes o serviço é genuíno; muitas vezes é construído sobre informação fabricada para tornar o acordo mais atraente.',
+    ganhos: ['Especialização em Intimidação (Coerção) ou Ladroagem (Segurança)', 'Um ponto em Dominação ou Potência', 'Três pontos entre Contatos e Recursos'],
+    perdas: ['Defeito Inimigo (••): A polícia ou uma vítima que escapou e quer vingança']
+  },
+  {
+    id: 'saqueador-de-tumulos',
+    nome: 'Saqueador de Túmulos',
+    icone: '⚰️',
+    pool: 'Determinação + Medicina / Manipulação + Percepção',
+    descricao: 'Semelhante ao Coletor de Bolsas, o Saqueador de Túmulos não desperdiça sangue — mesmo o de cadáveres. Trabalha em necrotérios, hospitais ou se alimenta de enlutados em cemitérios.',
+    ganhos: ['Especialização em Ocultismo (Rituais Funerários) ou Medicina (Cadáveres)', 'Um ponto em Fortitude ou Oblívio', 'Mérito de Alimentação (•••): Estômago de Ferro', 'Vantagem Refúgio (•)'],
+    perdas: ['Defeito de Rebanho (••): Predador Óbvio']
+  },
+  {
+    id: 'assassino-de-estrada',
+    nome: 'Assassino de Estrada',
+    icone: '🛣️',
+    pool: 'Destreza/Carisma + Condução',
+    descricao: 'Nunca fica em um lugar por muito tempo. O Assassino de Estrada está sempre em movimento, caçando aqueles que não serão notados caso desapareçam. O risco vale a recompensa.',
+    ganhos: ['Especialização em Sobrevivência (A Estrada) ou Investigação (Jargão Vampírico)', 'Um ponto em Fortitude ou Proteanismo', 'Dois pontos adicionais de Rebanho Migrante'],
+    perdas: ['Defeito de Alimentação: Exclusão de Presa (Locais)']
+  },
+  {
+    id: 'ceifador',
+    nome: 'Ceifador',
+    icone: '🏥',
+    pool: 'Inteligência + Percepção/Medicina',
+    descricao: 'Caça dentro de hospices, asilos e locais onde os moribundos residem. O Ceifador está em movimento constante em busca de novas vítimas próximas do fim de sua vida — e pode desenvolver um paladar para doenças específicas.',
+    ganhos: ['Especialização em Percepção (Morte) ou Ladroagem (Falsificação)', 'Um ponto em Auspício ou Oblívio', 'Um ponto em Aliados ou Influência na comunidade médica', 'Um ponto de Humanidade'],
+    perdas: ['Defeito de Alimentação (•): Exclusão de Presa (Mortais Saudáveis)']
+  },
+  {
+    id: 'monteiro',
+    nome: 'Monteiro',
+    icone: '🎯',
+    pool: 'Inteligência + Furtividade / Determinação + Furtividade',
+    descricao: 'Carrega uma tradição aristocrática espanhola: usa lacaios para conduzir as presas até ele, seja via golpes longos, flash mobs ou perseguições. A caça não é sempre literal, mas sempre é organizada.',
+    ganhos: ['Especialização em Liderança (Alcateia de Caça) ou Furtividade (Vigilância)', 'Um ponto em Dominação ou Ofuscação', 'Dois pontos de Lacaios'],
+    perdas: ['Perde um ponto de Humanidade']
+  },
+  {
+    id: 'perseguidor',
+    nome: 'Perseguidor',
+    icone: '🔍',
+    pool: 'Inteligência + Investigação / Vigor + Furtividade',
+    descricao: 'Estuda seus alvos com paciência — hábitos, rotinas, se serão notados caso sumam. O Perseguidor age no momento certo, quando a fome e a oportunidade se alinham perfeitamente.',
+    ganhos: ['Especialização em Investigação (Perfilamento) ou Furtividade (Vigilância)', 'Um ponto em Animalismo ou Auspício', 'Mérito (•): Farejador', 'Um ponto de Contato entre moradores moralmente flexíveis da área de caça'],
+    perdas: ['Perde um ponto de Humanidade']
+  },
+  {
+    id: 'alçapao',
+    nome: 'Alçapão',
+    icone: '🕸️',
+    pool: 'Carisma + Furtividade / Destreza + Furtividade / Raciocínio + Percepção + pontos de Refúgio',
+    descricao: 'Como a aranha, o Alçapão constrói um ninho e atrai presas para dentro. Um parque de diversões, uma casa abandonada, um clube subterrâneo — a vítima vem até ele. Pode apenas aterrorizar, drenar lentamente ou dar uma bebida profunda e deixar ir.',
+    ganhos: ['Especialização em Persuasão (Marketing) ou Furtividade (Emboscadas)', 'Um ponto em Proteanismo ou Ofuscação', 'Um ponto de Refúgio', 'Um ponto adicional em Lacaios, Rebanho ou um segundo ponto de Refúgio'],
+    perdas: ['Defeito de Refúgio (•): Assustador ou Mal-Assombrado']
+  },
+  {
+    id: 'cobrador-de-dizimos',
+    nome: 'Cobrador de Dízimos',
+    icone: '⚖️',
+    pool: '—',
+    descricao: 'Detém poder suficiente para que outros Cainitas lhe paguem tributo na forma de recipientes selecionados, entregues regularmente ou sob demanda. A Máscara é problema de todos os outros.',
+    ganhos: ['Especialização em Intimidação (Cainitas) ou Liderança (Cainitas)', 'Um ponto em Dominação ou Presença', 'Três pontos entre Domínio ou Status'],
+    perdas: ['Defeito Adversário (••)']
+  }
+];
+
+function showPredador() {
+  currentClan = null;
+  currentDisc = null;
+  buildNav();
+  $('introPage').style.display    = 'none';
+  $('clanDetail').style.display   = 'none';
+  $('discDetail').style.display   = 'none';
+  $('predadorPage').style.display = 'block';
+
+  const cardsHTML = PREDADOR_TYPES.map(p => `
+    <div class="pred-card">
+      <div class="pred-card-header">
+        <span class="pred-icone">${p.icone}</span>
+        <span class="pred-nome">${p.nome}</span>
+      </div>
+      <p class="pred-pool"><span class="pred-pool-label">Pool</span> ${p.pool}</p>
+      <p class="pred-desc">${p.descricao}</p>
+      <div class="pred-efeitos">
+        ${p.ganhos.length ? `<div class="pred-col"><div class="pred-col-title pred-gain-title">Ganhos</div><ul class="pred-list pred-gain-list">${p.ganhos.map(g=>`<li>${g}</li>`).join('')}</ul></div>` : ''}
+        ${p.perdas.length ? `<div class="pred-col"><div class="pred-col-title pred-loss-title">Perdas</div><ul class="pred-list pred-loss-list">${p.perdas.map(l=>`<li>${l}</li>`).join('')}</ul></div>` : ''}
+      </div>
+    </div>`).join('');
+
+  $('predadorPage').innerHTML = `
+    <div class="pred-page">
+      <div class="clan-nav-bar">
+        <button class="back-btn" onclick="showIntro()">← Início</button>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">Tipos de Predador</span>
+      </div>
+      <div class="disc-page-header">
+        <div class="disc-page-inner">
+          <div class="disc-page-sub">Criação de Personagem</div>
+          <h2 class="disc-page-title">Tipos de Predador</h2>
+          <p style="margin-top:14px;font-size:17px;color:var(--text2);line-height:1.8;font-style:italic;max-width:700px">Cada vampiro tem seu método preferido. A escolha do Tipo de Predador molda especializações, Disciplinas, Méritos e Defeitos iniciais — pois a experiência de caçar sangue define quem o Cainita se torna. O Narrador pode permitir pools alternativos dependendo da abordagem.</p>
+        </div>
+      </div>
+      <div class="disc-page-body pred-grid">
+        ${cardsHTML}
+      </div>
+      <div class="ornament" style="padding:32px 0">✦ ✦ ✦</div>
+    </div>`;
+
+  $('main').scrollTo(0, 0);
+  $('sidebar').classList.remove('open');
+  $('overlay').classList.remove('open');
+}
 
 function buildNav() {
   const clansOpen = _navState.clans;
@@ -79,6 +294,13 @@ function buildNav() {
       </div>
       <div class="nav-group-body" style="display:${discsOpen ? 'block' : 'none'}">
         ${discsHTML}
+      </div>
+    </div>
+    <div class="nav-group nav-group--single">
+      <div class="nav-group-header nav-group-header--single" onclick="showPredador()">
+        <span class="nav-group-icon">🦴</span>
+        <span class="nav-group-label">Tipos de Predador</span>
+        <span class="nav-group-arrow">›</span>
       </div>
     </div>`;
 }
@@ -448,9 +670,10 @@ function showIntro() {
   currentClan = null;
   currentDisc = null;
   buildNav();
-  $('introPage').style.display  = 'block';
-  $('clanDetail').style.display = 'none';
-  $('discDetail').style.display = 'none';
+  $('introPage').style.display    = 'block';
+  $('clanDetail').style.display   = 'none';
+  $('discDetail').style.display   = 'none';
+  $('predadorPage').style.display = 'none';
   $('main').scrollTo(0, 0);
 }
 

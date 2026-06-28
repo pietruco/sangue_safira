@@ -507,3 +507,138 @@ body { font-size: 19px !important; line-height: 1.85 !important; }
   filter: grayscale(0%);
   box-shadow: 0 0 0 3px var(--blood2), 0 6px 28px rgba(139,0,0,0.35);
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   TIPOS DE PREDADOR
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Nav item sem colapso */
+.nav-group--single .nav-group-header--single {
+  cursor: pointer;
+}
+.nav-group--single .nav-group-header--single:hover {
+  background: rgba(139,0,0,0.08);
+  color: var(--gold2);
+}
+
+/* Grid de cards */
+.pred-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 18px;
+  padding-top: 8px;
+}
+
+/* Card */
+.pred-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blood);
+  padding: 22px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.pred-card:hover {
+  border-color: var(--blood2);
+  border-left-color: var(--blood2);
+  box-shadow: 0 4px 20px rgba(139,0,0,0.15);
+}
+
+/* Header do card */
+.pred-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pred-icone {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.pred-nome {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold2);
+  letter-spacing: 0.05em;
+}
+
+/* Pool */
+.pred-pool {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  color: var(--text3);
+  line-height: 1.5;
+}
+.pred-pool-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blood2);
+  margin-right: 6px;
+}
+
+/* Descrição */
+.pred-desc {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 15px;
+  color: var(--text2);
+  line-height: 1.75;
+  font-style: italic;
+}
+
+/* Ganhos / Perdas */
+.pred-efeitos {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.pred-col { flex: 1; min-width: 140px; }
+.pred-col-title {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.pred-gain-title { color: var(--gold); }
+.pred-loss-title { color: var(--blood2); }
+.pred-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.pred-list li {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  padding-left: 12px;
+  position: relative;
+}
+.pred-gain-list li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+.pred-loss-list li::before {
+  content: '−';
+  position: absolute;
+  left: 0;
+  color: var(--blood2);
+  font-weight: 700;
+}
+
+@media (max-width: 680px) {
+  .pred-grid { grid-template-columns: 1fr; }
+}
