@@ -20,7 +20,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
 .brand-sub{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--blood2);margin-top:6px}
 .sidebar-section-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--text3);padding:16px 20px 6px}
 #clanNav{flex:1;padding:6px 0 20px}
-.clan-nav-item{display:flex;align-items:center;gap:10px;padding:9px 20px;cursor:pointer;transition:background 0.15s,color 0.15s,border-color 0.15s;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.06em;color:var(--text2);border-left:2px solid transparent;user-select:none}
+.clan-nav-item{display:flex;align-items:center;gap:10px;padding:9px 20px;cursor:pointer;transition:background 0.15s,color 0.15s,border-color 0.15s;font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.05em;color:var(--text2);border-left:2px solid transparent;user-select:none}
 .clan-nav-item:hover{background:rgba(139,0,0,0.08);color:var(--text);border-left-color:var(--blood)}
 .clan-nav-item.active{background:rgba(139,0,0,0.14);color:var(--gold2);border-left-color:var(--blood2)}
 .nav-symbol{font-size:14px;width:20px;text-align:center;opacity:0.8}
@@ -319,11 +319,13 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
   padding: 26px 22px 22px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 6px;
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
   cursor: default;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 .cainita-card::before {
   content: '';
@@ -353,6 +355,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
   font-weight: 700;
   color: var(--gold2);
   letter-spacing: 0.06em;
+  text-align: center;
 }
 .cainita-clan {
   font-family: 'Cinzel', serif;
@@ -369,6 +372,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
   line-height: 1.85 !important;
   font-style: normal !important;
   flex: 1;
+  text-align: center;
 }
 
 @media (max-width: 680px) {
@@ -407,8 +411,8 @@ body { font-size: 19px !important; line-height: 1.85 !important; }
   cursor: pointer;
   user-select: none;
   font-family: 'Cinzel', serif;
-  font-size: 11px;
-  letter-spacing: 0.2em;
+  font-size: 13px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text2);
   transition: background 0.15s, color 0.15s;
@@ -441,8 +445,8 @@ body { font-size: 19px !important; line-height: 1.85 !important; }
   cursor: pointer;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
   font-family: 'Cinzel', serif;
-  font-size: 11px;
-  letter-spacing: 0.05em;
+  font-size: 13px;
+  letter-spacing: 0.04em;
   color: var(--text2);
   border-left: 2px solid transparent;
   user-select: none;
@@ -492,7 +496,7 @@ body { font-size: 19px !important; line-height: 1.85 !important; }
   width: 120px;
   height: 120px;
   object-fit: cover;
-  object-position: top center;
+  object-position: center 15%;
   border-radius: 50%;
   border: 2px solid var(--blood2);
   box-shadow: 0 0 0 3px rgba(139,0,0,0.2), 0 4px 20px rgba(0,0,0,0.6);

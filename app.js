@@ -84,7 +84,7 @@ function buildNav() {
 }
 
 // Persistent nav state
-const _navState = {clans: true, discs: false};
+const _navState = {clans: false, discs: false};
 window._toggleNav = function(key) {
   _navState[key] = !_navState[key];
   buildNav();
@@ -113,7 +113,6 @@ function renderIntro() {
           <div class="cainita-foto-wrap">
             <img src="carmen.png" alt="Carmen" class="cainita-foto"/>
           </div>
-          <div class="cainita-symbol">🦅</div>
           <div class="cainita-nome">Carmen</div>
           <div class="cainita-clan">Ravnos</div>
           <p class="cainita-bio">A arquiteta de tudo. Quarenta anos de aparência e séculos de paciência. Carmen chegou a Barcelona antes de todos os outros e ficou — não por amor à cidade, mas porque viu nela o lugar certo para construir o que vem a seguir. Ela abrigou, empregou, protegeu. Cada favor é um fio que ela segura. Ela nunca mente diretamente. Nunca menciona São Paulo por iniciativa própria. O que ela está construindo tem um nome que ainda não pronunciou em voz alta para todos.</p>
