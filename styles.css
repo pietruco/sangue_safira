@@ -375,3 +375,131 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;backgroun
   .cainitas-grid { grid-template-columns: 1fr; }
   .intro-cainitas-text { font-size: 15px; }
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   LEGIBILIDADE + NAV COLAPSÁVEL — patch
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── 1. FONTE GLOBAL MAIOR ───────────────────────────────────────── */
+body { font-size: 19px !important; line-height: 1.85 !important; }
+
+.hab-card-resumo   { font-size: 18px !important; line-height: 1.85 !important; }
+.hab-card-mecanica { font-size: 17px !important; line-height: 1.9  !important; }
+.hab-meta-val      { font-size: 15px !important; }
+.clan-resumo       { font-size: 20px !important; line-height: 1.9  !important; }
+.clan-historia     { font-size: 18px !important; line-height: 1.95 !important; }
+.disc-card-desc    { font-size: 16px !important; line-height: 1.8  !important; }
+.cerimonia-intro   { font-size: 17px !important; line-height: 1.9  !important; }
+.intro-text        { font-size: 19px !important; }
+.perdicao-text,
+.fome-text         { font-size: 16px !important; line-height: 1.8  !important; }
+
+/* ── 2. NAV GRUPOS (Clãs / Disciplinas) ─────────────────────────── */
+.nav-group {
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-group-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 20px;
+  cursor: pointer;
+  user-select: none;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text2);
+  transition: background 0.15s, color 0.15s;
+}
+.nav-group-header:hover,
+.nav-group-header.open {
+  background: rgba(139,0,0,0.1);
+  color: var(--gold2);
+}
+.nav-group-icon {
+  font-size: 13px;
+  width: 18px;
+  text-align: center;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+.nav-group-label { flex: 1; }
+.nav-group-arrow {
+  font-size: 11px;
+  color: var(--blood2);
+  transition: transform 0.2s;
+}
+
+/* Discipline nav items — same style as clan-nav-item */
+.disc-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px 8px 32px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--text2);
+  border-left: 2px solid transparent;
+  user-select: none;
+}
+.disc-nav-item:hover {
+  background: rgba(139,0,0,0.08);
+  color: var(--text);
+  border-left-color: var(--blood);
+}
+.disc-nav-item.active {
+  background: rgba(139,0,0,0.14);
+  color: var(--gold2);
+  border-left-color: var(--blood2);
+}
+.disc-nav-item .nav-symbol {
+  font-size: 9px;
+  width: 16px;
+  text-align: center;
+  color: var(--blood2);
+}
+.disc-nav-item .nav-arrow {
+  font-size: 10px;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.15s, transform 0.15s;
+  color: var(--blood2);
+}
+.disc-nav-item:hover .nav-arrow,
+.disc-nav-item.active .nav-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Clan items inside nav-group get slight indent */
+.nav-group-body .clan-nav-item {
+  padding-left: 32px;
+}
+
+/* ── Foto de perfil no card da Carmen ── */
+.cainita-foto-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.cainita-foto {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+  border: 2px solid var(--blood2);
+  box-shadow: 0 0 0 3px rgba(139,0,0,0.2), 0 4px 20px rgba(0,0,0,0.6);
+  filter: grayscale(15%);
+  transition: filter 0.3s, box-shadow 0.3s;
+}
+.cainita-card--com-foto:hover .cainita-foto {
+  filter: grayscale(0%);
+  box-shadow: 0 0 0 3px var(--blood2), 0 6px 28px rgba(139,0,0,0.35);
+}

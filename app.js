@@ -25,15 +25,70 @@ function _btnDisc(idx) {
   showDisc(discKey, clanId);
 }
 
+// ── Discipline quick-access list (key → display name) ──────────
+const DISC_LIST = [
+  {key:'animalismo',  nome:'Animalismo'},
+  {key:'auspicio',    nome:'Auspício'},
+  {key:'celeridade',  nome:'Celeridade'},
+  {key:'dominacao',   nome:'Dominação'},
+  {key:'feiticaria',  nome:'Feitiçaria de Sangue'},
+  {key:'fortitude',   nome:'Fortitude'},
+  {key:'oblivio',     nome:'Oblívio'},
+  {key:'ofuscacao',   nome:'Ofuscação'},
+  {key:'potencia',    nome:'Potência'},
+  {key:'presenca',    nome:'Presença'},
+  {key:'proteanismo', nome:'Proteanismo'},
+];
+
 function buildNav() {
-  $('clanNav').innerHTML = CLANS.map(c => `
+  const clansOpen = _navState.clans;
+  const discsOpen = _navState.discs;
+
+  const clansHTML = CLANS.map(c => `
     <div class="clan-nav-item ${currentClan?.id === c.id ? 'active' : ''}"
          onclick="showClan('${c.id}')">
       <span class="nav-symbol">${c.simbolo}</span>
       <span class="nav-name">${c.nome}</span>
       <span class="nav-arrow">›</span>
     </div>`).join('');
+
+  const discsHTML = DISC_LIST.map(d => `
+    <div class="disc-nav-item ${currentDisc === d.key ? 'active' : ''}"
+         onclick="showDisc('${d.key}', null)">
+      <span class="nav-symbol">⬥</span>
+      <span class="nav-name">${d.nome}</span>
+      <span class="nav-arrow">›</span>
+    </div>`).join('');
+
+  $('clanNav').innerHTML = `
+    <div class="nav-group">
+      <div class="nav-group-header ${clansOpen ? 'open' : ''}" onclick="_toggleNav('clans')">
+        <span class="nav-group-icon">🩸</span>
+        <span class="nav-group-label">Clãs</span>
+        <span class="nav-group-arrow">${clansOpen ? '▾' : '›'}</span>
+      </div>
+      <div class="nav-group-body" style="display:${clansOpen ? 'block' : 'none'}">
+        ${clansHTML}
+      </div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-header ${discsOpen ? 'open' : ''}" onclick="_toggleNav('discs')">
+        <span class="nav-group-icon">✦</span>
+        <span class="nav-group-label">Disciplinas</span>
+        <span class="nav-group-arrow">${discsOpen ? '▾' : '›'}</span>
+      </div>
+      <div class="nav-group-body" style="display:${discsOpen ? 'block' : 'none'}">
+        ${discsHTML}
+      </div>
+    </div>`;
 }
+
+// Persistent nav state
+const _navState = {clans: true, discs: false};
+window._toggleNav = function(key) {
+  _navState[key] = !_navState[key];
+  buildNav();
+};
 
 function renderIntro() {
   $('introPage').innerHTML = `
@@ -51,11 +106,13 @@ function renderIntro() {
 
       <h2 class="intro-section-title">Nossos Cainitas</h2>
 
-      <p class="intro-cainitas-text">Barcelona, novembro de 2026. Dezesseis anos após o colapso da Camarilla em São Paulo, a cidade resiste — não por virtude, mas pela presença de alguém que soube ocupar o vácuo antes que o vácuo preenchesse a si mesmo. Carmen Vasquez, Ravnos de geração incerta, construiu aqui algo que se parece com ordem se você não olhar de perto demais. Em torno dela, uma coterie de sobreviventes e recém-chegados — vampiros de clãs e histórias muito diferentes, unidos por um fio que nenhum deles escolheu completamente.</p>
 
       <div class="cainitas-grid">
 
-        <div class="cainita-card">
+        <div class="cainita-card cainita-card--com-foto">
+          <div class="cainita-foto-wrap">
+            <img src="carmen.png" alt="Carmen" class="cainita-foto"/>
+          </div>
           <div class="cainita-symbol">🦅</div>
           <div class="cainita-nome">Carmen</div>
           <div class="cainita-clan">Ravnos</div>
@@ -102,6 +159,12 @@ function renderIntro() {
           <div class="cainita-nome">Catharina Montenegro</div>
           <div class="cainita-clan">Malkavian</div>
 
+        </div>
+
+        <div class="cainita-card">
+          <div class="cainita-symbol">⬡</div>
+          <div class="cainita-nome">César Rothschild</div>
+          <div class="cainita-clan">Banu Haqim</div>
         </div>
 
       </div>
